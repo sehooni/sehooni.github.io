@@ -27,3 +27,6 @@ classes: wide
 자세히 확인하면 다음과 같다.
 
 ![error2](https://user-images.githubusercontent.com/84653623/158160666-8f38e45b-ccc2-4640-b413-a77888b419cd.png)
+
+![detail](https://user-images.githubusercontent.com/84653623/158162938-c700fa99-f79c-4608-8dc1-79680ee4035e.png)
+
