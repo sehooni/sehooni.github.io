@@ -1,5 +1,5 @@
 ---
-title:  "[jekyll 에러] pages build and deployment"
+title:  "[Blog] jekyll 에러_pages build and deployment"
 excerpt: ""
 
 categories:
