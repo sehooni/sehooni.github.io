@@ -29,7 +29,8 @@ padding: 5px;
 &nbsp;&nbsp;&nbsp;&nbsp; 🌐[Biorobotics Lab homepage](https://jeon4365.wixsite.com/mysite)
 
 - B.S in Mechanical Engineering (2017.03 - present)
-&nbsp;&nbsp;&nbsp;&nbsp;  Incheon National University, Incheon, South Korea
+
+&nbsp;&nbsp;&nbsp;&nbsp; Incheon National University, Incheon, South Korea
 
 ### Current Interest
 - Deep Learning
