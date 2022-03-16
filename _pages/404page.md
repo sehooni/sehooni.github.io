@@ -1,12 +1,21 @@
 ---
 title: "Page Not Found"
 excerpt: "Page not found. Your pixels are in another canvas."
+sitemap: false
 permalink: /404.html
 author_profile: false
 classes: wide
 ---
+# 404 Error
 
 ### 요청하신 페이지를 찾을 수 없습니다.
 
+Sorry, but the page you were trying to view does not exist --- perhaps you can try searching for it below.
 
-놀라셨나요?! 이전 경로로 생성되었기 때문인 것 같다! 
+<script type="text/javascript">
+  var GOOG_FIXURL_LANG = 'en';
+  var GOOG_FIXURL_SITE = '{{ site.url }}'
+</script>
+<script type="text/javascript"
+  src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js">
+</script>
