@@ -1,46 +1,46 @@
 ---
 title: "About"
 permalink: /about/
+excerpt: "About Me"
+search: true
 layout: single
 classes: wide
 ---
 
-## Self introduction
+## Profile
+<center><img src="/assets/images/firenze.jpg" width="30%" height="30%" style="
+border: 1px solid #cab6de;
+border-radius: 50%;
+padding: 5px;
+-moz-border-radius: 50%;
+-khtml-border-radius: 50%;
+-webkit-border-radius: 50%;
+"></center>
 
-생체기계연구실에서 공부하고 있는 학부연구생입니다.
 
-딥러닝과 자연어처리(NLP), 로봇틱스(robotics)에 관심이 많으며 논문리뷰, 딥러닝, 코딩, 블로그 개발, NLP, ML 등을 기록하는 공간입니다.
+* NAME : SEHOON, PARK
+* MAJOR : Mechanical Engineering
 
-블로그에는 주로 제가 현재 공부하고있는 내용들을 올리고 있으며, 대학원 진학과 로봇+딥러닝, 자연어처리를 결합한 엔지니어 및 개발자를 목표로 공부하고 연구하고 있습니다.
+### Career & Activities
+- Undergraduate researcher at Biorobotics LAB(2020.04 - present) 
+&nbsp;&nbsp;&nbsp;&nbsp;  Biorobotics Lab. Incheon National University, Incheon, South Korea
+&nbsp;&nbsp;&nbsp;&nbsp;  [Biorobotics Lab homepage](https://jeon4365.wixsite.com/mysite)
 
-어찌보면 기초적인 부분부터 심화된 부분까지 다 다루고자 하고 있어요. :)
-
-글에 오류가 있거나 궁금하신 점이 있다면 언제든지 메일로 연락 부탁드릴게요! 😁
-
-💌 Email: 74sehoon@inu.ac.kr 
-
-<br>
-
-### Research Area
-
-- Deep Learning
-
-- Natural language Process
-
-- Computer Vision
-
-- Robotics
-
-### Education
-
-B.S in Mechanical Engineering (2017.03 - present)
-
+- B.S in Mechanical Engineering (2017.03 - present)
 &nbsp;&nbsp;&nbsp;&nbsp;  Incheon National University, Incheon, South Korea
 
-### Skills
+### Current Interest
+- Deep Learning
+- Natural language Process
+- Computer Vision
+- Robotics
 
+### Skills
 Python, c++
 
-### Knowledgeable
+### Contact
+- Email : 74sehoon@gmail.com
+- Git : [https://github.com/sehooni](https://github.com/sehooni)
+- Blog : [https://sehooni.github.io/](https://sehooni.github.io/)
 
-C, Python, CSS
+
