@@ -6,7 +6,7 @@ categories:
   - Blog
 tags: [Blog, jekyll]
 
-last_modified_at: 2022-03-17T00:00:00-00:30
+last_modified_at: 2022-03-17T00:00:00-00:30:00
 classes: wide
 ---
 
