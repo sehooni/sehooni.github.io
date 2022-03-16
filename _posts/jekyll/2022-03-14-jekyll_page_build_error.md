@@ -1,6 +1,6 @@
 ---
 title:  "[Blog] jekyll 에러_pages build and deployment"
-excerpt: ""
+excerpt: "jekyll error"
 
 categories:
   - Blog
