@@ -12,6 +12,8 @@ $type-size-4-5: 1.12em !default; // Ubuntu Mono is a bit small
 // @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes";
 
+@import "custom/customOverride.scss";
+
 // https://github.com/mmistakes/minimal-mistakes/issues/1219
 html {
   font-size: 12px; // change to whatever
