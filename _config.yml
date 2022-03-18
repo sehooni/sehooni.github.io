@@ -46,8 +46,9 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme                : "github-light" # "github-light" (default), "github-dark"
+    label                : "✨comment✨"
+    issue_term           : "pathname" # "pathname" (default)
   giscus:
     repo_id              : # Shown during giscus setup at https://giscus.app
     category_name        : # Full text name of the category
@@ -211,6 +212,10 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true  
 
 
 # Sass/SCSS
@@ -289,7 +294,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: false
+      read_time: false      # 읽는데 걸리는 소요시간 표시
+      show_date: true # 포스팅 날짜 표시
       comments:  true
       share: true
       related: true

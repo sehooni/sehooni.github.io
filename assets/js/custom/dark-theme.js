@@ -1,10 +1,10 @@
-const defaultTheme = [...document.styleSheets].find(style => /(main.css)$/.test(style.href));
+const customTheme = [...document.styleSheets].find(style => /(main.css)$/.test(style.href));
 const darkTheme = [...document.styleSheets].find(style => /(main_dark.css)$/.test(style.href));
 
 let setDarkMode = (isDark) => {
     darkTheme.disabled = isDark !== true;
-    defaultTheme.disabled = isDark === true;
-    localStorage.setItem('theme', isDark ? 'dark' : 'default');
+    customTheme.disabled = isDark === true;
+    localStorage.setItem('theme', isDark ? 'dark' : 'custom');
 }
 
 if (darkTheme) {
