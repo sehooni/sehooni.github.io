@@ -4,7 +4,7 @@ title:  "[ML] Linear Regression 정리"
 excerpt: "Linear Regression"
 
 categories:
-  - ML, MLP
+  - ML
 tags: [ML]
 
 last_modified_at: 2022-03-21T18:10:00-19:19:00
