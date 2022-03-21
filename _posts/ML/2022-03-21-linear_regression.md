@@ -42,6 +42,7 @@ $ cost(W, b) = \\frac{1}{m} \\sum^m_{i=1} \\left( H(x^{(i)}) - y^{(i)} \\right)^
 ## Data
 다음 예제를 위해 예시 데이터를 사용하여보자.
 (We will use fake data for this example.) 
+
     x_train = torch.FloatTensor([[1], [2], [3]])
     y_train = torch.FloatTensor([[1], [2], [3]])
     print(x_train)
@@ -58,6 +59,7 @@ $ cost(W, b) = \\frac{1}{m} \\sum^m_{i=1} \\left( H(x^{(i)}) - y^{(i)} \\right)^
 
 ## Hypothesis
 $ H(x) = Wx + b $
+
     hypothesis = x_train * W + b
     print(hypothesis)
 
@@ -143,6 +145,7 @@ Remember that we had this fake data.
 
 ## Hypothesis
 이제 모델을 생성해서 예측값 *H(x)* 를 구해보자
+
     hypothesis = model(x_train)
     print(hypothesis)
 
