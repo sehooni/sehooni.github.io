@@ -25,6 +25,7 @@ Author: Seungjae Lee(이승재)
 
 ## Theoretical Overview
 $ H(x) = Wx + b $
+
 $ cost(W, b) = \\frac{1}{m} \\sum^m_{i=1} \\left( H(x^{(i)}) - y^{(i)} \\right)^2 $
 
 - $H(x)$: 주어진 $x$ 값에 대해 예측을 어떻게 할 것인가
