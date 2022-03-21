@@ -6,6 +6,7 @@ excerpt: "Linear Regression"
 categories:
   - ML
 tags: [ML]
+use_math: true
 
 last_modified_at: 2022-03-21T18:10:00-19:19:00
 classes: wide

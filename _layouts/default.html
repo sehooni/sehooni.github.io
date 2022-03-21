@@ -12,6 +12,10 @@
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    {% if page.use_math %}
+	    {% include mathjax_support.html %}
+    {% endif %}
+
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
@@ -47,3 +51,5 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7973911736624397"
      crossorigin="anonymous"></script>
 </html>
+
+
