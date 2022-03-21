@@ -13,7 +13,7 @@ classes: wide
 ---
 
 학교 수업으로 타학과 전공인 '인공지능과 딥러닝'을 수강하게 되었다.
-오일석 교수님의 <Machine Learning 기계학습> 을 기반으로 진행되는 강의이다.
+오일석 교수님의 [Machine Learning 기계학습] 을 기반으로 진행되는 강의이다.
 
 Perceptron을 설명하면서 Linear regression을 직접 코딩을 통해 실습하는 시간을 가졌는데, 아래의 내용은 그 실습 내용을 정리한 것이다.
 
