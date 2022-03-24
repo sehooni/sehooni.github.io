@@ -1,0 +1,4 @@
+User-agent: * #허용할 검색엔진 명을 넣으면 된다. *는 모든 검색엔진을 허용한다.
+Allow: /
+
+Sitemap: https://sehooni.github.io/sitemap.xml #본인의 sitemap.xml의 url을 입력하면 된다
