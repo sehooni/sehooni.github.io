@@ -1,8 +1,10 @@
 blog: Blog
 Jekyll: jekyll
 ai: AI
+NLP: NaturalLanguageProcessing
+ML: MachineLearnig
 deeplearning: Deeplearning
-math: Math
+Etc: Etc
 Code: code
 cnn: CNN
 papereview: paperReview
