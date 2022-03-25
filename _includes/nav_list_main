@@ -84,10 +84,10 @@
                 {% endfor %}
             </ul>
       </li>
-      <!-- <li>	
+      <li>	
             <br>      
-            <img src="https://hits.sh/sehooni.github.io.svg?view=today-total&label=visitors&color=3311cc">
-      </li> -->
+            <img src="https://hits.sh/sehooni.github.io.svg?view=today-total&label=visitors&color=3311cc"style="font-size:1.0em;">
+      </li>
   </ul>
 </nav>
 
