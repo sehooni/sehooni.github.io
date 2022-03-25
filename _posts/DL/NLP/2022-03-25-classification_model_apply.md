@@ -2,6 +2,7 @@
 published: true
 title:  "[NLP] 문서 분류 모델 실전 투입"
 excerpt: "학습을 마친 문서 분류 모델을 가지고 웹 서비스를 만든다."
+toc: true
 
 categories:
   - NLP
