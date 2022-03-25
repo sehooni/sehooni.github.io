@@ -19,14 +19,14 @@
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
                 {% for category in site.categories %}
                     {% if category[0] == "paperReview" %}
-                        <li><a href="/categories/paperReview" class="" style="font-size:1em;">Paper Review</style> <style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/paperReview" class="" style="font-size:1.2em;">Paper Review</style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "code" %}
-                        <li><a href="/categories/code" class="" style="font-size:1em;">Code Implementation </style><style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/code" class="" style="font-size:1.2em;">Code Implementation </style><style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -34,21 +34,21 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "NLP" %}
-                        <li><a href="/categories/NLP" class=""style="font-size:1em;">NLP</style><style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/NLP" class=""style="font-size:1.2em;">NLP</style><style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "ML" %}
-                        <li><a href="/categories/ML" class=""style="font-size:1em;">ML</style><style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/ML" class=""style="font-size:1.2em;">ML</style><style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "DL" %}
-                        <li><a href="/categories/DL" class=""style="font-size:1em;">DL</style><style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/DL" class=""style="font-size:1.2em;">DL</style><style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -56,7 +56,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Robotics" %}
-                        <li><a href="/categories/Robotics" class="" style="font-size:1em;">Robotics</style> <style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/Robotics" class="" style="font-size:1.2em;">Robotics</style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>                          
@@ -64,7 +64,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Blog" %}
-                        <li><a href="/categories/Blog" class="" style="font-size:1em;">Jekyll GIT-blog</style> <style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/Blog" class="" style="font-size:1.2em;">Jekyll GIT-blog</style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -72,14 +72,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "ETC" %}
-                        <li><a href="/categories/ETC" class="" style="font-size:1em;">ETC</style> <style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/ETC" class="" style="font-size:1.2em;">ETC</style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "git" %}
-                        <li><a href="/categories/git" class="" style="font-size:1em;">git</style> <style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/git" class="" style="font-size:1.2em;">git</style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
