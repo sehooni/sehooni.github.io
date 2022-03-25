@@ -2,6 +2,8 @@
 published: true
 title:  "[NLP] 문서 분류 모델 training"
 excerpt: "문서분류 모델 학습하기."
+toc: true
+toc_sticky: true
 
 categories:
   - NLP

@@ -2,6 +2,8 @@
 published: true
 title:  "[NLP] 문장 쌍 분류 모델 실전 투입"
 excerpt: "문장 쌍 분류 모델 실전 투입하기"
+toc: true
+toc_sticky: true
 
 categories:
   - NLP

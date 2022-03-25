@@ -2,6 +2,8 @@
 published: true
 title:  "[Blog] 블로그 setting 하기(back_to_top)"
 excerpt: "Blog setting"
+toc: true
+toc_sticky: true
 
 categories:
   - Blog

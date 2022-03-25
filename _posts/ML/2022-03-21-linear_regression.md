@@ -2,6 +2,8 @@
 layout: single
 title:  "[ML] Linear Regression 정리"
 excerpt: "Linear Regression"
+toc: true
+toc_sticky: true
 
 categories:
   - ML

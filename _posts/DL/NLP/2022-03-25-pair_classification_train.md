@@ -2,6 +2,8 @@
 published: true
 title:  "[NLP] 문장 쌍 분류 모델 학습하기"
 excerpt: "문장 분류 쌍 모델 학습하기."
+toc: true
+toc_sticky: true
 
 categories:
   - NLP

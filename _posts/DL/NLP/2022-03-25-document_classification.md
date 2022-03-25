@@ -2,6 +2,8 @@
 published: true
 title:  "[NLP] 문서 분류 모델"
 excerpt: "문서 분류 모델이란?"
+toc: true
+toc_sticky: true
 
 categories:
   - NLP

@@ -2,6 +2,8 @@
 published: true
 title:  "[Blog] github 블로그 포스팅 게시 안되는 오류 해결"
 excerpt: "로컬 서버에서는 반영이 되었지만 실제 Github Pages엔 반영이 안되는 오류가 발생....그럼에도 불구하고 해결"
+toc: true
+toc_sticky: true
 
 categories:
   - Blog
