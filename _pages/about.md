@@ -39,7 +39,7 @@ padding: 5px;
 - Robotics
 
 ### Skills
-Python, c++
+Python, c++, Arduino
 
 ### Contact
 - Email : 74sehoon@gmail.com
