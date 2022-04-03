@@ -1,12 +1,12 @@
 ---
 published: true
-title:  "[DL, ML] ANN, DNN, CNN, RNN 개념과 차이"
+title:  "[DL] ANN, DNN, CNN, RNN 개념과 차이"
 excerpt: "ANN, DNN, CNN, RNN 개념과 차이"
 toc: true
 toc_sticky: true
 
 categories:
-  - DL, ML
+  - DL
 tags: [DL, ML]
 
 date: 2022-04-03
