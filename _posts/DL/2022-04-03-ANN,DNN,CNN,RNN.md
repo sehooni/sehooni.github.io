@@ -61,13 +61,13 @@ classes: wide
 #### 그림.3 NN vs DNN
 ![NNvsDNN](https://user-images.githubusercontent.com/84653623/161416432-a7afea8a-ca6b-443d-bfa9-302796ba8fdd.png)
 
-ANN 기법의 여러 문제가 해결됨에 따라 모델 내의 은닉층을 많이 늘려서 학습의 결과를 향상시키는 방법이 등장했다. 이를 DNN(Deep Neural Network)라고 한다. 
+ANN 기법의 여러 문제가 해결됨에 따라 `모델 내의 은닉층을 많이 늘려서 학습의 결과를 향상시키는 방법이 등장했다. 이를 DNN(Deep Neural Network)`라고 한다. 
 
 `DNN은 은닉층을 2개 이상 지닌 학습 방법`을 뜻한다. 컴퓨터가 스스로 분류레이블을 만들어 내고 공간을 왜곡하고 데이터를 구분짓는 과정을 반복하여 최적의 구분선을 도출해낸다. 많은 데이터와 반복학습, 사전학습, 그리고 오류역적파 기법을 통해 현재 널리 사용되고 있다. 그리고, DNN을 응용한 알고리즘이 바로 CNN, RNN인 것이며, 이 외에도 LSTM, GRU 등이 있다.
 
 ## CNN(Convolution Neural Network, 합성곱신경망)
 
-기존의 방식은 데이터에서 정보를 추출해 학습이 이루어졌지만, CNN은 데이터의 특징을 추출하여 특징들의 패턴을 파악하는 구조이다. 이러한 CNN 알고리즘은 **Convolution** 과정과 **Pooling** 과정을 통해 진행된다. `Convolution Layer와 Pooling Layer를 복합적으로 구성하여 알고리즘을 만드는 것`이다.
+기존의 방식은 데이터에서 정보를 추출해 학습이 이루어졌지만, CNN은 `데이터의 특징을 추출하여 특징들의 패턴을 파악하는 구조`이다. 이러한 CNN 알고리즘은 **Convolution** 과정과 **Pooling** 과정을 통해 진행된다. `Convolution Layer와 Pooling Layer를 복합적으로 구성하여 알고리즘을 만드는 것`이다.
 
 #### 그림.4 CNN
 ![CNN](https://user-images.githubusercontent.com/84653623/161416538-d3a66a4e-63cb-4af0-acc9-67405df183c5.png)
