@@ -31,7 +31,7 @@ classes: wide
 그림 1과 같이 가장 포괄적인 인공지능 분야 안에 머신러닝이 속하고, 머신러닝 분야 속에 딥러닝 분야가 속해있다고 생각하면 된다.
 
 
-# ANN, DNN, CNN, RNN
+## ANN, DNN, CNN, RNN
 ## ANN(Artificial Neural Network)
 
 머신러닝의 한 분야인 딥러닝은 **인공신경망**(Artificial Neural Network)를 기초로 하고 있다. 인공신경망이라고 불리는 ANN은 `사람의 신경망 원리와 구조를 모방하여 만든 기계학습 알고리즘`이다. 인간의 뇌에에서 뉴런들이 어떤 신호, 자극 등을 받고, 그 자극이 어떠한 임계값(threshold)을 넘어서면 결과 신호를 전달하는 과정에서 착안한 것이다. 여기서 들어온 자극, 신호는 인공신경망에서 Input Data이며 임계겂은 가중치(weight), 자극에 의해 어떤 행동을 하는 것은 Output Data에 비교하면 된다.
