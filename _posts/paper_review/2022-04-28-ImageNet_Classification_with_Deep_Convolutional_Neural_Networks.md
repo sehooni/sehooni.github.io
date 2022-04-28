@@ -37,6 +37,7 @@ ANN은 **Artificial Neural Network**의 준말로 사람의 신경망 원리와 
 위의 그림은 CNN의 진행순서를 간략하게 도식화한 것이다. 데이터가 입력되면 `Convolution`, `ReLu function`, `Pooling`과정을 거쳐 특징을 분석하게 된다.
 이후 `flatten`, `fully connected`, `Softmax function`을 통해 classification을 진행하게 된다.
 
+
 # CNN의 구조
 기존 신경망의 구조는 인접하는 계층의 모든 뉴런이 결합된 완전연결로 `affine 계층으로 구성`된다. 
 그러나 CNN의 경우, 신경망 구조에서 합성곱 계층과 풀링층이 추가되었다. 또한 풀링층은 때에 따라 생략이 가능하다. 
@@ -72,6 +73,8 @@ ANN은 **Artificial Neural Network**의 준말로 사람의 신경망 원리와 
 stride는 지정된 간격으로 필터를 순회하는 간격을 의미한다. 위의 <그림 6>에서는 stride가 1로 설정된 것이며,
 stride가 2로 설정되면 필터는 2칸씩 이동하면서 합성곱을 계산한다.
 
+
+
 # Padding
 **Padding**은 기존 데이터 주변에 값들을 채워넣어 크기를 키우는 것이다.
 Convolution 과정은 특징을 추출하는 것을 목표로 한다. 
@@ -86,6 +89,8 @@ Convolution 과정은 특징을 추출하는 것을 목표로 한다.
 
 ### 그림 7. Zero Padding 원리
 ![padding](https://user-images.githubusercontent.com/84653623/165729269-37476345-7114-4ddb-a790-735ece84d5f7.jpg)
+
+
 
 # Pooling
 CNN의 구조를 살펴보면 `Conv → Pooling → Conv → Pooling~~`의 순서로 진행된다.
@@ -117,8 +122,9 @@ CNN은 같은 레이어 크기의 FCNN과 비교해 볼 때 학습 파라미터�
 
 본 논문에는 특징 추출과 분류로 구성이 되어있으나, 이번 포스팅에서는 특징 추출 부분에 포커스를 맞추어 진행하였다.
 
----
+
 PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다. 
+
 
 # Reference
 - 논문: [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
