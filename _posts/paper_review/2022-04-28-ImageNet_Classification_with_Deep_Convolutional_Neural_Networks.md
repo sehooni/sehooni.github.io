@@ -13,6 +13,7 @@ use_math: true
 last_modified_at: 2022-04-28T16:30:00-20:04:00
 classes: wide
 ---
+
 # CNN이란?
 CNN이란, **Convolutional Neural Network**의 준말로 합성곱 신경망이라 불린다.
 입력 이미지로부터 특징을 추출하여 입력이미지가 어떤 이미지인지 클래스를 분류하게 되는 것이다.
@@ -41,7 +42,7 @@ ANN은 **Artificial Neural Network**의 준말로 사람의 신경망 원리와 
 # CNN의 구조
 기존 신경망의 구조는 인접하는 계층의 모든 뉴런이 결합된 완전연결로 `affine 계층으로 구성`된다. 
 그러나 CNN의 경우, 신경망 구조에서 합성곱 계층과 풀링층이 추가되었다. 또한 풀링층은 때에 따라 생략이 가능하다. 
-아래의 그림을 통해 CNN의 구조를 확인할 수 있다.
+
 
 ### 그림 3. CNN의 구조 1
 ![CNN의 구조](https://user-images.githubusercontent.com/84653623/165707470-339d138e-a0df-43d1-832b-38ee36f1f8ab.png)
@@ -49,6 +50,7 @@ ANN은 **Artificial Neural Network**의 준말로 사람의 신경망 원리와 
 ### 그림 4. CNN의 구조 2
 ![CNN의 구조2](https://user-images.githubusercontent.com/84653623/165729172-47445bfc-969e-4f30-a876-f273960f5f5e.png)
 
+위의 <그림 3>과 <그림 4>를 통해 CNN의 구조를 확인할 수 있다.
 
 # Convolution
 본 내용을 설명하기에 앞서 bias는 편향을 의미한다. 합성곱 연산, **Convolution**의 bias는 데이터에 bias가 더해지는 과정이다.
@@ -68,6 +70,7 @@ ANN은 **Artificial Neural Network**의 준말로 사람의 신경망 원리와 
 2차원의 입력 데이터가 들어오면, 필터의 윈도우가 일정 간격으로 이동해가며 연산이 적용된다.
 이때 이 이동과정을 `Stride`라고 한다. 
 이 과정을 모든 장소에서 진행하고, 위의 사진 오른쪽과 같은 합성곱 연산의 출력이 완성된다.
+
 
 ## stride
 stride는 지정된 간격으로 필터를 순회하는 간격을 의미한다. 위의 <그림 6>에서는 stride가 1로 설정된 것이며,
@@ -90,7 +93,7 @@ Convolution 과정은 특징을 추출하는 것을 목표로 한다.
 ### 그림 7. Zero Padding 원리
 ![padding](https://user-images.githubusercontent.com/84653623/165729269-37476345-7114-4ddb-a790-735ece84d5f7.jpg)
 
-
+<그림 7>은 zero padding의 원리를 설명한 그림이다.
 
 # Pooling
 CNN의 구조를 살펴보면 `Conv → Pooling → Conv → Pooling~~`의 순서로 진행된다.
@@ -109,6 +112,7 @@ pooling은 두 가지 종류로 구성된다.
 ### 그림 8. Pooling의 원리
 ![pooling](https://user-images.githubusercontent.com/84653623/165735542-9f473be7-2f0a-4c3f-9de8-211121dce50f.png)
 
+<그림 8>을 통해 Pooling의 원리를 살펴볼 수 있다.
 
 # 요약하자면...
 
@@ -122,7 +126,7 @@ CNN은 같은 레이어 크기의 FCNN과 비교해 볼 때 학습 파라미터�
 
 본 논문에는 특징 추출과 분류로 구성이 되어있으나, 이번 포스팅에서는 특징 추출 부분에 포커스를 맞추어 진행하였다.
 
-
+---
 PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다. 
 
 
