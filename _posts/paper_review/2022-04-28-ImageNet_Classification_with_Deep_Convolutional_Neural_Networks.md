@@ -1,7 +1,7 @@
 ---
 layout: single
-title:  "[PaperReview] ImageNet Classification with Deep Convolutional Neural Networks"
-excerpt: "CNN_Paper"
+title:  "[PaperReview] ImageNet Classification with Deep Convolutional Neural Networks(CNN)"
+excerpt: "CNN_Paper 리뷰"
 toc: true
 toc_sticky: true
 
@@ -10,7 +10,7 @@ categories:
 tags: [PaperReview]
 use_math: true
 
-last_modified_at: 2022-04-28T16:30:00-19:30:00
+last_modified_at: 2022-04-28T16:30:00-20:04:00
 classes: wide
 ---
 # CNN이란?
