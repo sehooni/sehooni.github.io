@@ -43,6 +43,7 @@ ANN은 **Artificial Neural Network**의 준말로 사람의 신경망 원리와 
 기존 신경망의 구조는 인접하는 계층의 모든 뉴런이 결합된 완전연결로 `affine 계층으로 구성`된다. 
 그러나 CNN의 경우, 신경망 구조에서 합성곱 계층과 풀링층이 추가되었다. 또한 풀링층은 때에 따라 생략이 가능하다. 
 
+## CNN의 구조
 
 ### 그림 3. CNN의 구조 1
 ![CNN의 구조](https://user-images.githubusercontent.com/84653623/165707470-339d138e-a0df-43d1-832b-38ee36f1f8ab.png)
@@ -58,6 +59,10 @@ ANN은 **Artificial Neural Network**의 준말로 사람의 신경망 원리와 
 `CNN에서는 이와 유사하게 필터와 bias가 학습을 시킬 매개변수이다. `
 `다시 말해, 이미지 처리에서 말하는 필터 연산에 해당하는 것이다.`
 
+## stride
+stride는 지정된 간격으로 필터를 순회하는 간격을 의미한다. 아래의 <그림 6>에서는 stride가 1로 설정된 것이며,
+stride가 2로 설정되면 필터는 2칸씩 이동하면서 합성곱을 계산한다.
+
 ### 그림 5. 합성곱 연산 과정 1
 ![합성곱 연산과정 1](https://user-images.githubusercontent.com/84653623/165711865-7153cc40-3954-45d9-9db4-31715447b868.png)
 
@@ -72,12 +77,6 @@ ANN은 **Artificial Neural Network**의 준말로 사람의 신경망 원리와 
 이 과정을 모든 장소에서 진행하고, 위의 사진 오른쪽과 같은 합성곱 연산의 출력이 완성된다.
 
 
-## stride
-stride는 지정된 간격으로 필터를 순회하는 간격을 의미한다. 위의 <그림 6>에서는 stride가 1로 설정된 것이며,
-stride가 2로 설정되면 필터는 2칸씩 이동하면서 합성곱을 계산한다.
-
-
-
 # Padding
 **Padding**은 기존 데이터 주변에 값들을 채워넣어 크기를 키우는 것이다.
 Convolution 과정은 특징을 추출하는 것을 목표로 한다. 
@@ -86,6 +85,7 @@ Convolution 과정은 특징을 추출하는 것을 목표로 한다.
 이는 Edge 성분이 점차 사라지게 되고, 이에 따라 Edge 근처의 특징을 누락할 수 있다.
 따라서 Padding을 통해 Convolution 연산을 하게 되더라도, 그 결과 이미지가 입력 이미지와 그 크기를 동일하게 유지하면서 특징을 추출할 수 있다.
 
+## Padding의 종류
 데이터 주변에 어떠한 값을 채우느냐에 따라 padding의 종류가 나뉜다.
 - Zero Padding : 최외각을 모두 pixel 0으로 설정
 - Same Padding : 최외각을 모두 이미지 외곽의 pixel 값으로 사용
@@ -105,6 +105,8 @@ Convolution 연산 후, FC Layer(Fully-Connected Layer)로 바로 연결될 경�
 특정 feature를 강조한다는 것은 `Convolution 이미지의 특징을 추출하고, 그 결과 속에서 특정 특징을 강조한다`는 의미이다. 
 
 Convolution이 행렬(matrix)의 연산이라면, Pooling은 각 Pixel에서 하나의 값을 뽑아내는 것이다.
+
+## Pooling의 종류
 pooling은 두 가지 종류로 구성된다. 
 - Max Pooling : 윈도우 창 내에서 각 원소들 중 가장 큰 값을 추출
 - Average Pooling : 윈도우 창 내에서 각 원소들의 평균 값을 추출
