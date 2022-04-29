@@ -23,9 +23,9 @@ classes: wide
 - **머신러닝**(Machine Learning): 기계학습이라고도 불리우며, 인공지능의 한 분야이다. 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야
 
 - **딥러닝**(Deep Learning): 여러 비선형 변환기법의 조합을 통해 높은 수준의 추상화(다량의 복잡한 자료들에서 핵심적인 내용만 추려내는 작업)을 시도하는 기계학습 알고리즘의 집합
-##
-###
-#### 그림.1 인공지능, 머신러닝, 딥러닝의 구조
+
+
+- **그림.1 인공지능, 머신러닝, 딥러닝의 구조**
 ![introduction of DL structure](https://user-images.githubusercontent.com/84653623/161415534-43ce2091-ac1c-4a05-96c8-be980a9e79d0.png)
 
 그림 1과 같이 가장 포괄적인 인공지능 분야 안에 머신러닝이 속하고, 머신러닝 분야 속에 딥러닝 분야가 속해있다고 생각하면 된다.
@@ -35,7 +35,7 @@ classes: wide
 
 머신러닝의 한 분야인 딥러닝은 **인공신경망**(Artificial Neural Network)를 기초로 하고 있다. 인공신경망이라고 불리는 ANN은 `사람의 신경망 원리와 구조를 모방하여 만든 기계학습 알고리즘`이다. 인간의 뇌에에서 뉴런들이 어떤 신호, 자극 등을 받고, 그 자극이 어떠한 임계값(threshold)을 넘어서면 결과 신호를 전달하는 과정에서 착안한 것이다. 여기서 들어온 자극, 신호는 인공신경망에서 Input Data이며 임계겂은 가중치(weight), 자극에 의해 어떤 행동을 하는 것은 Output Data에 비교하면 된다.
 
-#### 그림.2 ANN
+- **그림.2 ANN**
 ![ANN structure](https://user-images.githubusercontent.com/84653623/161415878-76a6c9f1-9e06-411f-8f89-663727a4b79a.png)
 
 인공신경망은 시냅스의 결합으로 네트워크를 형성한 인공뉴런(Node)이 학습을 통해 시냅스의 결합 세기를 변화 시켜 문제 해결 능력을 가지는 모델 전반을 의미한다. (출처: 위키백과)
@@ -56,7 +56,7 @@ classes: wide
 
 ## DNN(Deep Neural Network)
 
-#### 그림.3 NN vs DNN
+- **그림.3 NN vs DNN**
 ![NNvsDNN](https://user-images.githubusercontent.com/84653623/161416432-a7afea8a-ca6b-443d-bfa9-302796ba8fdd.png)
 
 ANN 기법의 여러 문제가 해결됨에 따라 `모델 내의 은닉층을 많이 늘려서 학습의 결과를 향상시키는 방법이 등장했다. 이를 DNN(Deep Neural Network)`라고 한다. 
@@ -67,21 +67,21 @@ ANN 기법의 여러 문제가 해결됨에 따라 `모델 내의 은닉층을 �
 
 기존의 방식은 데이터에서 정보를 추출해 학습이 이루어졌지만, CNN은 `데이터의 특징을 추출하여 특징들의 패턴을 파악하는 구조`이다. 이러한 CNN 알고리즘은 **Convolution** 과정과 **Pooling** 과정을 통해 진행된다. `Convolution Layer와 Pooling Layer를 복합적으로 구성하여 알고리즘을 만드는 것`이다.
 
-#### 그림.4 CNN
+- **그림.4 CNN**
 ![CNN](https://user-images.githubusercontent.com/84653623/161416538-d3a66a4e-63cb-4af0-acc9-67405df183c5.png)
 
 ### Convoluton
 
 `데이터의 특징을 추출하는 과정`으로 데이터에 각 성분의 인접 성분들을 조사해 득징을 파악하고 파악한 특징을 한장으로 도출시키는 과정이다. 여기서 도출된 정보를 Convolution Layer라고 한다. 이 과정은 하나의 압축 과정이며, 파라미터의 갯수를 효과적으로 줄여주는 역할을 한다.
 
-#### 그림.5 CNN-Convolution
+- **그림.5 CNN-Convolution**
 ![convolution](https://user-images.githubusercontent.com/84653623/161416997-c4239118-e778-4486-97a1-40388f13108a.png)
 
 ### Pooling
 
 Convolution 과정을 거친 레이어의 사이즈를 줄여주는 과정이다. 단순히 데이터의 사이즈를 줄여주고, 노이즈를 상쇄시키고 미세한 부분에서 일관적인 특징을 제공한다. 
 
-#### 그림.6 Pooling
+- **그림.6 Pooling**
 ![pooling](https://user-images.githubusercontent.com/84653623/161417048-20e5429f-1907-43bc-9e10-af6b5d0b0712.jpg)
 
 CNN은 보통 정보추출, 문장분류, 얼굴인식 등의 분야에서 널리 사용되고 있다.
@@ -90,7 +90,7 @@ CNN은 보통 정보추출, 문장분류, 얼굴인식 등의 분야에서 널�
 
 RNN 알고리즘은 `반복적이고 순차적인 데이터(Sequential Data)학습에 특화된 인공신경망의 한 종류로써 내부의 순환구조가 들어있다는 특징`을 가지고 있다. 순환구조를 이용하여 과거의 학습을 Weight를 통해 현재 학습에 반영하는 것이다. 즉, `기존의 지속적이고 반복적이며 순차적인 데이터학습의 한계를 해결하는 알고리즘`이다. 현재의 학습과 과거의 학습의 연결을 가능하게 하고, 시간에 종속된다는 특징을 갖고 있다. 음성 웨이브폼을 파악하거나, 텍스트의 앞 뒤 성분을 파악할 때 주로 사용된다.
 
-#### 그림.7 RNN
+- **그림.7 RNN**
 ![RNN](https://user-images.githubusercontent.com/84653623/161417100-e04b1a46-3998-423f-bdd7-5e7fdef08399.png)
 
 이와같이 인공지능, 머신러닝, 딥러닝의 차이를 알아보고, ANN, DNN, CNN, RNN의 구조 및 차이점을 알아보았다. 공부하면 할수록 내가 아직 부족하다는 것을 느끼지만, 그럼에도 한 걸음 더 내딛었다는 사실을 생각하며 끊임없이 노력해야지 :)
