@@ -4,6 +4,12 @@ layout: archive
 
 {{ content }}
 
+{% for tag in site.data.tags %}
+  <span class="tag" data-tag="{{tag}}">
+    {{ site.data.format[tag] }}
+  </span>
+{% endfor %}
+
 <ul class="taxonomy__index">
   {% assign postsInYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
   {% for year in postsInYear %}
