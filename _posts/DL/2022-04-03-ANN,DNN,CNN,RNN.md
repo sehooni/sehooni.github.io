@@ -23,7 +23,8 @@ classes: wide
 - **머신러닝**(Machine Learning): 기계학습이라고도 불리우며, 인공지능의 한 분야이다. 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야
 
 - **딥러닝**(Deep Learning): 여러 비선형 변환기법의 조합을 통해 높은 수준의 추상화(다량의 복잡한 자료들에서 핵심적인 내용만 추려내는 작업)을 시도하는 기계학습 알고리즘의 집합
-
+##
+###
 #### 그림.1 인공지능, 머신러닝, 딥러닝의 구조
 ![introduction of DL structure](https://user-images.githubusercontent.com/84653623/161415534-43ce2091-ac1c-4a05-96c8-be980a9e79d0.png)
 
