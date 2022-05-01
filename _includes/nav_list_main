@@ -10,6 +10,11 @@
       <li>
             ⭐ <span>TOTAL POSTS : <span> {{sum}} <span>posts ⭐
       </li>
+      </li>
+      <!-- <li>
+            <br>
+            <img src="https://hits.sh/sehooni.github.io.svg?view=today-total&label=visitors&color=3311cc"style="font-size:1.0em;">
+      </li> -->
       <li>
         <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Paper Review</style></span>
         <!--span 태그로 카테고리들을 크게 분류 -->
@@ -98,11 +103,7 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-      </li>
-      <!-- <li>	
-            <br>      
-            <img src="https://hits.sh/sehooni.github.io.svg?view=today-total&label=visitors&color=3311cc"style="font-size:1.0em;">
-      </li> -->
+
   </ul>
 </nav>
 
