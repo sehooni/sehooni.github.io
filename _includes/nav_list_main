@@ -52,7 +52,7 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Project</style></span>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Projects</style></span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "ML_Pytorch" %}
