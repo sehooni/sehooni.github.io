@@ -10,7 +10,7 @@ categories:
 tags: [DL, ML, Projects, Neural-Style-Transfer_tf]
 
 date: 2022-05-01
-last_modified_at: 2022-05-01T16:00:00-20:00:00
+last_modified_at: 2022-05-01T18:00:00-20:00:00
 classes: wide
 ---
 
@@ -58,5 +58,5 @@ opencv 및 tf.keras를 활용한 Neural Style Transfer 프로젝트 및 개념, 
   - [깃허브링크](https://github.com/sunkyoo/opencv4cvml)
 - OpenCV-Python으로 배우는 영상처리 및 응용
 
-
+# 글을 마무리하며
 다음 포스팅에서는 본 포르젝트 코드에 대한 설명을 이어갈 예정이다.
