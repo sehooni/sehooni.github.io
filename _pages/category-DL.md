@@ -4,6 +4,8 @@ layout: archive
 permalink: categories/DL
 author_profile: true
 sidebar_main: true
+toc: true
+toc_sticky: true
 ---
 
 {% assign posts = site.categories.DL %}

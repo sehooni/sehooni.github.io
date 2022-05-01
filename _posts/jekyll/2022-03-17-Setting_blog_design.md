@@ -25,7 +25,7 @@ classes: wide
 
 # 1. minimal-mistakes-theme에서 back to top 버튼 만들기
 
-### 1.1. `_sass/minimal-mistakes/_sidebar.scss`에서 아래 내용 삽입
+## 1.1. `_sass/minimal-mistakes/_sidebar.scss`에서 아래 내용 삽입
 
 삽입할 내용은 다음과 같아요! 다음 내용의 수정을 통해서 위치 조정 또한 가능하답니다.
 
@@ -70,7 +70,7 @@ classes: wide
   --생략--
 ```
 
-### 1.2. `_layouts/default.html`에 내용 삽입
+## 1.2. `_layouts/default.html`에 내용 삽입
 
 삽입할 내용 부분
 
@@ -98,7 +98,7 @@ classes: wide
 ```
 <br>
 
-### 1.3. 확인
+## 1.3. 확인
 
 아래 이미지처럼 생긴 top 버튼이 생긴 것을 확인 할 수 있습니다. 다른 친구들보다는 매우 간단한 작업이었던... 
 
@@ -112,7 +112,7 @@ classes: wide
 모두들 즐코하는 하루 보내세요 :P
 
 
-#### 참고
+### 참고
 
 
 [1] [https://github.com/mmistakes/minimal-mistakes/issues/1731](https://github.com/mmistakes/minimal-mistakes/issues/1731)

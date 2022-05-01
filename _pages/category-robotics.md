@@ -4,6 +4,8 @@ layout: archive
 permalink: categories/Robotics
 author_profile: true
 sidebar_main: true
+toc: true
+toc_sticky: true
 ---
 
 {% assign posts = site.categories.Robotics %}

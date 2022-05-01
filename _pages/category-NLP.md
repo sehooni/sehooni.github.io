@@ -4,6 +4,8 @@ layout: archive
 permalink: categories/NLP
 author_profile: true
 sidebar_main: true
+toc: true
+toc_sticky: true
 ---
 
 {% assign posts = site.categories.NLP %}
