@@ -56,14 +56,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "ML_Pytorch" %}
-                        <li><a href="/categories/pj_ML_Pytorch" class="" style="font-size:1.2em;">Robotics</style> <style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/pj_ML_Pytorch" class="" style="font-size:1.2em;">ML_Pytorch</style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Neural-Style-Transfer_tf" %}
-                        <li><a href="/categories/pj_Neural_Style_Transfer_tf" class="" style="font-size:1.2em;">Robotics</style> <style="">({{category[1].size}})</style></a></li>
+                        <li><a href="/categories/pj_Neural_Style_Transfer_tf" class="" style="font-size:1.2em;">Neural-Style-Transfer_tf</style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
