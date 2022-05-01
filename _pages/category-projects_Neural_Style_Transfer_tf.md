@@ -1,5 +1,5 @@
 ---
-title: "Projects-Neural-Style-Transfer_tf"
+title: "Neural-Style-Transfer_tf"
 layout: archive
 permalink: categories/pj_Neural_Style_Transfer_tf
 author_profile: true
