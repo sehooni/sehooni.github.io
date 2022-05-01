@@ -6,8 +6,8 @@ toc: true
 toc_sticky: true
 
 categories:
-  - [Projects-Neural-Style-Transfer_tf]
-tags: [DL], [ML], [Projects-Neural-Style-Transfer_tf]
+  - pj_Neural_Style_Transfer_tf
+tags: [DL, ML, Projects, Neural-Style-Transfer_tf]
 
 date: 2022-05-01
 last_modified_at: 2022-05-01T16:00:00-20:00:00
