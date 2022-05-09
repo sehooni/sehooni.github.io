@@ -1,13 +1,13 @@
 ---
 published: true
-title:  "[Project-tf] Neural Style Transfer 프로젝트 설명"
+title:  "[Neural Style Transfer] Neural Style Transfer 프로젝트 설명"
 excerpt: "tf를 활용한 Neural Style Transfer 구현 및 응용"
 toc: true
 toc_sticky: true
 
 categories:
-  - pj_Neural_Style_Transfer_tf
-tags: [DL, ML, Projects, Neural-Style-Transfer_tf]
+  - project
+tags: [DL, ML, Project, Neural Style Transfer]
 
 date: 2022-05-01
 last_modified_at: 2022-05-01T18:00:00-20:00:00
