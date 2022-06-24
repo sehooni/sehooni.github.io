@@ -60,8 +60,8 @@
         <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Projects</style></span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "ML_Pytorch" %}
-                        <li><a href="/categories/project" class="" style="font-size:1.2em;">Project</style> <style="">({{category[1].size}})</style></a></li>
+                    {% if category[0] == "project" %}
+                        <li><a href="/categories/project" class="" style="font-size:1.2em;">project</style> <style="">({{category[1].size}})</style></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
