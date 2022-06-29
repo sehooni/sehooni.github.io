@@ -1,3 +1,4 @@
+---
 published: true
 title:  "[Neural Style Transfer] Neural Style Transfer 프로젝트 Results"
 excerpt: "tf를 활용한 Neural Style Transfer 구현 및 응용"
