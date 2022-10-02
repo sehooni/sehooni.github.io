@@ -35,7 +35,7 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">ML/DL</style></span>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Study</style></span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "NLP" %}
@@ -57,6 +57,20 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Linux" %}
+                        <li><a href="/categories/Linux" class=""style="font-size:1.2em;">Linux</style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Robotics" %}
+                        <li><a href="/categories/Robotics" class="" style="font-size:1.2em;">Robotics</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Projects</style></span>
             <ul>
                 {% for category in site.categories %}
@@ -65,14 +79,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Robotics</style></span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Robotics" %}
-                        <li><a href="/categories/Robotics" class="" style="font-size:1.2em;">Robotics</style> <style="">({{category[1].size}})</style></a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>                          
         <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Blog DEV</style></span>
             <ul>
                 {% for category in site.categories %}
