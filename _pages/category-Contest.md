@@ -1,11 +1,11 @@
 ---
-title: "Neural Style Transfer"
+title: "Contest"
 layout: archive
-permalink: categories/Neural_Style_Transfer(project)
+permalink: categories/project_Contest
 author_profile: true
 sidebar_main: true
 --- 
 
 
-{% assign posts = site.categories.Neural_Style_Transfer(project) %}
+{% assign posts = site.categories.project_Contest %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

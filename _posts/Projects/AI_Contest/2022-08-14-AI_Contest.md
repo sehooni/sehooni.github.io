@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 
 categories:
-  - Contest(project)
+  - Contest
 tags: [인공지능경진대회, projects]
 
 date: 2022-10-02
