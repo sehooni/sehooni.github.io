@@ -1,11 +1,11 @@
 ---
-title: "Neural Style Transfer"
+title: "Capstone"
 layout: archive
-permalink: categories/project_Neural_Style_Transfer
+permalink: categories/Capstone(project)
 author_profile: true
 sidebar_main: true
 --- 
 
 
-{% assign posts = site.categories.project_Neural_Style_Transfer %}
+{% assign posts = site.categories.Capstone(project) %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
