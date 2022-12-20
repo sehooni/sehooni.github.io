@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 
 categories:
-  - PaperReview
+  - CV
 tags: [PaperReview]
 use_math: true
 
