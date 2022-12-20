@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 
 categories:
-  - project_Neural Style Transfer
+  - project_Neural_Style_Transfer
 tags: [DL, ML, Projects, Neural-Style-Transfer]
 
 date: 2022-05-01
