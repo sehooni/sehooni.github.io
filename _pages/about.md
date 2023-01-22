@@ -3,6 +3,8 @@ title: "About"
 permalink: /about/
 excerpt: "About Me"
 search: true
+last_modified_at: 2023-01-22T23:00:00-23:47:00
+toc: true
 layout: single
 classes: wide
 ---
@@ -19,27 +21,35 @@ padding: 5px;
 
 
 * NAME : SEHOON, PARK
-* MAJOR : Mechanical Engineering
+* MAJOR : Artificial Intelligence Engineering
+
+### Self introduction
+
 
 ### Career & Activities
-- Undergraduate researcher at Biorobotics LAB(2020.04 - present) 
+- M.S candidate in Artificial Intelligence Engineering (2023.03 - present)
 
-&nbsp;&nbsp;&nbsp;&nbsp; Biorobotics Lab. Incheon National University, Incheon, South Korea
+     &nbsp;&nbsp;&nbsp;&nbsp; BISLab - BioInformaticS Lab. Hanyang University, Seoul, South Korea
+    
+    &nbsp;&nbsp;&nbsp;&nbsp; 🌐[BISLab](http://bislab.hanyang.ac.kr/)
+- B.S in Mechanical Engineering (2017.03 - 2023.02)
 
-&nbsp;&nbsp;&nbsp;&nbsp; 🌐[Biorobotics Lab homepage](https://jeon4365.wixsite.com/mysite)
+    &nbsp;&nbsp;&nbsp;&nbsp; Incheon National University, Incheon, South Korea
 
-- B.S in Mechanical Engineering (2017.03 - present)
+- Undergraduate researcher at Biorobotics LAB(2020.04 - 2023.01)
 
-&nbsp;&nbsp;&nbsp;&nbsp; Incheon National University, Incheon, South Korea
+  &nbsp;&nbsp;&nbsp;&nbsp; Biorobotics Lab. Incheon National University, Incheon, South Korea
+
+  &nbsp;&nbsp;&nbsp;&nbsp; 🌐[Biorobotics Lab homepage](https://jeon4365.wixsite.com/mysite)
 
 ### Current Interest
 - Deep Learning
+- Bioinformatics
+- Artificial Intelligence
 - Natural language Process
-- Computer Vision
-- Robotics
 
 ### Skills
-Python, c++, Arduino
+Python, c++, Linux
 
 ### Contact
 - Email : 74sehoon@gmail.com
