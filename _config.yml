@@ -112,7 +112,7 @@ author:
   name             : "Sehoon Park"
   avatar           : "/assets/images/firenze.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "hello :)"
-  location         : "Incheon National University"
+  location         : "Hanyang University"
   email            : # "74sehoon@gmail.com"
   links:
     - label: "Email"
