@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[Jetson] Jetson Nano를 이용한 Yolov5 활용기"
+title:  "[Jetson] Jetson Nano를 이용한 Yolov5 활용기 (1) - linux os 설정"
 excerpt: "yahboom Jetson Nano Linux OS 설정"
 toc: true
 toc_sticky: true
