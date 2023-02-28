@@ -14,7 +14,7 @@ last_modified_at: 2022-12-19T17:30:00-19:30:00
 classes: wide
 ---
 
-2021년 머신러닝 스터디에서 진행하였던 ['R-CNN, Fast R-CNN, Faster R-CNN' 논문 리뷰](https://docs.google.com/presentation/d/1RLVjjI2pfTQFMMMTeRKQtM2uI_sDzNuA/edit?usp=sharing&ouid=110761253710952245104&rtpof=true&sd=true)를 재구성한 포스팅임을 미리 알려드립니다.
+2021년 머신러닝 스터디에서 진행하였던 ['R-CNN, Fast R-CNN, Faster R-CNN' 논문 리뷰](https://docs.google.com/presentation/d/1VOyGj7IH4VlivV45MAWQFb-j1qn9RHmu/edit?usp=sharing&ouid=103416735755875236001&rtpof=true&sd=true)를 재구성한 포스팅임을 미리 알려드립니다.
 
 # introduction
 위 논문은 CV(Computer Vision), 즉 이미치 처리에 있어 기반이 되는 논문입니다.
