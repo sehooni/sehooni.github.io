@@ -7,7 +7,7 @@ toc_sticky: true
 
 categories:
   - PaperReview
-tags: [PaperReview]
+tags: [PaperReview, CV, CNN]
 use_math: true
 
 last_modified_at: 2022-04-28T16:30:00-20:04:00

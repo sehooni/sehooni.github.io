@@ -7,7 +7,7 @@ toc_sticky: true
 
 categories:
   - PaperReview
-tags: [PaperReview]
+tags: [PaperReview, CV, Mask_RCNN, UNet]
 use_math: true
 
 last_modified_at: 2023-03-01T14:18:08-18:04:00

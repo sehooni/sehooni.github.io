@@ -7,7 +7,7 @@ toc_sticky: true
 
 categories:
   - PaperReview
-tags: [PaperReview]
+tags: [PaperReview, CV, RCNN, Fast_RCNN, Faster_RCNN]
 use_math: true
 
 last_modified_at: 2022-12-19T17:30:00-19:30:00
