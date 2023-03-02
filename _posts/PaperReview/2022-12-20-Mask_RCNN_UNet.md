@@ -198,6 +198,7 @@ U-Net이 개선한 점은 다음과 같습니다.
 이러한 두가지 문제점을 다음의 방법을 통해 해결하였습니다.
 1. `속도 저하의 문제: 기존의 sliding window 방식이 아닌, patch 탐색 방식을 사용하였습니다.`
 2. `trade-off 문제: Contracting path에서는 이미지의 context를 포착하고, Expanding path에서는 feature map을 upsampling한 뒤, 이를 contracting path에서 포착한 (feature map의)context와 결합하여 localization의 정확도를 높였습니다.`
+
 ![25](https://user-images.githubusercontent.com/84653623/221755749-fe5de78d-58f9-4862-8e9d-e122041b55d4.PNG)
 
 ## Structure of U-Net
