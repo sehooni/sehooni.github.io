@@ -86,9 +86,9 @@ CNN 모델로부터 Feature가 추출이 되고 Training Label이 적용되고 �
 CNN fine-tunning에서는 IoU가 0.5가 넘으면 positive로 두었고, 이외에는 "background"로 labeled해 두었습니다.
 ![10](https://user-images.githubusercontent.com/84653623/208387333-dbd08e1a-0059-477a-871d-3803171845a1.PNG)
 
-    여기서 IoU란, Intersection ove Union의 줄임말로, 두 바운딩 박스가 겹치는 비율을 의미합니다. 
-    성능 평가를 예시로 들자면, mAP@0.5는 정답과 예측의 IoU가 50% 이상일 때 정답으로 판정하겠다는 의미를 말하며, NMS 계산을 예시로 들자면, 같은 클래스(class)끼리 IoU가 50% 이상일 때 낮은 confidence의 box를 제거한다는 의미입니다. 
-    이때, mAP는 mean Average Precision을 의미합니다. 이러한 정보는 Computer Vision 분야에서 성능평가 지표로 사용됩니다.
+여기서 IoU란, Intersection ove Union의 줄임말로, 두 바운딩 박스가 겹치는 비율을 의미합니다. 
+성능 평가를 예시로 들자면, mAP@0.5는 정답과 예측의 IoU가 50% 이상일 때 정답으로 판정하겠다는 의미를 말하며, NMS 계산을 예시로 들자면, 같은 클래스(class)끼리 IoU가 50% 이상일 때 낮은 confidence의 box를 제거한다는 의미입니다. 
+이때, mAP는 mean Average Precision을 의미합니다. 이러한 정보는 Computer Vision 분야에서 성능평가 지표로 사용됩니다.
 ![11](https://user-images.githubusercontent.com/84653623/208387340-20af13f3-52e9-4d5f-a0aa-d76c5b856d60.PNG)
 
 반면에 SVM을 학습할 때의 ground-truth boxes만 positive example로 두고, IoU가 0.3 미만은 모두 negative, 나머지는 전부 무시하게 됩니다.
@@ -156,7 +156,7 @@ Faster R-CNN의 논문에서는, Region Proposal 방법을 GPU를 통한 학습�
 이 Sample들을 Fast R-CNN과 동일하게 **RoI Pooling**을 한 후, **Classification, bBox Regression**을 진행합니다.
 Pretrained된 CNN을 거쳐서 나온 **Feature Map**은 ZFNet 기준으로 256-d, VGG-16 기준으로 512-d를 갖게됩니다.(여기서 d는 차원으로 이해하였습니다.)
 
-    이때 ZFNet은 ILSVRC 2013에서 우승한 CNN구조이고, VGG-16은 옥스퍼드 대학의 연구팀 VGG에 의해 개발된 VGGNet의 모델 중 하나로 16개 층으로 구성된 모델이며, 2014년 이미지넷 인식대회에서 준우승한 모델을 의미합니다.
+이때 ZFNet은 ILSVRC 2013에서 우승한 CNN구조이고, VGG-16은 옥스퍼드 대학의 연구팀 VGG에 의해 개발된 VGGNet의 모델 중 하나로 16개 층으로 구성된 모델이며, 2014년 이미지넷 인식대회에서 준우승한 모델을 의미합니다.
 이 **Feature Map**을 k개의 Anchor box를 통해 영역을 정하고 **Classification Layer**와 **bBox Regression**을 거쳐서 물체가 위치한 곳을 학습하게 됩니다.
 **<u>여기서 Classification Layer가 물체가 있는지 없는지만 확인하므로, Class의 수는 2입니다.**</u>
 ![18](https://user-images.githubusercontent.com/84653623/208387417-111f9431-a58d-4e34-b0fc-868a4494c29e.PNG)
