@@ -10,8 +10,8 @@ categories:
   - projects
 tags: [DL, ML, Projects, Neural-Style-Transfer]
 
-date: 2022-05-01
-last_modified_at: 2022-05-01T14:00:00-14:10:00
+date: 2022-04-30
+last_modified_at: 2022-04-30T14:00:00-14:10:00
 classes: wide
 ---
 # Project 시작 전 설명
