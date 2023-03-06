@@ -10,7 +10,7 @@ categories:
 tags: [proteomics]
 use_math: true
 
-last_modified_at: 2023-03-06T17:08:08-21:38:10
+last_modified_at: 2023-03-06T22:40:08
 classes: wide
 ---
 
@@ -34,6 +34,8 @@ classes: wide
 
 즉, **단어의 이름에 기능(뜻)이 내재되어** 있기 때문에 이를 이용해 이해하면 도움이 된다!
 
+---
+
 # Transcription
 
 그럼 transcribe에 대해 알아보자. 아래 위치한 그림을 보면 조금 더 이해하기 편하다. 초기 DNA는 **실제로 유전 정보를 갖고 있는 부분(coding region)인 Exon**과 **유전 정보를 갖고 있지 않은 부분(noncoding region)인 Intron**으로 구성되어 있다. 이 중 **Exon은 단백질 서열을 구성하는데 참여**하게 된다.
@@ -46,6 +48,7 @@ DNA는 string(문자열) data로 존재하며, 사실 DNA 서열에는 앞과 �
 
 ![Untitled 3](https://user-images.githubusercontent.com/84653623/223109516-c6064f27-350c-43d1-b8f9-c5d5e6fcdccf.png)
 
+---
 # Protein Synthesis
 
 다음으로 mRNA가 Protein을 만드는 과정을 살펴보자. 순서는 다음과 같다.
@@ -63,6 +66,7 @@ Ribosome에 mRNA가 들어온다는 표현은 어찌보면 잘못 되었다. 그
 
 그림 밑에 존재하는 글을 살펴보면, 코돈 테이블에는 총 64개의 쌍이 존재하지만, tRNA의 아미노산은 20개가 존재하고 있다. 이를 통해 여러 코돈으로 같은 아미노산을 합성할 수 있음을 확인할 수 있다. 
 
+---
 # Protein folding
 
 다음 그림은 mRNA가 Ribosome에 들어가 아미노산을 연결하여 protein을 만드는 연속적인 모습을 나타낸다. 이때 아미노산 띠가 folding되지 않도록 Chaperone이라는 단백질이 아미노산 띠를 붙잡고 있다가 마지막에서야 folding을 진행하게 된다. `3차원 구조를 가져야 비로소 어떠한 기능을 할 수 있다`는 점에 유의하자.
@@ -75,6 +79,7 @@ Ribosome에 mRNA가 들어온다는 표현은 어찌보면 잘못 되었다. 그
 
 본 슬라이드에서도 다시 한번 이야기한다. `단백질의 구조는 기능과 연관되어` 있으며, 이러한 구조는 **일부 서열만 비슷하면 추론이 가능하다**.
 
+---
 # Protein folding & disulfide bond
 
 3차원 구조를 표시하는 여러가지 방법이 존재한다. 아래 그림을 살펴보면 **H부분**은 힌덱스 구조에 해당하는 부분을, **B는** ɑ sheet과 ß sheet 구조를, **Lys15**는 15번 아미노산의 위치를 표시하고 있다.
@@ -83,6 +88,7 @@ Ribosome에 mRNA가 들어온다는 표현은 어찌보면 잘못 되었다. 그
 
 ![Untitled 7](https://user-images.githubusercontent.com/84653623/223109530-5e562e2f-94fe-4957-925e-289944e6ea07.png)
 
+---
 # Native disulfide & Reversible denaturation
 
 구조와 관련해 살펴보면 아래의 그림과 같다. 
@@ -91,6 +97,7 @@ Ribosome에 mRNA가 들어온다는 표현은 어찌보면 잘못 되었다. 그
 
 본 슬라이드에서도 **disulfide bond**에 관해 추가적으로 설명을 하고 있다. 그림을 살펴보면 **S-S 결합의 형태를 띠고 있는데, 이는  SH기를 가진 아미노산인 Cys의 결합**을 나타낸다. Cys의 SH끼리 가까이 가면 H 2개가 산소와 결합하여 H2O가 되어 빠져나가고, S 2개가 공유결합을 하게 된다(산화 과정). 이러한 결합은 비교적 단단한 결합이며, `단백질 분석 시 disulfide 결합은 해석에 있어 방해요소로 작용`한다. 따라서 화학 처리를 통해 끊어내게 된다. 끊어내고 나면 다시 SH로 환원되게 된다.  
 
+---
 # Post-translational modifications
 
 PTM은 translation이후의 modification을 의미한다. 다음 그림을 살펴보자. PTM 글자 밑에 위치한 빨간 줄들은 protein을, 그 줄 주변에 위치한 도형들은 modification들을 나타낸다. 
@@ -101,6 +108,7 @@ Protein은 어떤 상황에 있냐에 따라서, 약간 modify되는 것이 다�
 
 같은 protein에서도 PTM의 종류는 다 다르며, 이에 따라 하는 일이 다 달라지게 된다. 예를 들자면, **기능 혹은 세포 안에서의 위치 등이 다 달라지게 되는 것**이다.
 
+---
 # Various modes of alternative splicing
 
 다시 앞부분의 내용을 상기시키며 본 내용을 살펴보자. Primary RNA가 splicing을 통해 mature mRNA로 바뀌는 과정으로 여러가지 가능성이 존재한다.
@@ -115,6 +123,7 @@ Protein은 어떤 상황에 있냐에 따라서, 약간 modify되는 것이 다�
 - Alternative 3’ acceptor sites
 - Intron retention
 
+---
 # Sources of errors in protein synthesis
 
 아래 그림을 살펴보면, protein이 만들어지는 과정에서 다양한 error들이 존재함을 확인할 수 있다.
@@ -123,18 +132,21 @@ Protein은 어떤 상황에 있냐에 따라서, 약간 modify되는 것이 다�
 
 ![Untitled 11](https://user-images.githubusercontent.com/84653623/223109545-d31054c0-1409-467c-96f5-66301df1f150.png)
 
+---
 # Mechanism to increase proteome diversity
 
 DNA로 부터 RNA, Protein으로 가는 과정에서 **다양성**이 계속 증가하게 된다. 그만큼 기능도 다양해진다. 그렇다면 고등 생물일수록 더 많은 종류의 단백질을 필요로 하지 않을까? 이와 관련한 내용은 다음 장에서 이야기하자. 결론적으로 더 고등한 생물일수록, 유전자의 크기를 키우지 않더라도, 이 과정에서 들어가는 `variation(ex. splicing, PTM, etc)의 가능성을 더 많이 활용하면`, **충분히 더 많은 수의 단백질 종류를 확보할 수 있다.** 
 
 ![Untitled 12](https://user-images.githubusercontent.com/84653623/223109550-061518b7-9bc2-4441-b7e1-608106bc5ef0.png)
 
+---
 # Genome size comparison
 
 유전자의 크기 자체는 단백질의 종류와는 상관이 없다. 클수록 고등 생물인 것도 아니며, 오히려 PTM의 활용 정도가 영향을 준다고 보는 것이 더 정확하다. 
 
 ![Untitled 13](https://user-images.githubusercontent.com/84653623/223109552-c61550dc-eea2-4acb-b412-da127fb0985b.png)
 
+---
 # Genomics vs. Proteomics
 
 DNA를 설계도라고 비유를 한다면, Protein은 기계에 비유할 수 있다. 크게 5가지를 아래와 같이 비교할 수 있다. 
@@ -143,6 +155,7 @@ DNA를 설계도라고 비유를 한다면, Protein은 기계에 비유할 수 �
 
 그 조건들은 **amplification(증폭), sensitivity(민감도), type(종류), difference of amount(양의 차이), complex(결합)** 등이 있으며, protein이 훨씬 까다롭고 다루기 어려움을 확인 할 수 있다.
 
+---
 # Proteomics: study of proteins
 
 proteomics는 다뤄야하는 data의 크기가 크다는 점과 알고리즘, 분산처리, cloud computing, ML의 발전과 같이 발전했다는 특징을 갖고 있다. 
@@ -155,6 +168,7 @@ Proteomics는 protein에 대한 연구로 어떤 단백질들이 발현되는가
 
 다음 포스팅 및 수업에서는 이러한 연구들의 방법들에 대해 배워볼 예정이다.
 
+---
 # 내용 요약 및 정리
 
 이번에 공부한 내용을 요약하고 정리하면 다음과 같다.
@@ -162,3 +176,6 @@ Proteomics는 protein에 대한 연구로 어떤 단백질들이 발현되는가
 ![Untitled 17](https://user-images.githubusercontent.com/84653623/223109502-ffe6d56c-cb6f-4942-9d00-5232685284cb.png)
 
 또한 단백질은 `3차원 구조를 가져야 비로소 어떠한 기능을 할 수 있으며, 이에 따라 구조는 기능과 연관이 있다.`
+
+---
+PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요.:)
