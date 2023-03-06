@@ -11,7 +11,7 @@ categories:
 tags: [Jetson, projects]
 use_math: true
 
-last_modified_at: 2023-02-18T19:05:08-19:10:00
+last_modified_at: 2023-02-17T19:05:08-19:10:00
 classes: wide
 ---
 이전 포스팅에 이어 진행하도록 하겠습니다.
