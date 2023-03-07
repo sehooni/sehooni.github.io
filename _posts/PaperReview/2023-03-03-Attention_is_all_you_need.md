@@ -323,8 +323,9 @@ Transformer는 기존의 RNN, seq2seq 모델의 한계였던 병렬화 불가능
 ---
 - **참고 문헌**
 
-    [Attention is all you need](https://arxiv.org/abs/1706.03762)
+    논문: [Attention is all you need](https://arxiv.org/abs/1706.03762)
 
+    사이트:
     [Attention is all you need paper 뽀개기](https://pozalabs.github.io/transformer/)
     
     [1. Attention Is All You Need](https://welcome-to-dewy-world.tistory.com/108)
@@ -336,5 +337,6 @@ Transformer는 기존의 RNN, seq2seq 모델의 한계였던 병렬화 불가능
     [Attention Is All You Need(transformer) paper 정리](https://omicro03.medium.com/attention-is-all-you-need-transformer-paper-%EC%A0%95%EB%A6%AC-83066192d9ab)
     
     [[NLP] Attention Is All You Need 번역 및 정리 (Transformer)](https://silhyeonha-git.tistory.com/16)
+
 ---
 PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다. 
