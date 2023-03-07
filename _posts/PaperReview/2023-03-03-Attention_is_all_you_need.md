@@ -15,6 +15,9 @@ classes: wide
 ---
 
 2022년 자연어처리 스터디, 집현전 3기에서 진행하였던 ['Attention is all you need' 논문 리뷰](https://docs.google.com/presentation/d/16ehwCfxzDYtmXI2-8qz4djyKLb2e6mHE/edit?usp=sharing&ouid=103416735755875236001&rtpof=true&sd=true)를 기반으로 재구성한 포스팅임을 미리 알려드립니다.
+아래 링크에서 영상으로도 확인할 수 있습니다. 
+
+링크 : [Attention is all you nedd 논문 리뷰 발표 영상](https://youtu.be/aFlWGqVzPbo)
 
 이번 포스팅에서는 NLP, 즉 자연어 처리의 연구에 있어 가장 기본이 되는, 근본이 되는 논문인 'Attention is all you need'를 소개하고자 합니다.
 
