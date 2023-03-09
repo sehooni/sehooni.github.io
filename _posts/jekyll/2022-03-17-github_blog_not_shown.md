@@ -34,10 +34,10 @@ classes: wide
 
 다음의 내용들은 기본적으로 지켜야 하는 것이다.
 
-- 1. `YEAR-MONTH-DAY-title.md` 파일 제목 형식을 확인.
-- 2. 포스팅 날짜 맞게 입력했는지 확인.
-- 3. `_post` 폴더에 맞게 위치해 있는지 확인.
-- 4. 카테고리 맞게 입력 했는지, 해당 카테고리 존재하는지 확인.
+1. `YEAR-MONTH-DAY-title.md` 파일 제목 형식을 확인.
+2. 포스팅 날짜 맞게 입력했는지 확인.
+3. `_post` 폴더에 맞게 위치해 있는지 확인.
+4. 카테고리 맞게 입력 했는지, 해당 카테고리 존재하는지 확인.
 
 <br>
 
@@ -45,10 +45,10 @@ classes: wide
 
 스택오버플로우랑 구글링을 통해서 시도해 본 사항들은 아래와 같다.
 
-- 1. `_config.yml`에 `future: true` 추가.
-- 2. 페이지 옵션(타이틀, 카테고리 적는 곳)에 `published: true` 추가.
-- 3. `index.html`에 공백이라도 추가해서 변경사항을 만들고 push.
-- 4. `jekyll build --verbose`로 skip된 것이 있는지 확인.
+1. `_config.yml`에 `future: true` 추가.
+2. 페이지 옵션(타이틀, 카테고리 적는 곳)에 `published: true` 추가.
+3. `index.html`에 공백이라도 추가해서 변경사항을 만들고 push.
+4. `jekyll build --verbose`로 skip된 것이 있는지 확인.
 
 <br>
 
