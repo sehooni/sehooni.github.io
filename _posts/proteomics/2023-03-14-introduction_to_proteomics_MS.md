@@ -1,4 +1,4 @@
---
+---
 layout: single
 title:  "[Proteomics] Introduction of Proteomics 2"
 excerpt: "Proteomics 수업 내용 정리 - Introduction of Proteomics 2"
