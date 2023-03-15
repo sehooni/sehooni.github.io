@@ -34,8 +34,10 @@ h6 {
 }
 
 h1 {
-  margin-top: 0;
+  margin-top: 2em;
+  margin-bottom: 1em;
   font-size: $h-size-1;
+  font-weight: 900;
 }
 
 h2 {
@@ -110,8 +112,10 @@ blockquote {
   margin: 2em 1em 2em 0;
   padding-left: 1em;
   padding-right: 1em;
-  font-style: italic;
+  padding-top: 0.5em;
+  padding-bottom: 0.1em;
   border-left: 0.25em solid $primary-color;
+  background-color: rgba(211, 211, 211, 0.178);
 
   cite {
     font-style: italic;
@@ -133,10 +137,12 @@ a {
   }
 
   &:visited {
+    text-decoration: none;
     color: $link-color-visited;
   }
 
   &:hover {
+    text-decoration: none;
     color: $link-color-hover;
     outline: 0;
   }
@@ -172,6 +178,7 @@ td > code {
   font-size: 0.8em;
   background: $code-background-color;
   border-radius: $border-radius;
+  color: $primary-color;
 
   &:before,
   &:after {
@@ -356,4 +363,27 @@ input[type="submit"],
 .archive__item-teaser {
   -webkit-transition: $global-transition;
   transition: $global-transition;
+}
+
+/* 내 custom setting */
+
+img + em {
+  display: block;
+  text-align: center;
+  font-size: .7rem;
+  color: light-grey;
+}
+
+em {
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
+}
+
+details {
+  color: $link-color;
+}
+
+details:hover {
+  cursor: pointer;
+  color: $primary-color;
 }
