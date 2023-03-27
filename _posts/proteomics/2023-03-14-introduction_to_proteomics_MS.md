@@ -10,7 +10,7 @@ categories:
 tags: [proteomics]
 use_math: true
 
-last_modified_at: 2023-03-14T19:23:00
+last_modified_at: 2023-03-27T17:50:00
 classes: wide
 ---
 “Protein을 대량으로 분석할 때의 data, 그리고 그 분석 방법”에 대한 내용을 이번시간에 이야기를 해볼까 한다.
@@ -101,6 +101,13 @@ Trypsin은 K와 R의 C-terminal 부분을 자른다고 했었는데, 위의 그�
 ![Untitled 9](https://user-images.githubusercontent.com/84653623/224967178-0f2f1604-c10f-4db8-9a22-822cb46b43d4.png)
 
 이러한 케이스들을 구분하는 방법으로 **NTT (Number of Tryptic Termini)** 가 있다. NTT가 0이면 Nontryptic을, NTT가 1이면 Semitryptic을, NTT가 2이면 Fully tryptic을 의미한다. 
+
+### (내용추가 23.03.27) 
+Fully/Semi/Non-tryptic을 달리 표현한 것이 NTT이며, 이것들은 Trypsin이 절단 효소로 사용될 때 썼던 용어이지만, 다른 효소가 사용될 때도 유사한 개념이 적용될 수 있다. 즉, **Number of Enzymatic Termini (NET)**라고 할 수 있다. NTT가 1이면 NTT가 2인 케이스를, NTT가 0이면 NTT가 1, 2인 케이스를 모두 포함하게 된다. 즉 아래의 그림과 같이 표현할 수 있다.
+
+![image](https://user-images.githubusercontent.com/84653623/227891214-abc2cf08-c3a2-4df3-ab25-59a72b970faa.png)
+
+또한 missed cleavage 또한, semitryptic peptide에 fully-tryptic peptide가 포함되는 것처럼 최대 개수를 의미한다. 즉, Miscleavage의 수가 2이면, 0~2까지의 경우의 수를 모두 포함하는 것이다.
 
 ## Why are peptides, and not proteins, sequenced?
 
