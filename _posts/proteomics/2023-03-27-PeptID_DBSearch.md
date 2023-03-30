@@ -135,9 +135,9 @@ Peptide identification의 목표는 `Find a peptide with maximal match between a
 
 Precursor m/z는 Precursor의 neutral mass와 charge*proton mass의 합을 charge로 나눔으로서 계산하게 된다.
 
-$
-Precursor\;m/z\;={\frac{Precursor\;neutral\;mass\;+\;charge\;*\;proton\;mass}/{charge}
-$
+$$
+Precursor_m/z={\frac{Precursor_neutral_mass+charge*proton_mass}{charge}
+$$
 
 위 식에서 precursor m/z는 관찰값이며, charge * proton mass 부분에서 charge로 1~3가의 이온이 들어갈 수 있다. 또한 여기서 계산된 percursor의 neutral mass와 비슷한 값의 peptide를 찾는 것을 목표로 한다.
 
