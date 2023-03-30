@@ -139,6 +139,7 @@ $$
 Precursor_m/z={\frac{Precursor_neutral_mass+charge*proton_mass}{charge}
 $$
 
+
 위 식에서 precursor m/z는 관찰값이며, charge * proton mass 부분에서 charge로 1~3가의 이온이 들어갈 수 있다. 또한 여기서 계산된 percursor의 neutral mass와 비슷한 값의 peptide를 찾는 것을 목표로 한다.
 
 이에 따라 **Output**은 `A peptide with mass M = ((m - m(H^{+}))*c), whose theoretical spectrum matches the experimental spectrum S best.`즉 이론적 스펙트럼이 실험적 스펙트럼 S에 최고로 일치하는 질량 M을 갖는 펩타이드가 나온다.
