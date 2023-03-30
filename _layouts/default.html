@@ -10,11 +10,12 @@
 -->
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
-    {% if page.use_math %}
-          {% include mathjax_support.html %}
-    {% endif %}
     {% include head.html %}
     {% include head/custom.html %}
+    {% if page.use_math %}
+      {% include mathjax_support.html %}
+    {% endif %}
+
     <!-- Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
