@@ -135,8 +135,7 @@ Peptide identification의 목표는 `Find a peptide with maximal match between a
 
 Precursor m/z는 Precursor의 neutral mass와 charge*proton mass의 합을 charge로 나눔으로서 계산하게 된다.
 
-$$Precursor_m/z = {Precursor_neutral_mass+charge*proton_mass} \over {charge}$$
-
+![image](https://user-images.githubusercontent.com/84653623/228831745-bb4957cb-01d8-4109-85ff-2ddb1d105b85.png)
 
 위 식에서 precursor m/z는 관찰값이며, charge * proton mass 부분에서 charge로 1~3가의 이온이 들어갈 수 있다. 또한 여기서 계산된 percursor의 neutral mass와 비슷한 값의 peptide를 찾는 것을 목표로 한다.
 
@@ -227,13 +226,7 @@ Mass of a neutral peptide는 residue mass의 합과 terminating group의 mass의
 
 PEP를 예시로 하여 mass를 계산하고, 각 이온의 mass, 각 이온의 화학 구조식들, 스펙트럼을 구해보면 다음과 같다.
 
-$$
-\begin{aligned}Neutral\;mass\;&=\;sum(residues)\;+\;H^{+}\;+\;OH^{-}\\&=\;sum(PEP)\;+\;H_{2}O\\&=\;(97.052+129.042+97.052)\;+H_{2}O\\&=\;341.159\end{aligned}
-$$
-
-$$
-\begin{aligned}&a_{2}^{+}\;=\;199.108\;\;\;\;\;\;x_{2}^{+}\;=\;271.093\\&b_{2}^{+}\;=\;227.10268\;\;y_{2}^{+}\;=\;245.113\\&c_{2}^{+}\;=\;244.129\;\;\;\;\;\;z_{2}^{+}\;=\;228.088\end{aligned}
-$$
+![image](https://user-images.githubusercontent.com/84653623/228831800-dbee6844-ff84-46df-9165-23930c268337.png)
 
 ![Untitled 18](https://user-images.githubusercontent.com/84653623/228815554-a1521677-60eb-4b57-a2da-77e6ef15679f.png)
 
