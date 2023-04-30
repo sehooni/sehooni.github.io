@@ -223,7 +223,7 @@ node의 **score**를 어떻게 정할 것인가에 대해 이야기를 해보자
 
 # PepNovo : Weighting nodes
 
-앞서 설명한 bayesian network를 이용해서 scoring을 진행한 것이 PepNovo의 기본 개념이다. 아래의 그림과 같이 node하나만 본 것이 아닌, 인접한 아미노산도 같이 본 것이다. 우리가 관심을 갖는 아미노산은 N-terminal과 C-terminal의 아미노산이 무엇이냐에 따라서도 영향을 받을 것이다. 또한 이 node가 b-ion인지, y-ion인지, b이면 intensity가 크냐 작냐 아예 관찰이 안되는가, b-ion의 intensity에 의해서 neutral loss의 intensity가 결정이 될꺼고 등등 이렇게 인과관계가 존재한다. 이러한 인관관계를 바탕으로 나름 그래프 모델을 만들고 이 그래프 모델에 각각의 노드에다가 앞서 말한 conditional 확률을 구해서 붙였는데 이미 존재하는 데이터를 기반으로 하여 일일히 진행한 것이고, 이러한 score는 아래의 그림에서 확인할 수 있듯이 log ratio를 기반으로 하여 구해졌다.
+앞서 설명한 bayesian network를 이용해서 scoring을 진행한 것이 PepNovo의 기본 개념이다. 아래의 그림과 같이 node하나만 본 것이 아닌, 인접한 아미노산도 같이 본 것이다. 우리가 관심을 갖는 아미노산은 N-terminal과 C-terminal의 아미노산이 무엇이냐에 따라서도 영향을 받을 것이다. 또한 이 node가 b-ion인지, y-ion인지, b이면 intensity가 크냐 작냐 아예 관찰이 안되는가, b-ion의 intensity에 의해서 neutral loss의 intensity가 결정이 될꺼고 등등 이렇게 인과관계가 존재한다. 이러한 인과관계를 바탕으로 나름 그래프 모델을 만들고 이 그래프 모델에 각각의 노드에다가 앞서 말한 conditional 확률을 구해서 붙였는데 이미 존재하는 데이터를 기반으로 하여 일일히 진행한 것이고, 이러한 score는 아래의 그림에서 확인할 수 있듯이 log ratio를 기반으로 하여 구해졌다.
 
 랜덤으로 그 정도가 나올 확률은 얼마냐를 구해서 랜덤 대비 관찰된 애가 이 정도 크기로 나올 확률이 얼마인지를 구하는 것이다. 이때 m은 prefix residue mass이고, S가 스펙트럼 그리고 그게 주어졌을 때 이 intensity가 작냐 크냐 없냐 이거를 나타내는 값인 것이다.
 
