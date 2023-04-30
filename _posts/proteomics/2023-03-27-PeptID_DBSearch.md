@@ -112,7 +112,6 @@ Peptide idenfication에는 크게 두 가지 방법이 존재한다.
 - de Novo interpretation (Sherenga)
 
 DB search가 대체적으로 유용하지만, 조금더 심도 있는 경우 de Novo로 진행되게 된다. 두 방법의 차이는 DB의 유무이다. DB는 reference에 불과하며, 항체와 같이 다른 어느 누군가의 고유의 단백질을 분석하는 경우에는 DB search는 그 효용성을 발휘하지 못한다. 즉, `DB가 없는 경우, de Novo interpretation이 더 효과적이다.`
-DB는 reference에 불과하며, DB가 없을 때, 항체와 같이 다른 어느 누군가의 고유의 단백질을 분석하는 경우에는 de Novo가 사용된다.
 
 ![Untitled 8](https://user-images.githubusercontent.com/84653623/228815529-8484ae84-a1bb-45a5-9498-1a4261fc8083.png)
 
