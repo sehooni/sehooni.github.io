@@ -193,13 +193,13 @@ node의 **score**를 어떻게 정할 것인가에 대해 이야기를 해보자
 
 첫 번째로 **intensity**. 즉, 크기가 크면 무조건 다 좋은 것인가에 대해 생각해봐야 한다. 크기가 크다고 무조건 좋은 것은 아니다. 위의 그래프를 보면, x축이 intensity rank이다. 검은 점이 b-ion을, 흰 점이 y-ion을 나타내는데, 1등으로 나오는 것이 y-ion이 70%, b-ion이 한 10%, 이렇게 나온다. 즉, intensity rank에서 1~3등과 같이 rank가 높은 부분은 y-ion이, rank가 낮은 부분에서는 b-ion이 더 많은 %를 차지하고 있다. 오른쪽 그래프는 그래프는 같은데 장비가 다른 case이다. (장비가 다르다 = fragment 방법이 다르다.) 그러나, 비슷한 경향을 보인다는 것을 확인할 수 있다. 정리하자면, `intensity를 통해 이게 b-ion일지, y-ion일지 그 가능성을 우리가 조금 더 잘 알 수 있다`는 점을 이야기하는 것이다.
 
-다음으로 support ions에 대해 이야기해보자. 앞서 언급했듯이, b나 y-ion이 H_{2}O나 NH_{3}를 추가적으로 잃어버려서 만들어진 이온을 **Neutral loss ion**이라고 부른다. 이러한 이온들이 관찰되는 경우 또한 많은데, 결국 fragmentation을 진행하려면 에너지를 주어야 하는데 (이때 에너지는 충돌에너지, 혹은 다른 에너지), 에너지를 통해 ion화가 된 다음, 또 남은 에너지가 영향을 미쳐, neutral loss ion이 발생하게 되는 것이다. 이러한 이온들이 해석이 잘 되었다면, 다음과 같은 spectrum을 보인다.
+다음으로 **support ions**에 대해 이야기해보자. 앞서 언급했듯이, b나 y-ion이 H_{2}O나 NH_{3}를 추가적으로 잃어버려서 만들어진 이온을 **Neutral loss ion**이라고 부른다. 이러한 이온들이 관찰되는 경우 또한 많은데, 결국 fragmentation을 진행하려면 에너지를 주어야 하는데 (이때 에너지는 충돌에너지, 혹은 다른 에너지), 에너지를 통해 ion화가 된 다음, 또 남은 에너지가 영향을 미쳐, neutral loss ion이 발생하게 되는 것이다. 이러한 이온들이 해석이 잘 되었다면, 다음과 같은 spectrum을 보인다.
 
 ![Untitled 20](https://user-images.githubusercontent.com/84653623/234660507-560d8e1a-1528-4578-bafb-790d62d75ad9.png)
 
 위의 spectrum을 보면, N-term, charge 1의 경우 H_{2}O 혹은 NH_{3}가 많이 빠진 모습을 보인다. 이처럼, 자기 자신과 연관된 다른 더 많은 neutral loss가 있는 peak들이 많이 관찰이 되는 것이다. 그 양상이 b냐 y냐에 따라 다르게 나타나며, 마찬가지로, fragment ion의 charge가 +1이냐 +2이냐에 따라서도 또 다르게 나타난다.
 
-마지막으로 isotopic에 대해 이야기해보면, 마찬가지로 앞서 [이야기](https://sehooni.github.io/proteomics/PeptID_DBSearch/#basics-for-theoretical-spectrum-generation)했듯이, precursor의 charge를 결정할 수 있는 이유는 isotopic에 해당하는 peak들(+1, +2) 사이의 간격을 통해 결정할 수 있다. fragment ion에서는 isotopic이 늘 보이지 않는데, 그 이유는 관측되는 fragment ion의 질량이 매우 작기 때문에 1%의 isotopic이 존재할 확률이 그렇게 크지 않는 것이다(끽해야 2~3개 있는 정도).  근데 이제 fragment ion의 질량이 커지면 isotopic들도 잘 보이게 된다. 따라서 isotopic 또한 noise로 작용할 수 있는 것이다.
+마지막으로 **isotopic**에 대해 이야기해보면, 마찬가지로 앞서 [이야기](https://sehooni.github.io/proteomics/PeptID_DBSearch/#basics-for-theoretical-spectrum-generation)했듯이, precursor의 charge를 결정할 수 있는 이유는 isotopic에 해당하는 peak들(+1, +2) 사이의 간격을 통해 결정할 수 있다. fragment ion에서는 isotopic이 늘 보이지 않는데, 그 이유는 관측되는 fragment ion의 질량이 매우 작기 때문에 1%의 isotopic이 존재할 확률이 그렇게 크지 않는 것이다(끽해야 2~3개 있는 정도).  근데 이제 fragment ion의 질량이 커지면 isotopic들도 잘 보이게 된다. 따라서 isotopic 또한 noise로 작용할 수 있는 것이다.
 
 결국 `위 3개의 factor들이 이 ion이 b냐 y냐를 결정하는 델타함수를 정할 때 좋은 근거들이 되는 것`이다. 
 
