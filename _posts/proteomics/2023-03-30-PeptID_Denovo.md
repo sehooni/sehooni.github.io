@@ -127,7 +127,7 @@ prefix하고 surffix가 섞여 있으면 처리하기 어렵기 때문에 **얘�
 
 ## Two problems
 
-전체 스펙트럼 그래프에서 실제 b-ion, y-ion에 해당하는 애들은 극히 일부이고, 그 다음에 우리가 forbidden pair를 피하는 경로를 찾는 문제를 풀어야되는 건데 이를 **NP-hard**라고 부른다. NP-hard란, 우리가 P하고, NP는 알고, (NP 중에 제일 어려운 것 = NP conflict, NP conflict는 NP-hard 중에 제일 쉬운 문제들을 의미) 일반적으로 NP-conflict 보다 더 어렵다고 생각되는 문제(어렵다 =  복잡도가 높다)를 의미한다.
+전체 스펙트럼 그래프에서 실제 b-ion, y-ion에 해당하는 애들은 극히 일부이고, 그 다음에 우리가 forbidden pair를 피하는 경로를 찾는 문제를 풀어야되는 건데 이를 **NP-hard**라고 부른다. NP-hard란, 우리가 P하고, NP는 알고, (NP 중에 제일 어려운 것 = NP conflict라고 하며, NP conflict는 NP-hard 중에 제일 쉬운 문제들에 해당) 일반적으로 NP-conflict 보다 더 어렵다고 생각되는 문제(어렵다 =  복잡도가 높다)를 의미한다.
 
 ![Untitled 11](https://user-images.githubusercontent.com/84653623/234660587-27e9d8b8-7a2e-4d4f-9c4f-a7ab8a3dc4f4.png)
 
