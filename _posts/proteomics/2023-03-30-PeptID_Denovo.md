@@ -131,7 +131,7 @@ prefix하고 surffix가 섞여 있으면 처리하기 어렵기 때문에 **얘�
 
 ![Untitled 11](https://user-images.githubusercontent.com/84653623/234660587-27e9d8b8-7a2e-4d4f-9c4f-a7ab8a3dc4f4.png)
 
-그런데 이제 한가지 재미있는 특징이 b-ion,  그러니까 prefix와 surffix, (이렇게 짝을 생각할 수 있다.) 과 b-ion과 그것에 대응되는 이쪽 surffix의 y-ion, 전체 peptide의 길이가 N이라고 이야기 하면, b_{i}가 있으면, y_{n-i}가 있다고 볼 수 있다.
+그런데 이제 한가지 재미있는 특징이 b-ion,  그러니까 prefix와 surffix, (이렇게 짝을 생각할 수 있다.) b-ion과 그것에 대응되는 이쪽 surffix의 y-ion, 전체 peptide의 길이가 N이라고 이야기 하면, b_{i}가 있으면, y_{n-i}가 있다고 볼 수 있다.
 
 `즉 쌍으로 존재를 한다는 것이다. 둘이 complementary하므로 둘이 합치면 전체가 되고, 서로 한 쪽을 알면 나머지를 알 수 있는 이런 관계인 것`이다. 
 
