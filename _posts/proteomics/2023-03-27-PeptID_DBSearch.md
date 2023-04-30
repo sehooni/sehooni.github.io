@@ -263,7 +263,7 @@ prosit 또한 추후 paper review에서 다룰 예정이다.
 
 다음으로 SEQUEST이다. SEQUEST는 paper로도 나왔으며, **Cross correlation**방법을 사용하였다는 특징을 갖는다. **Cross correlation**은 두 계열의 유사성을 다른 계열에 대한 한 쪽 변위의 함수로 나타내는 측도를 말하는데, 음 이 표현은 너무 번역한 느낌이 든다.
 
-쉽게 말하자면, 유사한 특징을 같도록 두 스펙트럼에 푸리에 변환 등과 같은 방법으로 비슷하게 변환하는 것이다. 이 부분이 SEQUEST 논문에서의 핵심이었기 때문에 추후 paper review에서 자세히 다루어보도록 하겠다.
+쉽게 말하자면, 유사한 특징을 갖도록 두 스펙트럼에 푸리에 변환 등과 같은 방법으로 비슷하게 변환하는 것이다. 이 부분이 SEQUEST 논문에서의 핵심이었기 때문에 추후 paper review에서 자세히 다루어보도록 하겠다.
 
 ![Untitled 21](https://user-images.githubusercontent.com/84653623/228815563-2e86a4bd-3337-4671-913c-c072c52e4aca.png)
 
