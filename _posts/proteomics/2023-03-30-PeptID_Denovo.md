@@ -139,7 +139,7 @@ prefix하고 surffix가 섞여 있으면 처리하기 어렵기 때문에 **얘�
 
 만약에 b_{i}가 y_{j}보다 작으면, y_{i}는 반드시 y_{j}보다 크다. 합해서 전체 M이 같은데, 한 쪽이 크면 반대쪽은 작아야 한다. 그림으로 보면 다음과 같다. 이 pair가 b-y pair라고 생각을 하고, 그 친구들이 이렇게 선을 통해 연결을 해놓고서는, 둘이 complementary pair다 이렇게 이야기 하는 것이다. (0과 precursor mass M도 complementary pair이다.)
 
-아래 그림은 surffix mass를 prefix mass로 바꿔놓아 더하면 precursor mass가 되지는 않지만, surffix라면 더하면 M이 된다. 이와 같이 쌍으로 존재하는데 그림을 그려보면 아래와 같이 서로 교차하는 일은 발생하지 않는다. 따라서 forbidden node fair들을 생각해보면 이 친구들은 절대로 서로 intercept하지 않고 늘 이렇게 포함관계로 존재한다. 
+아래 그림은 surffix mass를 prefix mass로 바꿔놓아 더하면 precursor mass가 되지는 않지만, surffix라면 더하면 M이 된다. 이와 같이 쌍으로 존재하는데 그림을 그려보면 아래와 같이 서로 교차하는 일은 발생하지 않는다. 따라서 forbidden node pair들을 생각해보면 이 친구들은 절대로 서로 intercept하지 않고 늘 이렇게 포함관계로 존재한다. 
 
 ![Untitled 13](https://user-images.githubusercontent.com/84653623/234660590-fcf99cc5-1572-46c0-9eb8-41a2574c1761.png)
 
