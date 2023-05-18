@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="72bc5de6-8b04-4238-9eea-38692559b67f" name="변경" comment="젯슨나노 프로젝트 포스팅">
+      <change afterPath="$PROJECT_DIR$/_posts/DataStructure/2023-01-26-linked_list.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/PaperReview/2022-12-20-Mask_RCNN_UNet.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="35e12fdc-aff6-420c-b43d-86e6133b6729" />
+        <option name="url" value="https://github.com/sehooni/sehooni.github.io.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26VgVqiIHWg1bjN3UDFvS0ysZQJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_pages" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\74seh\OneDrive - inu.ac.kr\바탕 화면\mine\Coding\sehooni.github.io\_pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\74seh\OneDrive - inu.ac.kr\바탕 화면\mine\Coding\sehooni.github.io\_posts\PaperReview" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="72bc5de6-8b04-4238-9eea-38692559b67f" name="변경" comment="" />
+      <created>1647514196284</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647514196284</updated>
+    </task>
+    <task id="LOCAL-00012" summary="내용수정">
+      <created>1651204438250</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1651204438250</updated>
+    </task>
+    <task id="LOCAL-00013" summary="toc 수정">
+      <created>1651204675198</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1651204675199</updated>
+    </task>
+    <task id="LOCAL-00014" summary="toc 수정">
+      <created>1651204936798</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1651204936798</updated>
+    </task>
+    <task id="LOCAL-00015" summary="내용 수정">
+      <created>1651205081395</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1651205081395</updated>
+    </task>
+    <task id="LOCAL-00016" summary="내용 수정">
+      <created>1651205193804</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1651205193804</updated>
+    </task>
+    <task id="LOCAL-00017" summary="내용 수정">
+      <created>1651205278452</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1651205278452</updated>
+    </task>
+    <task id="LOCAL-00018" summary="nav list 수정 및 categoty 추가">
+      <created>1651206395918</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1651206395918</updated>
+    </task>
+    <task id="LOCAL-00019" summary="tag activation">
+      <created>1651206576774</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1651206576774</updated>
+    </task>
+    <task id="LOCAL-00020" summary="tag activation">
+      <created>1651206661344</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1651206661344</updated>
+    </task>
+    <task id="LOCAL-00021" summary="toc 수정">
+      <created>1651207582773</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1651207582773</updated>
+    </task>
+    <task id="LOCAL-00022" summary="toc 수정">
+      <created>1651207740149</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1651207740149</updated>
+    </task>
+    <task id="LOCAL-00023" summary="toc 수정">
+      <created>1651207953994</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1651207953994</updated>
+    </task>
+    <task id="LOCAL-00024" summary="구성 수정">
+      <created>1651208080299</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1651208080299</updated>
+    </task>
+    <task id="LOCAL-00025" summary="구성 수정 테스트">
+      <created>1651208170223</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1651208170223</updated>
+    </task>
+    <task id="LOCAL-00026" summary="구성 수정">
+      <created>1651208638512</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1651208638512</updated>
+    </task>
+    <task id="LOCAL-00027" summary="구성 수정">
+      <created>1651208692523</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1651208692523</updated>
+    </task>
+    <task id="LOCAL-00028" summary="구성 수정">
+      <created>1651208714096</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1651208714096</updated>
+    </task>
+    <task id="LOCAL-00029" summary="카테고리 수정">
+      <created>1651212670109</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1651212670109</updated>
+    </task>
+    <task id="LOCAL-00030" summary="test">
+      <created>1651214974653</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1651214974653</updated>
+    </task>
+    <task id="LOCAL-00031" summary="test">
+      <created>1651215618702</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1651215618702</updated>
+    </task>
+    <task id="LOCAL-00032" summary="custom 수정">
+      <created>1651216196348</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1651216196348</updated>
+    </task>
+    <task id="LOCAL-00033" summary="custom 수정">
+      <created>1651216750902</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1651216750902</updated>
+    </task>
+    <task id="LOCAL-00034" summary="custom 수정">
+      <created>1651216956953</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1651216956954</updated>
+    </task>
+    <task id="LOCAL-00035" summary="custom 수정 (tag활성화)">
+      <created>1651218681511</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1651218681511</updated>
+    </task>
+    <task id="LOCAL-00036" summary="custom 수정 (tag활성화)">
+      <created>1651218856659</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1651218856659</updated>
+    </task>
+    <task id="LOCAL-00037" summary="custom 수정 (사라진 카테고리 찾기)">
+      <created>1651219237852</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1651219237852</updated>
+    </task>
+    <task id="LOCAL-00038" summary="custom 수정 (tag 활성화)">
+      <created>1651219395502</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1651219395502</updated>
+    </task>
+    <task id="LOCAL-00039" summary="custom 수정 (사라진 category 복구)">
+      <created>1651219822630</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1651219822630</updated>
+    </task>
+    <task id="LOCAL-00040" summary="custom 수정 (사라진 category 복구)">
+      <created>1651220149859</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1651220149859</updated>
+    </task>
+    <task id="LOCAL-00041" summary="custom 수정 (사라진 category 복구)">
+      <created>1651221377842</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1651221377842</updated>
+    </task>
+    <task id="LOCAL-00042" summary="오타 수정">
+      <created>1651224403967</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1651224403967</updated>
+    </task>
+    <task id="LOCAL-00043" summary="tag custom">
+      <created>1651224901775</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1651224901775</updated>
+    </task>
+    <task id="LOCAL-00044" summary="오류 수정">
+      <created>1651225001872</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1651225001872</updated>
+    </task>
+    <task id="LOCAL-00045" summary="오타 수정">
+      <created>1651225153369</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1651225153369</updated>
+    </task>
+    <task id="LOCAL-00046" summary="custom 변경(categories, tags 버튼 눌렀을 때 이동할 수 있도록 설정)">
+      <created>1651225508923</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1651225508923</updated>
+    </task>
+    <task id="LOCAL-00047" summary="custom 변경(categories)">
+      <created>1652096208604</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1652096208604</updated>
+    </task>
+    <task id="LOCAL-00048" summary="custom 변경(categories)">
+      <created>1652096676486</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1652096676486</updated>
+    </task>
+    <task id="LOCAL-00049" summary="custom 변경(categories)">
+      <created>1652342057412</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1652342057412</updated>
+    </task>
+    <task id="LOCAL-00050" summary="custom 변경">
+      <created>1652342318452</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1652342318452</updated>
+    </task>
+    <task id="LOCAL-00051" summary="custom 변경">
+      <created>1674398935905</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1674398935905</updated>
+    </task>
+    <task id="LOCAL-00052" summary="custom 변경">
+      <created>1674700075417</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1674700075417</updated>
+    </task>
+    <task id="LOCAL-00053" summary="custom 변경">
+      <created>1674701042601</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1674701042602</updated>
+    </task>
+    <task id="LOCAL-00054" summary="custom 변경">
+      <created>1674701538475</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1674701538475</updated>
+    </task>
+    <task id="LOCAL-00055" summary="젯슨나노 프로젝트 포스팅">
+      <created>1676713573018</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1676713573018</updated>
+    </task>
+    <task id="LOCAL-00056" summary="젯슨나노 프로젝트 포스팅(수정)">
+      <created>1676713689643</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1676713689643</updated>
+    </task>
+    <task id="LOCAL-00057" summary="젯슨나노 프로젝트 포스팅">
+      <created>1676714538524</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1676714538524</updated>
+    </task>
+    <task id="LOCAL-00058" summary="젯슨나노 프로젝트 포스팅(수정)">
+      <created>1676714675586</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1676714675586</updated>
+    </task>
+    <task id="LOCAL-00059" summary="젯슨나노 프로젝트 포스팅">
+      <created>1676715108679</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1676715108679</updated>
+    </task>
+    <task id="LOCAL-00060" summary="젯슨나노 프로젝트 포스팅">
+      <created>1676715692413</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1676715692413</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="revise category" />
+    <MESSAGE value="PaperReview_CNN 관련 Posting upload" />
+    <MESSAGE value="PaperReview_CNN 관련 Posting 수정" />
+    <MESSAGE value="내용수정" />
+    <MESSAGE value="내용 수정" />
+    <MESSAGE value="nav list 수정 및 categoty 추가" />
+    <MESSAGE value="tag activation" />
+    <MESSAGE value="toc 수정" />
+    <MESSAGE value="구성 수정 테스트" />
+    <MESSAGE value="구성 수정" />
+    <MESSAGE value="카테고리 수정" />
+    <MESSAGE value="test" />
+    <MESSAGE value="custom 수정" />
+    <MESSAGE value="custom 수정 (tag활성화)" />
+    <MESSAGE value="custom 수정 (사라진 카테고리 찾기)" />
+    <MESSAGE value="custom 수정 (tag 활성화)" />
+    <MESSAGE value="custom 수정 (사라진 category 복구)" />
+    <MESSAGE value="tag custom" />
+    <MESSAGE value="오류 수정" />
+    <MESSAGE value="오타 수정" />
+    <MESSAGE value="custom 변경(categories, tags 버튼 눌렀을 때 이동할 수 있도록 설정)" />
+    <MESSAGE value="custom 변경(categories)" />
+    <MESSAGE value="custom 변경" />
+    <MESSAGE value="젯슨나노 프로젝트 포스팅(수정)" />
+    <MESSAGE value="젯슨나노 프로젝트 포스팅" />
+    <option name="LAST_COMMIT_MESSAGE" value="젯슨나노 프로젝트 포스팅" />
+  </component>
+</project>

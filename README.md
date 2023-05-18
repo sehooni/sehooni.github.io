@@ -1,1 +1,0 @@
-# sehooni.github.io
