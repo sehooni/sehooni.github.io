@@ -3,8 +3,8 @@
 
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
@@ -12,57 +12,7 @@
   <head>
     {% include head.html %}
     {% include head/custom.html %}
-    {% if page.use_math %}
-      {% include mathjax_support.html %}
-    {% endif %}
-
-    <!-- Noto Sans KR -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-
-    <!-- NanumGothic -->
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
-
-    <!-- NanumGothicCoding -->
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-coding.css" rel="stylesheet">
-
-    <!-- Gowun Dodum -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-
-    <!-- Ubuntu Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
-    <style>
-      ::-webkit-scrollbar{
-        width: 13px;
-      }
-      ::-webkit-scrollbar-track {
-        background-color:#dededee2;
-        border-radius: 16px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background-color:#bababad5;
-        border-radius: 16px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #c42f95d9;
-      }
-      ::-webkit-scrollbar-button:start:decrement,
-      ::-webkit-scrollbar-button:end:increment
-      {
-          width:12px;
-          height:12px;
-          background:transparent;
-      }
-      /* 사이드바 스크롤바 없애기 */
-      .sidebar{ -ms-overflow-style: none; }
-      .sidebar::-webkit-scrollbar{ display:none; }
-    </style>
-
+    <script data-ad-client="ca-pub-1874291381625019" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
@@ -80,10 +30,6 @@
       </div>
     {% endif %}
 
-    <aside class="sidebar__top">
-    <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
-    </aside>
-    
     <div id="footer" class="page__footer">
       <footer>
         {% include footer/custom.html %}
@@ -94,9 +40,4 @@
     {% include scripts.html %}
 
   </body>
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7973911736624397"
-     crossorigin="anonymous"></script>
 </html>
-
-
