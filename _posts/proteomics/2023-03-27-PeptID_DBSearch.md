@@ -215,7 +215,7 @@ Aver. mass는 탄소 갯수에 따라 질량차(0.x_ or 0._)가 증가하게 됨
 
 Mass of a neutral peptide는 residue mass의 합과 terminating group의 mass의 합으로 표현되며, 이때, masses of the terminating groups는 N-terminus의 H와 C-terminus의 OH를 예로 들 수 있다.
 
-아미노산의 residue mass list는 [다음 링크]([http://www.matrixscience.com/help/aa_help.html](http://www.matrixscience.com/help/aa_help.html))를 통해 보다 자세히 확인할 수 있다. 
+아미노산의 residue mass list는 [다음 링크](http://www.matrixscience.com/help/aa_help.html)를 통해 보다 자세히 확인할 수 있다. 
 
 ## E.g. PEP
 
