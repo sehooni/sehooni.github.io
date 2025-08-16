@@ -124,15 +124,15 @@ author:
     - #label: "Twitter"
       #icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
-    - label: "Linkedin"
-      icon: "fab fa-fw fa-linkedin-square"
-      url: "www.linkedin.com/in/sehoon-park-575b8b22a"
+    - #label: "Facebook"
+      #icon: "fab fa-fw fa-facebook-square"
+      # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/sehooni"
-#    - label: "Instagram"
-#      icon: "fab fa-fw fa-instagram"
-#      url: "https://instagram.com/p_sehooni"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/p_sehooni"
 
 # Site Footer
 footer:
