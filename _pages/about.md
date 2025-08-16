@@ -5,8 +5,9 @@ excerpt: "About Me"
 search: true
 last_modified_at: 2025-08-16T20:35:00-20:36:00
 toc: true
+toc_sticky: true
 layout: single
-classes: wide
+# classes: wide
 ---
 
 ## Profile
