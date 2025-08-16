@@ -118,9 +118,9 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:74sehoon@gmail.com
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+    - label: "Linkedin"
+      icon: "fas fa-fw fa-linkedin"
+      url: "www.linkedin.com/in/sehoon-park-575b8b22a"
     - #label: "Twitter"
       #icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
