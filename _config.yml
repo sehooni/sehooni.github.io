@@ -118,9 +118,9 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:74sehoon@gmail.com
-    - label: "Linkedin"
-      icon: "fas fa-fw fa-linkedin"
-      url: "https:://www.linkedin.com/in/sehoon-park-575b8b22a"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      # url: "https://your-website.com"
     - #label: "Twitter"
       #icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -130,9 +130,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/sehooni"
-    # - label: "Instagram"
-    #   icon: "fab fa-fw fa-instagram"
-    #   url: "https://instagram.com/p_sehooni"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/sehoon-park-575b8b22a/?locale=ko_KR"
 
 # Site Footer
 footer:
