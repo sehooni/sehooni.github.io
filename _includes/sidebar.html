@@ -23,8 +23,7 @@
       {% for category in site.categories %}
       <li>
         <a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}" class="">
-          <span class="nav__sub-title">{{ category[0] }}</span>
-          <span class="count" style="font-size: 0.8em; color: #888;">{{ category[1].size }}</span>
+          {{ category[0] }} <span class="count" style="font-size: 0.8em; color: #888;">({{ category[1].size }})</span>
         </a>
       </li>
       {% endfor %}
