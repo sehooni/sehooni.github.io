@@ -16,6 +16,7 @@
 
 .sidebar {
   @include clearfix();
+
   @include breakpoint(max-width $large) {
     /* fix z-index order of follow links */
     position: relative;
@@ -48,7 +49,7 @@
     width: calc(#{$right-sidebar-width} - 1em);
   }
 
-  > * {
+  >* {
     margin-top: 1em;
     margin-bottom: 1em;
   }
@@ -71,7 +72,7 @@
 
   img {
     width: 100%;
-    
+
     &.emoji {
       width: 20px;
       height: 20px;
@@ -95,7 +96,7 @@
       @include clearfix();
       position: -webkit-sticky;
       position: sticky;
-      top: 2em;
+      top: 6em; // Increased top spacing to prevent overlapping
       float: right;
     }
   }
@@ -173,6 +174,7 @@
     margin-bottom: 10px;
   }
 }
+
 .sidebar .author__name {
   font-family: $sans-serif;
   font-size: $type-size-5;
@@ -323,4 +325,3 @@
     margin-right: initial;
   }
 }
-
