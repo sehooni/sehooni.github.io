@@ -1,9 +1,0 @@
-:HL["/_next/static/chunks/2f40a2027cd59172.css","style"]
-:HL["/_next/static/chunks/b9ef641e76e3a351.css","style"]
-:HL["https://user-images.githubusercontent.com/84653623/184535307-4af26d2c-8715-423a-afcb-66e38c8c8ae0.png","image"]
-:HL["https://user-images.githubusercontent.com/84653623/184535476-c8813eea-d392-415e-80a3-79a30ff3f984.png","image"]
-:HL["https://user-images.githubusercontent.com/84653623/184535518-7fc2e293-309b-407f-8919-989c84997205.png","image"]
-:HL["https://user-images.githubusercontent.com/84653623/184535645-962b29f0-68a7-4611-8f3f-f6d5c0d26273.png","image"]
-:HL["https://user-images.githubusercontent.com/84653623/184580323-573f7078-a6c8-45ba-8d05-b8431b1f6a23.png","image"]
-:HL["https://user-images.githubusercontent.com/84653623/184580759-0ac9c5ce-5e5f-40da-95ae-d8c175a2902f.png","image"]
-0:{"buildId":"8lJiHtAmlyU3nNFMbG8_k","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"2022-08-14-AI_Contest","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

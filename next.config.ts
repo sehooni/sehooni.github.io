@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+import path from 'path';
+
 const nextConfig: NextConfig = {
   output: 'export',
   images: {
@@ -8,7 +10,7 @@ const nextConfig: NextConfig = {
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': __dirname,
+      '@': path.join(process.cwd()),
     };
     return config;
   },
