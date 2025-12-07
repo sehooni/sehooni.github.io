@@ -1,0 +1,12 @@
+:HL["/_next/static/chunks/2f40a2027cd59172.css","style"]
+:HL["/_next/static/chunks/b9ef641e76e3a351.css","style"]
+:HL["https://user-images.githubusercontent.com/84653623/176131250-99e46527-ee45-433d-a4e7-7f4a4cf0a3da.png","image"]
+:HL["https://user-images.githubusercontent.com/84653623/176365710-8e31e48c-a3e7-427f-a5b1-ca8fe1112ddc.png","image"]
+:HL["https://user-images.githubusercontent.com/84653623/176131466-e203a847-708e-4c1b-b027-3ec6f0371cb0.png","image"]
+:HL["https://user-images.githubusercontent.com/84653623/176131541-797e4638-e06b-436a-97df-ef6c1ba35aed.png","image"]
+:HL["https://user-images.githubusercontent.com/84653623/176131642-01022619-70c4-4107-a74d-5f2a614a5397.png","image"]
+:HL["https://user-images.githubusercontent.com/84653623/176131743-829acc9d-b096-4b68-ae53-22d5ad56676a.png","image"]
+:HL["https://user-images.githubusercontent.com/84653623/176131840-18433d00-6d2a-438f-b2a2-0b68700df164.png","image"]
+:HL["https://user-images.githubusercontent.com/84653623/176131892-cf631a81-eb9e-4fe6-ad51-8771e94812d2.png","image"]
+:HL["https://user-images.githubusercontent.com/84653623/176131944-0b3efa54-32cc-4799-86b0-9b6f1f27bbff.png","image"]
+0:{"buildId":"8lJiHtAmlyU3nNFMbG8_k","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"slug","paramType":"d","paramKey":"2022-06-29-ppt_of_projects","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

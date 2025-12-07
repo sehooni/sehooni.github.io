@@ -1,0 +1,157 @@
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            ⭐ <span>TOTAL POSTS : <span> {{sum}} <span>posts ⭐
+      </li>
+      </li>
+      <!-- <li>
+            <br>
+            <img src="https://hits.sh/sehooni.github.io.svg?view=today-total&label=visitors&color=3311cc"style="font-size:1.0em;">
+      </li> -->
+      <li>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Paper Review</style></span>
+        <!--span 태그로 카테고리들을 크게 분류 -->
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--PaperReview 카테고리 글들을 모아둔 페이지인 /categories/PaperReview 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                {% for category in site.categories %}
+                    {% if category[0] == "PaperReview" %}
+                        <li><a href="/categories/PaperReview" class="" style="font-size:1.2em;">PaperReview</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "PaperCode" %}
+                        <li><a href="/categories/PaperCode" class="" style="font-size:1.2em;">Code Implementation </style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Study</style></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "proteomics" %}
+                        <li><a href="/categories/proteomics" class=""style="font-size:1.2em;">Proteomics</style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Data Structure" %}
+                        <li><a href="/categories/DataStructure" class=""style="font-size:1.2em;">Data Structure</style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "NLP" %}
+                        <li><a href="/categories/NLP" class=""style="font-size:1.2em;">NLP</style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "ML" %}
+                        <li><a href="/categories/ML" class=""style="font-size:1.2em;">ML</style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "DL" %}
+                        <li><a href="/categories/DL" class=""style="font-size:1.2em;">DL</style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Linux" %}
+                        <li><a href="/categories/Linux" class=""style="font-size:1.2em;">Linux</style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "algorithms" %}
+                        <li><a href="/categories/algorithms" class=""style="font-size:1.2em;">Algorithms</style><style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Robotics" %}
+                        <li><a href="/categories/Robotics" class="" style="font-size:1.2em;">Robotics</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Projects</style></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "project" %}
+                        <li><a href="/categories/project" class="" style="font-size:1.2em;">Projects</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Neural_Style_Transfer" %}
+                        <li><a href="/categories/Neural_Style_Transfer" class="" style="font-size:1.2em;">Neural Style Transfer</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Jetson" %}
+                        <li><a href="/categories/Jetson" class="" style="font-size:1.2em;">Jetson</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Capstone" %}
+                        <li><a href="/categories/Capstone" class="" style="font-size:1.2em;">Capstone</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Contest" %}
+                        <li><a href="/categories/Contest" class="" style="font-size:1.2em;">Contest</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">Blog DEV</style></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Blog" %}
+                        <li><a href="/categories/Blog" class="" style="font-size:1.2em;">Jekyll GIT-blog</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title" style="font-family:'MaruBuri-Regular'; font-size:1em;">ETC</style></span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "ETC" %}
+                        <li><a href="/categories/ETC" class="" style="font-size:1.2em;">ETC</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "git" %}
+                        <li><a href="/categories/git" class="" style="font-size:1.2em;">git</style> <style="">({{category[1].size}})</style></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+  </ul>
+</nav>
+

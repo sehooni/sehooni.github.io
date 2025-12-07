@@ -1,0 +1,111 @@
+1:"$Sreact.fragment"
+3:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+4:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"ViewportBoundary"]
+b:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"MetadataBoundary"]
+d:I[68027,[],"default"]
+:HL["/_next/static/chunks/8fa8e9b5e3e9b2cd.css","style"]
+0:{"P":null,"b":"oAIH0-g3w6LOdbw_0qDiA","c":["","posts","2023-02-16-Jetson_Yahboom",""],"q":"","i":false,"f":[[["",{"children":["posts",{"children":[["id","2023-02-16-Jetson_Yahboom","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/8fa8e9b5e3e9b2cd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/796e69ae18b2784c.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ko","children":["$","body",null,{"className":"antialiased bg-white dark:bg-black text-gray-900 dark:text-white flex min-h-screen","children":["$L2",["$","main",null,{"className":"flex-1 min-w-0","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/_next/static/chunks/a8f82a9835eb887b.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$@a"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$@c"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+e:I[22016,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],""]
+2:["$","aside",null,{"className":"w-64 h-screen sticky top-0 bg-gray-50 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 p-6 overflow-y-auto hidden lg:block","children":[["$","div",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-2xl font-bold font-sans tracking-tight","children":["$","$Le",null,{"href":"/","children":"Sehoon's Workspace"}]}],["$","p",null,{"className":"text-sm text-gray-500 mt-2","children":"Tech & Study Blog"}]]}],["$","nav",null,{"className":"space-y-8","children":[["$","div",null,{"children":[["$","h3",null,{"className":"text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2","children":"Menu"}],["$","ul",null,{"className":"space-y-1","children":[["$","li",null,{"children":["$","$Le",null,{"href":"/","className":"block py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors text-sm","children":"Recent Posts"}]}],["$","li",null,{"children":["$","$Le",null,{"href":"/about","className":"block py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors text-sm","children":"About"}]}]]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2","children":"Categories"}],["$","ul",null,{"className":"space-y-1","children":[["$","li","proteomics",{"children":["$","$Le",null,{"href":"/category/proteomics","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"proteomics"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",9,")"]}]]}]}],["$","li","NLP",{"children":["$","$Le",null,{"href":"/category/nlp","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"NLP"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",6,")"]}]]}]}],["$","li","Blog",{"children":["$","$Le",null,{"href":"/category/blog","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Blog"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",5,")"]}]]}]}],["$","li","Jetson",{"children":["$","$Le",null,{"href":"/category/jetson","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Jetson"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",4,")"]}]]}]}],["$","li","PaperReview",{"children":["$","$Le",null,{"href":"/category/paperreview","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"PaperReview"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",4,")"]}]]}]}],["$","li","Neural_Style_Transfer",{"children":["$","$Le",null,{"href":"/category/neural_style_transfer","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Neural_Style_Transfer"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",3,")"]}]]}]}],["$","li","jekyll",{"children":["$","$Le",null,{"href":"/category/jekyll","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"jekyll"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",2,")"]}]]}]}],["$","li","ML",{"children":["$","$Le",null,{"href":"/category/ml","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":["$Lf","$L10"]}]}],"$L11","$L12","$L13","$L14","$L15","$L16","$L17"]}]]}]]}],"$L18"]}]
+f:["$","span",null,{"children":"ML"}]
+10:["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",2,")"]}]
+11:["$","li","algorithms",{"children":["$","$Le",null,{"href":"/category/algorithms","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"algorithms"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+12:["$","li","Contest",{"children":["$","$Le",null,{"href":"/category/contest","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Contest"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+13:["$","li","Capstone",{"children":["$","$Le",null,{"href":"/category/capstone","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Capstone"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+14:["$","li","Linux",{"children":["$","$Le",null,{"href":"/category/linux","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Linux"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+15:["$","li","ETC",{"children":["$","$Le",null,{"href":"/category/etc","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"ETC"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+16:["$","li","DataStructure",{"children":["$","$Le",null,{"href":"/category/datastructure","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"DataStructure"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+17:["$","li","DL",{"children":["$","$Le",null,{"href":"/category/dl","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"DL"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+18:["$","div",null,{"className":"mt-8 pt-8 border-t border-gray-200 dark:border-gray-800","children":["$","div",null,{"className":"flex space-x-4"}]}]
+19:T1be2,<h1>1. Yahboom Jetson Nano Linux OS 설정</h1>
+<p>중국산 젯슨나노, 즉 야붐 제품을 사용할 경우, 기존과 달리 USB내에 os를 설치하고 이어서 기기 내 EMMC에도 OS를 설치해줘야 한다.</p>
+<p>이때 usb내의 OS와 emmc에 flash하는 os의 jetpack의 version을 동일하게 설정해줘야한다.</p>
+<p>(참고 사이트 1번과 2번을 보면서 설치하면 된다.)</p>
+<p><strong>그리고 리눅스로 sudo apt-get update를 진행하거나 (블라블라~)</strong></p>
+<p><strong>아무튼 명령어(install, update, upgrade, etc) 입력해줄 때, 네트워크 설정과 날짜와 시간이 올바르게 설정되어 있는지 확인해줘야 한다!!! 이거 안되어 있으면 아무리 명령해도 진행 안됩니다.</strong></p>
+<h2>1. emmc에 os 설치하기</h2>
+<p>본 과정에서는 VM Ware 를 이용하여 Jetson Nano 내에 OS를 입력해줘야한다.</p>
+<p>아래의 순서대로 진행하여 본다.</p>
+<h3>vm ware안에서 NVIDIA SDK를 다운받아 준다.</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853912-cb2d14e0-52c9-4fa0-989e-167c4c78892b.png" alt="10"></p>
+<h3>Download로 이동하여 다운받은 파일 확인 및 설치 실행.</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853914-cd1979b4-0081-4d63-8ade-63f7d0d30495.png" alt="11"></p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853917-b3e7f1bb-9cf2-4a8c-b165-09bead7be84f.png" alt="12"></p>
+<p>다운 받는 과정에서 오류가 날 경우 다음과 같은 명령어를 입력하여 설치를 진행하여 준다.</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853911-7d1deaea-6981-4e9b-a5db-fa4dc41ab246.png" alt="9"></p>
+<h3>SDK manager를 검색하여 실행. 이후 nvidia 계정으로 로그인 후 버전을 설정해주면 되는데, yahboom 공홈에 업로드 되어 있는 이미지의 jetpack 버전은 4.4.1이므로 이와 동일한 버전으로 flash해줘야한다.</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853908-c80e1390-05ba-4d72-95b2-ffc3600bfed8.png" alt="5"></p>
+<p>범퍼를 꽂아서 젯슨나노에 입력이 가능하도록 한다. 이후 vm ware가 있는 컴퓨터와 젯슨나노를 연결하여 준다.</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853922-77ffe7f2-c925-4121-9b00-c6c1e4c8e711.png" alt="19"></p>
+<p>컴퓨터와 연결하는 선은 흰 선 부분과 같다.</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853909-db319267-facc-4aa3-b975-7cbd9db94fd5.png" alt="7"></p>
+<p>연결하면 다음과 같은 화면이 뜨는데 vm으로 연결을 진행한다.</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853910-c37f7594-3f46-4e17-9c9b-03f05791498b.png" alt="8"></p>
+<p>Nvidia 공홈에서 회원가입 후 로그인 진행</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853918-7b82df32-ada5-40be-958c-c9896080d73c.png" alt="13"></p>
+<p>이때 리눅스 젯팩 버전을 4.4.1로 설정해줘야 한다.</p>
+<p>Jetpack version이 안 뜰 경우, 터미널에서 <strong>sdkmanager --archivedversions</strong>로 검색을 해주면 해당하는 버전을 선택할 수 있고 이를 통해 바로 접속이 가능하다.</p>
+<p>이후 젯슨나노는 아래와 같이 선택하여 주고, 위와 같이 3가지만 선택하여 준다.</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853919-d9f34231-74dc-4b4e-8322-0ebc0aedbc03.png" alt="14"></p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853921-47f60827-a140-4fbf-9bd9-ca73fcf18eb7.png" alt="18"></p>
+<p>이후 다음과 같은 화면이 뜨는데 메뉴얼로 셋업을 변경하고 진행하면 된다.</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853925-74e9bd3f-191d-4f1c-bada-7879b5a29b11.png" alt="MicrosoftTeams-image"></p>
+<p>설치가 다 되면 다음과 같은 화면이 뜬다!</p>
+<p>설치가 완료되면 범퍼를 다시 빼주고, emmc로 부팅을 하여준다.</p>
+<h2>2. usb에 flash하기</h2>
+<h3>yahboom 공식 홈페이지 왼쪽 하단에서 다음의 파일 다운로드.</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853900-b1381c25-a442-4aef-a859-ccec211246a0.png" alt="1"></p>
+<p>usb 부팅을 위한 파일</p>
+<h3>구글 드라이브에서 다음의 파일 다운로드.</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853903-9d619c65-ad8f-4216-a91a-20922b5320b5.png" alt="2"></p>
+<h3>부팅 usb 내부 초기화.</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853904-7b9f50a6-d440-4eec-b37e-d2ce10d2fc42.png" alt="3"></p>
+<h3>etcher 프로그램을 이용하여 os 파일 입력하기.</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853906-ddd50dcb-6c40-41b0-8572-bbdee429d5dc.png" alt="4"></p>
+<ul>
+<li>flash가 완료되면 수 많은 페이지가 뜨는데 무시하고 usb 제거해주면 된다.</li>
+</ul>
+<h2>3. emmc에서 usb로 부팅 바꿔주기</h2>
+<p>다음의 유튜브 영상을 참고하여 그대로 진행한다.</p>
+<p><a href="https://www.youtube.com/watch?v=xwH2qfsvGio">https://www.youtube.com/watch?v=xwH2qfsvGio</a></p>
+<h3>jetson nano 내에서 입력하여 진행하면 된다.</h3>
+<p>yahboom jetson nano는 emmc에 올라간 부트로더 extlinux가 /dev/emmc블라블라 ..</p>
+<p>그러니까 emmc를 루트파일시스템으로 잡고 있었는데</p>
+<p>이걸 usb에서 부팅할수 있도록 /boot/extlinux/extlinux.conf에서 루트파일시스템을 emmc가 아닌 /dev/sda1(위 영상의 경우)로 바꿔주면 된다고 한다.</p>
+<p>문제는 2가지가 있었는데</p>
+<ol>
+<li>emmc에 깔린 jetpack 버전과 usb에 담긴 jetpack 버전이 같아야 한다.</li>
+<li>꽂은 usb가 /dev/sda1로 읽히는지 확인</li>
+</ol>
+<p><strong>2번의 경우, df를 입력하여주면 확인할 수 있다.</strong></p>
+<h3><strong>입력 순서</strong></h3>
+<pre><code class="language-jsx">sudo apt-get update
+sudo apt-cache show nvidia-jetpack
+# 위에 코드로 버전 확인
+cd /boot/extlinux/
+
+sudo cp extlinux.conf extlinux.conf.boot_emmc_backup
+
+ls
+sudo vim extlinux.conf
+
+</code></pre>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853924-b24752a4-6d23-4c70-9fba-dd3824d141f4.png" alt="20"></p>
+<p>이후 sudo reboot 하면 os가 완벽하게 설치된다!</p>
+<p>이후 id는 nano, pw는 yahboom으로 설정된다.</p>
+<h1>글을 마무리하며,,</h1>
+<p>여기까지 따라오면 우선 yahboom내 linux os를 설치할 수 있게 됩니다.
+얼른 포스팅 했어야 했는데, 현생이 바쁘다보니....
+오늘 프로젝트 포스팅 마무리하고 다른 공부들도 올려야겠습니다.</p>
+<p>다음 포스팅에서는 yolov5를 진행하기 위한 Jetson Nano 내 CUDA BUILD와 관련한 이야기를 해보도록 하겠습니다.
+PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다.</p>
+5:["$","div",null,{"className":"relative","children":[["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","header",null,{"className":"mb-10 not-prose border-b border-gray-100 dark:border-gray-800 pb-8","children":[["$","div",null,{"className":"mb-4 text-sm text-gray-500 flex items-center space-x-2","children":[[["$","$Le",null,{"href":"/category/jetson","className":"font-medium text-blue-600 hover:underline","children":"Jetson"}],["$","span",null,{"children":"•"}]],["$","time",null,{"children":"$undefined"}]]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4","children":"[Jetson] Jetson Nano를 이용한 Yolov5 활용기 (1) - linux os 설정"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$19"}}]]}],"$L1a"]}]
+1b:I[50718,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],"default"]
+1a:["$","$L1b",null,{}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1c:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"IconMark"]
+c:[["$","title","0",{"children":"[Jetson] Jetson Nano를 이용한 Yolov5 활용기 (1) - linux os 설정"}],["$","meta","1",{"name":"description","content":"yahboom Jetson Nano Linux OS 설정"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L1c","3",{}]]
+8:null

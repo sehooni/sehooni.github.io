@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],""]
+4:I[50718,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],"default"]
+5:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+3:Tcc9,<h1>문서 분류 모델 정리</h1>
+<p>자연어처리의 예제 중 하나인 문서 분류 모델을 구현하기 전에, 우선 문서 분류 모델에 대해 알아보자.</p>
+<p><strong>문서 분류</strong>(document classification)란 문서가 주어졌을 때 해당 문서의 범주를 분류하는 과제이다.</p>
+<p>본 과제의 예시를 살펴보면</p>
+<ul>
+<li>
+<p>뉴스를 입력하고 정치, 경제, 연예 등 범주를 맞추기</p>
+</li>
+<li>
+<p>영화 리뷰가 긍정/부정 등 어떤 <strong>극성</strong> (polarity)을 가지는지 분류하기</p>
+</li>
+</ul>
+<p>이번 실습에서 사용할 데이터는 네이버 영화 리뷰 말뭉치(NSMC)이다.
+이번 실습에서 만들 문서 분류 모델은 영화 리뷰 문장을 입력으로 하고 해당 문장이 속한 극성의 확률을 출력한다.
+문서 분류 모델의 출력은 확률값이므로 적당한 후처리 과정을 거쳐 <strong>긍정, 부정처럼 사람이 보기에 좋은 형태로 가공한다.</strong>
+이를 <strong>감성 분석</strong> (sentiment analysis)라고 한다.</p>
+<h2>모델 구조</h2>
+<p>본 chapter에서 사용하는 문서 분류 모델은 입력 문장을 토큰화한 뒤 문장 시작과 끝을 알리는 스페셜 토큰 <strong>CLS</strong>와 <strong>SEP</strong>를 각각 원래 토큰 시퀀스 앞뒤에 붙인다.</p>
+<p>이를 BERT 모델에 입력하고 문장 수준의 벡터(<code>pooler_output</code>)를 뽑는다.
+여기에 작은 추가 모듈을 덧붙여 모델 전체의 출력이 <strong>[해당 문장이 긍정일 확률, 해당 문장이 부정일 확률]</strong> 형태가 되도록 한다.</p>
+<h3>그림 1. 문서 분류</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/156362925-f4488adb-857f-4b49-92e4-a6db61554b9f.png" alt="문서 분류"></p>
+<h2>태스크 모듈</h2>
+<p><code>pooler_output</code> 벡터 뒤에 붙는 추가 모듈의 구조는 아래의 그림과 동일하다. 우선 <code>pooler_output</code>벡터 <strong>(그림에서 x)</strong> 에 드롭아웃을 적용한다.
+드롭아웃을 적용한다는 의미는 그림에서 입력 벡터 x의 768개 요솟값 가운데 일부를 랜덤으로 0으로 바꿔 이후 계산에 포함하지 않도록 하는 것이다.</p>
+<h3>그림 2. 문서 분류 태스크 모듈</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/156363232-3c63964a-6ad9-4dd8-b4cb-2424a31a8ae7.png" alt="문서 분류 태스크 모듈"></p>
+<p>그 다음 가중치 행렬을 곱해 <code>pooler_output</code>을 분류해야 할 범주 수만큼의 차원을 갖는 벡터로 변환한다 <strong>(그림에서 net)</strong>.
+만일 <code>pooler_output</code>벡터가 768차원이고 분류 대상 범주 수가 2개(<strong>긍정, 부정</strong>)라면 가중치 행렬의 크기는 768 * 2이 된다.
+여기에 소프트맥스 함수를 취하면 모델의 최종 출력 <strong>(그림에서 y)</strong> 이 된다.</p>
+<p>이렇게 만든 모델의 최종 출력과 정답 레이블을 비교해 모델 출력이 정답 레이블과 최대한 같아지도록 태스크 모듈과 BERT 레이어를 포함한 모델 전체를 업데이트 한다.
+이를 <strong>파인튜닝</strong>(fine-tuning)이라고 한다.</p>
+0:{"buildId":"oAIH0-g3w6LOdbw_0qDiA","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"relative","children":[["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","header",null,{"className":"mb-10 not-prose border-b border-gray-100 dark:border-gray-800 pb-8","children":[["$","div",null,{"className":"mb-4 text-sm text-gray-500 flex items-center space-x-2","children":[[["$","$L2",null,{"href":"/category/nlp","className":"font-medium text-blue-600 hover:underline","children":"NLP"}],["$","span",null,{"children":"•"}]],["$","time",null,{"children":"2022-03-25"}]]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4","children":"[NLP] 문서 분류 모델"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]]}],["$","$L4",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/a8f82a9835eb887b.js","async":true}]],["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],"loading":null,"isPartial":false}
+7:null

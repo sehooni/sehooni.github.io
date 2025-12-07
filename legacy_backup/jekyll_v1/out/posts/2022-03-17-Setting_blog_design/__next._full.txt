@@ -1,0 +1,96 @@
+1:"$Sreact.fragment"
+3:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+4:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"ViewportBoundary"]
+b:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"MetadataBoundary"]
+d:I[68027,[],"default"]
+:HL["/_next/static/chunks/8fa8e9b5e3e9b2cd.css","style"]
+0:{"P":null,"b":"oAIH0-g3w6LOdbw_0qDiA","c":["","posts","2022-03-17-Setting_blog_design",""],"q":"","i":false,"f":[[["",{"children":["posts",{"children":[["id","2022-03-17-Setting_blog_design","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/8fa8e9b5e3e9b2cd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/796e69ae18b2784c.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ko","children":["$","body",null,{"className":"antialiased bg-white dark:bg-black text-gray-900 dark:text-white flex min-h-screen","children":["$L2",["$","main",null,{"className":"flex-1 min-w-0","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/_next/static/chunks/a8f82a9835eb887b.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$@a"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$@c"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+e:I[22016,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],""]
+2:["$","aside",null,{"className":"w-64 h-screen sticky top-0 bg-gray-50 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 p-6 overflow-y-auto hidden lg:block","children":[["$","div",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-2xl font-bold font-sans tracking-tight","children":["$","$Le",null,{"href":"/","children":"Sehoon's Workspace"}]}],["$","p",null,{"className":"text-sm text-gray-500 mt-2","children":"Tech & Study Blog"}]]}],["$","nav",null,{"className":"space-y-8","children":[["$","div",null,{"children":[["$","h3",null,{"className":"text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2","children":"Menu"}],["$","ul",null,{"className":"space-y-1","children":[["$","li",null,{"children":["$","$Le",null,{"href":"/","className":"block py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors text-sm","children":"Recent Posts"}]}],["$","li",null,{"children":["$","$Le",null,{"href":"/about","className":"block py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors text-sm","children":"About"}]}]]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2","children":"Categories"}],["$","ul",null,{"className":"space-y-1","children":[["$","li","proteomics",{"children":["$","$Le",null,{"href":"/category/proteomics","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"proteomics"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",9,")"]}]]}]}],["$","li","NLP",{"children":["$","$Le",null,{"href":"/category/nlp","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"NLP"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",6,")"]}]]}]}],["$","li","Blog",{"children":["$","$Le",null,{"href":"/category/blog","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Blog"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",5,")"]}]]}]}],["$","li","Jetson",{"children":["$","$Le",null,{"href":"/category/jetson","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Jetson"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",4,")"]}]]}]}],["$","li","PaperReview",{"children":["$","$Le",null,{"href":"/category/paperreview","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"PaperReview"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",4,")"]}]]}]}],["$","li","Neural_Style_Transfer",{"children":["$","$Le",null,{"href":"/category/neural_style_transfer","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Neural_Style_Transfer"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",3,")"]}]]}]}],["$","li","jekyll",{"children":["$","$Le",null,{"href":"/category/jekyll","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"jekyll"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",2,")"]}]]}]}],["$","li","ML",{"children":["$","$Le",null,{"href":"/category/ml","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":["$Lf","$L10"]}]}],"$L11","$L12","$L13","$L14","$L15","$L16","$L17"]}]]}]]}],"$L18"]}]
+f:["$","span",null,{"children":"ML"}]
+10:["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",2,")"]}]
+11:["$","li","algorithms",{"children":["$","$Le",null,{"href":"/category/algorithms","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"algorithms"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+12:["$","li","Contest",{"children":["$","$Le",null,{"href":"/category/contest","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Contest"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+13:["$","li","Capstone",{"children":["$","$Le",null,{"href":"/category/capstone","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Capstone"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+14:["$","li","Linux",{"children":["$","$Le",null,{"href":"/category/linux","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Linux"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+15:["$","li","ETC",{"children":["$","$Le",null,{"href":"/category/etc","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"ETC"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+16:["$","li","DataStructure",{"children":["$","$Le",null,{"href":"/category/datastructure","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"DataStructure"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+17:["$","li","DL",{"children":["$","$Le",null,{"href":"/category/dl","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"DL"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+18:["$","div",null,{"className":"mt-8 pt-8 border-t border-gray-200 dark:border-gray-800","children":["$","div",null,{"className":"flex space-x-4"}]}]
+1a:I[50718,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],"default"]
+19:Tcb4,<p>블로그를 setting하는데 거의 3일을 투자한 것 같네요.</p>
+<p>이 블로그가 메인이 아닌, 공부내용을 업로드하면서 git과 css를 동시에 짬내서 공부하는 느낌인지라..!!</p>
+<p>또 개강도 했고, 대학원 준비도 하고... 이래저래 정신이 없었지만</p>
+<p>거두절미하고 포스팅을 이어나가 보도록 하겠습니다.</p>
+<p>다른 분들의 repo도 참고하고, 또 기본의 repo를 보면서 이것저것 setting을 진행하였습니다! :)</p>
+<h1>1. minimal-mistakes-theme에서 back to top 버튼 만들기</h1>
+<h2>1.1. <code>_sass/minimal-mistakes/_sidebar.scss</code>에서 아래 내용 삽입</h2>
+<p>삽입할 내용은 다음과 같아요! 다음 내용의 수정을 통해서 위치 조정 또한 가능하답니다.</p>
+<pre><code class="language-scss">.sidebar__top {
+  position: fixed;
+  bottom: 1.5em;
+  right: 2em;
+  z-index: 10;
+}
+</code></pre>
+<p><strong>삽입 후</strong>의 모습은 다음과 같아요.</p>
+<p><code>_sidebar.scss</code>를 보면 다음과 같이 ========= 부분 <strong>아래</strong>에 추가해주면 된다는 점.</p>
+<pre><code class="language-scss">/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+
+/*
+   Default
+   ========================================================================== */
+
+.sidebar__top {
+  position: fixed;
+  bottom: 1.5em;
+  right: 2em;
+  z-index: 10;
+}
+
+.sidebar {
+  @include clearfix();
+  // @include breakpoint(max-width $large) {
+  //   /* fix z-index order of follow links */
+  //   position: relative;
+  //   z-index: 10;
+  //   -webkit-transform: translate3d(0, 0, 0);
+  //   transform: translate3d(0, 0, 0);
+  // }
+  --생략--
+</code></pre>
+<h2>1.2. <code>_layouts/default.html</code>에 내용 삽입</h2>
+<p>삽입할 내용 부분</p>
+<pre><code class="language-html">&#x3C;aside class="sidebar__top">
+&#x3C;a href="#site-nav"> &#x3C;i class="fas fa-angle-double-up fa-2x">&#x3C;/i>&#x3C;/a>
+&#x3C;/aside>
+</code></pre>
+<p><strong>삽입 후</strong>의 모습입니다.</p>
+<p><code>&#x3C;div id="footer" class="page__footer"></code> 의 바로 <strong>위</strong>에 추가하면 되구요!</p>
+<pre><code class="language-html">--생략--
+{% raw %}
+    {% endif %}
+    &#x3C;aside class="sidebar__top">
+    &#x3C;a href="#site-nav"> &#x3C;i class="fas fa-angle-double-up fa-2x">&#x3C;/i>&#x3C;/a>
+    &#x3C;/aside>
+    &#x3C;div id="footer" class="page__footer">
+{% endraw %}
+--생략--
+</code></pre>
+<h2>1.3. 확인</h2>
+<p>아래 이미지처럼 생긴 top 버튼이 생긴 것을 확인 할 수 있습니다. 다른 친구들보다는 매우 간단한 작업이었던...</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/158626167-9f246219-69cd-429c-b6e3-ccd1920e2a93.png" alt="back_to_top"></p>
+<p>내용이 길어져서 섹션을 나눠서 다음 포스팅에서 또 다른 설정하기를 설명드리도록 하겠습니다!</p>
+<p>모두들 즐코하는 하루 보내세요 :P</p>
+<h3>참고</h3>
+<p>[1] <a href="https://github.com/mmistakes/minimal-mistakes/issues/1731">https://github.com/mmistakes/minimal-mistakes/issues/1731</a></p>
+5:["$","div",null,{"className":"relative","children":[["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","header",null,{"className":"mb-10 not-prose border-b border-gray-100 dark:border-gray-800 pb-8","children":[["$","div",null,{"className":"mb-4 text-sm text-gray-500 flex items-center space-x-2","children":[[["$","$Le",null,{"href":"/category/blog","className":"font-medium text-blue-600 hover:underline","children":"Blog"}],["$","span",null,{"children":"•"}]],["$","time",null,{"children":"$undefined"}]]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4","children":"[Blog] 블로그 setting 하기(back_to_top)"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$19"}}]]}],["$","$L1a",null,{}]]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1b:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"IconMark"]
+c:[["$","title","0",{"children":"[Blog] 블로그 setting 하기(back_to_top)"}],["$","meta","1",{"name":"description","content":"Blog setting"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L1b","3",{}]]
+8:null

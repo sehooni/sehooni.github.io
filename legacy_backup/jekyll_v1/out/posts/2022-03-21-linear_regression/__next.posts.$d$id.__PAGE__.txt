@@ -1,0 +1,184 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],""]
+7:I[50718,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],"default"]
+8:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+3:T1838,<p>학교 수업으로 타학과 전공인 '인공지능과 딥러닝'을 수강하게 되었다.
+오일석 교수님의 [Machine Learning 기계학습] 을 기반으로 진행되는 강의이다.</p>
+<p>Perceptron을 설명하면서 Linear regression을 직접 코딩을 통해 실습하는 시간을 가졌는데, 아래의 내용은 그 실습 내용을 정리한 것이다.</p>
+<h1>Linear regression</h1>
+<p>Author: Seungjae Lee(이승재)</p>
+<p>모두를 위한 딥러닝을 참고하였습니다.</p>
+<h2>Theoretical Overview</h2>
+<p>$ H(x) = Wx + b $</p>
+<p>$ cost(W, b) = \frac{1}{m} \sum^m_{i=1} \left( H(x^{(i)}) - y^{(i)} \right)^2 $</p>
+<ul>
+<li>$H(x)$: 주어진 $x$ 값에 대해 예측을 어떻게 할 것인가</li>
+<li>$cost(W, b)$: $H(x)$ 가 $y$ 를 얼마나 잘 예측했는가</li>
+</ul>
+<h2>Import</h2>
+<pre><code>import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+</code></pre>
+<h2>For reproducibility</h2>
+<pre><code>torch.manual_seed(1)
+</code></pre>
+<h2>Data</h2>
+<p>다음 예제를 위해 예시 데이터를 사용하여보자.
+(We will use fake data for this example.)</p>
+<pre><code>x_train = torch.FloatTensor([[1], [2], [3]])
+y_train = torch.FloatTensor([[1], [2], [3]])
+print(x_train)
+print(x_train.shape)
+print(y_train)
+print(y_train.shape)
+</code></pre>
+<p>기본적으로 Pytorch는 NCHW 형태이다.</p>
+<h2>Weight Initialization</h2>
+<pre><code>W = torch.zeros(1, requires_grad=True)
+print(W)
+b = torch.zeros(1, requires_grad=True)
+print(b)
+</code></pre>
+<h2>Hypothesis</h2>
+<p>$ H(x) = Wx + b $</p>
+<pre><code>hypothesis = x_train * W + b
+print(hypothesis)
+</code></pre>
+<h2>Cost</h2>
+<p>$ cost(W, b) = \frac{1}{m} \sum^m_{i=1} \left( H(x^{(i)}) - y^{(i)} \right)^2 $</p>
+<pre><code>print(hypothesis)
+print(y_train)
+print(hypothesis - y_train)
+print((hypothesis - y_train) ** 2)
+cost = torch.mean((hypothesis - y_train) ** 2)
+print(cost)
+</code></pre>
+<h2>Gradient Descent</h2>
+<pre><code>optimizer = optim.SGD([W, b], lr = 0.01)
+optimizer.zero_grad()
+cost.backward()
+optimizer.step()
+print(W)
+print(b)
+</code></pre>
+<p>가설이 잘 작동하는지 확인하여 보자.
+(Let's check if the hypothesis is now better.)</p>
+<pre><code>hypothesis = x_train * W + b
+print(hypothesis)
+cost = torch.mean((hypothesis - y_train) ** 2)
+print(cost)
+</code></pre>
+<h2>Training with Full Code</h2>
+<p>In reality, we will be training on the dataset for multiple epochs. This can be done simply with loops.</p>
+<pre><code># 데이터
+x_train = torch.FloatTensor([[1], [2], [3]])
+y_train = torch.FloatTensor([[1], [2], [3]])
+
+# 모델 초기화
+W = torch.zeros(1, requires_grad=True)
+b = torch.zeros(1, requires_grad=True)
+
+# optimizer 설정
+optimizer = optim.SGD([W, b], lr = 0.01)
+
+nb_epochs = 1000
+for epoch in range(nb_epochs + 1):
+        
+    # H(x) 계산
+    hypothesis = x_train * W + b
+        
+    # cost 계산
+    cost = torch.mean((hypothesis - y_train) ** 2)
+        
+    # cost로 H(x) 개선
+    optimizer.zero_grad()
+    cost.backward()
+    optimizer.step()
+        
+    # 100번마다 로그 출력
+    if epoch % 100 == 0:
+        print('Epoch {:4d}/{} W: {:.3f}, b: {:.3f} Cost: {:.6f}'.format(
+                epoch, nb_epochs, W.item(), b.item(), cost.item()
+        ))
+</code></pre>
+<h2>High-level implementaion with <code>nn.Module</code></h2>
+<p>Remember that we had this fake data.</p>
+<pre><code>x_train = torch.FloatTensor([[1], [2], [3]])
+y_train = torch.FloatTensor([[1], [2], [3]])
+</code></pre>
+<h3>이제 linear regression 모델을 만들면 되는데, 기본적으로 Pytorch의 모든 모델은 제공되는 <code>nn.Module</code>을 inherit 해서 만들게 된다.</h3>
+<pre><code>class LinearRegressionModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.linear = nn.Linear(1, 1)
+        
+    def forward(self, x):
+        return self.linear(x)
+</code></pre>
+<h3>모델의 <code>__init__</code>에서는 사용할 레이어들을 정의하게 된다. 여기서 우리는 linear regression 모델을 만들기 때문에, <code>nn.Linear</code>를 이용할 것이다. 그리고 <code>forward</code>에서는 이 모델이 어떻게 입력값에서 출력값을 계산하는지 알려준다.</h3>
+<pre><code>model = LinearRegressionModel()
+</code></pre>
+<h2>Hypothesis</h2>
+<p>이제 모델을 생성해서 예측값 <em>H(x)</em> 를 구해보자</p>
+<pre><code>hypothesis = model(x_train)
+print(hypothesis)
+</code></pre>
+<h2>Cost</h2>
+<p>이제 mean squared error (MSE)로 cost를 구해보자. MSE 역시 PyTorch에서 기본적으로 제공한다.</p>
+<pre><code>print(hypothesis)
+print(y_train)
+cost = F.mse_loss(hypothesis, y_train)
+print(cost)
+</code></pre>
+<h2>Gradient Descent</h2>
+<p>마지막 주어진 cost를 이용해 <em>H(x)</em> 의 <em>W</em> , <em>b</em> 를 바꾸어서 cost를 줄여봅시다. 이때 PyTorch의 <code>torch.optim</code>에 있는 <code>optimizer</code>들 중 하나를 사용할 수 있다.</p>
+<pre><code>optimizer = optim.SGD(model.parameters(), lr=0.01)
+optimizer.zero_grad()
+cost.backward()
+optimizer.step()
+</code></pre>
+<h2>Training with Full Code</h2>
+<p>이제 Linear Regression 코드를 이해했으니, 실제로 코드를 돌려 피팅하여보자.</p>
+<pre><code># 데이터
+x_train = torch.FloatTensor([[1], [2], [3]])
+y_train = torch.FloatTensor([[1], [2], [3]])
+
+# 모델 초기화
+model = LinearRegressionModel()
+
+# optimizer 설정
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+nb_epochs = 1000
+for epoch in range(nb_epochs + 1):
+    
+    # H(x) 계산
+    prediction = model(x_train)
+        
+    # cost 계산
+    cost = F.mse_loss(prediction, y_train)
+        
+    # cost로 H(x) 개선
+    optimizer.zero_grad()
+    cost.backward()
+    optimizer.step()
+        
+    # 100번 마다 로그 출력
+    if epoch % 100 == 0:
+        params = list(model.parameters())
+        W = params[0].item()
+        b = params[1].item()
+        print('Epoch {:4d}/{} W: {:.3f}, b: {:.3f} Cost: {:.6f}'.format(
+            epoch, nb_epochs, W, b, cost.item()
+        ))
+    
+</code></pre>
+<p>점점 <em>H(x)</em> 의 <em>W</em> 와 <em>b</em> 를 조정해서 cost가 줄어드는 것을 볼 수 있다.</p>
+0:{"buildId":"oAIH0-g3w6LOdbw_0qDiA","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"relative","children":[["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","header",null,{"className":"mb-10 not-prose border-b border-gray-100 dark:border-gray-800 pb-8","children":[["$","div",null,{"className":"mb-4 text-sm text-gray-500 flex items-center space-x-2","children":[[["$","$L2",null,{"href":"/category/ml","className":"font-medium text-blue-600 hover:underline","children":"ML"}],["$","span",null,{"children":"•"}]],["$","time",null,{}]]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4","children":"[ML] Linear Regression 정리"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]]}],"$L4"]}],["$L5"],"$L6"]}],"loading":null,"isPartial":false}
+4:["$","$L7",null,{}]
+5:["$","script","script-0",{"src":"/_next/static/chunks/a8f82a9835eb887b.js","async":true}]
+6:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null

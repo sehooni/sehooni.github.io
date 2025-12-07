@@ -1,0 +1,37 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],""]
+4:I[50718,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],"default"]
+5:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+3:T88b,<p>자연어처리(NLP) 공부를 하면서 정리해놓은 <code>.ipynb</code>파일이 꽤나 많아졌다. 이러한 내용들을 블로그에 업로드하려면 결국 <code>.md</code>로 바꿔줘야 한다.</p>
+<p>그렇다면 어떠한 방법을 사용해야할까?</p>
+<h2><code>nbconvert</code></h2>
+<p><code>nbconvert</code>는 jupyter notebook을 markdown 파일 혹은 html파일로 변환해주는 프로그램이다.</p>
+<p>아래의 명령어를 통해 설치할 수 있다.</p>
+<pre><code class="language-bash"># pip을 통해 nbconvert 설치
+pip install nbconvert
+</code></pre>
+<pre><code class="language-bash"># conda를 통해 nbconvert 설치
+conda install nbconvert
+</code></pre>
+<p>예를 들어 살펴보자.</p>
+<p><code>Hello.ipynb</code>라는 jupyter notebook 파일을 markdown 파일로 변환하고 싶다면?
+이를 위해 먼저 <code>Hello.ipynb</code> 파일이 있는 경로로 이동한다. 그 뒤, 아래의 명령어를 실행한다.</p>
+<pre><code class="language-bash">jupyter nbconvert --to markdown Hello.ipynb
+</code></pre>
+<p>위의 명령어는 해당 경로에 다음의 두 가지 결과물을 생성한다.</p>
+<ul>
+<li><code>Hello.md</code> : markdown 파일</li>
+<li><code>Hello_files</code> : markdown 파일에 포함되어 있는 모든 이미지들을 모아놓은 폴더</li>
+</ul>
+<p>이를 활용하여 Github 블로그에 포스팅 하기 위해서는 다음과 같은 작업을 거쳐야 한다.</p>
+<ol>
+<li><code>Hello.md</code> 파일 내 상단에 YAML 부분을 추가한다.</li>
+<li><code>Hello.md</code> 파일 내 이미지들의 경로를 블로그의 이미지 경로 형태로 수정한다.</li>
+<li><code>Hello.md</code> 파일의 파일명을 날짜(date)와 제목(title)을 포함하는 <code>YYYY-MM-DD-TITLE.md</code> 형태로 바꿔준다.</li>
+<li>이 <code>YYYY-MM-DD-TITLE.md</code> 파일을 블로그의 <code>_posts</code> 폴더로 이동시킨다.</li>
+<li><code>Hello_files</code> 폴더를 블로그의 <code>images</code> 폴더로 이동시킨다.</li>
+</ol>
+<p>이제 이 파일들을 모두 add/commit/push하면 Github 블로그에 포스팅이 추가되는 것을 확인할 수 있다.</p>
+0:{"buildId":"oAIH0-g3w6LOdbw_0qDiA","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"relative","children":[["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","header",null,{"className":"mb-10 not-prose border-b border-gray-100 dark:border-gray-800 pb-8","children":[["$","div",null,{"className":"mb-4 text-sm text-gray-500 flex items-center space-x-2","children":[[["$","$L2",null,{"href":"/category/etc","className":"font-medium text-blue-600 hover:underline","children":"ETC"}],["$","span",null,{"children":"•"}]],["$","time",null,{}]]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4","children":"[마크다운] Jupyter notebook을 Markdown으로 변환하는 방법"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]]}],["$","$L4",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/a8f82a9835eb887b.js","async":true}]],["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],"loading":null,"isPartial":false}
+7:null

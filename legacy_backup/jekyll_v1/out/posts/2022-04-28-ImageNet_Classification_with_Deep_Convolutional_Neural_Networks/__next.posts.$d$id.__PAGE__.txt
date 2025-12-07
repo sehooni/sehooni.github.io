@@ -1,0 +1,97 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],""]
+7:I[50718,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],"default"]
+8:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+3:T2350,<h1>CNN이란?</h1>
+<p>CNN이란, <strong>Convolutional Neural Network</strong>의 준말로 합성곱 신경망이라 불린다.
+입력 이미지로부터 특징을 추출하여 입력이미지가 어떤 이미지인지 클래스를 분류하게 되는 것이다.
+대게 이미지 및 비디오 인식, 추천 시스템, 이미지 분류, 의료 이미지 분석 및 자연어처리에 이용된다.</p>
+<h2>ANN과 CNN</h2>
+<p>ANN은 <strong>Artificial Neural Network</strong>의 준말로 사람의 신경망 원리와 구조를 모방하여 만든 기계학습 알고리즘이다. 이와 관련한 내용은 <a href="https://sehooni.github.io/dl/ANN,DNN,CNN,RNN/">[DL] ANN, DNN, CNN, RNN 개념과 차이</a> 에 명시해두었다.</p>
+<p>본론으로 돌아와 ANN과 비교하여 CNN을 알아보자면, 일반 신경망, ANN은 이미지 전체를 하나의 데이터로 입력하기 때문에
+이미지의 특성을 찾지 못하고 이미지의 위치가 변형되거나 왜곡된 경우에는 올바른 성능을 기대할 수 없게 된다. 즉, <code>데이터의 형상이 무시되는 것이다.</code></p>
+<p>이에 반해 합성곱 신경망, CNN은 이미지를 하나의 데이터가 아닌 여러개로 분할하여 처리한다. 이에 따라 이미지가 왜곡되더라도 이미지의 부분적 특성을 추출할 수 있어 올바른 성능을 낼 수 있다.</p>
+<h3>그림 1. ANN과 CNN</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/165703614-c50e182f-25fa-4c5e-a45c-001cbe4d11c6.png" alt="ANN과 CNN"></p>
+<p>이와 관련한 내용은 위의 그림을 통해서 쉽게 확인 가능하다.</p>
+<h3>그림 2. CNN의 진행순서</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/165703938-4905c417-1e76-4617-b4dd-cbdc3fd33f66.png" alt="CNN의 진행순서"></p>
+<p>위의 그림은 CNN의 진행순서를 간략하게 도식화한 것이다. 데이터가 입력되면 <code>Convolution</code>, <code>ReLu function</code>, <code>Pooling</code>과정을 거쳐 특징을 분석하게 된다.
+이후 <code>flatten</code>, <code>fully connected</code>, <code>Softmax function</code>을 통해 classification을 진행하게 된다.</p>
+<h1>CNN의 구조</h1>
+<p>기존 신경망의 구조는 인접하는 계층의 모든 뉴런이 결합된 완전연결로 <code>affine 계층으로 구성</code>된다.
+그러나 CNN의 경우, 신경망 구조에서 합성곱 계층과 풀링층이 추가되었다. 또한 풀링층은 때에 따라 생략이 가능하다.</p>
+<h2>CNN의 구조</h2>
+<h3>그림 3. CNN의 구조 1</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/165707470-339d138e-a0df-43d1-832b-38ee36f1f8ab.png" alt="CNN의 구조"></p>
+<h3>그림 4. CNN의 구조 2</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/165729172-47445bfc-969e-4f30-a876-f273960f5f5e.png" alt="CNN의 구조2"></p>
+<p>위의 &#x3C;그림 3>과 &#x3C;그림 4>를 통해 CNN의 구조를 확인할 수 있다.</p>
+<h1>Convolution</h1>
+<p>본 내용을 설명하기에 앞서 bias는 편향을 의미한다. 합성곱 연산, <strong>Convolution</strong>의 bias는 데이터에 bias가 더해지는 과정이다.
+덧셈연산이라고 생각하면 이해하기 쉽다. 완전 연결 신경망에는 가중치(Weight) 매개변수와 bias가 존재하게 된다.
+<code>CNN에서는 이와 유사하게 필터와 bias가 학습을 시킬 매개변수이다. </code>
+<code>다시 말해, 이미지 처리에서 말하는 필터 연산에 해당하는 것이다.</code></p>
+<h2>stride</h2>
+<p>stride는 지정된 간격으로 필터를 순회하는 간격을 의미한다. 아래의 &#x3C;그림 6>에서는 stride가 1로 설정된 것이며,
+stride가 2로 설정되면 필터는 2칸씩 이동하면서 합성곱을 계산한다.</p>
+<h3>그림 5. 합성곱 연산 과정 1</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/165711865-7153cc40-3954-45d9-9db4-31715447b868.png" alt="합성곱 연산과정 1"></p>
+<p>위의 그림과 같이 bias는 항상 하나의 값(1*1)으로 존재하며 필터를 적용한 후 모든 원소에 더해지게 된다.
+즉 CNN을 통해 학습이 거듭되며 필터의 원소값과 bias가 매번 갱신되는 것이다.</p>
+<h3>그림 6. 합성곱 연산 과정 2</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/165712067-9aa6e8fb-6d79-492a-9664-e866786d09cd.jpg" alt="합성곱 연산과정 2"></p>
+<p>2차원의 입력 데이터가 들어오면, 필터의 윈도우가 일정 간격으로 이동해가며 연산이 적용된다.
+이때 이 이동과정을 <code>Stride</code>라고 한다.
+이 과정을 모든 장소에서 진행하고, 위의 사진 오른쪽과 같은 합성곱 연산의 출력이 완성된다.</p>
+<h1>Padding</h1>
+<p><strong>Padding</strong>은 기존 데이터 주변에 값들을 채워넣어 크기를 키우는 것이다.
+Convolution 과정은 특징을 추출하는 것을 목표로 한다.</p>
+<p>그러나, Padding이 없이 진행되면 Convolution 연산 후에는 <em>'의도치 않게'</em> 이미지의 크기가 작아지게 된다.
+이는 Edge 성분이 점차 사라지게 되고, 이에 따라 Edge 근처의 특징을 누락할 수 있다.
+따라서 Padding을 통해 Convolution 연산을 하게 되더라도, 그 결과 이미지가 입력 이미지와 그 크기를 동일하게 유지하면서 특징을 추출할 수 있다.</p>
+<h2>Padding의 종류</h2>
+<p>데이터 주변에 어떠한 값을 채우느냐에 따라 padding의 종류가 나뉜다.</p>
+<ul>
+<li>Zero Padding : 최외각을 모두 pixel 0으로 설정</li>
+<li>Same Padding : 최외각을 모두 이미지 외곽의 pixel 값으로 사용</li>
+</ul>
+<h3>그림 7. Zero Padding 원리</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/165729269-37476345-7114-4ddb-a790-735ece84d5f7.jpg" alt="padding"></p>
+<p>&#x3C;그림 7>은 zero padding의 원리를 설명한 그림이다.</p>
+<h1>Pooling</h1>
+<p>CNN의 구조를 살펴보면 <code>Conv → Pooling → Conv → Pooling~~</code>의 순서로 진행된다.</p>
+<p>Convolution 연산 후, FC Layer(Fully-Connected Layer)로 바로 연결될 경우, 입력 이미지를 그대로 가져와 연산을 진행하게 된다.
+이 때문에 FC Layer에서의 연산량이 기하급수적으로 증가하게 된다. <code>이러한 연산량을 줄이기 위해 Pooling이라는 과정을 추가하여, 연산 후 크기를 '적당히' 줄이고 특정 feature를 강조한다.</code>
+그렇다면 특정 feature를 강조한다는 것은 무슨 의미일까?</p>
+<p>특정 feature를 강조한다는 것은 <code>Convolution 이미지의 특징을 추출하고, 그 결과 속에서 특정 특징을 강조한다</code>는 의미이다.</p>
+<p>Convolution이 행렬(matrix)의 연산이라면, Pooling은 각 Pixel에서 하나의 값을 뽑아내는 것이다.</p>
+<h2>Pooling의 종류</h2>
+<p>pooling은 두 가지 종류로 구성된다.</p>
+<ul>
+<li>Max Pooling : 윈도우 창 내에서 각 원소들 중 가장 큰 값을 추출</li>
+<li>Average Pooling : 윈도우 창 내에서 각 원소들의 평균 값을 추출</li>
+</ul>
+<h3>그림 8. Pooling의 원리</h3>
+<p><img src="https://user-images.githubusercontent.com/84653623/165735542-9f473be7-2f0a-4c3f-9de8-211121dce50f.png" alt="pooling"></p>
+<p>&#x3C;그림 8>을 통해 Pooling의 원리를 살펴볼 수 있다.</p>
+<h1>요약하자면...</h1>
+<p>CNN(Convolution Neural Network)은 이미지의 공간정보를 유지하면서 인접 이미지와의 특징을 효과적으로 인식하고 강조하는 방식으로 이미지의 특징을 추출하는 부분과 이미지를 분류하는 부분으로 구성된다.
+특징 추출 영역은 필터를 사용하여 공유 파라미터 수를 최소화하면서 이미지의 특징을 찾는 Convolution Layer와 특징을 강화하고 모으는 Pooling Layer로 구성된다.</p>
+<p>CNN은 필터의 크기를 비롯하여 Stride, Padding과 Pooling의 크기로 출력 데이터 크기를 조절하고, 필터의 개수로 출력 데이터의 채널을 결정한다.</p>
+<p>CNN은 같은 레이어 크기의 FCNN과 비교해 볼 때 학습 파라미터의 양이 현저히 적다. 은닉층이 깊어질 수록 그 차이는 더 커지게 된다.
+<code>즉, CNN은 더 작은 학습 파라미터로 더 높은 인식률을 제공</code>하는 것이다.</p>
+<p>본 논문에는 특징 추출과 분류로 구성이 되어있으나, 이번 포스팅에서는 특징 추출 부분에 포커스를 맞추어 진행하였다.</p>
+<hr>
+<p>PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다.</p>
+<h1>Reference</h1>
+<ul>
+<li>논문: <a href="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">ImageNet Classification with Deep Convolutional Neural Networks</a></li>
+<li>'기계학습(Machine Learning)/오일석 저자' 강의 자료</li>
+</ul>
+0:{"buildId":"oAIH0-g3w6LOdbw_0qDiA","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"relative","children":[["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","header",null,{"className":"mb-10 not-prose border-b border-gray-100 dark:border-gray-800 pb-8","children":[["$","div",null,{"className":"mb-4 text-sm text-gray-500 flex items-center space-x-2","children":[[["$","$L2",null,{"href":"/category/paperreview","className":"font-medium text-blue-600 hover:underline","children":"PaperReview"}],["$","span",null,{"children":"•"}]],["$","time",null,{}]]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4","children":"[PaperReview] ImageNet Classification with Deep Convolutional Neural Networks(CNN)"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]]}],"$L4"]}],["$L5"],"$L6"]}],"loading":null,"isPartial":false}
+4:["$","$L7",null,{}]
+5:["$","script","script-0",{"src":"/_next/static/chunks/a8f82a9835eb887b.js","async":true}]
+6:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null

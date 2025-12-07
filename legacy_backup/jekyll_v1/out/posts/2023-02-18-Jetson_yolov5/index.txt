@@ -1,0 +1,84 @@
+1:"$Sreact.fragment"
+3:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+4:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"ViewportBoundary"]
+b:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"MetadataBoundary"]
+d:I[68027,[],"default"]
+:HL["/_next/static/chunks/8fa8e9b5e3e9b2cd.css","style"]
+0:{"P":null,"b":"oAIH0-g3w6LOdbw_0qDiA","c":["","posts","2023-02-18-Jetson_yolov5",""],"q":"","i":false,"f":[[["",{"children":["posts",{"children":[["id","2023-02-18-Jetson_yolov5","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/8fa8e9b5e3e9b2cd.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/796e69ae18b2784c.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ko","children":["$","body",null,{"className":"antialiased bg-white dark:bg-black text-gray-900 dark:text-white flex min-h-screen","children":["$L2",["$","main",null,{"className":"flex-1 min-w-0","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",[["$","script","script-0",{"src":"/_next/static/chunks/a8f82a9835eb887b.js","async":true,"nonce":"$undefined"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$@a"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$@c"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+e:I[22016,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],""]
+2:["$","aside",null,{"className":"w-64 h-screen sticky top-0 bg-gray-50 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 p-6 overflow-y-auto hidden lg:block","children":[["$","div",null,{"className":"mb-8","children":[["$","h1",null,{"className":"text-2xl font-bold font-sans tracking-tight","children":["$","$Le",null,{"href":"/","children":"Sehoon's Workspace"}]}],["$","p",null,{"className":"text-sm text-gray-500 mt-2","children":"Tech & Study Blog"}]]}],["$","nav",null,{"className":"space-y-8","children":[["$","div",null,{"children":[["$","h3",null,{"className":"text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2","children":"Menu"}],["$","ul",null,{"className":"space-y-1","children":[["$","li",null,{"children":["$","$Le",null,{"href":"/","className":"block py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors text-sm","children":"Recent Posts"}]}],["$","li",null,{"children":["$","$Le",null,{"href":"/about","className":"block py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors text-sm","children":"About"}]}]]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2","children":"Categories"}],["$","ul",null,{"className":"space-y-1","children":[["$","li","proteomics",{"children":["$","$Le",null,{"href":"/category/proteomics","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"proteomics"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",9,")"]}]]}]}],["$","li","NLP",{"children":["$","$Le",null,{"href":"/category/nlp","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"NLP"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",6,")"]}]]}]}],["$","li","Blog",{"children":["$","$Le",null,{"href":"/category/blog","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Blog"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",5,")"]}]]}]}],["$","li","Jetson",{"children":["$","$Le",null,{"href":"/category/jetson","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Jetson"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",4,")"]}]]}]}],["$","li","PaperReview",{"children":["$","$Le",null,{"href":"/category/paperreview","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"PaperReview"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",4,")"]}]]}]}],["$","li","Neural_Style_Transfer",{"children":["$","$Le",null,{"href":"/category/neural_style_transfer","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Neural_Style_Transfer"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",3,")"]}]]}]}],["$","li","jekyll",{"children":["$","$Le",null,{"href":"/category/jekyll","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"jekyll"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",2,")"]}]]}]}],["$","li","ML",{"children":["$","$Le",null,{"href":"/category/ml","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":["$Lf","$L10"]}]}],"$L11","$L12","$L13","$L14","$L15","$L16","$L17"]}]]}]]}],"$L18"]}]
+f:["$","span",null,{"children":"ML"}]
+10:["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",2,")"]}]
+11:["$","li","algorithms",{"children":["$","$Le",null,{"href":"/category/algorithms","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"algorithms"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+12:["$","li","Contest",{"children":["$","$Le",null,{"href":"/category/contest","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Contest"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+13:["$","li","Capstone",{"children":["$","$Le",null,{"href":"/category/capstone","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Capstone"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+14:["$","li","Linux",{"children":["$","$Le",null,{"href":"/category/linux","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"Linux"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+15:["$","li","ETC",{"children":["$","$Le",null,{"href":"/category/etc","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"ETC"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+16:["$","li","DataStructure",{"children":["$","$Le",null,{"href":"/category/datastructure","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"DataStructure"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+17:["$","li","DL",{"children":["$","$Le",null,{"href":"/category/dl","className":"flex items-center justify-between py-1.5 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors group text-sm","children":[["$","span",null,{"children":"DL"}],["$","span",null,{"className":"text-xs text-gray-400 group-hover:text-blue-500 font-mono","children":["(",1,")"]}]]}]}]
+18:["$","div",null,{"className":"mt-8 pt-8 border-t border-gray-200 dark:border-gray-800","children":["$","div",null,{"className":"flex space-x-4"}]}]
+19:T1170,<p>이전 포스팅에 이어 진행하도록 하겠습니다.
+드디어 마지막 yolov5를 설치할 차례입니다.</p>
+<h1>3. Yolov5 설치</h1>
+<h2>1. github에서 기본 repository 받아오기</h2>
+<p>이제 95프로 왔다. 다온거다</p>
+<p>아래의 코드를 통해 Yolov5의 repository를 받아준다.</p>
+<pre><code class="language-bash">git clone https://github.com/ultralytics/yolov5
+cd yolov5
+ 
+# yolov5s.pt weight 다운로드
+wget https://github.com/ultralytics/yolov5/releases/download/v6.0/yolov5s.pt
+</code></pre>
+<h2>2. 이후 폴더 내에 존재하는 requirements.txt에서 이미 설치한 항목들 지워주기</h2>
+<p>2-5과정에서 이미 설치한 항목들이 있으므로 requirements.txt에서 제거해준다.</p>
+<pre><code class="language-bash"># 다음 내용 requirements.txt에서 제거
+ 
+numpy>=1.18.5
+opencv-python>=4.1.2
+torch>=1.7.0
+torchvision>=0.8.1
+</code></pre>
+<h2>3. pip 업그레이드 이후 requirements.txt 설치</h2>
+<pre><code class="language-bash">python3 -m pip install --upgrade pip
+ 
+python3 -m pip install -r requirements.txt
+</code></pre>
+<p>이렇게 하면 yolov5 설치가 완료된다!</p>
+<h1>4. 추가 참고 사항</h1>
+<h2>FPS 2로 출력되는 문제 (1)</h2>
+<p>다 설치하고 나면 FPS가 2로 출력되면서 웹캠으로 영상을 출력하는데 끊어지는 현상들이 발생한다.</p>
+<p>본인의 판단으로는 아래의 사진에서 나타나는 경고 한 줄 때문이라 생각되는데..</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853928-b88a83c2-f7ce-4269-a5db-85868c1915dd.png" alt="Untitled 2"></p>
+<p>일단 더 찾아봐야할 듯 하다.(23.01.12-13)</p>
+<h2>FPS 2로 출력되는 문제 (2) - [inf frames 2560x1472 at 2.00 FPS]</h2>
+<p>inf frames 2560x1472 at 2.00 FPS 와 같이 출력되는 부분은 utils.dataloader.py에서 수정해 줄수 있는데 인위적으로 수정해서는 개선이 되지 않았다.</p>
+<p>저 내용은 아래 사진들에서 볼 수 있듯이 환경의 종류가 다양한데, 이를 어떻게 적용하고 수정하는지 찾아봐야할 것 같다.(23.01.13)</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853931-d4a42459-98e0-4f1d-b52a-43522469b8e1.png" alt="Untitled 3"></p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853933-e0f6d3ad-34c3-4e78-9a16-53df661296fd.png" alt="Untitled 4"></p>
+<h2>위 두 문제 해결 - (23.01.16)</h2>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853935-55418484-80fe-47e8-a8e6-f94fa31c6771.png" alt="Untitled 5"></p>
+<p>yolov5/utils에 있는 dataloader.py에서 cap = cv2.VideoCapture(s)를 cv2.VideoCapture(s, cv2.CAP_V4L)로 입력하여 주면 (1)번 문제에서 나타나는 warning 오류 해결되며, 이와 동시에 FPS 30으로 증가.</p>
+<p>동영상의 끊김이 전보다는 개선됨을 확인.</p>
+<p><img src="https://user-images.githubusercontent.com/84653623/219853936-685e32a0-7301-481c-8ad8-1042bdb35bb6.png" alt="Untitled 6"></p>
+<p>(2)번 문제를 참고하여 inference 해상도를 증가시켰을 때 5FPS로 출력됨.</p>
+<p>이에 따라 640*480이 가장 우수하다고 판단됨.</p>
+<h1>글을 마무리하며,,</h1>
+<p>이렇게 프로젝트가 마무리 됩니다.
+본 프로젝트에서 dataset을 제작할 때에는 roboflow 사이트 내에서 데이터를 직접 제작하여 train하는데 사용을 했습니다.</p>
+<p>기회가 된다면 데이터 제작기에 대해서도 정리를 해야겠네요.</p>
+<p>아무튼 2022년의 6개월 이상 소요되었던 yolov5 with Jetson Nano 프로젝트는 다음과 같이 마무리 되었습니다.
+사용한 제품이 4GB delveloper kit이다보니, 성능적 측면에서 훌륭한 기대효과를 볼 수는 없지만, 데이터의 특징이 뚜렷하다면 충분히 사용가능할 것으로 판단됩니다.</p>
+<p>또한 yahboom의 경우 yolov4를 기본으로 지원하는데, 처음 프로젝트를 nvidia 제품으로 진행하였고, 그 과정에서 yolov5를 사용하였기 때문에 하는 수 없이 이런 여러 수고들이 있었습니다.
+자료 또한 현저히 적었구요...
+누군가 본 포스팅들을 통해 해결이 된다면 그걸로 정리하는 입장에서는 만족스러울 것 같습니다!</p>
+<p>PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다.</p>
+5:["$","div",null,{"className":"relative","children":[["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","header",null,{"className":"mb-10 not-prose border-b border-gray-100 dark:border-gray-800 pb-8","children":[["$","div",null,{"className":"mb-4 text-sm text-gray-500 flex items-center space-x-2","children":[[["$","$Le",null,{"href":"/category/jetson","className":"font-medium text-blue-600 hover:underline","children":"Jetson"}],["$","span",null,{"children":"•"}]],["$","time",null,{"children":"$undefined"}]]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4","children":"[Jetson] Jetson Nano를 이용한 Yolov5 활용기 (3) - yolov5 설치 및 프로젝트 중 발생한 오류(시행착오) 정리"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$19"}}]]}],"$L1a"]}]
+1b:I[50718,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],"default"]
+1a:["$","$L1b",null,{}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1c:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"IconMark"]
+c:[["$","title","0",{"children":"[Jetson] Jetson Nano를 이용한 Yolov5 활용기 (3) - yolov5 설치 및 프로젝트 중 발생한 오류(시행착오) 정리"}],["$","meta","1",{"name":"description","content":"Jetson Nano 내에 yolov5 설치"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L1c","3",{}]]
+8:null
