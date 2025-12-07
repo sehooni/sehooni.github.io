@@ -33,6 +33,15 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
             const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
             return <h3 id={id} className="text-xl font-bold mt-6 mb-3" {...props} />;
         },
+        img: ({ node, ...props }: any) => {
+            return (
+                <img
+                    {...props}
+                    className="block mx-auto my-8 max-w-full rounded-lg shadow-sm"
+                    style={{ display: 'block', margin: '2rem auto' }}
+                />
+            );
+        },
     };
 
     return (
