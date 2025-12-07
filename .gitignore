@@ -35,3 +35,5 @@ _site
 .idea/sehooni.github.io.iml
 .idea/inspectionProfiles/profiles_settings.xml
 .idea
+.next
+out

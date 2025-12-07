@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST='{"node_modules/@giscus/react/dist/index.js -> ./giscus-Ci9LqPcC.js":{"id":3017,"files":["static/chunks/17.975a3dd13026096e.js"]}}';
