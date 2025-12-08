@@ -1,4 +1,4 @@
-import { getPostData, getAllPostIds, getCategories } from '@/lib/posts';
+import { getPostData, getAllPostIds, getCategories, getSortedPostsData } from '@/lib/posts';
 import { format } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -23,6 +23,8 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
     const decodedSlug = decodeURIComponent(slug);
     const postData = await getPostData(decodedSlug);
     const categories = getCategories();
+    const allPosts = getSortedPostsData(); // Fetch all posts to get recent ones
+    const recentPosts = allPosts.slice(0, 5);
 
     // Custom components for ReactMarkdown to add IDs to headings for TOC
     const components = {
@@ -51,7 +53,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
 
     return (
         <div className="flex flex-col lg:flex-row min-h-screen">
-            <Sidebar categories={categories} />
+            <Sidebar categories={categories} recentPosts={recentPosts} />
             <main className="flex-1 w-full max-w-7xl mx-auto p-6 lg:p-12">
                 <div className="flex gap-8">
                     <ScrollToTop />

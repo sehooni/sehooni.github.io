@@ -2,11 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
+import { PostData } from '@/lib/posts';
+
 interface SidebarProps {
     categories: Record<string, number>;
+    recentPosts?: PostData[];
 }
 
-export default function Sidebar({ categories }: SidebarProps) {
+export default function Sidebar({ categories, recentPosts }: SidebarProps) {
     return (
         <div className="w-full lg:w-64 flex-shrink-0 lg:block bg-sidebar-bg border-r border-border h-auto lg:h-screen lg:sticky lg:top-0 overflow-y-auto sidebar-scroll font-sans">
             <div className="p-6">
@@ -59,7 +62,7 @@ export default function Sidebar({ categories }: SidebarProps) {
                 </nav>
 
                 {/* Categories */}
-                <div>
+                <div className="mb-8">
                     <h3 className="text-xs font-bold uppercase tracking-wider text-secondary mb-3 pb-1 border-b border-border">
                         Categories
                     </h3>
@@ -79,6 +82,32 @@ export default function Sidebar({ categories }: SidebarProps) {
                         ))}
                     </ul>
                 </div>
+
+                {/* Recent Posts */}
+                {recentPosts && recentPosts.length > 0 && (
+                    <div>
+                        <h3 className="text-xs font-bold uppercase tracking-wider text-secondary mb-3 pb-1 border-b border-border">
+                            Recent Posts
+                        </h3>
+                        <ul className="space-y-3 text-sm">
+                            {recentPosts.map((post) => (
+                                <li key={post.slug}>
+                                    <Link
+                                        href={`/${post.slug}`}
+                                        className="block group"
+                                    >
+                                        <span className="block text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-0.5">
+                                            {post.title}
+                                        </span>
+                                        <span className="text-xs text-cool-gray-400 group-hover:text-cool-gray-500 transition-colors">
+                                            {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                                        </span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -15,6 +15,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     const decodedCategory = decodeURIComponent(category);
     const allPostsData = getSortedPostsData();
     const categories = getCategories();
+    const recentPosts = allPostsData.slice(0, 5);
 
     const categoryPosts = allPostsData.filter(post =>
         post.category === decodedCategory || (post.categories && post.categories.includes(decodedCategory))
@@ -22,7 +23,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
     return (
         <div className="flex flex-col lg:flex-row min-h-screen">
-            <Sidebar categories={categories} />
+            <Sidebar categories={categories} recentPosts={recentPosts} />
             <main className="flex-1 w-full max-w-4xl mx-auto p-6 lg:p-12">
                 <header className="mb-12 border-b pb-8">
                     <h1 className="text-4xl font-bold mb-4">Category: {decodedCategory}</h1>

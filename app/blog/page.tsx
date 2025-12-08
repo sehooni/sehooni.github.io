@@ -6,10 +6,11 @@ import { format } from 'date-fns';
 export default function Blog() {
     const posts = getSortedPostsData();
     const categories = getCategories();
+    const recentPosts = posts.slice(0, 5);
 
     return (
         <div className="flex flex-col lg:flex-row min-h-screen">
-            <Sidebar categories={categories} />
+            <Sidebar categories={categories} recentPosts={recentPosts} />
             <main className="flex-1 w-full max-w-4xl mx-auto p-6 lg:p-12">
                 <header className="mb-12">
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Blog</h1>
