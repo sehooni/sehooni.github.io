@@ -1,25 +1,26 @@
-"use client";
+'use client';
 
-import Giscus from '@giscus/react';
+import { useEffect, useRef } from 'react';
 
 export default function Comments() {
-    return (
-        <div className="mt-10 border-t pt-10">
-            <Giscus
-                id="comments"
-                repo="sehooni/sehooni.github.io"
-                repoId="R_kgDOG_3x1w"
-                category="General"
-                categoryId="DIC_kwDOG_3x184CA_3-"
-                mapping="pathname"
-                term="Welcome to @giscus/react component!"
-                reactionsEnabled="1"
-                emitMetadata="0"
-                inputPosition="bottom"
-                theme="preferred_color_scheme"
-                lang="en"
-                loading="lazy"
-            />
-        </div>
-    );
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+
+        // Remove any existing script to prevent duplicates on re-renders
+        containerRef.current.innerHTML = '';
+
+        const script = document.createElement('script');
+        script.src = 'https://utteranc.es/client.js';
+        script.setAttribute('repo', 'sehooni/sehooni.github.io');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', 'github-light');
+        script.setAttribute('crossorigin', 'anonymous');
+        script.async = true;
+
+        containerRef.current.appendChild(script);
+    }, []);
+
+    return <div ref={containerRef} className="mt-10 border-t pt-10" />;
 }
