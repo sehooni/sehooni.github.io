@@ -1,5 +1,23 @@
 [
     {
+        "title": "AI-driven Game Scenario Generator",
+        "date": "2024.07",
+        "description": "LLM Finetuning 및 Prompt engineering을 통한 게임 시나리오 제너레이터 개발, 스마일게이트 퓨쳐랩 AI 서비스 위클리톤 대상 수상",
+        "links": [
+            {
+                "label": "GitHub repository",
+                "url": "https://github.com/sehooni/AIStoryWeaver",
+                "icon": "github"
+            },
+            {
+                "label": "관련링크",
+                "url": "https://newsroom.smilegate.com/lab/2024AIweeklyton",
+                "icon": "external"
+            }
+        ],
+        "contentMarkdown": "1st place winner at Smilegate FutureLab AI Service Weeklython.\n- Objective: Create an AI-based game scenario generator for dynamic content creation.\n- Approach: \n    - Applied GPT fine-tuning, prompt engineering, and DALL·E.\n    - Developed an interactive UI using Gradio."
+    },
+    {
         "title": "Development of an Automatic Defect Sorting System Module for Paper Containers Using AI-based Vision Inspection",
         "date": "2022.07 - 2023.02",
         "description": "NVIDIA JETSON NANO 및 Yolov5를 활용한 종이용기 불량품 자동 선별 시스템 모듈 개발",
@@ -10,7 +28,7 @@
                 "icon": "github"
             }
         ],
-        "contentMarkdown": "한글:\n\n - yolo-v5를 활용한 object detection 모델 개발 및 Jetson-Nano를 이용한 판별 시스템 구축 \n\n    - local 환경에서 이물질을 판별할 수 있도록 dataset 구성 및 yolo-v5 baseline model fine-tuning 진행.\n    - Jetson-Nano에서 사용할 수 있도록 경량화 진행. \n    - 95%의 정확도로 이물질 검출 성능 입증.\n    - KSME2022 포스터 발표. \n\nEnglish:\n - Developed an object detection model using YOLOv5 and built a classification system using Jetson Nano.\n   - Constructed a dataset for detecting foreign substances in a local environment and fine-tuned a YOLOv5 baseline model.\n - Optimized the model for deployment on Jetson Nano by applying model compression techniques.\n - Achieved 95% accuracy in detecting foreign substances.\n - Presented a poster at KSME2022 (The Korean Society of Mechanical Engineers)."
+        "contentMarkdown": "한글:\n\n - yolo-v5를 활용한 object detection 모델 개발 및 Jetson-Nano를 이용한 판별 시스템 구축 \n\n    - local 환경에서 이물질을 판별할 수 있도록 dataset 구성 및 yolo-v5 baseline model fine-tuning 진행.\n    - Jetson-Nano에서 사용할 수 있도록 경량화 진행. \n    - 95%의 정확도로 이물질 검출 성능 입증.\n    - KSME2022 포스터 발표. \n\nEnglish:\n - Developed an object detection model using YOLOv5 and built a classification system using Jetson Nano.\n   - Constructed a dataset for detecting foreign substances in a local environment and fine-tuned a YOLOv5 baseline model.\n - Optimized the model for deployment on Jetson Nano by applying model compression techniques.\n - Achieved 95% accuracy in detecting foreign substances.\n - Presented a poster at KSME2022 (The Korean Society of Mechanical Engineers).\n\n#### Tech Stack\n\n - YOLOv5\n - Jetson Nano\n - Python\n - CUDA\n - OpenCV\n - PyTorch"
     },
     {
         "title": "Display Toggler",
