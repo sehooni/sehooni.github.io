@@ -15,9 +15,36 @@ interface ProjectCardProps {
     description: string;
     details: React.ReactNode;
     links?: ProjectLink[];
+    tags?: string[];
 }
 
-export default function ProjectCard({ title, date, description, details, links }: ProjectCardProps) {
+// Function to generate consistent pastel color from string
+function stringToColor(str: string) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const c = (hash & 0x00ffffff).toString(16).toUpperCase();
+    const hex = "00000".substring(0, 6 - c.length) + c;
+
+    // Convert hex to specific pastel variations
+    // Simplifying: Use a fixed set of nice tailwind colors based on modulo
+    const colors = [
+        'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+        'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+        'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
+        'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
+        'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
+        'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200',
+        'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200',
+        'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
+    ];
+
+    const index = Math.abs(hash) % colors.length;
+    return colors[index];
+}
+
+export default function ProjectCard({ title, date, description, details, links, tags }: ProjectCardProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -31,11 +58,23 @@ export default function ProjectCard({ title, date, description, details, links }
             >
                 <div className="flex justify-between items-start gap-4">
                     <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-2">
                             <h3 className="text-xl font-bold text-foreground">{title}</h3>
-                            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-secondary/10 text-secondary">
+                            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-secondary/10 text-secondary whitespace-nowrap">
                                 {date}
                             </span>
+                            {tags && tags.length > 0 && (
+                                <div className="flex flex-wrap gap-2">
+                                    {tags.map(tag => (
+                                        <span
+                                            key={tag}
+                                            className={`text-xs font-semibold px-2 py-0.5 rounded-md ${stringToColor(tag)}`}
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                             {description}

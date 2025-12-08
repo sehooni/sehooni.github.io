@@ -12,15 +12,16 @@ def parse_and_publish_project(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Regex patterns
     # # 제목 : Title
     # # 설명 : Description
     # # 진행기간 : Date (YYYY.MM or string)
+    # # 태그 : Tag1, Tag2
     # # 링크 : Label: URL, Label: URL
     
     title_match = re.search(r'^#\s*제목\s*:\s*(.+)$', content, re.MULTILINE)
     desc_match = re.search(r'^#\s*설명\s*:\s*(.+)$', content, re.MULTILINE)
     date_match = re.search(r'^#\s*진행기간\s*:\s*(.+)$', content, re.MULTILINE)
+    tags_match = re.search(r'^#\s*태그\s*:\s*(.+)$', content, re.MULTILINE)
     links_match = re.search(r'^#\s*링크\s*:\s*(.+)$', content, re.MULTILINE)
     
     if not (title_match and desc_match and date_match):
@@ -30,6 +31,12 @@ def parse_and_publish_project(file_path):
     title = title_match.group(1).strip()
     description = desc_match.group(1).strip()
     date_str = date_match.group(1).strip()
+
+    # Parse Tags
+    tags = []
+    if tags_match:
+        tags_str = tags_match.group(1).strip()
+        tags = [t.strip() for t in tags_str.split(',') if t.strip()]
     
     # Parse Links
     # Expected format: "GitHub: https://..., Demo: https://..."
@@ -84,6 +91,7 @@ def parse_and_publish_project(file_path):
         "title": title,
         "date": date_str,
         "description": description,
+        "tags": tags,
         "links": links,
         "contentMarkdown": content_markdown
     }

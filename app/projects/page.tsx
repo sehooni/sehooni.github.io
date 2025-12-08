@@ -20,6 +20,7 @@ export default async function Projects() {
                         title={project.title}
                         date={project.date}
                         description={project.description}
+                        tags={project.tags}
                         links={project.links}
                         details={
                             <ReactMarkdown

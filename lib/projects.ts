@@ -8,6 +8,7 @@ export interface ProjectData {
     title: string;
     date: string;
     description: string;
+    tags?: string[];
     links: { label: string; url: string; icon?: 'github' | 'external' }[];
     contentMarkdown: string;
 }
