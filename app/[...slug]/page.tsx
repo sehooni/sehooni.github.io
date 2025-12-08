@@ -77,7 +77,8 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
             if (inline) {
                 return (
                     <code
-                        className="bg-yellow-200 text-gray-900 dark:bg-yellow-900/50 dark:text-gray-100 rounded px-1 py-0.5 font-mono text-sm"
+                        className="bg-yellow-200 text-gray-900 dark:bg-yellow-500/30 dark:text-gray-100 rounded px-1.5 py-0.5 font-mono text-sm before:content-none after:content-none"
+                        style={{ backgroundColor: '#fef08a', color: '#111827' }} // Inline style fallback for maximum specificity
                         {...props}
                     >
                         {children}
