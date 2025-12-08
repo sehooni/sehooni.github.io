@@ -1,5 +1,18 @@
 [
     {
+        "title": "Development of an Automatic Defect Sorting System Module for Paper Containers Using AI-based Vision Inspection",
+        "date": "2022.07 - 2023.02",
+        "description": "NVIDIA JETSON NANO 및 Yolov5를 활용한 종이용기 불량품 자동 선별 시스템 모듈 개발",
+        "links": [
+            {
+                "label": "GitHub",
+                "url": "https://github.com/sehooni/yolov5_jetsonnano",
+                "icon": "github"
+            }
+        ],
+        "contentMarkdown": "한글:\n• yolo-v5를 활용한 object detection 모델 개발 및 Jetson-Nano를 이용한 판별 시스템 구축 \n    • local 환경에서 이물질을 판별할 수 있도록 dataset 구성 및 yolo-v5 baseline model fine-tuning 진행.\n    • Jetson-Nano에서 사용할 수 있도록 경량화 진행. \n    • 95%의 정확도로 이물질 검출 성능 입증.\n    • KSME2022 포스터 발표.\nEnglish:\n• Developed an object detection model using YOLOv5 and built a classification system using Jetson Nano\n• Constructed a dataset for detecting foreign substances in a local environment and fine-tuned a YOLOv5 baseline model\n    • Optimized the model for deployment on Jetson Nano by applying model compression techniques\n    • Achieved 95% accuracy in detecting foreign substances\n    • Presented a poster at KSME2022 (The Korean Society of Mechanical Engineers)"
+    },
+    {
         "title": "Display Toggler",
         "date": "2025.12",
         "description": "macOS menu bar app to quickly toggle display mirroring and manage screen arrangements.",
