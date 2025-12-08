@@ -3,21 +3,23 @@ export const CATEGORY_ORDER = [
     'PaperReview',
     'DL_ML',
     'proteomics',
-    'DataStructure',
+    'Datastructure',
     'algorithms',
     'Linux',
+    'Blog',
     'ETC',
     'jekyll',
 ];
 
 export const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
     'DL_ML': '🖥️ DL & ML',
-    'datastructure': '📚 Data Structure',
+    'Projects': '📖 Projects',
+    'Datastructure': '📚 Data Structure',
     'algorithms': '💻 Algorithms',
     'PaperReview': '📚 Paper Review',
     'proteomics': '🧬 Proteomics',
-    'Linux': 'Linux',
-    'blog': 'Blog',
+    'Linux': '🐧 Linux',
+    'Blog': '📝 Blog',
     'ETC': 'ETC',
     // Add more renames here
 };
