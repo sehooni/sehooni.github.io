@@ -10,6 +10,60 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ categories, recentPosts }: SidebarProps) {
+    // Transform flat categories into a tree structure
+    const categoryTree = Object.entries(categories).reduce((acc, [path, count]) => {
+        const parts = path.split('/');
+        let currentLevel = acc;
+
+        parts.forEach((part, index) => {
+            const isLast = index === parts.length - 1;
+            const fullPath = parts.slice(0, index + 1).join('/');
+
+            if (!currentLevel[part]) {
+                currentLevel[part] = {
+                    name: part,
+                    path: fullPath,
+                    count: 0,
+                    children: {}
+                };
+            }
+
+            if (isLast) {
+                currentLevel[part].count = count;
+            }
+
+            currentLevel = currentLevel[part].children;
+        });
+
+        return acc;
+    }, {} as Record<string, any>);
+
+    // Recursive component to render categories
+    const renderCategories = (nodes: Record<string, any>, level = 0) => {
+        return (
+            <ul className={`space-y-1 text-sm ${level > 0 ? 'ml-3 border-l border-border pl-3' : ''}`}>
+                {Object.values(nodes).map((node: any) => (
+                    <li key={node.path}>
+                        <div className="flex justify-between items-center group py-1">
+                            <Link
+                                href={`/category/${node.path}/`}
+                                className="block text-foreground hover:text-primary hover:underline transition-colors truncate max-w-[80%]"
+                            >
+                                {node.name}
+                            </Link>
+                            {node.count > 0 && (
+                                <span className="text-xs text-secondary bg-white px-2 py-0.5 rounded-full border border-border group-hover:border-primary group-hover:text-primary transition-colors">
+                                    {node.count}
+                                </span>
+                            )}
+                        </div>
+                        {Object.keys(node.children).length > 0 && renderCategories(node.children, level + 1)}
+                    </li>
+                ))}
+            </ul>
+        );
+    };
+
     return (
         <div className="w-full lg:w-64 flex-shrink-0 lg:block bg-sidebar-bg border-r border-border h-auto lg:h-screen lg:sticky lg:top-0 overflow-y-auto sidebar-scroll font-sans">
             <div className="p-6">
@@ -66,21 +120,7 @@ export default function Sidebar({ categories, recentPosts }: SidebarProps) {
                     <h3 className="text-xs font-bold uppercase tracking-wider text-secondary mb-3 pb-1 border-b border-border">
                         Categories
                     </h3>
-                    <ul className="space-y-1 text-sm">
-                        {Object.entries(categories).map(([category, count]) => (
-                            <li key={category} className="flex justify-between items-center group">
-                                <Link
-                                    href={`/category/${category}/`}
-                                    className="block py-1.5 text-foreground hover:text-primary hover:underline transition-colors truncate max-w-[80%]"
-                                >
-                                    {category}
-                                </Link>
-                                <span className="text-xs text-secondary bg-white px-2 py-0.5 rounded-full border border-border group-hover:border-primary group-hover:text-primary transition-colors">
-                                    {count}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
+                    {renderCategories(categoryTree)}
                 </div>
 
                 {/* Recent Posts */}
