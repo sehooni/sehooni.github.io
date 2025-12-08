@@ -26,11 +26,12 @@
     "add-banner": "node banner.js",
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
     "build:js": "npm run uglify && npm run add-banner",
-    "new-post": "node scripts/create-post.mjs",
+    "new-post": "node scripts/new-post.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "publish": "python3 scripts/publish_post.py"
   },
   "dependencies": {
     "@giscus/react": "^3.0.0",

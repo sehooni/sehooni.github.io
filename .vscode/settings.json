@@ -1,0 +1,9 @@
+{
+    "markdown.copyFiles.destination": {
+        "content/posts/**/*": "public/assets/images/${documentBaseName}/",
+        "_drafts/**/*": "public/assets/images/${documentBaseName}/"
+    },
+    "path-autocomplete.pathMappings": {
+        "/": "${folder}/public"
+    }
+}
