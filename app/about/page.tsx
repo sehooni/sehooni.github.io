@@ -1,4 +1,3 @@
-```
 import TopNav from '@/components/TopNav';
 import Image from 'next/image';
 
@@ -27,7 +26,7 @@ export default function About() {
                         </p>
                     </div>
                 </div>
-                
+
                 <h3>Contact</h3>
                 <ul>
                     <li>Email: <a href="mailto:74sehoon@gmail.com">74sehoon@gmail.com</a></li>
@@ -37,4 +36,3 @@ export default function About() {
         </div>
     );
 }
-```
