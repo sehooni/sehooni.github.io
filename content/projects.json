@@ -52,6 +52,11 @@
                 "label": "GitHub Repository",
                 "url": "https://github.com/sehooni/yolov5_jetsonnano",
                 "icon": "github"
+            },
+            {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/category/Projects/Jetson",
+                "icon": "blog"
             }
         ],
         "contentMarkdown": "한글:\n\n - yolo-v5를 활용한 object detection 모델 개발 및 Jetson-Nano를 이용한 판별 시스템 구축 \n\n    - local 환경에서 이물질을 판별할 수 있도록 dataset 구성 및 yolo-v5 baseline model fine-tuning 진행.\n    - Jetson-Nano에서 사용할 수 있도록 경량화 진행. \n    - 95%의 정확도로 이물질 검출 성능 입증.\n    - KSME2022 포스터 발표. \n\nEnglish:\n - Developed an object detection model using YOLOv5 and built a classification system using Jetson Nano.\n   - Constructed a dataset for detecting foreign substances in a local environment and fine-tuned a YOLOv5 baseline model.\n - Optimized the model for deployment on Jetson Nano by applying model compression techniques.\n - Achieved 95% accuracy in detecting foreign substances.\n - Presented a poster at KSME2022 (The Korean Society of Mechanical Engineers).\n\n#### Tech Stack\n\n - YOLOv5\n - Jetson Nano\n - Python\n - CUDA\n - OpenCV\n - PyTorch"

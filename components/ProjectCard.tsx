@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from 'react';
-import { FaChevronDown, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaChevronDown, FaGithub, FaExternalLinkAlt, FaBook } from 'react-icons/fa';
 
 export interface ProjectLink {
     label: string;
     url: string;
-    icon?: 'github' | 'external';
+    icon?: 'github' | 'external' | 'blog';
 }
 
 interface ProjectCardProps {
@@ -147,7 +147,7 @@ export default function ProjectCard({ title, date, description, details, links, 
                                         className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md bg-white dark:bg-gray-800 border border-border hover:border-primary hover:text-primary transition-colors shadow-sm"
                                         onClick={(e) => e.stopPropagation()}
                                     >
-                                        {link.icon === 'github' ? <FaGithub /> : <FaExternalLinkAlt size={12} />}
+                                        {link.icon === 'github' ? <FaGithub /> : link.icon === 'blog' ? <FaBook /> : <FaExternalLinkAlt size={12} />}
                                         {link.label}
                                     </a>
                                 ))}
