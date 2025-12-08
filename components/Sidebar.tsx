@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 import { PostData } from '@/lib/posts';
+import { CATEGORY_ORDER, CATEGORY_DISPLAY_NAMES } from '@/lib/category-config';
 
 interface SidebarProps {
     categories: Record<string, number>;
@@ -40,16 +41,31 @@ export default function Sidebar({ categories, recentPosts }: SidebarProps) {
 
     // Recursive component to render categories
     const renderCategories = (nodes: Record<string, any>, level = 0) => {
+        const sortedNodes = Object.values(nodes).sort((a: any, b: any) => {
+            const indexA = CATEGORY_ORDER.indexOf(a.name);
+            const indexB = CATEGORY_ORDER.indexOf(b.name);
+
+            // If both are in the predefined order list, sort by index
+            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+            // If only A is in list, comes first
+            if (indexA !== -1) return -1;
+            // If only B is in list, comes first
+            if (indexB !== -1) return 1;
+
+            // Default alphabetical sort for everything else
+            return a.name.localeCompare(b.name);
+        });
+
         return (
             <ul className={`space-y-1 text-sm ${level > 0 ? 'ml-3 border-l border-border pl-3' : ''}`}>
-                {Object.values(nodes).map((node: any) => (
+                {sortedNodes.map((node: any) => (
                     <li key={node.path}>
                         <div className="flex justify-between items-center group py-1">
                             <Link
                                 href={`/category/${node.path}/`}
                                 className="block text-foreground hover:text-primary hover:underline transition-colors truncate max-w-[80%]"
                             >
-                                {node.name}
+                                {CATEGORY_DISPLAY_NAMES[node.name] || node.name}
                             </Link>
                             {node.count > 0 && (
                                 <span className="text-xs text-secondary bg-white px-2 py-0.5 rounded-full border border-border group-hover:border-primary group-hover:text-primary transition-colors">
