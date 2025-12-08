@@ -116,9 +116,27 @@ export default function ProjectCard({ title, date, description, details, links, 
                                 </div>
                             )}
                         </div>
-                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                             {description}
                         </p>
+
+                        {links && links.length > 0 && (
+                            <div className="flex flex-wrap gap-3 mt-3">
+                                {links.map((link) => (
+                                    <a
+                                        key={link.url}
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md bg-gray-50 dark:bg-gray-800 border border-border hover:border-primary hover:text-primary hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm z-10 relative"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        {link.icon === 'github' ? <FaGithub /> : link.icon === 'blog' ? <FaBook /> : <FaExternalLinkAlt size={12} />}
+                                        {link.label}
+                                    </a>
+                                ))}
+                            </div>
+                        )}
                     </div>
                     <div className={`mt-1 text-secondary transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                         <FaChevronDown />
@@ -136,23 +154,7 @@ export default function ProjectCard({ title, date, description, details, links, 
                             {details}
                         </div>
 
-                        {links && links.length > 0 && (
-                            <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-border/50">
-                                {links.map((link) => (
-                                    <a
-                                        key={link.url}
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-md bg-white dark:bg-gray-800 border border-border hover:border-primary hover:text-primary transition-colors shadow-sm"
-                                        onClick={(e) => e.stopPropagation()}
-                                    >
-                                        {link.icon === 'github' ? <FaGithub /> : link.icon === 'blog' ? <FaBook /> : <FaExternalLinkAlt size={12} />}
-                                        {link.label}
-                                    </a>
-                                ))}
-                            </div>
-                        )}
+
                     </div>
                 </div>
             </div>
