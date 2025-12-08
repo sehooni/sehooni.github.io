@@ -5,7 +5,7 @@
         "description": "NVIDIA JETSON NANO 및 Yolov5를 활용한 종이용기 불량품 자동 선별 시스템 모듈 개발",
         "links": [
             {
-                "label": "GitHub",
+                "label": "GitHub Repository",
                 "url": "https://github.com/sehooni/yolov5_jetsonnano",
                 "icon": "github"
             }
