@@ -18,13 +18,17 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
     const [activeId, setActiveId] = useState<string>('');
 
     useEffect(() => {
+        // Remove code blocks to avoid capturing comments or code as headings
+        // Matches ```...``` blocks (multiline)
+        const contentWithoutCode = content.replace(/```[\s\S]*?```/g, '');
+
         // Simple regex to extract headings from markdown
         // Matches # Heading, ## Heading, etc.
         const regex = /^(#{1,3})\s+(.+)$/gm;
         const extractedHeadings: Heading[] = [];
         let match;
 
-        while ((match = regex.exec(content)) !== null) {
+        while ((match = regex.exec(contentWithoutCode)) !== null) {
             const level = match[1].length;
             const text = match[2].trim();
             // Create a simple ID from text
