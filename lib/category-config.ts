@@ -3,7 +3,7 @@ export const CATEGORY_ORDER = [
     'PaperReview',
     'DL_ML',
     'proteomics',
-    'Datastructure',
+    'datastructure',
     'algorithms',
     'Linux',
     'Blog',
@@ -14,7 +14,7 @@ export const CATEGORY_ORDER = [
 export const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
     'DL_ML': '🖥️ DL & ML',
     'Projects': '📖 Projects',
-    'Datastructure': '📚 Data Structure',
+    'datastructure': '📚 Data Structure',
     'algorithms': '💻 Algorithms',
     'PaperReview': '📚 Paper Review',
     'proteomics': '🧬 Proteomics',
