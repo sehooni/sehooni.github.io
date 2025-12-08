@@ -1,7 +1,0 @@
-1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],""]
-3:I[50718,["/_next/static/chunks/796e69ae18b2784c.js","/_next/static/chunks/a8f82a9835eb887b.js"],"default"]
-4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
-5:"$Sreact.suspense"
-0:{"buildId":"oAIH0-g3w6LOdbw_0qDiA","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"relative","children":[["$","article",null,{"className":"prose prose-lg dark:prose-invert max-w-none","children":[["$","header",null,{"className":"mb-10 not-prose border-b border-gray-100 dark:border-gray-800 pb-8","children":[["$","div",null,{"className":"mb-4 text-sm text-gray-500 flex items-center space-x-2","children":[[["$","$L2",null,{"href":"/category/blog","className":"font-medium text-blue-600 hover:underline","children":"Blog"}],["$","span",null,{"children":"•"}]],["$","time",null,{}]]}],["$","h1",null,{"className":"text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4","children":"[Blog] 블로그 시작하기"}]]}],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"<p>From this moment, my story is going on.</p>\n<h1><em>Done is better than perfect.</em></h1>\n"}}]]}],["$","$L3",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/a8f82a9835eb887b.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
-6:null
