@@ -47,6 +47,10 @@ export function getSortedPostsData(): PostData[] {
                 const matterResult = matter(fileContents);
 
                 let date = matterResult.data.date;
+                if (date instanceof Date) {
+                    date = date.toISOString().split('T')[0];
+                }
+
                 if (!date) {
                     const match = file.match(/^(\d{4}-\d{2}-\d{2})/);
                     if (match) {
