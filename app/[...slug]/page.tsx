@@ -18,7 +18,6 @@ import ScrollToTop from '@/components/ScrollToTop';
 import ShareButtons from '@/components/ShareButtons';
 import PostNavigation from '@/components/PostNavigation';
 import Sidebar from '@/components/Sidebar';
-import MiniSearch from '@/components/MiniSearch';
 
 export default async function Post({ params }: { params: Promise<{ slug: string[] }> }) {
     const { slug } = await params;
@@ -64,12 +63,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                     <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
                         <PostNavigation />
                         <header className="mb-8 not-prose border-b pb-8">
-                            <div className="flex justify-between items-start gap-4">
-                                <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
-                                <div className="mt-1 shrink-0">
-                                    <MiniSearch />
-                                </div>
-                            </div>
+                            <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
                             <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                                 <time dateTime={postData.date}>{format(new Date(postData.date), 'MMMM d, yyyy')}</time>
                                 {postData.category && (
