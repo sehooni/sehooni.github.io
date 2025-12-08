@@ -73,6 +73,23 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                 />
             );
         },
+        code: ({ node, inline, className, children, ...props }: any) => {
+            if (inline) {
+                return (
+                    <code
+                        className="bg-yellow-200 text-gray-900 dark:bg-yellow-900/50 dark:text-gray-100 rounded px-1 py-0.5 font-mono text-sm"
+                        {...props}
+                    >
+                        {children}
+                    </code>
+                );
+            }
+            return (
+                <code className={className} {...props}>
+                    {children}
+                </code>
+            );
+        },
     };
 
     return (
