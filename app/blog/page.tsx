@@ -15,7 +15,7 @@ export default function Blog() {
                 <header className="mb-12">
                     <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Blog</h1>
                     <p className="text-gray-600 dark:text-gray-400">
-                        Writing about technology, learning, and life.
+                        Writing about technology, learning, experience and especially AI.
                     </p>
                 </header>
 

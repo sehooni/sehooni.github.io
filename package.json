@@ -31,7 +31,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "publish": "python3 scripts/publish_post.py"
+    "publish": "python3 scripts/publish_post.py",
+    "publish-project": "python3 scripts/publish_project.py"
   },
   "dependencies": {
     "@giscus/react": "^3.0.0",
