@@ -2,6 +2,7 @@ import { getPostData, getAllPostIds, getCategories, getSortedPostsData } from '@
 import { format } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import rehypeRaw from 'rehype-raw';
 import rehypeHighlight from 'rehype-highlight';
 import TableOfContents from '@/components/TableOfContents';
@@ -75,7 +76,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                         </header>
 
                         <ReactMarkdown
-                            remarkPlugins={[remarkGfm]}
+                            remarkPlugins={[remarkGfm, remarkBreaks]}
                             rehypePlugins={[rehypeRaw, rehypeHighlight]}
                             components={components}
                         >
