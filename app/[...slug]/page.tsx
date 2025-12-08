@@ -19,6 +19,10 @@ import ShareButtons from '@/components/ShareButtons';
 import PostNavigation from '@/components/PostNavigation';
 import Sidebar from '@/components/Sidebar';
 
+import TopNav from '@/components/TopNav';
+
+// ... (existing imports)
+
 export default async function Post({ params }: { params: Promise<{ slug: string[] }> }) {
     const { slug } = await params;
     // slug is an array: [category, title]
@@ -29,67 +33,49 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
     const allPosts = getSortedPostsData(); // Fetch all posts to get recent ones
     const recentPosts = allPosts.slice(0, 5);
 
-    // Custom components for ReactMarkdown to add IDs to headings for TOC
-    const components = {
-        h1: ({ node, ...props }: any) => {
-            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-            return <h1 id={id} className="text-3xl font-bold mt-8 mb-4" {...props} />;
-        },
-        h2: ({ node, ...props }: any) => {
-            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-            return <h2 id={id} className="text-2xl font-bold mt-8 mb-4" {...props} />;
-        },
-        h3: ({ node, ...props }: any) => {
-            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-            return <h3 id={id} className="text-xl font-bold mt-6 mb-3" {...props} />;
-        },
-        img: ({ node, ...props }: any) => {
-            return (
-                <img
-                    {...props}
-                    className="block mx-auto my-8 max-w-full rounded-lg shadow-sm"
-                    style={{ display: 'block', margin: '2rem auto' }}
-                />
-            );
-        },
-    };
+    // ... (components definition)
 
     return (
-        <div className="flex flex-col lg:flex-row min-h-screen">
-            <Sidebar categories={categories} recentPosts={recentPosts} />
-            <main className="flex-1 w-full max-w-7xl mx-auto p-6 lg:p-12">
-                <div className="flex gap-8">
-                    <ScrollToTop />
-                    <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
-                        <PostNavigation />
-                        <header className="mb-8 not-prose border-b pb-8">
-                            <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
-                            <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                                <time dateTime={postData.date}>{format(new Date(postData.date), 'MMMM d, yyyy')}</time>
-                                {postData.category && (
-                                    <>
-                                        <span>•</span>
-                                        <span className="font-medium text-primary">{postData.category}</span>
-                                    </>
-                                )}
-                            </div>
-                        </header>
+        <div className="min-h-screen flex flex-col">
+            {/* TopNav for Blog Section */}
+            <TopNav title="Blog" />
 
-                        <ReactMarkdown
-                            remarkPlugins={[remarkGfm, remarkBreaks]}
-                            rehypePlugins={[rehypeRaw, rehypeHighlight]}
-                            components={components}
-                        >
-                            {postData.content}
-                        </ReactMarkdown>
+            <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto">
+                <Sidebar categories={categories} recentPosts={recentPosts} />
+                <main className="flex-1 w-full lg:max-w-5xl p-6 lg:p-12">
+                    <div className="flex gap-8">
+                        <ScrollToTop />
+                        <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
+                            <PostNavigation />
+                            <header className="mb-8 not-prose border-b pb-8">
+                                <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+                                <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                                    <time dateTime={postData.date}>{format(new Date(postData.date), 'MMMM d, yyyy')}</time>
+                                    {postData.category && (
+                                        <>
+                                            <span>•</span>
+                                            <span className="font-medium text-primary">{postData.category}</span>
+                                        </>
+                                    )}
+                                </div>
+                            </header>
 
-                        <ShareButtons title={postData.title} slug={decodedSlug} />
-                        <Comments />
-                    </article>
+                            <ReactMarkdown
+                                remarkPlugins={[remarkGfm, remarkBreaks]}
+                                rehypePlugins={[rehypeRaw, rehypeHighlight]}
+                                components={components}
+                            >
+                                {postData.content}
+                            </ReactMarkdown>
 
-                    <TableOfContents content={postData.content} />
-                </div>
-            </main>
+                            <ShareButtons title={postData.title} slug={decodedSlug} />
+                            <Comments />
+                        </article>
+
+                        <TableOfContents content={postData.content} />
+                    </div>
+                </main>
+            </div>
         </div>
     );
 }

@@ -23,16 +23,21 @@ export async function generateStaticParams() {
     }));
 }
 
+import TopNav from '@/components/TopNav';
+
+// ... (existing imports)
+
 export default async function Category({ params }: { params: Promise<{ category: string[] }> }) {
+    // ... (existing logic)
     const { category } = await params;
-    // category is array: ['Projects', 'AI_Contest']
-    // Decode and join to match the keys in our categories object/post.category
+    // decode title part for share buttons if needed, usually slug parts are url-encoded
     const decodedCategory = category.map(c => decodeURIComponent(c)).join('/');
     const allPostsData = getSortedPostsData();
     const categories = getCategories();
     const recentPosts = allPostsData.slice(0, 5);
 
     const categoryPosts = allPostsData.filter(post => {
+        // ... (filtering logic)
         // Match exact category OR subcategories
         // e.g. decodedCategory="DL", post.category="DL/NLP" -> should match
         // Check if post.category starts with decodedCategory AND is followed by a separator or end of string
@@ -56,32 +61,36 @@ export default async function Category({ params }: { params: Promise<{ category:
     });
 
     return (
-        <div className="flex flex-col lg:flex-row min-h-screen">
-            <Sidebar categories={categories} recentPosts={recentPosts} />
-            <main className="flex-1 w-full max-w-4xl mx-auto p-6 lg:p-12">
-                <header className="mb-12 border-b pb-8">
-                    <h1 className="text-4xl font-bold mb-4">Category: {decodedCategory}</h1>
-                    <p className="text-xl text-gray-600 dark:text-gray-400">
-                        {categoryPosts.length} posts found.
-                    </p>
-                </header>
+        <div className="min-h-screen flex flex-col">
+            <TopNav title="Blog" />
 
-                <div className="space-y-8">
-                    {categoryPosts.map(({ slug, date, title }) => (
-                        <article key={slug} className="group relative flex flex-col items-start">
-                            <h2 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                                <Link href={`/${slug}/`}>
-                                    <span className="absolute inset-0" />
-                                    {title}
-                                </Link>
-                            </h2>
-                            <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                                <time dateTime={date}>{format(new Date(date), 'MMMM d, yyyy')}</time>
-                            </div>
-                        </article>
-                    ))}
-                </div>
-            </main>
+            <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto">
+                <Sidebar categories={categories} recentPosts={recentPosts} />
+                <main className="flex-1 w-full p-6 lg:p-12">
+                    <header className="mb-12 border-b pb-8">
+                        <h1 className="text-4xl font-bold mb-4">Category: {decodedCategory}</h1>
+                        <p className="text-xl text-gray-600 dark:text-gray-400">
+                            {categoryPosts.length} posts found.
+                        </p>
+                    </header>
+
+                    <div className="space-y-8">
+                        {categoryPosts.map(({ slug, date, title }) => (
+                            <article key={slug} className="group relative flex flex-col items-start border-b border-gray-100 dark:border-gray-800 pb-8 last:border-0 last:pb-0">
+                                <h2 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                                    <Link href={`/${slug}/`}>
+                                        <span className="absolute inset-0" />
+                                        {title}
+                                    </Link>
+                                </h2>
+                                <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                                    <time dateTime={date}>{format(new Date(date), 'MMMM d, yyyy')}</time>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </main>
+            </div>
         </div>
     );
 }
