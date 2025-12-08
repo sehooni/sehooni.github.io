@@ -80,7 +80,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
             {/* TopNav for Blog Section */}
             <TopNav title="Blog" />
 
-            <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
                 <Sidebar categories={categories} recentPosts={recentPosts} />
                 <main className="flex-1 w-full lg:max-w-5xl p-6 lg:p-12">
                     <div className="flex gap-8">

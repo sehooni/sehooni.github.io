@@ -64,7 +64,7 @@ export default async function Category({ params }: { params: Promise<{ category:
         <div className="min-h-screen flex flex-col">
             <TopNav title="Blog" />
 
-            <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
                 <Sidebar categories={categories} recentPosts={recentPosts} />
                 <main className="flex-1 w-full p-6 lg:p-12">
                     <header className="mb-12 border-b pb-8">

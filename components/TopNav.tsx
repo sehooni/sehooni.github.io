@@ -19,7 +19,7 @@ export default function TopNav({ title }: TopNavProps) {
     ];
 
     return (
-        <nav className="w-full max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center border-b border-gray-200 dark:border-gray-800 mb-8 md:mb-12">
+        <nav className="w-full max-w-screen-2xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center border-b border-gray-200 dark:border-gray-800 mb-8 md:mb-12">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 md:mb-0">
                 {title}
             </h1>

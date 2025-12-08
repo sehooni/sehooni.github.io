@@ -13,7 +13,7 @@ export default function Blog() {
         <div className="min-h-screen flex flex-col">
             <TopNav title="Blog" />
 
-            <div className="flex flex-col lg:flex-row w-full max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
                 <Sidebar categories={categories} recentPosts={recentPosts} />
                 <main className="flex-1 w-full p-6 lg:p-12">
                     {/* Header 'Blog' removed as it's in TopNav now, or kept as page title? TopNav has title 'Blog'. So maybe reduce redundancy. */}
