@@ -3,6 +3,8 @@ import { getSortedPostsData, getCategories, PostData } from '@/lib/posts';
 import Sidebar from '@/components/Sidebar';
 import SearchablePostList from '@/components/SearchablePostList';
 
+import { Suspense } from 'react';
+
 export default function Blog() {
     const posts = getSortedPostsData();
     const categories = getCategories();
@@ -19,7 +21,9 @@ export default function Blog() {
                     </p>
                 </header>
 
-                <SearchablePostList initialPosts={posts} />
+                <Suspense fallback={<div>Loading posts...</div>}>
+                    <SearchablePostList initialPosts={posts} />
+                </Suspense>
             </main>
         </div>
     );

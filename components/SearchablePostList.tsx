@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { format } from 'date-fns';
 import { PostData } from '@/lib/posts';
 import { FaSearch } from 'react-icons/fa';
@@ -11,7 +12,27 @@ interface SearchablePostListProps {
 }
 
 export default function SearchablePostList({ initialPosts }: SearchablePostListProps) {
-    const [searchTerm, setSearchTerm] = useState('');
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const pathname = usePathname();
+
+    // Initialize from URL or default to empty
+    // We use a separate state to control the input immediately
+    const [searchTerm, setSearchTerm] = useState(searchParams.get('q') || '');
+
+    // Sync URL with search term (debounced slightly or just effect)
+    useEffect(() => {
+        const params = new URLSearchParams(searchParams.toString());
+        if (searchTerm) {
+            params.set('q', searchTerm);
+        } else {
+            params.delete('q');
+        }
+
+        // Update URL without full reload
+        // replace to avoid building huge history stack
+        router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    }, [searchTerm, pathname, router, searchParams]);
 
     const filteredPosts = useMemo(() => {
         if (!searchTerm.trim()) return initialPosts;
@@ -19,12 +40,13 @@ export default function SearchablePostList({ initialPosts }: SearchablePostListP
         const lowerTerm = searchTerm.toLowerCase();
         return initialPosts.filter(post => {
             const titleMatch = post.title.toLowerCase().includes(lowerTerm);
-            const excerptMatch = post.excerpt?.toLowerCase().includes(lowerTerm);
-            const categoryMatch = post.category?.toLowerCase().includes(lowerTerm);
-            // If we have tags in posts, we should search them too. The PostData interface allows [key: string]: any.
-            // But standard posts might not have tags yet.
+            const excerptMatch = (post.excerpt || '').toLowerCase().includes(lowerTerm);
+            const categoryMatch = (post.category || '').toLowerCase().includes(lowerTerm);
+            // If we have tags in posts, we should search them too.
+            // Check if tags exists and is an array
+            const tagsMatch = Array.isArray(post.tags) && post.tags.some((tag: string) => tag.toLowerCase().includes(lowerTerm));
 
-            return titleMatch || excerptMatch || categoryMatch;
+            return titleMatch || excerptMatch || categoryMatch || tagsMatch;
         });
     }, [initialPosts, searchTerm]);
 
