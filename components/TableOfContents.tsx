@@ -30,7 +30,16 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
 
         while ((match = regex.exec(contentWithoutCode)) !== null) {
             const level = match[1].length;
-            const text = match[2].trim();
+            let text = match[2].trim();
+
+            // Basic markdown stripping for display text and ID
+            // Remove bold/italic (* or _)
+            text = text.replace(/[*_]{1,3}([^*_]+)[*_]{1,3}/g, '$1');
+            // Remove links [text](url) -> text
+            text = text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+            // Remove code `code` -> code
+            text = text.replace(/`([^`]+)`/g, '$1');
+
             // Create a simple ID from text
             const id = text
                 .toLowerCase()

@@ -15,7 +15,7 @@ export default async function Projects() {
         <div className="min-h-screen flex flex-col items-center">
             <TopNav title="Projects" />
             <main className="flex-1 w-full max-w-5xl mx-auto p-4 md:p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
                     {projects.map((project) => (
                         <ProjectCard
                             key={project.title}

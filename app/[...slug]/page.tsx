@@ -33,18 +33,35 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
     const allPosts = getSortedPostsData(); // Fetch all posts to get recent ones
     const recentPosts = allPosts.slice(0, 5);
 
+    // Helper helper to extract text from React children
+    const getTextFromChildren = (children: any): string => {
+        if (!children) return '';
+        if (typeof children === 'string') return children;
+        if (Array.isArray(children)) return children.map(getTextFromChildren).join('');
+        if (children.props && children.props.children) return getTextFromChildren(children.props.children);
+        return '';
+    };
+
+    const generateId = (children: any) => {
+        const text = getTextFromChildren(children);
+        return text
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)+/g, '');
+    };
+
     // Custom components for ReactMarkdown to add IDs to headings for TOC
     const components = {
         h1: ({ node, ...props }: any) => {
-            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            const id = generateId(props.children);
             return <h1 id={id} className="text-3xl font-bold mt-8 mb-4" {...props} />;
         },
         h2: ({ node, ...props }: any) => {
-            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            const id = generateId(props.children);
             return <h2 id={id} className="text-2xl font-bold mt-8 mb-4" {...props} />;
         },
         h3: ({ node, ...props }: any) => {
-            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            const id = generateId(props.children);
             return <h3 id={id} className="text-xl font-bold mt-6 mb-3" {...props} />;
         },
         img: ({ node, ...props }: any) => {

@@ -25,14 +25,26 @@ export default function TopNav({ title }: TopNavProps) {
             </h1>
             <ul className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm font-medium tracking-wide">
                 {navItems.map((item) => {
-                    const isActive = pathname === item.path || (item.path !== '/' && pathname?.startsWith(item.path));
+                    let isActive = pathname === item.path || (item.path !== '/' && pathname?.startsWith(item.path));
+
+                    // Special case for BLOG: It should be active for individual posts (/[slug]) and categories (/category/...)
+                    // Since posts are at root level (/[slug]), we can't just check startsWith('/blog')
+                    // Logic: If it's NOT Home, Projects, About, or Resume, it's considered Blog context.
+                    if (item.path === '/blog') {
+                        const isMainPage = ['/', '/projects', '/about', '/resume'].some(path =>
+                            pathname === path || (path !== '/' && pathname?.startsWith(path))
+                        );
+                        if (!isMainPage && pathname !== '/') {
+                            isActive = true;
+                        }
+                    }
                     return (
                         <li key={item.path}>
                             <Link
                                 href={item.path}
                                 className={`transition-colors ${isActive
-                                        ? 'text-gray-900 dark:text-white font-bold'
-                                        : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+                                    ? 'text-gray-900 dark:text-white font-bold'
+                                    : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
                                     }`}
                             >
                                 {item.name}
