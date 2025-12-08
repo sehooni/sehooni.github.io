@@ -22,7 +22,7 @@ export default function Blog() {
                 <div className="space-y-12">
                     {posts.map((post) => (
                         <article key={post.slug} className="flex flex-col group">
-                            <Link href={`/${post.slug}`} className="block">
+                            <Link href={`/${post.slug}/`} className="block">
                                 <h2 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
                                     {post.title}
                                 </h2>
@@ -42,7 +42,7 @@ export default function Blog() {
                                 {post.excerpt || "Click to read more..."}
                             </p>
                             <Link
-                                href={`/${post.slug}`}
+                                href={`/${post.slug}/`}
                                 className="inline-block mt-4 text-primary font-medium hover:underline"
                             >
                                 Read more →

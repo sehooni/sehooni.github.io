@@ -70,7 +70,7 @@ export default function Sidebar({ categories, recentPosts }: SidebarProps) {
                         {Object.entries(categories).map(([category, count]) => (
                             <li key={category} className="flex justify-between items-center group">
                                 <Link
-                                    href={`/category/${category}`}
+                                    href={`/category/${category}/`}
                                     className="block py-1.5 text-foreground hover:text-primary hover:underline transition-colors truncate max-w-[80%]"
                                 >
                                     {category}
@@ -93,7 +93,7 @@ export default function Sidebar({ categories, recentPosts }: SidebarProps) {
                             {recentPosts.map((post) => (
                                 <li key={post.slug}>
                                     <Link
-                                        href={`/${post.slug}`}
+                                        href={`/${post.slug}/`}
                                         className="block group"
                                     >
                                         <span className="block text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-0.5">

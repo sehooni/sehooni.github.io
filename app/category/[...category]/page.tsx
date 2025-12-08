@@ -38,7 +38,7 @@ export default async function Category({ params }: { params: Promise<{ category:
                     {categoryPosts.map(({ slug, date, title }) => (
                         <article key={slug} className="group relative flex flex-col items-start">
                             <h2 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                                <Link href={`/${slug}`}>
+                                <Link href={`/${slug}/`}>
                                     <span className="absolute inset-0" />
                                     {title}
                                 </Link>
