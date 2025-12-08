@@ -4,7 +4,7 @@ export default function Resume() {
     return (
         <div className="min-h-screen flex flex-col items-center">
             <TopNav title="Résumé" />
-            <main className="flex-1 w-full max-w-4xl mx-auto p-4 md:p-8 prose prose-slate dark:prose-invert">
+            <main className="flex-1 w-full max-w-7xl mx-auto p-4 md:p-8 prose prose-slate dark:prose-invert">
                 <h3>Education</h3>
                 <ul>
                     <li><strong>Hanyang University</strong></li>

@@ -5,7 +5,7 @@ export default function About() {
     return (
         <div className="min-h-screen flex flex-col items-center">
             <TopNav title="About" />
-            <main className="flex-1 w-full max-w-4xl mx-auto p-4 md:p-8 prose prose-slate dark:prose-invert">
+            <main className="flex-1 w-full max-w-7xl mx-auto p-4 md:p-8 prose prose-slate dark:prose-invert">
                 <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
                     <div className="relative w-48 h-48 shrink-0 overflow-hidden rounded-full border-4 border-gray-100 dark:border-gray-800 shadow-lg">
                         <Image
