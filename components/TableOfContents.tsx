@@ -64,7 +64,7 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
     if (headings.length === 0) return null;
 
     return (
-        <nav className="hidden xl:block w-64 sticky top-6 h-[calc(100vh-3rem)] overflow-y-auto pl-6 border-l border-gray-200 dark:border-gray-800">
+        <nav className="hidden xl:block w-48 sticky top-6 h-[calc(100vh-3rem)] overflow-y-auto pl-6 border-l border-gray-200 dark:border-gray-800">
             <h4 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">On this page</h4>
             <ul className="space-y-2 text-sm">
                 {headings.map((heading) => (

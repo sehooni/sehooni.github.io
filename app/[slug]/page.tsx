@@ -52,8 +52,8 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
     return (
         <div className="flex flex-col lg:flex-row min-h-screen">
             <Sidebar categories={categories} />
-            <main className="flex-1 w-full max-w-4xl mx-auto p-6 lg:p-12">
-                <div className="flex gap-10">
+            <main className="flex-1 w-full max-w-7xl mx-auto p-6 lg:p-12">
+                <div className="flex gap-8">
                     <ScrollToTop />
                     <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
                         <PostNavigation />
