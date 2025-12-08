@@ -108,6 +108,11 @@ export default function Sidebar({ categories, recentPosts }: SidebarProps) {
                             </Link>
                         </li>
                         <li>
+                            <Link href="/blog" className="block py-1.5 text-foreground hover:text-primary hover:underline transition-colors">
+                                Blog
+                            </Link>
+                        </li>
+                        <li>
                             <Link href="/about" className="block py-1.5 text-foreground hover:text-primary hover:underline transition-colors">
                                 About
                             </Link>
