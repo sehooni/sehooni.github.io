@@ -33,7 +33,30 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
     const allPosts = getSortedPostsData(); // Fetch all posts to get recent ones
     const recentPosts = allPosts.slice(0, 5);
 
-    // ... (components definition)
+    // Custom components for ReactMarkdown to add IDs to headings for TOC
+    const components = {
+        h1: ({ node, ...props }: any) => {
+            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            return <h1 id={id} className="text-3xl font-bold mt-8 mb-4" {...props} />;
+        },
+        h2: ({ node, ...props }: any) => {
+            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            return <h2 id={id} className="text-2xl font-bold mt-8 mb-4" {...props} />;
+        },
+        h3: ({ node, ...props }: any) => {
+            const id = props.children[0]?.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            return <h3 id={id} className="text-xl font-bold mt-6 mb-3" {...props} />;
+        },
+        img: ({ node, ...props }: any) => {
+            return (
+                <img
+                    {...props}
+                    className="block mx-auto my-8 max-w-full rounded-lg shadow-sm"
+                    style={{ display: 'block', margin: '2rem auto' }}
+                />
+            );
+        },
+    };
 
     return (
         <div className="min-h-screen flex flex-col">
