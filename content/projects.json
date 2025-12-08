@@ -1,5 +1,22 @@
 [
     {
+        "title": "AI Parmacist Chatbot Service",
+        "date": "2024.07 - 2024.09",
+        "description": "[Upstage Global AI Hackathon] RAG와 Langchain, Solar LLM Finetuning을 이용한 영양제 추천 서비스 개발",
+        "tags": [
+            "AI",
+            "Hackathon"
+        ],
+        "links": [
+            {
+                "label": "GitHub repository",
+                "url": "https://github.com/sehooni/NutriPharmAI",
+                "icon": "github"
+            }
+        ],
+        "contentMarkdown": "Finalist in Global AI Week Hackathon (Upstage AI Hackathon).\n- Objective: Develop an AI-driven chatbot to assist with supplement and medication intake.\n- Approach:\n    - Designed and implemented chatbot functionality using LLMs, Langchain, RAG, and Gradio.\n    - Optimized responses through retrieval-augmented generation (RAG)."
+    },
+    {
         "title": "AI-driven Game Scenario Generator",
         "date": "2024.07",
         "description": "[스마일게이트 퓨쳐랩 AI 서비스 위클리톤 대상 수상] LLM Finetuning 및 Prompt engineering을 통한 게임 시나리오 제너레이터 개발",
