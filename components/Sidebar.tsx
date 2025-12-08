@@ -1,5 +1,8 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 import { PostData } from '@/lib/posts';
@@ -11,6 +14,8 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ categories, recentPosts }: SidebarProps) {
+    const pathname = usePathname();
+
     // Transform flat categories into a tree structure
     const categoryTree = Object.entries(categories).reduce((acc, [path, count]) => {
         const parts = path.split('/');
@@ -80,6 +85,15 @@ export default function Sidebar({ categories, recentPosts }: SidebarProps) {
         );
     };
 
+    const navItems = [
+        { name: 'Home', path: '/' },
+        { name: 'Blog', path: '/blog' },
+        { name: 'Projects', path: '/projects' },
+        { name: 'About', path: '/about' },
+        // Resume is special case, user will provide link later
+        { name: 'Resume', path: '/resume' },
+    ];
+
     return (
         <div className="w-full lg:w-64 flex-shrink-0 lg:block bg-sidebar-bg border-r border-border h-auto lg:h-screen lg:sticky lg:top-0 overflow-y-auto sidebar-scroll font-sans">
             <div className="p-6">
@@ -118,21 +132,50 @@ export default function Sidebar({ categories, recentPosts }: SidebarProps) {
                         Navigation
                     </h3>
                     <ul className="space-y-1 text-sm">
-                        <li>
-                            <Link href="/" className="block py-1.5 text-foreground hover:text-primary hover:underline transition-colors">
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/blog" className="block py-1.5 text-foreground hover:text-primary hover:underline transition-colors">
-                                Blog
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/about" className="block py-1.5 text-foreground hover:text-primary hover:underline transition-colors">
-                                About
-                            </Link>
-                        </li>
+                        {navItems.map((item) => {
+                            // Logic: Exclude if current path matches item path
+                            // BUT for Home ('/'), it matches everything if using 'startsWith'
+                            // Exactly matching logic:
+                            // If item.path is '/', check if pathname is exactly '/'
+                            // Else check if pathname starts with item.path (e.g. /blog matches /blog/post-1)
+                            // User request: "Self-exclusion" (e.g. Blog page doesn't show Blog link)
+
+                            // Refined Logic based on user request "Blog eseo neun Blog neun an tteu go"
+                            // If I am on /blog, hide Blog.
+                            // If I am on /projects, hide Projects.
+
+                            // Handling sub-paths: If I am on /blog/post-1, should I hide Blog?
+                            // Usually yes, because "Blog" link goes to /blog index.
+                            // But maybe the user only meant the exact page?
+                            // "Home, Blog, Project, about man itdwe, sseuro neun an tteu do rok"
+                            // Let's assume strict checking for now, or prefix checking.
+
+                            // Let's use exact match for root, and 'startsWith' for others to be safe?
+                            // Actually, if I am on a blog post, I might WANT to go back to Blog index.
+                            // The user said "Blog page (index) excludes Blog link".
+                            // If I am reading a post, showing "Blog" link is useful.
+                            // So let's exclude ONLY if `pathname === item.path`.
+
+                            // Exception: For Home ('/'), exclude only if pathname === '/'
+
+                            if (pathname === item.path) return null;
+                            // Also handle implicit index? Next.js normalizes paths.
+
+                            // What about trailing slashes?
+                            // pathname usually comes without trailing slash unless configured.
+                            // item.path has no trailing slash.
+
+                            return (
+                                <li key={item.path}>
+                                    <Link
+                                        href={item.path}
+                                        className="block py-1.5 text-foreground hover:text-primary hover:underline transition-colors"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </nav>
 
