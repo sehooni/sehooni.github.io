@@ -5,7 +5,20 @@ import Sidebar from '@/components/Sidebar';
 
 export async function generateStaticParams() {
     const categories = getCategories();
-    return Object.keys(categories).map((category) => ({
+    // Use a Set to store unique paths including intermediates
+    const allPaths = new Set<string>();
+
+    Object.keys(categories).forEach((category) => {
+        const parts = category.split('/');
+        // Add all intermediate paths
+        // e.g. "Projects/AI_Contest" -> adds "Projects" and "Projects/AI_Contest"
+        parts.forEach((_, index) => {
+            const path = parts.slice(0, index + 1).join('/');
+            allPaths.add(path);
+        });
+    });
+
+    return Array.from(allPaths).map((category) => ({
         category: category.split('/'),
     }));
 }
@@ -19,9 +32,23 @@ export default async function Category({ params }: { params: Promise<{ category:
     const categories = getCategories();
     const recentPosts = allPostsData.slice(0, 5);
 
-    const categoryPosts = allPostsData.filter(post =>
-        post.category === decodedCategory || (post.categories && post.categories.includes(decodedCategory))
-    );
+    const categoryPosts = allPostsData.filter(post => {
+        // Match exact category OR subcategories
+        // e.g. decodedCategory="DL", post.category="DL/NLP" -> should match
+        // Check if post.category starts with decodedCategory AND is followed by a separator or end of string
+        // But since we use '/' as separator and it is consistent:
+        if (!post.category) return false;
+
+        const isDirectMatch = post.category === decodedCategory;
+        const isSubCategory = post.category.startsWith(`${decodedCategory}/`);
+
+        // Also check legacy multiple categories array if it exists (though we primarily use string category now)
+        const isIncludedInList = post.categories && post.categories.some(c =>
+            c === decodedCategory || c.startsWith(`${decodedCategory}/`)
+        );
+
+        return isDirectMatch || isSubCategory || isIncludedInList;
+    });
 
     return (
         <div className="flex flex-col lg:flex-row min-h-screen">
