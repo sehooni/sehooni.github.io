@@ -18,10 +18,12 @@ import ShareButtons from '@/components/ShareButtons';
 import PostNavigation from '@/components/PostNavigation';
 import Sidebar from '@/components/Sidebar';
 
-export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Post({ params }: { params: Promise<{ slug: string[] }> }) {
     const { slug } = await params;
-    const decodedSlug = decodeURIComponent(slug);
-    const postData = await getPostData(decodedSlug);
+    // slug is an array: [category, title]
+    const postData = await getPostData(slug);
+    // decode title part for share buttons if needed, usually slug parts are url-encoded
+    const decodedSlug = slug.map(s => decodeURIComponent(s)).join('/');
     const categories = getCategories();
     const allPosts = getSortedPostsData(); // Fetch all posts to get recent ones
     const recentPosts = allPosts.slice(0, 5);

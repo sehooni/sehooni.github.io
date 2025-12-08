@@ -6,13 +6,15 @@ import Sidebar from '@/components/Sidebar';
 export async function generateStaticParams() {
     const categories = getCategories();
     return Object.keys(categories).map((category) => ({
-        category: category,
+        category: category.split('/'),
     }));
 }
 
-export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
+export default async function Category({ params }: { params: Promise<{ category: string[] }> }) {
     const { category } = await params;
-    const decodedCategory = decodeURIComponent(category);
+    // category is array: ['Projects', 'AI_Contest']
+    // Decode and join to match the keys in our categories object/post.category
+    const decodedCategory = category.map(c => decodeURIComponent(c)).join('/');
     const allPostsData = getSortedPostsData();
     const categories = getCategories();
     const recentPosts = allPostsData.slice(0, 5);
