@@ -2,7 +2,7 @@
     {
         "title": "AI-driven Game Scenario Generator",
         "date": "2024.07",
-        "description": "LLM Finetuning 및 Prompt engineering을 통한 게임 시나리오 제너레이터 개발, 스마일게이트 퓨쳐랩 AI 서비스 위클리톤 대상 수상",
+        "description": "[스마일게이트 퓨쳐랩 AI 서비스 위클리톤 대상 수상] LLM Finetuning 및 Prompt engineering을 통한 게임 시나리오 제너레이터 개발",
         "tags": [
             "AI",
             "Hackathon"
