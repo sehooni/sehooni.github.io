@@ -1,4 +1,4 @@
-import { getPostData, getAllPostIds } from '@/lib/posts';
+import { getPostData, getAllPostIds, getCategories } from '@/lib/posts';
 import { format } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -13,11 +13,16 @@ export async function generateStaticParams() {
 }
 
 import Comments from '@/components/Comments';
+import ScrollToTop from '@/components/ScrollToTop';
+import ShareButtons from '@/components/ShareButtons';
+import PostNavigation from '@/components/PostNavigation';
+import Sidebar from '@/components/Sidebar';
 
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const decodedSlug = decodeURIComponent(slug);
     const postData = await getPostData(decodedSlug);
+    const categories = getCategories();
 
     // Custom components for ReactMarkdown to add IDs to headings for TOC
     const components = {
@@ -45,33 +50,41 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
     };
 
     return (
-        <div className="flex gap-10">
-            <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
-                <header className="mb-8 not-prose border-b pb-8">
-                    <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
-                    <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                        <time dateTime={postData.date}>{format(new Date(postData.date), 'MMMM d, yyyy')}</time>
-                        {postData.category && (
-                            <>
-                                <span>•</span>
-                                <span className="font-medium text-primary">{postData.category}</span>
-                            </>
-                        )}
-                    </div>
-                </header>
+        <div className="flex flex-col lg:flex-row min-h-screen">
+            <Sidebar categories={categories} />
+            <main className="flex-1 w-full max-w-4xl mx-auto p-6 lg:p-12">
+                <div className="flex gap-10">
+                    <ScrollToTop />
+                    <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
+                        <PostNavigation />
+                        <header className="mb-8 not-prose border-b pb-8">
+                            <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+                            <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                                <time dateTime={postData.date}>{format(new Date(postData.date), 'MMMM d, yyyy')}</time>
+                                {postData.category && (
+                                    <>
+                                        <span>•</span>
+                                        <span className="font-medium text-primary">{postData.category}</span>
+                                    </>
+                                )}
+                            </div>
+                        </header>
 
-                <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    rehypePlugins={[rehypeRaw, rehypeHighlight]}
-                    components={components}
-                >
-                    {postData.content}
-                </ReactMarkdown>
+                        <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            rehypePlugins={[rehypeRaw, rehypeHighlight]}
+                            components={components}
+                        >
+                            {postData.content}
+                        </ReactMarkdown>
 
-                <Comments />
-            </article>
+                        <ShareButtons title={postData.title} slug={decodedSlug} />
+                        <Comments />
+                    </article>
 
-            <TableOfContents content={postData.content} />
+                    <TableOfContents content={postData.content} />
+                </div>
+            </main>
         </div>
     );
 }
