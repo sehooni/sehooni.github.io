@@ -49,9 +49,9 @@ export default async function Category({ params }: { params: Promise<{ category:
 
         return isDirectMatch || isSubCategory || isIncludedInList;
     }).sort((a, b) => {
-        // Sort by date ASCENDING (Oldest first) for tutorial series
-        if (a.date < b.date) return -1;
-        if (a.date > b.date) return 1;
+        // Sort by date DESCENDING (Newest first)
+        if (a.date < b.date) return 1;
+        if (a.date > b.date) return -1;
         return 0;
     });
 
