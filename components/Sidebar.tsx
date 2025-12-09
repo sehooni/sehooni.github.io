@@ -10,10 +10,9 @@ import { CATEGORY_ORDER, CATEGORY_DISPLAY_NAMES } from '@/lib/category-config';
 
 interface SidebarProps {
     categories: Record<string, number>;
-    recentPosts?: PostData[];
 }
 
-export default function Sidebar({ categories, recentPosts }: SidebarProps) {
+export default function Sidebar({ categories }: SidebarProps) {
     const pathname = usePathname();
 
     // Transform flat categories into a tree structure
@@ -140,32 +139,7 @@ export default function Sidebar({ categories, recentPosts }: SidebarProps) {
                     </div>
                 )}
 
-                {/* Recent Posts - Hide on Home, Projects, About, Resume pages (Show only on Blog context) */}
-                {recentPosts && recentPosts.length > 0 &&
-                    !(pathname === '/' || ['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path))) && (
-                        <div>
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-secondary mb-3 pb-1 border-b border-border">
-                                Recent Posts
-                            </h3>
-                            <ul className="space-y-3 text-sm">
-                                {recentPosts.map((post) => (
-                                    <li key={post.slug}>
-                                        <Link
-                                            href={`/${post.slug}/`}
-                                            className="block group"
-                                        >
-                                            <span className="block text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-0.5">
-                                                {post.title}
-                                            </span>
-                                            <span className="text-xs text-cool-gray-400 group-hover:text-cool-gray-500 transition-colors">
-                                                {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                                            </span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
+
             </div>
         </div>
     );

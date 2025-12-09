@@ -37,8 +37,6 @@
   "datastructure/linked_list": "/DataStructure/linked_list",
   "md_ipynb": "/ETC/md_ipynb",
   "etc/md_ipynb": "/ETC/md_ipynb",
-  "linux": "/Linux/Linux",
-  "linux/linux": "/Linux/Linux",
   "imagenet_classification_with_deep_convolutional_neural_networks": "/PaperReview/ImageNet_Classification_with_Deep_Convolutional_Neural_Networks",
   "paperreview/imagenet_classification_with_deep_convolutional_neural_networks": "/PaperReview/ImageNet_Classification_with_Deep_Convolutional_Neural_Networks",
   "rcnn_fast_rcnn_faster_rcnn": "/PaperReview/RCNN_Fast_RCNN_Faster_RCNN",

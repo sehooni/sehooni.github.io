@@ -34,7 +34,7 @@ export default async function Category({ params }: { params: Promise<{ category:
     const decodedCategory = category.map(c => decodeURIComponent(c)).join('/');
     const allPostsData = getSortedPostsData();
     const categories = getCategories();
-    const recentPosts = allPostsData.slice(0, 5);
+
 
     const categoryPosts = allPostsData.filter(post => {
         // ... (filtering logic)
@@ -65,7 +65,7 @@ export default async function Category({ params }: { params: Promise<{ category:
             <TopNav title="Blog" />
 
             <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
-                <Sidebar categories={categories} recentPosts={recentPosts} />
+                <Sidebar categories={categories} />
                 <main className="flex-1 w-full p-6 lg:p-12">
                     <header className="mb-12 border-b pb-8">
                         <h1 className="text-4xl font-bold mb-4">Category: {decodedCategory}</h1>

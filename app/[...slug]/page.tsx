@@ -30,8 +30,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
     // decode title part for share buttons if needed, usually slug parts are url-encoded
     const decodedSlug = slug.map(s => decodeURIComponent(s)).join('/');
     const categories = getCategories();
-    const allPosts = getSortedPostsData(); // Fetch all posts to get recent ones
-    const recentPosts = allPosts.slice(0, 5);
+
 
     // Helper helper to extract text from React children
     const getTextFromChildren = (children: any): string => {
@@ -99,7 +98,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
             <TopNav title="Blog" />
 
             <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
-                <Sidebar categories={categories} recentPosts={recentPosts} />
+                <Sidebar categories={categories} />
                 <main className="flex-1 w-full p-6 lg:p-12">
                     <div className="flex gap-8">
                         <ScrollToTop />
