@@ -72,7 +72,7 @@ export default function Sidebar({ categories }: SidebarProps) {
                                 {CATEGORY_DISPLAY_NAMES[node.name] || node.name}
                             </Link>
                             {node.count > 0 && (
-                                <span className="text-xs text-secondary bg-white px-2 py-0.5 rounded-full border border-border group-hover:border-primary group-hover:text-primary transition-colors">
+                                <span className="text-xs text-secondary bg-white dark:bg-gray-800 px-2 py-0.5 rounded-full border border-border group-hover:border-primary group-hover:text-primary transition-colors">
                                     {node.count}
                                 </span>
                             )}

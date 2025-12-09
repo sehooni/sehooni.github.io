@@ -41,23 +41,23 @@ export default function Home() {
 
             {/* Navigation Links */}
             <nav className="flex flex-wrap justify-center gap-8 md:gap-16 mt-8">
-                <Link href="/blog" className="text-2xl text-purple-700 hover:text-purple-900 font-light transition-colors">
+                <Link href="/blog" className="text-2xl text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 font-light transition-colors">
                     Blog
                 </Link>
-                <Link href="/projects" className="text-2xl text-purple-700 hover:text-purple-900 font-light transition-colors">
+                <Link href="/projects" className="text-2xl text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 font-light transition-colors">
                     Projects
                 </Link>
-                <Link href="/about" className="text-2xl text-purple-700 hover:text-purple-900 font-light transition-colors">
+                <Link href="/about" className="text-2xl text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 font-light transition-colors">
                     About
                 </Link>
-                <Link href="/resume" className="text-2xl text-purple-700 hover:text-purple-900 font-light transition-colors">
+                <Link href="/resume" className="text-2xl text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 font-light transition-colors">
                     Résumé
                 </Link>
             </nav>
 
             {/* Footer Divider */}
-            <div className="w-full max-w-2xl h-px bg-gray-200 mt-12 mb-8 relative flex justify-center">
-                <span className="bg-white px-2 absolute -top-1.5 w-3 h-3 border border-gray-200 rounded-full"></span>
+            <div className="w-full max-w-2xl h-px bg-gray-200 dark:bg-gray-800 mt-12 mb-8 relative flex justify-center">
+                <span className="bg-white dark:bg-background px-2 absolute -top-1.5 w-3 h-3 border border-gray-200 dark:border-gray-800 rounded-full"></span>
             </div>
 
             {/* Footer */}

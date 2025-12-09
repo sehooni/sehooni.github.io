@@ -22,14 +22,7 @@ const config: Config = {
                 serif: ["Georgia", "Times", "Times New Roman", "serif"],
                 mono: ["Menlo", "Monaco", "Consolas", "Courier New", "monospace"],
             },
-            colors: {
-                background: "#ffffff",
-                foreground: "#333333",
-                primary: "#3498db", // Default Minimal Mistakes blue
-                secondary: "#5c5c5c", // Muted text
-                border: "#e2e2e2",
-                "sidebar-bg": "#f2f3f3", // Light gray sidebar
-            },
+
             typography: {
                 DEFAULT: {
                     css: {
