@@ -65,15 +65,19 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
         },
         img: ({ node, ...props }: any) => {
             return (
-                <img
-                    {...props}
-                    className="block mx-auto my-8 max-w-full rounded-lg shadow-sm"
-                    style={{ display: 'block', margin: '2rem auto' }}
-                />
+                <span className="block w-full overflow-visible">
+                    <img
+                        {...props}
+                        className="block mx-auto my-8 max-w-full h-auto rounded-lg shadow-sm"
+                        style={{ display: 'block', margin: '2rem auto' }}
+                    />
+                </span>
             );
         },
         code: ({ node, inline, className, children, ...props }: any) => {
-            if (inline) {
+            const match = /language-(\w+)/.exec(className || '');
+            const isInline = inline || !match;
+            if (isInline) {
                 return (
                     <code
                         className="!bg-[#ffff00] !text-gray-900 rounded px-1.5 py-0.5 font-mono text-sm before:content-none after:content-none font-bold"
