@@ -4,12 +4,11 @@ export const CATEGORY_ORDER = [
     'DL_ML',
     'proteomics',
     'Proteomics',
-    'Docker'
+    'Docker',
     'Computer Science',
     'DataStructure',
     'Algorithms',
     'Linux',
-    'Docker',
     'Blog',
     'ETC',
     'jekyll',
