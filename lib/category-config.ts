@@ -1,13 +1,15 @@
 export const CATEGORY_ORDER = [
     'Projects',
-    'Computer Science',
-    'DataStructure',
-    'Algorithms',
     'PaperReview',
     'DL_ML',
     'proteomics',
     'Proteomics',
+    'Docker'
+    'Computer Science',
+    'DataStructure',
+    'Algorithms',
     'Linux',
+    'Docker',
     'Blog',
     'ETC',
     'jekyll',
@@ -17,13 +19,28 @@ export const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
     'DL_ML': '🖥️ DL & ML',
     'Projects': '📖 Projects',
     'Computer Science': '💻 Computer Science',
-    'DataStructure': '📚 Data Structure',
-    'Algorithms': '🧮 Algorithms',
+    'DataStructure': 'Data Structure',
+    'Algorithms': 'Algorithms',
     'PaperReview': '📚 Paper Review',
     'proteomics': '🧬 Proteomics',
     'Proteomics': '🧬 Proteomics',
-    'Linux': '🐧 Linux',
+    'Linux': 'Linux',
+    'Docker': '🐳 Docker',
     'Blog': '📝 Blog',
     'ETC': 'ETC',
     // Add more renames here
+};
+
+export const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+    'Linux': '✔️ 내가 찾아쓰려고 저장해놓는 Linux command post',
+    'Docker': '✔️ Docker 환경 설정 및 사용법 정리',
+    'PaperReview': '✔️ 지금까지 읽은 논문 정리 및 공유',
+    'proteomics': '✔️ Proteomics & Protein Structure',
+    'Proteomics': '✔️ Proteomics & Protein Structure',
+    'DL_ML': '✔️ Related to Deep Learning & Machine Learning',
+    'Computer Science': '✔️ 컴퓨터 과학 관련 내용 정리',
+    'DataStructure': '✔️ 자료구조란 무엇인가',
+    'Algorithms': '✔️ 알고리즘 코딩 테스트 준비',
+    'Projects': '✔️ 지금까지 진행한 개인 및 팀 프로젝트',
+    // Add more descriptions here
 };

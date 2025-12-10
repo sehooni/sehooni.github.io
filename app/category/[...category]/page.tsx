@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getSortedPostsData, getCategories } from '@/lib/posts';
 import { format } from 'date-fns';
 import Sidebar from '@/components/Sidebar';
+import { CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@/lib/category-config';
 
 export async function generateStaticParams() {
     const categories = getCategories();
@@ -68,10 +69,19 @@ export default async function Category({ params }: { params: Promise<{ category:
                 <Sidebar categories={categories} />
                 <main className="flex-1 w-full p-6 lg:p-12">
                     <header className="mb-12 border-b pb-8">
-                        <h1 className="text-4xl font-bold mb-4">Category: {decodedCategory}</h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-400">
-                            {categoryPosts.length} posts found.
-                        </p>
+                        <div className="flex flex-col gap-2">
+                            <h1 className="text-4xl font-bold mb-4">
+                                {CATEGORY_DISPLAY_NAMES[decodedCategory.split('/').pop()!] || decodedCategory}
+                            </h1>
+                            {CATEGORY_DESCRIPTIONS[decodedCategory.split('/').pop()!] && (
+                                <p className="text-lg text-gray-500 dark:text-gray-400 mb-2">
+                                    {CATEGORY_DESCRIPTIONS[decodedCategory.split('/').pop()!]}
+                                </p>
+                            )}
+                            <p className="text-sm text-gray-400 dark:text-gray-500">
+                                {categoryPosts.length} posts found
+                            </p>
+                        </div>
                     </header>
 
                     <div className="space-y-8">

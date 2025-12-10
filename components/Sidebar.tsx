@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 import { PostData } from '@/lib/posts';
-import { CATEGORY_ORDER, CATEGORY_DISPLAY_NAMES } from '@/lib/category-config';
+import { CATEGORY_ORDER, CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@/lib/category-config';
 
 interface SidebarProps {
     categories: Record<string, number>;
