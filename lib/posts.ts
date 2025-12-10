@@ -121,11 +121,14 @@ export function getAllPostIds() {
 }
 
 export async function getPostData(slugArray: string[]): Promise<PostData> {
+    // Decode all segments to handle URL encoding (e.g., "Computer%20Science" -> "Computer Science")
+    const decodedSlugArray = slugArray.map(segment => decodeURIComponent(segment));
+
     // slugArray: [...categorySegments, titleSlug]
     // Last element is title
-    const titleSlug = slugArray[slugArray.length - 1];
+    const titleSlug = decodedSlugArray[decodedSlugArray.length - 1];
     // Rest is category path
-    const categorySegments = slugArray.slice(0, -1);
+    const categorySegments = decodedSlugArray.slice(0, -1);
     const category = categorySegments.join(path.sep) || 'uncategorized';
 
     const targetDir = path.join(postsDirectory, category);
@@ -143,13 +146,10 @@ export async function getPostData(slugArray: string[]): Promise<PostData> {
     const files = fs.readdirSync(targetDir);
     let targetFile = '';
 
-    // Decode titleSlug just in case URL encoding persists (e.g. ANN%2CDNN)
-    const decodedTitleSlug = decodeURIComponent(titleSlug);
-
     // Find file that ends with titleSlug.md (ignoring date prefix)
     for (const file of files) {
         // Try matching both raw and decoded to be safe
-        if (file.endsWith(`${titleSlug}.md`) || file.endsWith(`${decodedTitleSlug}.md`)) {
+        if (file.endsWith(`${titleSlug}.md`)) {
             targetFile = file;
             break;
         }
