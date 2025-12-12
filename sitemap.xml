@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://sehooni.github.io/</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/blog</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/projects</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/about</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/resume</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Projects</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Projects/AI_Contest</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Projects/Capstone</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Projects/Jetson</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Projects/Neural_Style_Transfer_tf</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/PaperReview</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/DL_ML</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/DL_ML/DL</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/DL_ML/ML</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/DL_ML/NLP</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/proteomics</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/DataStructure</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/algorithms</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Linux</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Blog</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Blog/jekyll</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/Blog/nextjs</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/category/ETC</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Blog/nextjs/migrating-jekyll-to-nextjs</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/Percolator</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/model_based_validation</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/Peptide_validation</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/peptide_identification</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/PeptID_Denovo</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/PeptID_DBSearch</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/introduction_to_proteomics_MS</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/introduction_to_proteomics</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/algorithms/algorithms_start</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/proteomics/proteomics_start</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/PaperReview/Attention_is_all_you_need</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/Jetson/Jetson_yolov5</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/Jetson/Jetson_CUDA_Build</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/Jetson/Jetson_Yahboom</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DataStructure/linked_list</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/Jetson/Jetson_1</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/PaperReview/Mask_RCNN_UNet</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/AI_Contest/AI_Contest</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Linux/Linux</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/PaperReview/RCNN_Fast_RCNN_Faster_RCNN</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/Capstone/Capstone</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/Neural_Style_Transfer_tf/ppt_of_projects</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/Neural_Style_Transfer_tf/Detail_of_project</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Projects/Neural_Style_Transfer_tf/Introduction_of_project</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/PaperReview/ImageNet_Classification_with_Deep_Convolutional_Neural_Networks</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/ML/CNN</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/DL/ANN,DNN,CNN,RNN</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/NLP/classification_model_apply</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/NLP/classification_model_train</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/NLP/document_classification</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/NLP/pair_classification</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/ETC/md_ipynb</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/NLP/pair_classification_service</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/NLP/pair_classification_train</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/DL_ML/ML/linear_regression</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Blog/jekyll/set_up_the_dark_mode</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Blog/jekyll/github_blog_not_shown</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Blog/jekyll/Setting_blog_design</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Blog/jekyll/jekyll_page_build_error</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Blog/jekyll/first</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sehooni.github.io/Blog/jekyll/404error</loc>
+  <lastmod>2025-12-08T12:17:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
