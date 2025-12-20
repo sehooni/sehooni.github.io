@@ -1,6 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
@@ -49,10 +52,12 @@ export default async function About() {
                             </h1>
 
                             <ReactMarkdown
-                                remarkPlugins={[remarkGfm, remarkBreaks]}
-                                rehypePlugins={[rehypeRaw, rehypeHighlight]}
+                                remarkPlugins={[remarkGfm, remarkBreaks, remarkMath]}
+                                rehypePlugins={[rehypeRaw, rehypeHighlight, rehypeKatex]}
                                 components={{
-                                    // Basic custom components if needed, similar to blog posts
+                                    h1: ({ node, ...props }: any) => <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />,
+                                    h2: ({ node, ...props }: any) => <h2 className="text-2xl font-bold mt-8 mb-4" {...props} />,
+                                    h3: ({ node, ...props }: any) => <h3 className="text-xl font-bold mt-6 mb-3" {...props} />,
                                     img: ({ node, ...props }: any) => (
                                         <span className="block w-full overflow-visible">
                                             <img
@@ -61,6 +66,46 @@ export default async function About() {
                                             />
                                         </span>
                                     ),
+                                    code: ({ node, inline, className, children, ...props }: any) => {
+                                        const match = /language-(\w+)/.exec(className || '');
+                                        const isInline = inline || !match;
+                                        if (isInline) {
+                                            return (
+                                                <code
+                                                    className="!bg-[#ffff00] !text-gray-900 rounded px-1.5 py-0.5 font-mono text-sm before:content-none after:content-none font-bold"
+                                                    {...props}
+                                                >
+                                                    {children}
+                                                </code>
+                                            );
+                                        }
+                                        return (
+                                            <code className={className} {...props}>
+                                                {children}
+                                            </code>
+                                        );
+                                    },
+                                    pre: ({ node, children, ...props }: any) => {
+                                        let isOutput = true;
+                                        if (children && children.props && children.props.className) {
+                                            if (children.props.className.includes('language-')) {
+                                                isOutput = false;
+                                            }
+                                        }
+                                        if (isOutput) {
+                                            return (
+                                                <details className="my-4 bg-gray-900 rounded-lg overflow-hidden">
+                                                    <summary className="cursor-pointer px-4 py-2 text-sm text-gray-400 bg-gray-800 hover:bg-gray-700 transition-colors select-none">
+                                                        Click to see output
+                                                    </summary>
+                                                    <div className="p-4 overflow-x-auto text-sm text-gray-300 font-mono whitespace-pre">
+                                                        {children}
+                                                    </div>
+                                                </details>
+                                            );
+                                        }
+                                        return <pre {...props}>{children}</pre>;
+                                    },
                                 }}
                             >
                                 {postData.content}

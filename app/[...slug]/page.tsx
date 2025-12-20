@@ -112,7 +112,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
 
             let isOutput = true;
             if (children && children.props && children.props.className) {
-                if (children.props.className.startsWith('language-')) {
+                if (children.props.className.includes('language-')) {
                     isOutput = false;
                 }
             }
