@@ -85,6 +85,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
             if (inline) {
                 return (
                     <code
+                        {...props}
                         style={{
                             backgroundColor: '#ffff00',
                             color: '#000000',
@@ -93,7 +94,6 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                             fontWeight: 'bold',
                             fontFamily: 'monospace'
                         }}
-                        {...props}
                     >
                         {children}
                     </code>
