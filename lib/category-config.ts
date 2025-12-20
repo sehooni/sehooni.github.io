@@ -1,7 +1,7 @@
 export const CATEGORY_ORDER = [
     'Projects',
     'PaperReview',
-    'DL_ML',
+    'AI',
     'proteomics',
     'Proteomics',
     'Docker',
@@ -15,7 +15,7 @@ export const CATEGORY_ORDER = [
 ];
 
 export const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
-    'DL_ML': '🖥️ DL & ML',
+    'AI': '🤖 AI',
     'Projects': '📖 Projects',
     'Computer Science': '💻 Computer Science',
     'DataStructure': 'Data Structure',
@@ -28,6 +28,9 @@ export const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
     'Hackathon': 'Hackathon',
     'Toy_Projects': 'Toy Projects',
     'Research': 'Research',
+    'DL_ML': 'DL/ML',
+    'Jetson': 'Jetson',
+    'NLP': 'NLP',
     // Add more renames here
 };
 
@@ -37,7 +40,6 @@ export const CATEGORY_DESCRIPTIONS: Record<string, string> = {
     'PaperReview': '✔️ 지금까지 읽은 논문 정리 및 공유',
     'proteomics': '✔️ Proteomics & Protein Structure',
     'Proteomics': '✔️ Proteomics & Protein Structure',
-    'DL_ML': '✔️ Related to Deep Learning & Machine Learning',
     'Computer Science': '✔️ 컴퓨터 과학 관련 내용 정리',
     'DataStructure': '✔️ 자료구조란 무엇인가',
     'Algorithms': '✔️ 알고리즘 코딩 테스트 준비',
@@ -45,5 +47,9 @@ export const CATEGORY_DESCRIPTIONS: Record<string, string> = {
     'Hackathon': '✔️ 참가했던 Hackathon 회고 및 후기, 사용기술 정리',
     'Toy_Projects': '✔️ 진행한 수업이나 프로젝트를 정리한 포스트',
     'Research': '✔️ My Research',
+    'AI': '✔️ Related to Artificial Intelligence',
+    'DL_ML': '✔️ Deep Learning & Machine Learning Studies',
+    'NLP': '✔️ What is the Natural Language Processing',
+    'Jetson': '✔️ the CV Project with Jetson Nano',
     // Add more descriptions here
 };
