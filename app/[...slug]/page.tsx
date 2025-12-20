@@ -80,12 +80,8 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
         },
         code: ({ node, inline, className, children, ...props }: any) => {
             const match = /language-(\w+)/.exec(className || '');
-            const isInline = inline || !match; // Treat as inline if no language match AND it is inline prop (actually ReactMarkdown logic is complex here, but let's rely on 'inline' prop mostly)
-
-            // Note: ReactMarkdown v9 often passes block code as `pre > code`.
-            // The `pre` component below handles the toggle logic.
-            // If we are here, it's likely inline code or the inner code of a pre.
-            // If it's inline, style it.
+            // Correctly Check if it is inline using the prop.
+            // Do not degrade to inline style just because language is missing (handle that in pre or render plain block)
             if (inline) {
                 return (
                     <code
