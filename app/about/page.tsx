@@ -1,38 +1,74 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
+import rehypeRaw from 'rehype-raw';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/github-dark.css';
+
 import TopNav from '@/components/TopNav';
-import Image from 'next/image';
+import Sidebar from '@/components/Sidebar';
+import { getCategories } from '@/lib/posts';
+import ScrollToTop from '@/components/ScrollToTop';
 
-export default function About() {
+interface AboutPostData {
+    content: string;
+    title?: string;
+    [key: string]: any;
+}
+
+async function getAboutData(): Promise<AboutPostData> {
+    const fullPath = path.join(process.cwd(), 'content/about.md');
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+
+    return {
+        content: matterResult.content,
+        ...matterResult.data,
+    };
+}
+
+export default async function About() {
+    const postData = await getAboutData();
+    const categories = getCategories();
+
     return (
-        <div className="min-h-screen flex flex-col items-center">
+        <div className="min-h-screen flex flex-col">
             <TopNav title="About" />
-            <main className="flex-1 w-full max-w-screen-2xl mx-auto p-4 md:p-8 prose prose-slate dark:prose-invert">
-                <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
-                    <div className="relative w-48 h-48 shrink-0 overflow-hidden rounded-full border-4 border-gray-100 dark:border-gray-800 shadow-lg">
-                        <Image
-                            src="/assets/img/Self.jpeg"
-                            alt="Sehoon Park"
-                            fill
-                            className="object-cover"
-                            priority
-                        />
-                    </div>
-                    <div>
-                        <h2 className="text-3xl font-bold mb-2 !mt-0">Sehoon Park</h2>
-                        <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">
-                            AI Engineer & Developer
-                        </p>
-                        <p className="text-lg">
-                            Hello! I'm a developer passionate about Artificial Intelligence and building useful services.
-                        </p>
-                    </div>
-                </div>
 
-                <h3>Contact</h3>
-                <ul>
-                    <li>Email: <a href="mailto:74sehoon@gmail.com">74sehoon@gmail.com</a></li>
-                    <li>GitHub: <a href="https://github.com/sehooni">github.com/sehooni</a></li>
-                </ul>
-            </main>
+            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
+                <Sidebar categories={categories} />
+                <main className="flex-1 w-full p-6 lg:p-12">
+                    <div className="flex gap-8">
+                        <ScrollToTop />
+                        <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
+                            <h1 className="text-4xl font-bold mb-8 border-b pb-4">
+                                {postData.title || 'About'}
+                            </h1>
+
+                            <ReactMarkdown
+                                remarkPlugins={[remarkGfm, remarkBreaks]}
+                                rehypePlugins={[rehypeRaw, rehypeHighlight]}
+                                components={{
+                                    // Basic custom components if needed, similar to blog posts
+                                    img: ({ node, ...props }: any) => (
+                                        <span className="block w-full overflow-visible">
+                                            <img
+                                                {...props}
+                                                className="block mx-auto my-8 max-w-full h-auto rounded-lg shadow-sm"
+                                            />
+                                        </span>
+                                    ),
+                                }}
+                            >
+                                {postData.content}
+                            </ReactMarkdown>
+                        </article>
+                    </div>
+                </main>
+            </div>
         </div>
     );
 }
