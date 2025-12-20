@@ -9,9 +9,9 @@ export const CATEGORY_ORDER = [
     'DataStructure',
     'Algorithms',
     'Linux',
-    'Blog',
-    'ETC',
-    'jekyll',
+    'Hackathon',
+    'Toy_Projects',
+    'Research',
 ];
 
 export const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
@@ -25,8 +25,9 @@ export const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
     'Proteomics': '🧬 Proteomics',
     'Linux': 'Linux',
     'Docker': '🐳 Docker',
-    'Blog': '📝 Blog',
-    'ETC': 'ETC',
+    'Hackathon': 'Hackathon',
+    'Toy_Projects': 'Toy Projects',
+    'Research': 'Research',
     // Add more renames here
 };
 
@@ -40,6 +41,9 @@ export const CATEGORY_DESCRIPTIONS: Record<string, string> = {
     'Computer Science': '✔️ 컴퓨터 과학 관련 내용 정리',
     'DataStructure': '✔️ 자료구조란 무엇인가',
     'Algorithms': '✔️ 알고리즘 코딩 테스트 준비',
-    'Projects': '✔️ 지금까지 진행한 개인 및 팀 프로젝트',
+    'Projects': '✔️ 지금까지 진행한 개인 및 팀 프로젝트, Hackathon',
+    'Hackathon': '✔️ 참가했던 Hackathon 회고 및 후기, 사용기술 정리',
+    'Toy_Projects': '✔️ 진행한 수업이나 프로젝트를 정리한 포스트',
+    'Research': '✔️ My Research',
     // Add more descriptions here
 };
