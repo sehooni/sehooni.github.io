@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[PaperReview] Mask R-CNN & U-Net"
+title:  "[PaperReview | CV] Mask R-CNN & U-Net"
 excerpt: "Mask R-CNN & U-Net Paper 리뷰"
 toc: true
 toc_sticky: true

@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[PaperReview] ImageNet Classification with Deep Convolutional Neural Networks(CNN)"
+title:  "[PaperReview | CV] ImageNet Classification with Deep Convolutional Neural Networks(CNN)"
 excerpt: "CNN_Paper 리뷰"
 toc: true
 toc_sticky: true

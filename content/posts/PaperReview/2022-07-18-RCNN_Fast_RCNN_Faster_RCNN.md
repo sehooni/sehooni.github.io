@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[PaperReview] RCNN, Fast R-CNN, Faster R-CNN"
+title:  "[PaperReview | CV] RCNN, Fast R-CNN, Faster R-CNN"
 excerpt: "RCNN, Fast R-CNN, Faster R-CNN Paper 리뷰"
 toc: true
 toc_sticky: true
