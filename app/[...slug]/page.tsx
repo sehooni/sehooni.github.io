@@ -85,7 +85,14 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
             if (inline) {
                 return (
                     <code
-                        className="!bg-[#ffff00] !text-gray-900 rounded px-1.5 py-0.5 font-mono text-sm before:content-none after:content-none font-bold"
+                        style={{
+                            backgroundColor: '#ffff00',
+                            color: '#000000',
+                            borderRadius: '4px',
+                            padding: '2px 4px',
+                            fontWeight: 'bold',
+                            fontFamily: 'monospace'
+                        }}
                         {...props}
                     >
                         {children}
