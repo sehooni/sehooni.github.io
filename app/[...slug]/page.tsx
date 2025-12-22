@@ -79,7 +79,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
             );
         },
         code: ({ node, inline, className, children, ...props }: any) => {
-            const match = /language-(\w+)/.exec(className || '');
+            const match = /language-(\w+)/.exec(className || `language-`);
             // Correctly Check if it is inline using the prop.
             // Do not degrade to inline style just because language is missing (handle that in pre or render plain block)
             if (inline) {
