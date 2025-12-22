@@ -19,10 +19,10 @@ export default function About() {
                     <div>
                         <h2 className="text-3xl font-bold mb-2 !mt-0">Sehoon Park</h2>
                         <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">
-                            AI Engineer & Developer
+                            AI Research Engineer
                         </p>
                         <p className="text-lg">
-                            Hello! I'm a developer passionate about Artificial Intelligence and building useful services.
+                            AI Research Engineer focused on protein structure prediction and structure-based interaction modeling. Built AlphaFold2-based models that integrate disulfide-bond information (embedding + loss) and validated improvements in TM-score and disulfide-bond prediction recall. Participated in CASP16 (DeepFold team) and contributed to target prediction/analysis; achieved 3rd place in the Antibody/Peptide category.
                         </p>
                     </div>
                 </div>
@@ -31,6 +31,7 @@ export default function About() {
                 <ul>
                     <li>Email: <a href="mailto:74sehoon@gmail.com">74sehoon@gmail.com</a></li>
                     <li>GitHub: <a href="https://github.com/sehooni">github.com/sehooni</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/sehoon-park-575b8b22a/?locale=ko_KR">linkedin.com/Sehoon_Park</a></li>
                 </ul>
             </main>
         </div>
