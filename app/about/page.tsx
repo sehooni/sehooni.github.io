@@ -26,7 +26,26 @@ export default function About() {
                         </p>
                     </div>
                 </div>
-
+                <h3>Research Interests</h3>
+                <ul>
+                    <li>Protein Structure Prediction</li>
+                    <li>Structure-based Interaction Modeling</li>
+                    <li>AlphaFold2,3-based Models</li>
+                    <li>Multimodal Learning</li>
+                </ul>
+                <h3>Education</h3>
+                <ul>
+                    <li>Hanyang University, Master of Science in Artificial Intelligence, 2025</li>
+                    <li>Incheon National University, Bachelor of Science in Mechanical Engineering, 2023</li>
+                </ul>
+                <h3>Experience</h3>
+                <ul>
+                    <li>Post-Master Researcher, Korea Basic Science Institute (KBSI), Biopharmaceuticals Research Center, 2025.09 - Present</li>
+                    <li>Post-Master Researcher, Hanyang University, Bioinformatics and Intelligent Systems Lab (BISLab), 2025.02 - 2025.04</li>
+                    <li>Master's Student, Hanyang University, Bioinformatics and Intelligent Systems Lab (BISLab), 2023.02 - 2025.02</li>
+                    <li>Research Assistant, Korea Institute for Advanced Study (KIAS), DeepFold, 2023.07 - 2025.02</li>
+                    <li>Undergraduate Research Fellow, Incheon National University, Biorobotics Lab, 2021.03 - 2023.02</li>
+                </ul>
                 <h3>Contact</h3>
                 <ul>
                     <li>Email: <a href="mailto:74sehoon@gmail.com">74sehoon@gmail.com</a></li>
