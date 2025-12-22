@@ -65,7 +65,7 @@ RNN의 모델 중 하나인 seq2seq는 **순차적으로 연산을 진행**하�
 
 ![Untitled 4](https://user-images.githubusercontent.com/84653623/223362066-52eb6e78-b2fa-4064-a410-3b802992d6ad.png)
 
-구조를 그대로 두고 weight sum vector(h1 + h2 …)를 디코더의 RNN셀과  FC셀의 input으로 넣게 됩니다. 여기서 구해진 확률값, attention weight를 이용해 각 추력이 어떤 정보를 만히 참고해쓴지 확인할 수 있게 됩니다.
+구조를 그대로 두고 weight sum vector($h_1 + h_2 \dots$)를 디코더의 RNN셀과  FC셀의 input으로 넣게 됩니다. 여기서 구해진 확률값, attention weight를 이용해 각 추력이 어떤 정보를 만히 참고해쓴지 확인할 수 있게 됩니다.
 
 ## Transformer
 
@@ -119,11 +119,11 @@ Scaled-dot을 수식으로 표현하면 fig 14와 같습니다. 이때, 논문�
 
 그렇다면 기존의 dot-product attention에서 scaling을 진행한 이유는 무엇일까요?
 
-그 이유는 fig 15에서 살펴볼 수 있듯이, **QK의 내적 값이 매우 커질 수 있기 때문**입니다. 왜 커지는가에 의문을 품을 수 있습니다. 그에 대해 보충 설명을 하자면, Q, K가 각각 gaussian(가우시안) 분포를 따른다고 가정했을 때 분산이 d_k가 됨을 확인할 수 있습니다.
+그 이유는 fig 15에서 살펴볼 수 있듯이, **QK의 내적 값이 매우 커질 수 있기 때문**입니다. 왜 커지는가에 의문을 품을 수 있습니다. 그에 대해 보충 설명을 하자면, $Q, K$가 각각 gaussian(가우시안) 분포를 따른다고 가정했을 때 분산이 $d_k$가 됨을 확인할 수 있습니다.
 
 ![Untitled 11](https://user-images.githubusercontent.com/84653623/223362085-c2e091b1-5aea-45ff-95d4-7aad558b02e5.png)
 
-QK의 내적 값이 매우 커지면 softmax의 scale variant한 특성을 만나 gradient vanishing이 발생하게 됩니다. 실제로 dim = 4인 경우, softmax의 jacobian(자코비안)은 fig 16과 같은데, 이 경우 scale이 크면 S = (1, 0, 0, 0)과 같은 형태가 되어 gradient vanishing이 발생합니다.
+QK의 내적 값이 매우 커지면 softmax의 scale variant한 특성을 만나 gradient vanishing이 발생합니다. 실제로 $dim = 4$인 경우, softmax의 jacobian(자코비안)은 fig 16과 같은데, 이 경우 scale이 크면 $S = (1, 0, 0, 0)$과 같은 형태가 되어 gradient vanishing이 발생합니다.
 
 ![Untitled 12](https://user-images.githubusercontent.com/84653623/223362012-dcd91405-23f6-4178-bdd3-d523384e1e63.png)
 
@@ -135,7 +135,7 @@ QK의 내적 값이 매우 커지면 softmax의 scale variant한 특성을 만�
 - K = **Key vector** : 어떤 종류의 정보가 있는지를 나타내는 벡터, **영향을 주는 벡터**
 - V = **Value vector** : **주는 영향의 가중치 벡터**
 
-Fig 17에 나와있듯이 scaled dot-product attention의 과정을 정리해보면, 먼저 입력을 Q, K, V로 처리하게 됩니다. 이후 matrix로 여러 입력을 처리하고, Q와 K 사이의 내적을 통해 Q, K 사이 유사도를 측정하게 됩니다. 이후 fig 18과 같이 softmax 함수에 대입하여 최종 attention 값 matrix를 얻게 됩니다. 다시 말해 **softmax(QK)V = Attention value matrix**와 같이 정리할 수 있겠습니다.
+Fig 17에 나와있듯이 scaled dot-product attention의 과정을 정리해보면, 먼저 입력을 $Q, K, V$로 처리하게 됩니다. 이후 matrix로 여러 입력을 처리하고, $Q$와 $K$ 사이의 내적을 통해 $Q, K$ 사이 유사도를 측정하게 됩니다. 이후 fig 18과 같이 softmax 함수에 대입하여 최종 attention 값 matrix를 얻게 됩니다. 다시 말해 $softmax(QK)V = \text{Attention value matrix}$와 같이 정리할 수 있겠습니다.
 
 ![Untitled 13](https://user-images.githubusercontent.com/84653623/223362015-7054ac4e-d732-4d9b-acd2-c682b9e0bec8.png)
 
@@ -143,7 +143,7 @@ Fig 17에 나와있듯이 scaled dot-product attention의 과정을 정리해보
 
 ### Process
 
-위에서 설명하였듯이 Q, K, V를 계산하여 concat(=concatenate)를 진행하게 됩니다.  concatenate은 사슬로 잇다라는 의미로 attention한 값들을 말 그대로 이어줍니다. 
+위에서 설명하였듯이 $Q, K, V$를 계산하여 concat(=concatenate)를 진행하게 됩니다.  concatenate은 사슬로 잇다라는 의미로 attention한 값들을 말 그대로 이어줍니다. 
 
 ![Untitled 15](https://user-images.githubusercontent.com/84653623/223362021-4b3efb40-1263-4322-878b-3ca7503191cb.png)
 Multi-head attention으로 얻을 수 있는 이점을 살펴보면, 입력의 서로 다른 부분을 참조함에 따라 다양한 표현을 얻을 수 있습니다. 또한 이를 통해 ensemble 효과를 얻을 수 있다는 큰 이점을 갖고 있습니다. 여기서 앙상블 효과란, 하나의 모델만을 학습시켜 사용하는 것이 아닌 여러 모델을 학습시켜 결합하는 방식으로 문제를 처리하는 , 여러 측면에서 데이터를 바라보는 효과를 의미합니다.
@@ -156,20 +156,20 @@ transformer에는 encoder self-attention, masked decoder self-attention, encoder
 
 ![Untitled 17](https://user-images.githubusercontent.com/84653623/223362025-132d5b23-ab74-4caa-adbd-1d6437a026d7.png)
 
-각 어텐션의 타입의 Q, K, V는 다음과 같이 표시할 수 있습니다.
+각 어텐션의 타입의 $Q, K, V$는 다음과 같이 표시할 수 있습니다.
 
 - 인코더의 self-attention
-    - Query = Key = Value
+    - $Query = Key = Value$
 - 디코더의 masked self-attention
-    - Query = Key = Value
+    - $Query = Key = Value$
 - 디코더의 encoder-decoder attention
     - Query: 디코더 벡터 / Key = Value: 인코더 벡터
 
-인코더의 self-attention과 디코더의 masked self-attention에서는 Q와 K, V가 모두 동일합니다. 그러나 디코더의 encoder-decoder attention은 Q로 decoder vector를, K&V로 encoder vector를 갖습니다.
+인코더의 self-attention과 디코더의 masked self-attention에서는 $Q$와 $K, V$가 모두 동일합니다. 그러나 디코더의 encoder-decoder attention은 $Q$로 decoder vector를, $K\&V$로 encoder vector를 갖습니다.
 
 ![Untitled 18](https://user-images.githubusercontent.com/84653623/223362030-af353e35-b893-4f44-b24a-4c809fe5ea92.png)
 
-또한 multi-head attention에서 decoder는 auto-regressive한 모델이기 때문에 masking을 필요로 합니다. Masking을 통해 Auto-regressive한 성질을 유지할 수 있습니다. Fig 24에서 볼 수 있듯이 y1은 x1만 참고하며, y2는 x1, x2를, 즉 이후 단계의 값은 참고하지 못하는 것입니다.
+또한 multi-head attention에서 decoder는 auto-regressive한 모델이기 때문에 masking을 필요로 합니다. Masking을 통해 Auto-regressive한 성질을 유지할 수 있습니다. Fig 24에서 볼 수 있듯이 $y_1$은 $x_1$만 참고하며, $y_2$는 $x_1, x_2$를, 즉 이후 단계의 값은 참고하지 못하는 것입니다.
 
 ![Untitled 19](https://user-images.githubusercontent.com/84653623/223362031-a764a7cd-9174-4f17-a4e4-06f01aea9408.png)
 
@@ -218,8 +218,8 @@ Batch normalization과 Layer normalization에 대해 본 논문에서는 다음�
 
 반면에 Layer Normalization의 경우 이와 대비되는 다음과 같은 장점들이 존재합니다.
 
-1. 데이터마다 각각 다른 normalization term(μ, σ)를 갖는다
-2. mini-batch 크기에 영향을 받지 않는다. (즉, size = 1 이어도 작동한다.)
+1. 데이터마다 각각 다른 normalization term($\mu, \sigma$)를 갖는다
+2. mini-batch 크기에 영향을 받지 않는다. (즉, $size = 1$ 이어도 작동한다.)
 3. 서로 다른 길이를 갖는 sequence가 batch 단위의 입력으로 들어오는 경우에도 적용할 수 있다. (1번 특징 때문)
 
 따라서 본 논문에서는 layer normalization을 사용하게 되었습니다.

@@ -28,7 +28,7 @@ padding: 5px;
 I received the M.S. degrees in Artificial intelligence from Hanyang University, Seoul, Korea, in 2025 and the B.S. degree in mechanical engineering from Incheon National University, Incheon, Korea, in 2023.
 
 From 2023 to 2025, I was a M.S. candidate with Protein Structure prediction model, BIS Lab, in Hanyang University.
-In 2024, I participated in CASP16 as a member of the DeepFold2.
+In 2024, I participated in CASP16 as a member of the DeepFold.
 
 From 2021 to 2023, I was a undergraduate research assistant with Computer vision based Deep learning system & robotics, Biorobotics Lab, in Incheon National University.
 

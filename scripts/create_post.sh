@@ -39,9 +39,20 @@ tags:
   - $category
 toc: true
 toc_sticky: true
+use_math: true
 date: $date_str
 last_modified_at: $date_str
 ---
+<!--
+⚠️ Math Rendering Rules ⚠️
+1. Do NOT wrap math expressions in backticks (\` \`).
+   - INCORRECT: \`\$x + y\$\`
+   - CORRECT: \$x + y\$
+2. Do NOT wrap math delimiters (\`\$\`) in bold (\`**\`) or italics (\`*\`).
+   - INCORRECT: **\$x\$**
+   - CORRECT: \$x\$ or \$\mathbf{x}\$
+3. Use \$ for inline math and \$\$ for block math.
+-->
 
 ## Introduction
 

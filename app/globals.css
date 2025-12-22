@@ -26,3 +26,22 @@
     @apply antialiased bg-background text-foreground transition-colors duration-300;
   }
 }
+
+@layer utilities {
+  .prose code {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+    border-radius: 4px !important;
+    padding: 2px 4px !important;
+    font-family: monospace !important;
+  }
+
+  .prose pre code {
+    background-color: transparent !important;
+    color: inherit !important;
+    font-weight: inherit !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+}

@@ -117,7 +117,7 @@ Normal 분포를 가정했을 때, 다양한 score를 표시할 수 있으며 �
 
 ![Untitled 9](https://github.com/sehooni/sehooni.github.io/assets/84653623/707cca4a-5d07-4a63-b4a0-e312f5ada0d7)
 
-Normal 분포를 가정했을 때, **평균(mean)에 해당하는 위치를 Z-score 0**으로 보고, **1σ, 2σ, 3σ**를 각각 **1, 2, 3으로 표시**하여 **각각의 분포에서 어디쯤 위치하고 있느냐 하는 것이 Z-score가 나타내는 값**이다. (일종의 normalization 하는 방법)
+Normal 분포를 가정했을 때, **평균(mean)에 해당하는 위치를 Z-score 0**으로 보고, $1\sigma, 2\sigma, 3\sigma$를 각각 **1, 2, 3으로 표시**하여 **각각의 분포에서 어디쯤 위치하고 있느냐 하는 것이 Z-score가 나타내는 값**이다. (일종의 normalization 하는 방법)
 
 ### Imputation
 
@@ -230,7 +230,7 @@ percolator는 언제까지 이 iteration을 하느냐하면, **실제로는 최�
 
 ## Model: SVM(1)
 
-이 SVM이 어떤 학습 모델이냐 개념 정도만 설명하고 넘어가도록 하자. 아래의 그림에서 볼 수 있듯이, 여기에 있는 이 점들로 표현된 것들이 이제 학습 data이고, 진한 애들이 positive, 흐린 애들이 negative다 그러면 SVM은 이걸 2차원 평면으로 설명하지만, 이 학습 data를 나타내는 feature의 vector가 있는 거고, 그 feature vector는 2차원이 아닐 수도 있다. 당연히 걔네들은 어떤 차원일지 모르기 때문에 임의의 차원의 vector인데, 설명하기 위해서 그림에서는 2차원처럼 표시되어 있다. 이때 w,x는 어떤 vector를 나타낸다.
+이 SVM이 어떤 학습 모델이냐 개념 정도만 설명하고 넘어가도록 하자. 아래의 그림에서 볼 수 있듯이, 여기에 있는 이 점들로 표현된 것들이 이제 학습 data이고, 진한 애들이 positive, 흐린 애들이 negative다 그러면 SVM은 이걸 2차원 평면으로 설명하지만, 이 학습 data를 나타내는 feature의 vector가 있는 거고, 그 feature vector는 2차원이 아닐 수도 있다. 당연히 걔네들은 어떤 차원일지 모르기 때문에 임의의 차원의 vector인데, 설명하기 위해서 그림에서는 2차원처럼 표시되어 있다. 이때 $w, x$는 어떤 vector를 나타낸다.
 
 ![Untitled 22](https://github.com/sehooni/sehooni.github.io/assets/84653623/3df9d080-0ce6-458c-bb9a-83a6c11c375b)
 
@@ -240,29 +240,29 @@ percolator는 언제까지 이 iteration을 하느냐하면, **실제로는 최�
 
 ## Model: training a linear SVM
 
-이걸 구하는 과정도 조금 살펴보면 흥미롭기는 하다. 이렇게 margin을 가장 넓히는 그런 decision boundary를 찾기 위해서는 positive set에 대해서 **x가 positive set일 때**, *wx+b > 1*이여야 한다. 왜냐하면 `positive set의 supporting vector를 지나는 직선이 wx+b=1인 직선이었기 때문에 이것보다 커야하는 것`이다. 마찬가지로 **label이 negative인 x에 대해서는** *wx+b<-1*이여야 한다. 
+이걸 구하는 과정도 조금 살펴보면 흥미롭기는 하다. 이렇게 margin을 가장 넓히는 그런 decision boundary를 찾기 위해서는 positive set에 대해서 $x$가 **positive set일 때**, $wx+b > 1$이여야 한다. 왜냐하면 positive set의 supporting vector를 지나는 직선이 $wx+b=1$인 직선이었기 때문에 이것보다 커야하는 것이다. 마찬가지로 **label이 negative인 $x$에 대해서는** $wx+b < -1$이여야 한다. 
 
 ![Untitled 23](https://github.com/sehooni/sehooni.github.io/assets/84653623/807dda3a-d7de-4d53-a96f-c179a1088a17)
 
-이제 이 조건을 만족하도록 구해보면 결국 이 λ라고 하는 게 두 직선 사이의 margin이다. x^+라고 하는데 positive의 직선이고, x^-라고 하는게 negative의 직선을 의미한다. 두 직선은 결국 w벡터의 뱡향으로 평행 이동 시킨 것이지 때문에 λ만큼, 이 크기가 남는 것이다. 따라서 위 그림의 식들과 같이 쓸 수 있고, 이를 정리하면  λ는 weight vector의 norm이라고 부르는 값을 부모로 갖는 이런 값이 되는 것이다. **우리가 원하는 것은 λ가 제일 커지는 w를 구하는 것**이다. SVM에서는 둘을 제일 많이 갈라놓는 w가 뭐냐를 찾는 문제라는 것이다. 
+이제 이 조건을 만족하도록 구해보면 결국 이 $\lambda$라고 하는 게 두 직선 사이의 margin이다. $x^+$라고 하는데 positive의 직선이고, $x^-$라고 하는게 negative의 직선을 의미한다. 두 직선은 결국 $w$벡터의 뱡향으로 평행 이동 시킨 것이지 때문에 $\lambda$만큼, 이 크기가 남는 것이다. 따라서 위 그림의 식들과 같이 쓸 수 있고, 이를 정리하면  $\lambda$는 weight vector의 norm이라고 부르는 값을 부모로 갖는 이런 값이 되는 것이다. **우리가 원하는 것은 $\lambda$가 제일 커지는 $w$를 구하는 것**이다. SVM에서는 둘을 제일 많이 갈라놓는 $w$가 뭐냐를 찾는 문제라는 것이다. 
 
 ![Untitled 24](https://github.com/sehooni/sehooni.github.io/assets/84653623/b2f2d431-a5a1-4484-b986-6f580c22ab55)
 
 이것을 바꿔서 **저 norm을 minimize하는 문제로 구하는 것**이다. 이때 norm이 아닌 norm의 제곱을 구하는 이유는 나중에 저 norm을 계산하는데 그 안에 square-root가 있기 때문이고, norm을 minimize하나 norm의 제곱을 minimize하나 minimize하는 조건은 똑같기 때문에 그렇게 하겠다는 것이다.
 
-minimize할 때의 조건을 생각해보면 결국 주어진 data를 잘 설명하면서, 다 만족시키면서 minimize해야 할 것이다. 그래서 **x_i가 positive set의 data일 때는 y가 1, negative data일 때는 y가 -1**이며, **SVM은 1, -1 이렇게 labeling**을 하게 된다. 결국 이를 통해 y(wx+b)≥1의 식에 다 적합한 모델이 된다.
+minimize할 때의 조건을 생각해보면 결국 주어진 data를 잘 설명하면서, 다 만족시키면서 minimize해야 할 것이다. 그래서 **$x_i$가 positive set의 data일 때는 $y$가 1, negative data일 때는 $y$가 -1**이며, **SVM은 1, -1 이렇게 labeling**을 하게 된다. 결국 이를 통해 $\mathit{y(wx+b) \ge 1}$의 식에 다 적합한 모델이 된다.
 
 정리하자면 아래와 같다.
 
-- 주어진 training data를 다 만족시키면서 이것을 minimize하는 그런 w를 찾는게, SVM에서 문제를 해결하고자 하는 decision boundary에 해당하는 직선이 뭐냐를 찾는 문제이고, 직선은 결국 coefficient들을 찾는 건데 그게 이 w라고 하는 weight-vector로 표현될 수 있다.
+- 주어진 training data를 다 만족시키면서 이것을 minimize하는 그런 $w$를 찾는게, SVM에서 문제를 해결하고자 하는 decision boundary에 해당하는 직선이 뭐냐를 찾는 문제이고, 직선은 결국 coefficient들을 찾는 건데 그게 이 $w$라고 하는 weight-vector로 표현될 수 있다.
 
 그런데 이제 이렇게 조건이 붙었을 때 어떤 optimization을 할 때는 Lagrange multiplier method를 쓸수가 있다. 이 조건에 해당하는 부분까지를 합하는 equation을 만들고 그 전체를 그냥 minimize하면 그러면 원래 우리가 이 조건일 때 norm을 minimize하는 것과 같은 결과를 얻을 수 있다는 것이다. 
 
-Lagrange multiplier method에 의해 각각을 그냥 편미분해서 그게 0이 되는, 3개의 parameter 각각에 대해서 편미분을 한 다음에 이 전체 함수가 0이 되는 값이 뭐냐를 찾으면 된다. 그래서 위의 그림을 살펴보면 w와 b, 여기에는 안나타났지만 *alpha*에 대해서도 편미분을 한 다음에 그거를 만족시키는 값을 찾는 문제로 바꿔서 생각할 수 있다는 것이다. 이 SVM을 제대로 이해하는 것은 굉장히 복잡하다. 개념을 이해하는 정도로만 간략하게 설명을 하면 그런 것으로 충분할 것 같다고 생각된다.
+Lagrange multiplier method에 의해 각각을 그냥 편미분해서 그게 0이 되는, 3개의 parameter 각각에 대해서 편미분을 한 다음에 이 전체 함수가 0이 되는 값이 뭐냐를 찾으면 된다. 그래서 위의 그림을 살펴보면 $w$와 $b$, 여기에는 안나타났지만 $\alpha$에 대해서도 편미분을 한 다음에 그거를 만족시키는 값을 찾는 문제로 바꿔서 생각할 수 있다는 것이다. 이 SVM을 제대로 이해하는 것은 굉장히 복잡하다. 개념을 이해하는 정도로만 간략하게 설명을 하면 그런 것으로 충분할 것 같다고 생각된다.
 
 ## Model: testing a linear SVM
 
-그렇게 해서 w와 b와 이런 것이 어떤 값을 가질 때 margin이 maximize되냐 하는 거를 우리가 찾으면 그 다음에는 inference는 굉장히 간단하다. wb에 의해서 2개의 직선이 정해지고, 그 2개의 직선 가운데를 지나가는 애를 우리가 decision boundary라고 했으니까, 그 decision boundary를 중심으로 그러를 넘으면 positive, 아니면 negative (`training data는 1과 -1로 label을 붙였지만 inference할 때는 중심이 0, 즉 decision boundary를 중심으로 우리가 하기 때문에 0을 중심으로 구별!`)로 해서 판단한다. 
+그렇게 해서 $w$와 $b$와 이런 것이 어떤 값을 가질 때 margin이 maximize되냐 하는 거를 우리가 찾으면 그 다음에는 inference는 굉장히 간단하다. $wb$에 의해서 2개의 직선이 정해지고, 그 2개의 직선 가운데를 지나가는 애를 우리가 decision boundary라고 했으니까, 그 decision boundary를 중심으로 그러를 넘으면 positive, 아니면 negative (`training data는 1과 -1로 label을 붙였지만 inference할 때는 중심이 0, 즉 decision boundary를 중심으로 우리가 하기 때문에 0을 중심으로 구별!`)로 해서 판단한다. 
 
 ![Untitled 25](https://github.com/sehooni/sehooni.github.io/assets/84653623/e8367c87-a247-44a9-bc1b-cd2c4f00a85d)
 
@@ -276,7 +276,7 @@ Lagrange multiplier method에 의해 각각을 그냥 편미분해서 그게 0�
 
 ![Untitled 27](https://github.com/sehooni/sehooni.github.io/assets/84653623/6f107192-4c9e-4a49-b5ab-24d467385b2e)
 
- 그렇기 때문에 **”Slack” variable**이라는 것을 추가해서 margin을 조금 soft하게 가는 것이다.(**soft margin**) 원래는 위의 그림처럼 positive set과 negative set에 대한 boundary에서 중간에 나오는 애들(x_3, x_4, x_5)은 포기를 해야하는데, 그렇지 않고 약간의 여유를 두어서 허용할 수 있게 그런 개선을 좀 했다는 것이다. `즉, soft margin을 주어서 그 안에서는 왔다갔다 하더라도 허용할 수 있도록 개선한 것이다.`  그보다 더 중요한 것은 **”Kernel” trick**이라고 하는 것이다.
+ 그렇기 때문에 **”Slack” variable**이라는 것을 추가해서 margin을 조금 soft하게 가는 것이다.(**soft margin**) 원래는 위의 그림처럼 positive set과 negative set에 대한 boundary에서 중간에 나오는 애들($x_3, x_4, x_5$)은 포기를 해야하는데, 그렇지 않고 약간의 여유를 두어서 허용할 수 있게 그런 개선을 좀 했다는 것이다. `즉, soft margin을 주어서 그 안에서는 왔다갔다 하더라도 허용할 수 있도록 개선한 것이다.`  그보다 더 중요한 것은 **”Kernel” trick**이라고 하는 것이다.
 
 ## Model: kernel trick
 
@@ -284,7 +284,7 @@ Lagrange multiplier method에 의해 각각을 그냥 편미분해서 그게 0�
 
 ![Untitled 28](https://github.com/sehooni/sehooni.github.io/assets/84653623/098271e4-b552-4a4b-88a0-79f611827b6d)
 
-이렇게 바꾸는 거를 kernel function을 이용해서 표현할 수 있다면, optimal solution을 찾기 위한 계산을 하다 보면 아래와 같은 식들을 만날 수 있다. **2개의 data x_i와 x_j, 그 2개의 data point 사이에 이런 곱을 구해야하는 일이 생기는데 각각을 다른 feature space로 보낸 것**이다. **x_i와 x_j를 transform해서 Φ(x_i)와 Φ(x_j)로 바꾼다.** 그 다음에 **그들 사이의 곱을 구하는 문제로 바꾸면 classification이 잘 되기도 하더라**라는 이야기이다.
+이렇게 바꾸는 거를 kernel function을 이용해서 표현할 수 있다면, optimal solution을 찾기 위한 계산을 하다 보면 아래와 같은 식들과 만날 수 있다. **2개의 data $x_i$와 $x_j$, 그 2개의 data point 사이에 이런 곱을 구해야하는 일이 생기는데 각각을 다른 feature space로 보낸 것**이다. **$x_i$와 $x_j$를 transform해서 $\Phi(x_i)$와 $\Phi(x_j)$로 바꾼다.** 그 다음에 **그들 사이의 곱을 구하는 문제로 바꾸면 classification이 잘 되기도 하더라**라는 이야기이다.
 
 ![Untitled 29](https://github.com/sehooni/sehooni.github.io/assets/84653623/75f5f489-162b-4b7f-bc3d-5633dcc324b9)
 
@@ -336,7 +336,7 @@ percolator에 대한 설명은 여기까지이며, 몇가지 classification에 �
 
 ![Untitled 33](https://github.com/sehooni/sehooni.github.io/assets/84653623/5d3150a1-9b16-4033-aefd-5b3674e708e5)
 
-여기서 **x_0는 센터를 0에 맞추기 위해서 평균만큼 이렇게 shift하는 것**이며, 저 기본꼴이 logistic function이고 여기서 `L과 k, x_0가 각각 1, 1, 0일 때를 sigmoid function`이라고 부른다. 오른쪽 그래프와 같다. classification 문제에서 저 그래프가 도출이 되었으니, 주어진 데이터를 가장 잘 설명하는 이 parameter를 구하는 문제로 보는 것이다. 따라서 **L, k, x_0를 구하면 문제로 해결을 하면 되고, 구하는 방법은 stocastic gradient descent 방법, 즉 편미분을 해서 그 방향으로 계속 weight를, parameter들을 업데이트하는 방식**으로 하면 된다.
+여기서 **$x_0$는 센터를 0에 맞추기 위해서 평균만큼 이렇게 shift하는 것**이며, 저 기본꼴이 logistic function이고 여기서 $L$과 $k$, $x_0$가 각각 1, 1, 0일 때를 sigmoid function이라고 부른다. 오른쪽 그래프와 같다. classification 문제에서 저 그래프가 도출이 되었으니, 주어진 데이터를 가장 잘 설명하는 이 parameter를 구하는 문제로 보는 것이다. 따라서 **$L, k, x_0$를 구하면 문제로 해결을 하면 되고, 구하는 방법은 stocastic gradient descent 방법, 즉 편미분을 해서 그 방향으로 계속 weight를, parameter들을 업데이트하는 방식**으로 하면 된다.
 
 **logistic function이 좋은 이유**는 미분한 함수가 딱 크로스 폼으로 구해지기 때문에 어렵지 않게 그 값을 구할 수 있음에 있다. 즉, gradient를 쉽게 구할 수 있어 편리하고, 이 때문에 logistic regression을 classification문제에서 굉장히 많이 사용한다.
 
@@ -354,9 +354,9 @@ data는 그냥 이 feature들의 값으로 표현된 형태로 나타나며, 쉽
 
 ![Untitled 36](https://github.com/sehooni/sehooni.github.io/assets/84653623/5811c132-bc53-4a7b-a4e1-063ca3dbae0e)
 
-entropy라고 하는 것은 Information Content를 의미한다. 여기서 v_1, …, v_n은 feature의 값을 의미하며, 각각의 값에 해당하는 dataset이 있으면 그 data가 전체에서 확률이 얼마나 되는가를 나타내는 것은 p이다. 확률은 결국 분수의 형태(fraction)로 볼 수 있다.
+entropy라고 하는 것은 Information Content를 의미한다. 여기서 $v_1, \dots, v_n$은 feature의 값을 의미하며, 각각의 값에 해당하는 dataset이 있으면 그 data가 전체에서 확률이 얼마나 되는가를 나타내는 것은 $p$이다. 확률은 결국 분수의 형태(fraction)로 볼 수 있다.
 
-예를 들어, feature의 값에 따라서 v1, v2, v3가 있으면 각각의 값에 따라서 이들의 fraction을 가지고 *-Plog(P)*를 구한 다음에 SUM한 것을 **Entropy**라고 부른다. 
+예를 들어, feature의 값에 따라서 $v_1, v_2, v_3$가 있으면 각각의 값에 따라서 이들의 fraction을 가지고 $-P \log(P)$를 구한 다음에 SUM한 것을 **Entropy**라고 부른다. 
 
 앞서 봤던 그림을 예로 다시한번 Entropy와 관련하여 살펴보자.
 
@@ -366,7 +366,7 @@ entropy라고 하는 것은 Information Content를 의미한다. 여기서 v_1, 
 
 ![Untitled 38](https://github.com/sehooni/sehooni.github.io/assets/84653623/2f9d263f-2b4e-4cf0-9eb1-0a4601087b01)
 
-마찬가지로 some부분의 entropy를 계산해보면, 아래와 같이 구해지는데 log(0/4)는 정의할 수 없지만 앞에 곱해진 0/4로 0이 된다.
+마찬가지로 some부분의 entropy를 계산해보면, 아래와 같이 구해지는데 $\log(0/4)$는 정의할 수 없지만 앞에 곱해진 $0/4$로 0이 된다.
 
 ![Untitled 39](https://github.com/sehooni/sehooni.github.io/assets/84653623/ca823ee1-f775-4d0b-90d8-429826b73065)
 
@@ -376,7 +376,7 @@ entropy라고 하는 것은 Information Content를 의미한다. 여기서 v_1, 
 
 ![Untitled 40](https://github.com/sehooni/sehooni.github.io/assets/84653623/ce8ee1fa-5f21-4689-9ee8-e5d89cb89b24)
 
-그러니까 한 label, 즉 positive가 1 혹은 0 (전체가 1로 본 경우), 음.. 확률로 보는게 좋을 것 같다. 확률 p가 1 혹은 0일 때, entropy는 0이 되고, 반대로 1/2일때 가장 높은 값인 1의 값을 갖는다. 여기서 하고 싶은 이야기는 각각의 partion이 가지는 이 entropy가 있는데, 이 entropy를 전체 partion에 대해서 SUM해보면 (weighted sum) 그 entropy가 그 feature의 information이라고 생각하는 것이다. 어떤 정보의 양이라고 생각하는데, entropy가 낮으면 낮을수록 정보의 양이 많고, 반반이면 entropy가 가장 클 때이고, 그때는 아무것도 모르는 상태, 즉 positive인지 negative인지 알 수 없는 상태인 것이다.
+그러니까 한 label, 즉 positive가 1 혹은 0 (전체가 1로 본 경우), 음.. 확률로 보는게 좋을 것 같다. 확률 $p$가 1 혹은 0일 때, entropy는 0이 되고, 반대로 $1/2$일때 가장 높은 값인 1의 값을 갖는다. 여기서 하고 싶은 이야기는 각각의 partion이 가지는 이 entropy가 있는데, 이 entropy를 전체 partion에 대해서 SUM해보면 (weighted sum) 그 entropy가 그 feature의 information이라고 생각하는 것이다. 어떤 정보의 양이라고 생각하는데, entropy가 낮으면 낮을수록 정보의 양이 많고, 반반이면 entropy가 가장 클 때이고, 그때는 아무것도 모르는 상태, 즉 positive인지 negative인지 알 수 없는 상태인 것이다.
 
 ![Untitled 41](https://github.com/sehooni/sehooni.github.io/assets/84653623/068dd541-6b20-4db7-af35-7cc07af4f895)
 

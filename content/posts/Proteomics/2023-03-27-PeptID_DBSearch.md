@@ -47,7 +47,7 @@ Peptide identification은 크게 3가지 단계로 나뉘어 진다.
 
 >Protein complex → **Enzyme** → Peptides → **Mass spectrometry (MS)** → MS1 spectra
 
-이후 각 펩타이드의 질량을 분석하게 된다. 이때 측정되는 질량은 **m/z**로 `질량/전하량` 으로 x축에 위치한다. 무게가 적은 쪽부터 큰 쪽으로 하여 그래프 나타내게 된다. y축은 intensity로 얼마만큼의 펩타이드가 존재하는지를 보여준다.
+이후 각 펩타이드의 질량을 분석하게 된다. 이때 측정되는 질량은 **m/z**로 (`질량/전하량`으로) x축에 위치한다. 무게가 적은 쪽부터 큰 쪽으로 하여 그래프 나타내게 된다. y축은 intensity로 얼마만큼의 펩타이드가 존재하는지를 보여준다.
 
 본 과정은 아래의 그림과 같이 표현할 수 있으며, MS1이 본 과정에 해당한다. 본 과정을 통해 protein을 구성하는 peptide의 종류와 그 크기를 확인할 수 있다.
 
@@ -89,7 +89,7 @@ MS부터 MS1 spetra 분석, MS2(collision energy)까지의 과정을 Tandem Mass
     
 - Represented in 2-D: mass/charge axis vs. intensity axis
     
-    2D로 표현되며, MS1에서와 같이 mass/charge (m/z) 축과 intensity 축으로 나타난다. 
+    2D로 표현되며, MS1에서와 같이 mass/charge ($m/z$) 축과 intensity 축으로 나타난다. 
     
 
 또한 아래의 그림에 보이는 스펙트럼에서 각 부분의 질량차이는 각 아미노산의 질량을 의미한다고 볼 수 있다. 예시로 주어진 스펙트럼(아래 사진의 노란색 박스)은 비교적 깔끔하고 예쁜 상태이나, 현실에서는 이보다 더 지저분한 스펙트럼이 나오게 된다.
@@ -123,24 +123,25 @@ Peptide identification의 목표는 `Find a peptide with maximal match between a
 
 - *S* : experimental spectrum
 - *△* : set of possible ion type
-- *m* : precursor m/z
+- *m* : precursor $m/z$
 - *c* : charge
 
 △(델타)는 이온이 어디서 깨지는가를 고려하여 input으로 들어가며, c(charge)의 경우 주어지지 않으면 모든 경우의 수를 고려하게 된다. 그러나 보통 MS1에서 c에 대한 값을 제시해준다.
 
-Precursor m/z는 Precursor의 neutral mass와 charge*proton mass의 합을 charge로 나눔으로서 계산하게 된다.
+Precursor $m/z$는 Precursor의 neutral mass와 $charge \times proton$ mass의 합을 charge로 나눔으로서 계산하게 된다.
 
 ![image](https://user-images.githubusercontent.com/84653623/228831745-bb4957cb-01d8-4109-85ff-2ddb1d105b85.png)
 
 위 식에서 precursor m/z는 관찰값이며, charge * proton mass 부분에서 charge로 1~3가의 이온이 들어갈 수 있다. 또한 여기서 계산된 percursor의 neutral mass와 비슷한 값의 peptide를 찾는 것을 목표로 한다.
 
 이에 따라 **Output**은 `A peptide with mass M = ((m - m(H^{+}))*c), whose theoretical spectrum matches the experimental spectrum S best.`즉 이론적 스펙트럼이 실험적 스펙트럼 S에 최고로 일치하는 질량 M을 갖는 펩타이드가 나온다.
+(수식으로 표현하면: $M = ((m - m(H^{+})) \times c)$)
 
 DB search와 De Novo의 차이를 DB의 유무라고 했는데, 다음 그림을 보면 조금 더 자세히 이해할 수 있다. 
 
 ![Untitled 9](https://user-images.githubusercontent.com/84653623/228815531-2bdf920f-b691-434d-9959-384f68a6be31.png)
 
-즉, DB search는 주어진 DB를 고려하기 때문에 시간복잡도가 10^{8}로 고정되어 있지만, de Novo의 경우 모든 경우의 수를 고려하여 최적의 경로를 찾는 D.P.문제와 같기에 20^{n}의 시간복잡도를 갖게 된다. 이때 질량분석기가 인식할 수 있는 펩타이드의 길이는 아미노산 6개부터 50개가 연결된 경우까지이다.
+즉, DB search는 주어진 DB를 고려하기 때문에 시간복잡도가 $10^{8}$로 고정되어 있지만, de Novo의 경우 모든 경우의 수를 고려하여 최적의 경로를 찾는 D.P.문제와 같기에 $20^{n}$의 시간복잡도를 갖게 된다. 이때 질량분석기가 인식할 수 있는 펩타이드의 길이는 아미노산 6개부터 50개가 연결된 경우까지이다.
 
 ## Peptide identification by database search
 
@@ -151,7 +152,7 @@ DB search를 이용한 peptide identification의 목표는 `Find a peptide from 
 - *S* : experimental spectrum
 - ***P* : database of peptides**
 - *△* : set of possible ion type
-- *m* : precursor m/z
+- *m* : precursor $m/z$
 - *c* : charge
 
 이때 △(델타)는 이온 타입에 따라 다 다르며, (b, y)가 major하게 출력된다.
@@ -190,7 +191,7 @@ Glycine을 예시로 들어 살펴보면 아래의 그림과 같다.
 
 ![Untitled 14](https://user-images.githubusercontent.com/84653623/228815540-de5fd2eb-1756-4876-8d0a-b6843b4ca1db.png)
 
-Glycine(G)의 경우, 기본적인 backbone인 C_{2}H_{2}NO에 R위치에 H가 붙은 화학 구조를 갖는다. Free amino acid는 G가 단독으로 존재하는 경우를 나타내며, Amino acid residue는 펩타이드에 G가 결합되어 있을 경우를 나타낸다. 이때 전하를 띄지 않는다면 Neutral 상태에 있다고 말할 수 있다. Monoisotopic mass는 단일 동위원소의 질량을 나타내며, 분자 내 각 원자의 가장 풍부한 자연 발생 안정 동위원소의 질량의 합을 취하여 계산이 된다. (이 부분에 대한 설명은 다음다음 사진에서 다시한번 더 다룬다.)
+Glycine(G)의 경우, 기본적인 backbone인 $C_{2}H_{2}NO$에 R위치에 H가 붙은 화학 구조를 갖는다. Free amino acid는 G가 단독으로 존재하는 경우를 나타내며, Amino acid residue는 펩타이드에 G가 결합되어 있을 경우를 나타낸다. 이때 전하를 띄지 않는다면 Neutral 상태에 있다고 말할 수 있다. Monoisotopic mass는 단일 동위원소의 질량을 나타내며, 분자 내 각 원자의 가장 풍부한 자연 발생 안정 동위원소의 질량의 합을 취하여 계산이 된다. (이 부분에 대한 설명은 다음다음 사진에서 다시한번 더 다룬다.)
 
 ![Untitled 15](https://user-images.githubusercontent.com/84653623/228815542-9811d9ac-41f9-46e8-ad24-71766d02b213.png)
 

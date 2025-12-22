@@ -78,41 +78,10 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                 </span>
             );
         },
-        code: ({ node, inline, className, children, ...props }: any) => {
-            const match = /language-(\w+)/.exec(className || ``);
-            // Correctly Check if it is inline using the prop.
-            // Do not degrade to inline style just because language is missing (handle that in pre or render plain block)
-            if (inline) {
-                return (
-                    <code
-                        {...props}
-                        style={{
-                            backgroundColor: '#ffff00',
-                            color: '#000000',
-                            borderRadius: '4px',
-                            padding: '2px 4px',
-                            fontWeight: 'bold',
-                            fontFamily: 'monospace'
-                        }}
-                    >
-                        {children}
-                    </code>
-                );
-            }
 
-            // For block code (inside pre), we just render the code tag with highlight.js class
-            return (
-                <code className={className} {...props}>
-                    {children}
-                </code>
-            );
-        },
         // Custom pre component to handle the Toggle logic
         pre: ({ node, children, ...props }: any) => {
-            // Children of pre is usually a code element.
-            // Check if the code element has a language class.
-            // ReactMarkdown passes children as an object (ReactElement) if it's a code block.
-
+            // console.log('Pre render:', { childrenProps: children?.props });
             let isOutput = true;
             if (children && children.props && children.props.className) {
                 if (children.props.className.includes('language-')) {
@@ -123,12 +92,15 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
             // If it's an output block (no language class), wrap in Details
             if (isOutput) {
                 return (
-                    <details className="my-4 bg-gray-900 rounded-lg overflow-hidden">
-                        <summary className="cursor-pointer px-4 py-2 text-sm text-gray-400 bg-gray-800 hover:bg-gray-700 transition-colors select-none">
-                            Click to see output
+                    <details className="my-4 bg-gray-900 rounded-lg overflow-hidden group">
+                        <summary className="cursor-pointer px-4 py-2 text-sm text-gray-400 bg-gray-800 hover:bg-gray-700 transition-colors select-none list-none flex items-center">
+                            <span className="mr-2 transform group-open:rotate-90 transition-transform">▶</span>
+                            Code output
                         </summary>
-                        <div className="p-4 overflow-x-auto text-sm text-gray-300 font-mono whitespace-pre">
-                            {children}
+                        <div className="p-4 overflow-x-auto text-white font-mono whitespace-pre">
+                            <pre className="!m-0 !p-0 !bg-transparent" {...props}>
+                                {children}
+                            </pre>
                         </div>
                     </details>
                 );
@@ -166,7 +138,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
 
                             <ReactMarkdown
                                 remarkPlugins={[remarkGfm, remarkBreaks, remarkMath]}
-                                rehypePlugins={[rehypeRaw, rehypeHighlight, rehypeKatex]}
+                                rehypePlugins={[rehypeRaw, [rehypeHighlight, { detect: false, ignoreMissing: true }], rehypeKatex]}
                                 components={components}
                             >
                                 {postData.content}

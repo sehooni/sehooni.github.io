@@ -44,7 +44,7 @@ Mask R-CNN은 Faster R-CNN과 크게 다르지 않은 구조로, 그 차이점�
 ![5](https://user-images.githubusercontent.com/84653623/208845583-18dd59c6-9695-477d-8e91-0c95b37b98f1.PNG)
 
 ## Mask R-CNN의 구조
-N*N 사이즈의 input image가 주어졌을 때, Mask R-CNN의 Process는 다음과 같습니다.
+$N \times N$ 사이즈의 input image가 주어졌을 때, Mask R-CNN의 Process는 다음과 같습니다.
 본 슬라이드를 통해 전체적인 맥락과 흐름, 과정을 파악하고 뒤쪽에서 step-by-step으로 세분화하여 설명하도록 하겠습니다.
 ![6](https://user-images.githubusercontent.com/84653623/208845586-664b2c62-da1c-4d9a-ba25-4bedb90fc84e.PNG)
 ![7](https://user-images.githubusercontent.com/84653623/208845588-cf7407a4-1544-4881-a133-8cf673374bdd.PNG)
@@ -55,14 +55,14 @@ Mask R-CNN에서는 backbone으로 ResNet-101을 사용하는데 ResNet 네트�
 따라서 이미지를 800 ~ 1,024정도의 size로 맞춰주는데, 이때 `bilinear interpolation을 사용하여 resize` 해주게 됩니다.
 
 과정을 다시 설명하면 다음과 같습니다.
-- 2x2의 이미지를 왼쪽 그림과 같이 4x4로 upsampling 한다면 2x2에 있던 pixel value가 각각 P1, P2, P3, P4로 대응하게 됩니다.
+- $2 \times 2$의 이미지를 왼쪽 그림과 같이 $4 \times 4$로 upsampling 한다면 $2 \times 2$에 있던 pixel value가 각각 $P_1, P_2, P_3, P_4$로 대응하게 됩니다.
 - 이때 총 16개 중 4개의 pixel만 값이 대응되고 나머지 12개는 값이 아직 채워지지 않게 됩니다.
 - 이를 bilinear interpolation으로 값을 채워주게 됩니다.
-- 이렇게 기존의 image를 800 ~ 1,024 사이로 resize해준 후 네트워크의 input size인 1,024x1,024로 맞추기 위해 나머지 값들은 zero padding으로 값을 채워 주게 됩니다.
+- 이렇게 기존의 image를 800 ~ 1,024 사이로 resize해준 후 네트워크의 input size인 $1,024 \times 1,024$로 맞추기 위해 나머지 값들은 zero padding으로 값을 채워 주게 됩니다.
 
 
 **Bilinear interpolation**은 여러 interpolation 기법 중 하나로 동작 과정은 다음과 같습니다.
-- 일반적으로 두 지점 p1, p2에서의 데이터 값이 각각 f(p1), f(p2)일 때, p1, p2 사이의 임의의 지점 p에서의 데이터 값 f(p)는 아래 그림과 같이 계산할 수 있습니다.
+- 일반적으로 두 지점 $p_1, p_2$에서의 데이터 값이 각각 $f(p_1), f(p_2)$일 때, $p_1, p_2$ 사이의 임의의 지점 $p$에서의 데이터 값 $f(p)$는 아래 그림과 같이 계산할 수 있습니다.
 
 ![8](https://user-images.githubusercontent.com/84653623/208845590-16df92d1-4e6f-4145-8cf3-08284146cd9e.PNG)
 
@@ -77,21 +77,21 @@ Network 중 하나로 생각하고 넘기기에는 부족한 점이 많아서 �
  이를 극복하기 위해 ResNet을 고안한 것입니다. ResNet는 `Skip connection을 이용한 Residual Learning을 통해 layer가 깊어짐에 따른 Gradient Vanishing 문제를 해결`하였습니다.
  ![9](https://user-images.githubusercontent.com/84653623/208845595-11b1ed78-0fa2-453e-ba2d-c519cc706a81.PNG)
  
-기존의 Neural Net의 학습 목적은 input(x)을 타겟 값(y)으로 mapping하는 함수 H(x)를 찾는 것이었습니다.
-따라서 `H(x) - y`를 최소화하는 방향으로 학습을 진행하게 됩니다.
+기존의 Neural Net의 학습 목적은 input($x$)을 타겟 값($y$)으로 mapping하는 함수 $H(x)$를 찾는 것이었습니다.
+따라서 $H(x) - y$를 최소화하는 방향으로 학습을 진행하게 됩니다.
 
-이때 이미지 classification과 같은 문제의 경우, x에 대한 타겟 값 y는 사실 x를 대변하는 것으로 y와 x의 의미가 같게 끔 mapping 해야합니다。
-즉, 강아지 사진의 pixel 값이 input(x)로 주어질 때, 이를 2개의 label중 강아지가 1에 해당한다면 타겟 값(y)를 1로 정해서 학습하는 것이 아닌, 강아지 사진의 pixel 값(x)로 y를 mapping 하는 것 입니다.
+이때 이미지 classification과 같은 문제의 경우, $x$에 대한 타겟 값 $y$는 사실 $x$를 대변하는 것으로 $y$와 $x$의 의미가 같게 끔 mapping 해야합니다。
+즉, 강아지 사진의 pixel 값이 input($x$)로 주어질 때, 이를 2개의 label중 강아지가 1에 해당한다면 타겟 값($y$)를 1로 정해서 학습하는 것이 아닌, 강아지 사진의 pixel 값($x$)로 $y$를 mapping 하는 것 입니다.
 
-따라서 `네트워크의 출력값이 x가 되도록 H(x) - x를 최소화하는 방향으로 학습을 진행`합니다.
-*F(x) = H(x) - x*를 잔차라고 하며, 이 잔차를 학습하는 것은 **Residual learning**이라 합니다.
+따라서 `네트워크의 출력값이 $x$가 되도록 $H(x) - x$를 최소화하는 방향으로 학습을 진행`합니다.
+$F(x) = H(x) - x$를 잔차라고 하며, 이 잔차를 학습하는 것은 **Residual learning**이라 합니다.
 
-결국 이 문제를 해결하기 위해서, 네트워크는 0이 되도록 학습시키고 마지막에 x를 더해서 H(x)가 x가 되로록 학습하면, 미분을 해도, x 자체는 미분 값 1을 갖기 때문에 각 layer마다 최소 gradient로 1은 갖도록 한 것 입니다.
+결국 이 문제를 해결하기 위해서, 네트워크는 0이 되도록 학습시키고 마지막에 $x$를 더해서 $H(x)$가 $x$가 되로록 학습하면, 미분을 해도, $x$ 자체는 미분 값 1을 갖기 때문에 각 layer마다 최소 gradient로 1은 갖도록 한 것 입니다.
 ![10](https://user-images.githubusercontent.com/84653623/221755707-4e2b9c17-7bda-4f05-b4d4-1826cbcac17c.PNG)
 
 이렇게 shortcut connection으로 만든 block을 identity block이라고 하는데요.
 그리고 ResNet은 identity block과 convolution block으로 구성되는데 각각은 아래 슬라이드 11과 같습니다.
-단순히 `identity block은 이전까지 설명했듯이 네트워크의 output F(x)에 x를 그대로 더하는 것`이고, `Convolution block은 x 역시 1x1 convolution 연산을 거친 후 F(x)에 더해주는 것` 입니다.
+단순히 `identity block은 이전까지 설명했듯이 네트워크의 output $F(x)$에 $x$를 그대로 더하는 것`이고, `Convolution block은 $x$ 역시 $1 \times 1$ convolution 연산을 거친 후 $F(x)$에 더해주는 것` 입니다.
 그리고 ResNet은 이 두가지 block를 다음 슬라이드 12와 같이 쌓아서 구성합니다.
 ![11](https://user-images.githubusercontent.com/84653623/221755710-c7469784-f4ba-4976-8a05-215bffe77c43.PNG)
 ![12](https://user-images.githubusercontent.com/84653623/221755713-96ed41c4-af8d-44cd-b091-475a5efdecb2.PNG)
@@ -111,7 +111,7 @@ FPN의 작동과정은 다음과 같습니다.
 ![14](https://user-images.githubusercontent.com/84653623/221755718-4ba44620-efc6-4339-8c12-22d9b99e92e3.PNG)
 
 이 과정을 자세히 살펴보면,
-먼저 2배로 upsampling을 한 후, 이전 layer의 feature map을 1x1 Fully convolution 연산을 통해 filter 갯수를 똑같이 맞춰준 후 더함으로써 새로운 feature map을 생성하게 됩니다. 
+먼저 2배로 upsampling을 한 후, 이전 layer의 feature map을 $1 \times 1$ Fully convolution 연산을 통해 filter 갯수를 똑같이 맞춰준 후 더함으로써 새로운 feature map을 생성하게 됩니다. 
 결과적으로 ResNest을 통해 C1, C2, C3, C4, C5 feature map을 생성하게 되는데, C1은 사용하지 않고 C5부터 P5, P4, P3, P2를 생성하고 P5에서 max pooling을 통해 P6를 추가로 생성하게 됩니다.
 
 `최종적으로 P2, P3, P4, P5, P6 이렇게 5개의 feature map이 생성되는 것입니다.`
@@ -121,9 +121,9 @@ FPN의 작동과정은 다음과 같습니다.
 
 위에서 설명한 부분을 다시 정리하면 다음과 같습니다.
 - P2 ~ P5의 경우 : 
- RPN에 보내기 전에 3x3 convolution 연산을 거치게 됩니다. P2~P5는 up-sampling과 이전 feature map을 더함으로써 feature data가 조금 망가졌을 수 있기에 3x3 연산을 한번 더 진행해주는 것 입니다.
+ RPN에 보내기 전에 $3 \times 3$ convolution 연산을 거치게 됩니다. P2~P5는 up-sampling과 이전 feature map을 더함으로써 feature data가 조금 망가졌을 수 있기에 $3 \times 3$ 연산을 한번 더 진행해주는 것 입니다.
 - P6의 경우 : 
-P5에서 max-pooling을 한 결과이므로 3x3 연산을 하지 않고 RPN에 그대로 전달하게 됩니다.
+P5에서 max-pooling을 한 결과이므로 $3 \times 3$ 연산을 하지 않고 RPN에 그대로 전달하게 됩니다.
 
 ![15](https://user-images.githubusercontent.com/84653623/221755722-7c584d38-ed52-4072-b501-95dcdb122236.PNG)
 
@@ -167,7 +167,7 @@ NMS 알고리즘은 anchor bbox들을 score 순으로 정렬시킨 후 score가 
 Class, box branch는 공간 정보가 필요 없기 때문에 FC layer를 사용해서 (channels 1,1) vector로 변환됩니다.
 하지만 **Mask branch는 공간 정보를 추출해야 합니다.** `따라서 convolution을 사용하여 pixel-to-pixel 정보를 추출합니다.`
 여기서 pixel-to-pixel 정보란, class에 따라 분할된 이미지 조각이라 생각하면 좋을 듯 합니다.
-`Mask branch는 FCN을 사용하여 각 RoI에 대해 m x m 크기의 K개 mask를 예측합니다.`(이때 K는 class 수를 의미합니다.)
+`Mask branch는 FCN을 사용하여 각 RoI에 대해 $m \times m$ 크기의 $K$개 mask를 예측합니다.`(이때 $K$는 class 수를 의미합니다.)
 FC layer를 사용하지 않는 이유는 공간 정보를 활용하기 위함입니다. 따라서 mask는 이미지 내 객체에 대한 공간 정보를 효과적으로 encode 하는 것이 가능합니다.
 ![22](https://user-images.githubusercontent.com/84653623/221755740-f51ad527-ced0-4ead-8bdd-6af29ddc68d2.PNG)
 ![23](https://user-images.githubusercontent.com/84653623/221755743-e9657783-c97b-48c2-9b1a-dc1fa5560b22.PNG)
@@ -210,7 +210,7 @@ U를 닮은 모델의 구조는 크게 3가지로 나눌 수 있습니다.
 간략히 모델의 작동을 살펴보면 다음과 같습니다.
 모델의 input은 이미지의 픽셀 별 RGB데이터이고, 모델의 output은 이미지의 각 픽셀별 객체 구분 정보(class)입니다.
 Convolution 연산과정에서 패딩(padding)을 사용하지 않으므로 모델의 output size는 input size보다 작습니다.
-예를 들어, 572x572(RGB)크기의 이미지를 input으로 사용하면 output으로 388x388(class) 이미지가 생성되게 됩니다.
+예를 들어, $572 \times 572$(RGB)크기의 이미지를 input으로 사용하면 output으로 $388 \times 388$(class) 이미지가 생성되게 됩니다.
 ![26](https://user-images.githubusercontent.com/84653623/221755750-3eb8fe03-efd7-4f45-a95d-60e59fdd4fbc.PNG)
 
 다음으로 각 단계의 구조 및 구성을 살펴보겠습니다.
@@ -219,8 +219,8 @@ Convolution 연산과정에서 패딩(padding)을 사용하지 않으므로 모�
 먼저 수축 경로입니다.
 
 수축경로에서 아래 슬라이드 27과 같은 Down-sampling 과정을 반복하여 특징 맵(feature map)을 생성하게 됩니다.
-수축 경로는 주변 픽셀들을 참조하는 범위를 넓혀가며 이미지로부터 Contextual 정보를 추출하는 역할을 수행합니다. 3x3 convolution을 수행할 때, 패딩을 하지 않으므로, 특징맵(feature map)의 크기가 감소하게 됩니다.
-또한 Down-sampling 할 때마다 채널(Channel)의 수를 2배씩 증가시키면서 진행하는데, 처음 input channel(1)을 64개로 증가시키는 부분을 제외하면, 채널은 1 → 64 → 128 → 256 → 512 → 1024로 Down-sampling을 진행할 때마다 증가하게 됩니다.
+수축 경로는 주변 픽셀들을 참조하는 범위를 넓혀가며 이미지로부터 Contextual 정보를 추출하는 역할을 수행합니다. $3 \times 3$ convolution을 수행할 때, 패딩을 하지 않으므로, 특징맵(feature map)의 크기가 감소하게 됩니다.
+또한 Down-sampling 할 때마다 채널(Channel)의 수를 2배씩 증가시키면서 진행하는데, 처음 input channel(1)을 64개로 증가시키는 부분을 제외하면, 채널은 $1 \rightarrow 64 \rightarrow 128 \rightarrow 256 \rightarrow 512 \rightarrow 1024$로 Down-sampling을 진행할 때마다 증가하게 됩니다.
 
 논문에서는 batch-normalization이 언급되지 않았으나 구현체 및 다수의 리뷰에서 batch-normalization을 사용하는 것을 확인했다고 하는데요.
 Batch-normalization은 배치 정교화로 각 레이어마다 정규화하는 레이어를 두어 변형된 분포가 나오지 않도록 조절하는 것이라는데요.. 음.. 이 점은 저도 조금 더 찾아서 공부해야할 것 같습니다.
@@ -235,8 +235,8 @@ Batch-normalization은 배치 정교화로 각 레이어마다 정규화하는 �
 ### U-Net: 확장 경로(Expanding Path)
 마지막으로 확장 경로입니다.
 확장 경로는 슬라이드 29에서 볼 수 있듯이, (2)skip connection을 통해 수축 경로에서 생성된 Contextual 정보와 위치 정보를 결합하는 역할을 합니다.
-동일한 level에서 수축 경로의 특징 맵과 확장 경로의 특징 맵의 크기가 다른 이유는 수축 경로 슬라이드에서 설명했듯이 여러 번의 패딩이 없는 3x3 convolution layer를 지나면서 특징 맵의 크기가 줄어들었기 때문입니다.
-확장 경로의 마지막에 class의 갯수만큼 필터를 갖고 있는 **1x1 Convolution Layer**가 있습니다. **1x1 Convolution Layer**를 통과한 후 `각 픽셀이 어떤 class에 해당하는지`에 대한 정보를 나타내는 **3차원(Width x Height x Class)벡터**가 생성됩니다.
+동일한 level에서 수축 경로의 특징 맵과 확장 경로의 특징 맵의 크기가 다른 이유는 수축 경로 슬라이드에서 설명했듯이 여러 번의 패딩이 없는 $3 \times 3$ convolution layer를 지나면서 특징 맵의 크기가 줄어들었기 때문입니다.
+확장 경로의 마지막에 class의 갯수만큼 필터를 갖고 있는 **$1 \times 1$ Convolution Layer**가 있습니다. **$1 \times 1$ Convolution Layer**를 통과한 후 `각 픽셀이 어떤 class에 해당하는지`에 대한 정보를 나타내는 **3차원($\text{Width} \times \text{Height} \times \text{Class}$)벡터**가 생성됩니다.
 ![29](https://user-images.githubusercontent.com/84653623/221755755-ec54c15d-eb88-45d9-8ee0-7d80465ed8a0.PNG)
 
 ## U-Net: 학습 방법
@@ -270,12 +270,12 @@ U-Net의 경우, input과 output의 이미지 크기가 다릅니다. 슬라이�
 따라서 논문에서는 `각 픽셀이 경계와 얼마나 가까운지에 따른 Weight-Map에 비례하게 증가시킴으로써 경계를 잘 학습하도록 설계`하였습니다.
 ![33](https://user-images.githubusercontent.com/84653623/221755766-15427f4d-ad83-4373-a15a-8cae9695fff8.PNG)
 
-w(x)는 픽셀 x와 경계의 거리가 가까우면 큰 값을 갖게 되므로 해당 픽셀의 Loss 비중이 커지게 됩니다.
+$w(x)$는 픽셀 $x$와 경계의 거리가 가까우면 큰 값을 갖게 되므로 해당 픽셀의 Loss 비중이 커지게 됩니다.
 즉, 학습 시 경계에 해당하는 픽셀을 잘 학습하게 되는 것입니다.
 ![34](https://user-images.githubusercontent.com/84653623/221755768-48b77601-5d4f-46b3-a71c-2b692b89e5fd.PNG)
 
-슬라이드 35의 그림은 이미지의 픽셀 위치에 따른 Weight w(x)를 시각화한 것입니다.
-w(x)는 객체의 경계 부분에서 큰 값을 갖는 것을 확인합니다.
+슬라이드 35의 그림은 이미지의 픽셀 위치에 따른 Weight $w(x)$를 시각화한 것입니다.
+$w(x)$는 객체의 경계 부분에서 큰 값을 갖는 것을 확인합니다.
 객체 간 경계가 전체 픽셀에 차지하는 비중은 매우 작습니다. 따라서 Weight loss를 이용하지 않을 경우 경계가 잘 학습되지 않아 여러 개의 객체가 한 개의 객체로 표시될 가능성이 높아 보입니다.
 ![35](https://user-images.githubusercontent.com/84653623/221755772-d189ebf5-0956-44a3-81e4-fd75e8692561.PNG)
 
