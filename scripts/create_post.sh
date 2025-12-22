@@ -24,7 +24,7 @@ year=$(date +%Y)
 
 # Define path (nested by category folder if desired, keeping simple flat structure or category folder)
 # User's existing structure has folders like _posts/DL, _posts/ML.
-target_dir="_posts/$category"
+target_dir="content/posts/$category"
 mkdir -p "$target_dir"
 filepath="$target_dir/$filename"
 
@@ -51,7 +51,10 @@ last_modified_at: $date_str
 2. Do NOT wrap math delimiters (\`\$\`) in bold (\`**\`) or italics (\`*\`).
    - INCORRECT: **\$x\$**
    - CORRECT: \$x\$ or \$\mathbf{x}\$
-3. Use \$ for inline math and \$\$ for block math.
+3. Format exponents using math mode (e.g., for 2 to the power of n).
+   - INCORRECT: 2^n
+   - CORRECT: \$2^n\$
+4. Use \$ for inline math and \$\$ for block math.
 -->
 
 ## Introduction
