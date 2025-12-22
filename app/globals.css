@@ -44,4 +44,10 @@
     padding: 0 !important;
     border-radius: 0 !important;
   }
+
+  .prose img {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
 }

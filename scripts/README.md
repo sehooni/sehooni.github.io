@@ -37,10 +37,15 @@ To ensure mathematical formulas and chemical notations render correctly on the s
     -   ✅ Correct: `$x$` or `$\mathbf{x}$` (use LaTeX for styling inside the math)
     -   *Why?* Markdown parsers can get confused by the asterisk syntax immediately surrounding the dollar sign, causing artifacts or rendering failures.
 
-3.  **Use `$` for Inline Math**.
+3.  **Format exponents using math mode**.
+    -   ❌ Incorrect: `2^n`
+    -   ✅ Correct: `$2^n$`
+    -   *Why?* The caret `^` is treated as a regular character in Markdown tekst unless inside math delimiters.
+
+4.  **Use `$` for Inline Math**.
     -   Example: "The variable `$x$` is defined as..."
 
-4.  **Use `$$` for Block Math**.
+5.  **Use `$$` for Block Math**.
     -   Example:
         ```latex
         $$

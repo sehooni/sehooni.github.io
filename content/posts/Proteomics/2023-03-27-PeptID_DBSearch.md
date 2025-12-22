@@ -134,8 +134,9 @@ Precursor $m/z$는 Precursor의 neutral mass와 $charge \times proton$ mass의 �
 
 위 식에서 precursor m/z는 관찰값이며, charge * proton mass 부분에서 charge로 1~3가의 이온이 들어갈 수 있다. 또한 여기서 계산된 percursor의 neutral mass와 비슷한 값의 peptide를 찾는 것을 목표로 한다.
 
-이에 따라 **Output**은 `A peptide with mass M = ((m - m(H^{+}))*c), whose theoretical spectrum matches the experimental spectrum S best.`즉 이론적 스펙트럼이 실험적 스펙트럼 S에 최고로 일치하는 질량 M을 갖는 펩타이드가 나온다.
+이에 따라 **Output**은 "A peptide with mass $M = ((m - m(H^{+})) \times c)$, whose theoretical spectrum matches the experimental spectrum S best." 즉 이론적 스펙트럼이 실험적 스펙트럼 S에 최고로 일치하는 질량 M을 갖는 펩타이드가 나온다.
 (수식으로 표현하면: $M = ((m - m(H^{+})) \times c)$)
+
 
 DB search와 De Novo의 차이를 DB의 유무라고 했는데, 다음 그림을 보면 조금 더 자세히 이해할 수 있다. 
 
