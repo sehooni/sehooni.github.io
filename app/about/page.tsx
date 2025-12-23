@@ -40,10 +40,30 @@ export default function About() {
                 </ul>
                 <h3>Experience</h3>
                 <ul>
-                    <li>Post-Master Researcher, Korea Basic Science Institute (KBSI), Biopharmaceuticals Research Center & Protein Structure Group, 2025.09 - Present</li>
-                    <li>Master's Student, Hanyang University, Bioinformatics and Intelligent Systems Lab (BISLab), 2023.02 - 2025.03</li>
-                    <li>Research Assistant, Korea Institute for Advanced Study (KIAS), DeepFold, 2023.07 - 2025.02</li>
-                    <li>Undergraduate Research Fellow, Incheon National University, Biorobotics Lab, 2021.03 - 2023.02</li>
+                    <li>
+                        <strong>Post-Master Researcher</strong>
+                        <ul>
+                            <li>Korea Basic Science Institute (KBSI), Biopharmaceuticals Research Center & Protein Structure Group, 2025.09 - Present</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Master's Student</strong>
+                        <ul>
+                            <li>Hanyang University, Bioinformatics and Intelligent Systems Lab (BISLab), 2023.02 - 2025.03</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Research Assistant</strong>
+                        <ul>
+                            <li>Korea Institute for Advanced Study (KIAS), DeepFold, 2023.07 - 2025.02</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Undergraduate Research Fellow</strong>
+                        <ul>
+                            <li>Incheon National University, Biorobotics Lab, 2021.03 - 2023.02</li>
+                        </ul>
+                    </li>
                 </ul>
                 <h3>Contact</h3>
                 <ul>
