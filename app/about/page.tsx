@@ -35,14 +35,13 @@ export default function About() {
                 </ul>
                 <h3>Education</h3>
                 <ul>
-                    <li>Hanyang University, Master of Science in Artificial Intelligence, 2025</li>
-                    <li>Incheon National University, Bachelor of Science in Mechanical Engineering, 2023</li>
+                    <li>Hanyang University, Master of Science in Artificial Intelligence, 2023.03-2025.02</li>
+                    <li>Incheon National University, Bachelor of Science in Mechanical Engineering, 2017.03-2023.02</li>
                 </ul>
                 <h3>Experience</h3>
                 <ul>
-                    <li>Post-Master Researcher, Korea Basic Science Institute (KBSI), Biopharmaceuticals Research Center, 2025.09 - Present</li>
-                    <li>Post-Master Researcher, Hanyang University, Bioinformatics and Intelligent Systems Lab (BISLab), 2025.02 - 2025.04</li>
-                    <li>Master's Student, Hanyang University, Bioinformatics and Intelligent Systems Lab (BISLab), 2023.02 - 2025.02</li>
+                    <li>Post-Master Researcher, Korea Basic Science Institute (KBSI), Biopharmaceuticals Research Center & Protein Structure Group, 2025.09 - Present</li>
+                    <li>Master's Student, Hanyang University, Bioinformatics and Intelligent Systems Lab (BISLab), 2023.02 - 2025.03</li>
                     <li>Research Assistant, Korea Institute for Advanced Study (KIAS), DeepFold, 2023.07 - 2025.02</li>
                     <li>Undergraduate Research Fellow, Incheon National University, Biorobotics Lab, 2021.03 - 2023.02</li>
                 </ul>
