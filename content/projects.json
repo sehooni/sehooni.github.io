@@ -31,6 +31,11 @@
                 "icon": "github"
             },
             {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator",
+                "icon": "blog"
+            },
+            {
                 "label": "관련링크",
                 "url": "https://newsroom.smilegate.com/lab/2024AIweeklyton",
                 "icon": "external"
@@ -60,23 +65,5 @@
             }
         ],
         "contentMarkdown": "한글:\n\n - yolo-v5를 활용한 object detection 모델 개발 및 Jetson-Nano를 이용한 판별 시스템 구축 \n\n    - local 환경에서 이물질을 판별할 수 있도록 dataset 구성 및 yolo-v5 baseline model fine-tuning 진행.\n    - Jetson-Nano에서 사용할 수 있도록 경량화 진행. \n    - 95%의 정확도로 이물질 검출 성능 입증.\n    - KSME2022 포스터 발표. \n\nEnglish:\n - Developed an object detection model using YOLOv5 and built a classification system using Jetson Nano.\n   - Constructed a dataset for detecting foreign substances in a local environment and fine-tuned a YOLOv5 baseline model.\n - Optimized the model for deployment on Jetson Nano by applying model compression techniques.\n - Achieved 95% accuracy in detecting foreign substances.\n - Presented a poster at KSME2022 (The Korean Society of Mechanical Engineers).\n\n#### Tech Stack\n\n - YOLOv5\n - Jetson Nano\n - Python\n - CUDA\n - OpenCV\n - PyTorch"
-    },
-    {
-        "title": "Display Toggler",
-        "date": "2025.12",
-        "description": "macOS menu bar app to quickly toggle display mirroring and manage screen arrangements.",
-        "tags": [
-            "Tool",
-            "macOS",
-            "Swift"
-        ],
-        "links": [
-            {
-                "label": "GitHub Repository",
-                "url": "https://github.com/sehooni/DisplayToggler",
-                "icon": "github"
-            }
-        ],
-        "contentMarkdown": "macOS 사용 중 발표나 회의 시 디스플레이 미러링을 자주 켜고 꺼야 하는 불편함을 해소하기 위해 개발한 메뉴바 앱입니다. \n복잡한 시스템 설정 패널에 진입하지 않고도 상단 바에서 한 번의 클릭으로 디스플레이 모드를 전환할 수 있습니다.\n\n#### - Key Features\n* **One-Click Toggle:** 미러링(Mirroring)과 확장(Extend) 모드를 즉시 전환합니다.\n* **Global Hotkey:** `Cmd+Opt+Ctrl+D` 단축키를 통해 어떤 앱에서든 즉시 전환 가능합니다.\n* **Display Arrangement:** 듀얼 모니터 사용 시 보조 모니터의 위치(Left, Right, Top, Bottom)를 손쉽게 변경할 수 있습니다.\n* **Window Management:**\n  * `Ctrl + Option + ←` : Left Half\n  * `Ctrl + Option + →` : Right Half\n  * `Ctrl + Option + ↑` : Top Half\n  * `Ctrl + Option + ↓` : Bottom Half\n  * `Ctrl + Option + Enter` : Maximize\n* **Native Performance:** SwiftUI와 AppKit을 활용하여 매우 가볍고 빠르며, 시스템 리소스를 거의 차지하지 않습니다.\n\n#### Tech Stack\n* Language: Swift\n* UI Framework: SwiftUI\n* System Framework: AppKit (CoreGraphics)"
     }
 ]
