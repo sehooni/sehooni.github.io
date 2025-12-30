@@ -27,12 +27,11 @@ last_modified_at: 2024-07-31
 
 ## Introduction
 
-본 포스트는 2024년 SmileGate FutureLab에서 주최한 제1회 AI service weeklython에서 대상을 수상한 AI-driven Game Scenario Generator에 대한 포스트입니다. 
+본 포스트는 2024년 SmileGate FutureLab에서 주최한 제1회 AI service weeklython에서 대상을 수상한 AI-driven Game Scenario Generator에 대한 내용과 대회 회고에 대한 내용을 담고 있습니다. 
 
 AI 위클리톤의 경우, 2024년 7월 21일에 열린 "온보딩 워크숍"을 바탕으로 개발자와 기획자들이 모여 팀구성 및 아이디어를 선정하였으며, 주중 5일동안 아이디어를 구체화하고 개발이 진행되었습니다. 이후 7월 26일, 27일에 개최된 "집중개발데이"에서 모든 팀들이 모여 프로토타입을 개발하여 서비스를 제시함으로서 모든 팀들의 서비스를 직접적으로 체험할 수 있었습니다. 
 
-해당 대회와 관련하여, [링크](https://newsroom.smilegate.com/lab/2024AIweeklyton)를 통해 관련 내용을 확인할 수 있습니다.
-본 포스팅을 통해 대회를 회고해보면서 AI-driven Game Scenario Generator 프로젝트를 진행하면서 사용된 기술들과 접근 방식에 대해 정리해보았습니다. 
+다음 [스마일게이트 퓨쳐랩 기사](https://newsroom.smilegate.com/lab/2024AIweeklyton)를 통해 대회 관련 내용을 확인할 수 있습니다.
 
 해당 서비스는 다음 [Github Repository](https://github.com/sehooni/AIStoryWeaver)에서 확인할 수 있으며, 프로토타입의 사진은 본 포스트 하단에서 확인 가능합니다!
 
