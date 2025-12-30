@@ -181,6 +181,7 @@ Gradio는 [Gradio 공식 문서](https://www.gradio.app/guides/quickstart)를 �
 저에게 연락을 주고 싶으신 것이 있으시다면 
 - LinkedIn : www.linkedin.com/in/sehoon-park-575b8b22a
 - Github : https://github.com/sehooni
+- Email : 74sehoon@gmail.com
 - 블로그 댓글
 으로 연락 주시면 감사하겠습니다.
 
