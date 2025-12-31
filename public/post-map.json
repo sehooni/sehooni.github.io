@@ -29,6 +29,8 @@
   "projects/hackathon/ai_contest": "/Projects/Hackathon/AI_Contest",
   "2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator": "/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator",
   "projects/hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator": "/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator",
+  "ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-": "/Projects/Hackathon/ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-",
+  "projects/hackathon/ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-": "/Projects/Hackathon/ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-",
   "jetson_1": "/Projects/Jetson/Jetson_1",
   "projects/jetson/jetson_1": "/Projects/Jetson/Jetson_1",
   "jetson_yahboom": "/Projects/Jetson/Jetson_Yahboom",
@@ -47,12 +49,6 @@
   "proteomics/peptid_dbsearch": "/Proteomics/PeptID_DBSearch",
   "peptid_denovo": "/Proteomics/PeptID_Denovo",
   "proteomics/peptid_denovo": "/Proteomics/PeptID_Denovo",
-  "peptide_identification": "/Proteomics/peptide_identification",
-  "proteomics/peptide_identification": "/Proteomics/peptide_identification",
-  "peptide_validation": "/Proteomics/Peptide_validation",
-  "proteomics/peptide_validation": "/Proteomics/Peptide_validation",
-  "model_based_validation": "/Proteomics/model_based_validation",
-  "proteomics/model_based_validation": "/Proteomics/model_based_validation",
   "percolator": "/Proteomics/Percolator",
   "proteomics/percolator": "/Proteomics/Percolator"
 }

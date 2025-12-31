@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "[PaperReview | NLP] Attention is all you need"
+title:  "[NLP] Attention is all you need"
 excerpt: "Transformer 논문 리뷰"
 toc: true
 toc_sticky: true
