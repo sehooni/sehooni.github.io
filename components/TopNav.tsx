@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 
-export default function TopNav() {
+export default function TopNav({ title: customTitle }: { title?: string }) {
     const pathname = usePathname();
 
     // Hide on Home page
     if (pathname === '/') return null;
 
     // Derive title from pathname
-    let title = 'Blog'; // Default
+    let title = customTitle || 'Blog'; // Default
     if (pathname?.startsWith('/projects')) title = 'Projects';
     else if (pathname?.startsWith('/about')) title = 'About';
     else if (pathname?.startsWith('/resume')) title = 'Résumé';
