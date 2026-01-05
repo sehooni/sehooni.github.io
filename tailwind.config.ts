@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+    darkMode: 'media',
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -27,9 +28,9 @@ const config: Config = {
                 DEFAULT: {
                     css: {
                         maxWidth: '100%',
-                        color: '#333',
+                        color: 'var(--foreground)',
                         a: {
-                            color: '#3498db',
+                            color: 'var(--primary)',
                             textDecoration: 'none',
                             '&:hover': {
                                 textDecoration: 'underline',
@@ -37,14 +38,17 @@ const config: Config = {
                         },
                         h1: {
                             fontWeight: '700',
-                            borderBottom: '1px solid #e2e2e2',
+                            borderBottom: '1px solid var(--border)',
                             paddingBottom: '0.5rem',
+                            color: 'var(--foreground)',
                         },
                         h2: {
                             fontWeight: '700',
-                            borderBottom: '1px solid #e2e2e2',
+                            borderBottom: '1px solid var(--border)',
                             paddingBottom: '0.3rem',
+                            color: 'var(--foreground)',
                         },
+
                         'code::before': {
                             content: '""',
                         },

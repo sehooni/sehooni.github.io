@@ -10,6 +10,17 @@
   --primary: #3498db;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111827; /* Gray 900 */
+    --foreground: #e5e7eb; /* Gray 200 */
+    --sidebar-bg: #1f2937; /* Gray 800 */
+    --border: #374151; /* Gray 700 */
+    --secondary: #9ca3af; /* Gray 400 */
+    --primary: #60a5fa; /* Blue 400 - lighter for better contrast */
+  }
+}
+
 
 
 @theme {
