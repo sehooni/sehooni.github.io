@@ -1,4 +1,5 @@
 import { getPostData, getAllPostIds, getCategories, getSortedPostsData } from '@/lib/posts';
+import Link from 'next/link';
 import { format } from 'date-fns';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
@@ -23,7 +24,6 @@ import ShareButtons from '@/components/ShareButtons';
 import PostNavigation from '@/components/PostNavigation';
 import Sidebar from '@/components/Sidebar';
 
-import TopNav from '@/components/TopNav';
 
 // ... (existing imports)
 
@@ -114,23 +114,27 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
     return (
         <div className="min-h-screen flex flex-col">
             {/* TopNav for Blog Section */}
-            <TopNav title="Blog" />
 
-            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
+            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto items-start">
                 <Sidebar categories={categories} />
                 <main className="flex-1 w-full p-6 lg:p-12">
                     <div className="flex gap-8">
                         <ScrollToTop />
                         <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
-                            <PostNavigation />
                             <header className="mb-8 not-prose border-b pb-8">
+                                <PostNavigation />
                                 <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
                                 <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                                     <time dateTime={postData.date}>{format(new Date(postData.date), 'MMMM d, yyyy')}</time>
                                     {postData.category && (
                                         <>
                                             <span>•</span>
-                                            <span className="font-medium text-primary">{postData.category}</span>
+                                            <Link
+                                                href={`/category/${postData.category}`}
+                                                className="font-medium text-primary hover:underline"
+                                            >
+                                                {postData.category}
+                                            </Link>
                                         </>
                                     )}
                                 </div>

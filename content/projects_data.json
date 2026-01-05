@@ -1,0 +1,90 @@
+[
+    {
+        "title": "AI Parmacist Chatbot Service",
+        "tags": [
+            "RAG",
+            "OCR",
+            "LangGraph",
+            "LLM",
+            "Hackathon"
+        ],
+        "period": "2024.08 - 2024.09",
+        "description": "[Upstage Global AI Hackathon finalist]\nRAG와 Langchain, Solar LLM Finetuning을 이용한 영양제 추천 서비스 개발",
+        "image": "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI.jpg",
+        "github": "https://github.com/sehooni/NutriPharmAI",
+        "links": [
+            {
+                "label": "GitHub",
+                "url": "https://github.com/sehooni/NutriPharmAI",
+                "icon": "github"
+            }
+        ],
+        "details": {
+            "en": "\nFinalist in Global AI Week Hackathon (Upstage AI Hackathon).\n- **Objective**: Develop an AI-driven chatbot to assist with supplement and medication intake.\n- **Approach**:\n    - Designed and implemented chatbot functionality using LLMs, Langchain, RAG, and Gradio.\n    - Optimized responses through retrieval-augmented generation (RAG).\n                ",
+            "ko": "\n[Upstage Global AI Hackathon Finalist]\n- **목표**: 영양제 및 약물 섭취를 돕기 위한 AI 기반 챗봇 개발.\n- **접근 방식**:\n    - LLM, Langchain, RAG, 및 Gradio를 사용하여 챗봇 기능 설계 및 구현.\n    - 검색 증강 생성(RAG)을 통해 응답 최적화.\n                "
+        }
+    },
+    {
+        "title": "AI-driven Game Scenario Generator",
+        "tags": [
+            "Prompt Engineering",
+            "DALL-E",
+            "LLM",
+            "Hackathon"
+        ],
+        "period": "2024.07",
+        "description": "[스마일게이트 퓨쳐랩 AI 서비스 위클리톤 대상 수상]\nLLM Finetuning 및 Prompt engineering을 통한 게임 시나리오 제너레이터 개발",
+        "image": "/assets/images/2024-07-31-2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator/시연영상.gif",
+        "github": "https://github.com/sehooni/AIStoryWeaver",
+        "links": [
+            {
+                "label": "GitHub",
+                "url": "https://github.com/sehooni/AIStoryWeaver",
+                "icon": "github"
+            },
+            {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator",
+                "icon": "blog"
+            },
+            {
+                "label": "Related Link",
+                "url": "https://newsroom.smilegate.com/lab/2024AIweeklyton",
+                "icon": "external"
+            }
+        ],
+        "details": {
+            "en": "\n1st place winner at Smilegate FutureLab AI Service Weeklython.\n- **Objective**: Create an AI-based game scenario generator for dynamic content creation.\n- **Approach**: \n    - Applied GPT fine-tuning, prompt engineering, and DALL·E.\n    - Developed an interactive UI using Gradio.\n                ",
+            "ko": "\n[스마일게이트 퓨쳐랩 AI 서비스 위클리톤 대상]\n- **목표**: 동적 콘텐츠 생성을 위한 AI 기반 게임 시나리오 생성기 개발.\n- **접근 방식**:\n    - GPT 파인튜닝, 프롬프트 엔지니어링, DALL·E 적용.\n    - Gradio를 활용한 인터랙티브 UI 개발.\n                "
+        }
+    },
+    {
+        "title": "Development of an Automatic Defect Sorting System Module for Paper Containers Using AI-based Vision Inspection",
+        "tags": [
+            "AI",
+            "Vision",
+            "Yolov5",
+            "Jetson Nano"
+        ],
+        "period": "2022.03 - 2022.12",
+        "description": "NVIDIA JETSON NANO 및 Yolov5를 활용한 종이용기 불량품 자동 선별 시스템 모듈 개발",
+        "video": "/assets/video/Yolov5_JetsonNano_PLC.mp4",
+        "github": "https://github.com/sehooni/yolov5_jetsonnano",
+        "links": [
+            {
+                "label": "GitHub",
+                "url": "https://github.com/sehooni/yolov5_jetsonnano",
+                "icon": "github"
+            },
+            {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/category/Projects/Jetson",
+                "icon": "blog"
+            }
+        ],
+        "details": {
+            "en": "\n - Developed an object detection model using YOLOv5 and built a classification system using Jetson Nano.\n    - Constructed a dataset for detecting foreign substances in a local environment and fine-tuned a YOLOv5 baseline model.\n - Optimized the model for deployment on Jetson Nano by applying model compression techniques.\n - Achieved 95% accuracy in detecting foreign substances.\n - Presented a poster at KSME2022 (The Korean Society of Mechanical Engineers).\n\n#### Tech Stack\n - YOLOv5\n - Jetson Nano\n - Python\n - CUDA\n - OpenCV\n - PyTorch\n                ",
+            "ko": "\n - yolo-v5를 활용한 object detection 모델 개발 및 Jetson-Nano를 이용한 판별 시스템 구축 \n    - local 환경에서 이물질을 판별할 수 있도록 dataset 구성 및 yolo-v5 baseline model fine-tuning 진행.\n    - Jetson-Nano에서 사용할 수 있도록 경량화 진행. \n    - 95%의 정확도로 이물질 검출 성능 입증.\n    - KSME2022 포스터 발표. \n\n#### Tech Stack\n - YOLOv5\n - Jetson Nano\n - Python\n - CUDA\n - OpenCV\n - PyTorch\n                "
+        }
+    }
+]

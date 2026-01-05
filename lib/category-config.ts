@@ -31,6 +31,7 @@ export const CATEGORY_DISPLAY_NAMES: Record<string, string> = {
     'DL_ML': 'DL/ML',
     'Jetson': 'Jetson',
     'NLP': 'NLP',
+    'LLM': 'LLM',
     // Add more renames here
 };
 
@@ -51,5 +52,6 @@ export const CATEGORY_DESCRIPTIONS: Record<string, string> = {
     'DL_ML': '✔️ Deep Learning & Machine Learning Studies',
     'NLP': '✔️ What is the Natural Language Processing',
     'Jetson': '✔️ the CV Project with Jetson Nano',
+    'LLM': '✔️ Large Language Model Studies',
     // Add more descriptions here
 };

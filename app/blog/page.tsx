@@ -1,6 +1,5 @@
 import { getSortedPostsData, getCategories } from '@/lib/posts';
 import Sidebar from '@/components/Sidebar';
-import TopNav from '@/components/TopNav';
 import BlogPosts from '@/components/BlogPosts';
 
 export default function Blog() {
@@ -9,9 +8,8 @@ export default function Blog() {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <TopNav title="Blog" />
 
-            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
+            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto items-start">
                 <Sidebar categories={categories} />
                 <main className="flex-1 w-full p-6 lg:p-12">
                     <div className="mb-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">

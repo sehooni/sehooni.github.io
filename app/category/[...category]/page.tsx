@@ -24,7 +24,6 @@ export async function generateStaticParams() {
     }));
 }
 
-import TopNav from '@/components/TopNav';
 
 // ... (existing imports)
 
@@ -63,12 +62,11 @@ export default async function Category({ params }: { params: Promise<{ category:
 
     return (
         <div className="min-h-screen flex flex-col">
-            <TopNav title="Blog" />
 
-            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto">
+            <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto items-start">
                 <Sidebar categories={categories} />
-                <main className="flex-1 w-full p-6 lg:p-12">
-                    <header className="mb-12 border-b pb-8">
+                <main className="flex-1 w-full p-6 lg:p-12 relative">
+                    <header className="mb-12 border-b pb-8 sticky top-20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-10 pt-4 -mt-4 transition-all duration-200">
                         <div className="flex flex-col gap-2">
                             <h1 className="text-4xl font-bold mb-4">
                                 {CATEGORY_DISPLAY_NAMES[decodedCategory.split('/').pop()!] || decodedCategory}

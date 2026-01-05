@@ -67,7 +67,11 @@ export default function Sidebar({ categories }: SidebarProps) {
                         <div className="flex justify-between items-center group py-1">
                             <Link
                                 href={`/category/${node.path}/`}
-                                className="block text-foreground hover:text-primary hover:underline transition-colors truncate max-w-[80%]"
+                                className={`block hover:text-primary hover:underline transition-colors truncate max-w-[80%]
+                                    ${(pathname?.startsWith(`/category/${node.path}`) || pathname?.startsWith(`/${node.path}`))
+                                        ? 'font-bold text-black dark:text-white'
+                                        : 'text-foreground'
+                                    }`}
                             >
                                 {CATEGORY_DISPLAY_NAMES[node.name] || node.name}
                             </Link>
@@ -94,7 +98,7 @@ export default function Sidebar({ categories }: SidebarProps) {
     ];
 
     return (
-        <div className="w-full lg:w-64 flex-shrink-0 lg:block bg-sidebar-bg border-r border-border h-auto lg:h-screen lg:sticky lg:top-0 overflow-y-auto sidebar-scroll font-sans">
+        <div className="w-full lg:w-64 flex-shrink-0 lg:block bg-sidebar-bg border-r border-border h-auto lg:h-[calc(100vh-6rem)] lg:sticky lg:top-24 overflow-y-auto sidebar-scroll font-sans">
             <div className="p-6">
                 {/* Profile Section - Hide on Projects, About, Resume pages */}
                 {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
