@@ -110,7 +110,7 @@ export const ABOUT_DATA = {
     // Awards Section
     awards: {
         certifications: [
-            "LG Aimers 7th ",
+            "LG Aimers 7th AI Hackathon - Top 4% in Preliminary Round",
             "Upstage Global AI Hackathon - Top 15 Certificate",
             "Smilegate Futurelab AI Service Weeklython - 1st Place",
 
