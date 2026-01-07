@@ -1,6 +1,6 @@
 [
     {
-        "title": "LG Aimers 7th Time Series Forecasting with",
+        "title": "[LG Aimers 7th] Menu demand forecasting with N-HiTS & designed loss function",
         "tags": [
             "Time Series Forecasting",
             "N-HiTS",
@@ -34,8 +34,8 @@
             }
         ],
         "details": {
-            "en": "\nFinalist in Global AI Week Hackathon (Upstage AI Hackathon).\n- **Objective**: Develop an AI-driven chatbot to assist with supplement and medication intake.\n- **Approach**:\n    - Designed and implemented chatbot functionality using LLMs, Langchain, RAG, and Gradio.\n    - Optimized responses through retrieval-augmented generation (RAG).\n                ",
-            "ko": "\n[LG Aimers 7th Hackathon finalist]\n1. 매출 수량 log 변환 / 데이터 정규화 \n 학습 안정화를 위해 타깃을 로그변환하여 학습/검증/예측 -> 이후 역변환하여 결과 도출 \n 그 외 covariate들에 대해 시리즈(매장x메뉴)별로 MinMaxScaling (0-1) \n\n 2. N-HiTS 기반 모델링 전략\n시간 순서를 유지한 단순 시점 분할\n 멀티 윈도우 검증 : 검증 스팬에 28->7 창을 여러 번 넣어 평균 성능을 보기 위해 검증 스팬을 충분히 길게 설정 (42~56일)\n 실전 제출과의 일관성 : 실제 예측이 “최근 28일 히스토리로 다음 7일 예측“이므로,검증도 똑같이 구성하여 오버피팅/언더피팅 판단을 정확히 함.\nCovariate 정합성 : 타깃과 동일한 시점으로 cov도 나누므로, 정렬/길이 mistmatch 에러를 미연에 방지\n\n3. 정량평가산식\n예선과 본선의 정량평가산식이 다름에 따라 손실 함수 (loss function) 접근법 달리 설정.\n3.1. 예선\n식음업장 별 가중치가 있는 SMAPE (특정 매장에 강한 가중치 부여)\n해당 매장의 데이터를 학습에 중복 사용 (Over-sampling) 하여 가중치를 학습할 수 있도록 구성\n3.2. 본선\nSMAPE, NMAE, NRMSE, R-squared\n매장 별 가중치 동일 (Over-sampling 사용 x)\n동일 사항 : 실제값 0은 평가에 반영 되지 않으므로, 마스킹을 통해 target이 0이거나 음수인 구간 제외\n\n4. 군집별 모델링\n검증 데이터 기반 잔차 10 이상인 메뉴 확인\n잔차 10 이상인 메뉴 중 고가중치 영업장에 해당하는 ‘미라시아’의 메뉴에 대해 spearman 상관계수 기반 군집 분석\n이를 통해 메뉴 간 추세가 유사한 3개의 군집으로 분류\n"
+            "en": "\n[LG Aimers 7th Hackathon finalist]\n\n**1. Log Transformation & Data Normalization**\n- Log-transformed sales quantity targets for training stability (training/validation/prediction) → Inverse transformed for final results.\n- Applied MinMaxScaling (0-1) to other covariates per series (store x menu).\n\n**2. N-HiTS Based Modeling Strategy**\n- **Simple Temporal Split**: Maintained time order.\n- **Multi-Window Validation**: Set a sufficiently long validation span (42~56 days) to test multiple 28-day input → 7-day forecast windows for average performance.\n- **Consistency**: Configured validation identically to the actual submission task (\"predict next 7 days using last 28 days\") to accurately assess overfitting/underfitting.\n- **Covariate Alignment**: Split covariates at the same time steps as targets to prevent mismatch errors.\n\n**3. Evaluation Metrics & Loss Functions**\n- Adapted loss function approach due to different metrics in preliminary vs. final rounds.\n- **3.1. Preliminary Round**: Weighted SMAPE by store. Used oversampling on specific high-weight stores (e.g., 'Mirasia') to learn weights.\n- **3.2. Final Round**: SMAPE, NMAE, NRMSE, R-squared. Equal weights per store (no oversampling). Masked segments where target is 0 or negative as they are excluded from evaluation.\n\n**4. Cluster-Based Modeling**\n- Identified menus with residuals > 10 in validation data.\n- Performed Spearman correlation-based cluster analysis on menus from the high-weight store ('Mirasia') with high residuals.\n- Classified into 3 clusters based on similar trend patterns.\n",
+            "ko": "\n[LG Aimers 7th Hackathon finalist]\n\n**1. 매출 수량 Log 변환 & 데이터 정규화**\n- 학습 안정화를 위해 타깃을 로그변환하여 학습/검증/예측 → 이후 역변환하여 결과 도출\n- 그 외 covariate들에 대해 시리즈(매장x메뉴)별로 MinMaxScaling (0-1)\n\n**2. N-HiTS 기반 모델링 전략**\n- **시간 순서를 유지한 단순 시점 분할 (Simple Temporal Split)**\n- **멀티 윈도우 검증**: 검증 스팬에 28→7 창을 여러 번 넣어 평균 성능을 보기 위해 검증 스팬을 충분히 길게 설정 (42~56일)\n- **실전 제출과의 일관성**: 실제 예측이 “최근 28일 히스토리로 다음 7일 예측“이므로, 검증도 똑같이 구성하여 오버피팅/언더피팅 판단을 정확히 함.\n- **Covariate 정합성**: 타깃과 동일한 시점으로 cov도 나누므로, 정렬/길이 mismatch 에러를 미연에 방지\n\n**3. 정량평가산식 & 손실 함수**\n- 예선과 본선의 정량평가산식이 다름에 따라 손실 함수 (loss function) 접근법 달리 설정.\n- **3.1. 예선**: 식음업장 별 가중치가 있는 SMAPE (특정 매장에 강한 가중치 부여). 해당 매장의 데이터를 학습에 중복 사용 (Over-sampling) 하여 가중치를 학습할 수 있도록 구성\n- **3.2. 본선**: SMAPE, NMAE, NRMSE, R-squared. 매장 별 가중치 동일 (Over-sampling 사용 x). 실제값 0은 평가에 반영 되지 않으므로, 마스킹을 통해 target이 0이거나 음수인 구간 제외\n\n**4. 군집별 모델링**\n- 검증 데이터 기반 잔차 10 이상인 메뉴 확인\n- 잔차 10 이상인 메뉴 중 고가중치 영업장에 해당하는 ‘미라시아’의 메뉴에 대해 spearman 상관계수 기반 군집 분석\n- 이를 통해 메뉴 간 추세가 유사한 3개의 군집으로 분류\n"
         }
     },
     {
@@ -49,7 +49,12 @@
         ],
         "period": "2024.08 - 2024.09",
         "description": "[Upstage Global AI Hackathon finalist]\nRAG와 Langchain, Solar LLM Finetuning을 이용한 영양제 추천 서비스 개발",
-        "image": "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI.jpg",
+        "image": "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI_2.jpg",
+        "images": [
+            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI_2.jpg",
+            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI_insertIMG.jpg",
+            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI_chat.jpg"
+        ],
         "github": "https://github.com/sehooni/NutriPharmAI",
         "links": [
             {

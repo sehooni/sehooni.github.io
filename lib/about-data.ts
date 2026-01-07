@@ -60,7 +60,8 @@ export const ABOUT_DATA = {
             school: "Myungduk High School",
             degree: "High School Diploma",
             period: "2013.03 - 2016.02",
-            location: "Seoul, Korea"
+            location: "Seoul, Korea",
+            details: "Served as Vice Editor-in-Chief of ENC (English Newspaper Club)."
         }
     ],
 
@@ -99,7 +100,8 @@ export const ABOUT_DATA = {
             company: "Biorobotics Lab, Incheon National University",
             period: "2021.03 - 2023.02",
             details: [
-                "Research on Computer vision-based Deep Learning system & Robotics.",
+                "**전력설비 관리를 위한 경량형 로봇팔 부착형 무인비행체 및 운전기술 개발** (Jan. 2022 ~ Apr. 2022) / 한국전력공사 전력연구원\n\n- **[Patent]** APPARATUS FOR SUPPORTING SMART STICK (KOR 10-2022-0064648, Issued: May 26, 2022)",
+                "**인공지능 비전검사를 활용한 종이용기 불량품 자동 선별 시스템 모듈 개발** (Jul. 2022 ~ Feb. 2023) / 인천대학교 산학협력단\n\n- 인공지능 모델 개발 및 Jetson-Nano를 이용한 판별 시스템 구축\n- **[Poster]** Hyeongmo Park, ... Sehoon Park et al., \"Design of Automation System for Monitoring of Defective Products in Paper container Using PLC Control and Deep Learning\", KSME 2022"
             ]
         }
     ],
@@ -110,15 +112,17 @@ export const ABOUT_DATA = {
     // Awards Section
     awards: {
         certifications: [
-            "LG Aimers 7th AI Hackathon - Top 4% in Preliminary Round",
+            "LG Aimers 7th AI Hackathon - Top 4% in Preliminary Round/",
             "Upstage Global AI Hackathon - Top 15 Certificate",
             "Smilegate Futurelab AI Service Weeklython - 1st Place",
+            "[Patent] APPARATUS FOR SUPPORTING SMART STICK (KOR 10-2022-0064648, Issued: May 26, 2022)",
 
         ],
         presentations: [
             "CASP 16 (Punta Cana, Dominican Republic) - Poster Presentation",
             "BIOINFO2024 (Gyeongju, Korea) - Poster Presentation",
-            "Upstage Global AI Hackathon - Project Presentation"
+            "Upstage Global AI Hackathon - Project Presentation",
+            "KSME2022 (Jeju, Korea) - Poster Presentation"
         ]
     },
 

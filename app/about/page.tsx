@@ -306,9 +306,21 @@ function ExperienceItem({ title, company, period, details }: { title: string, co
             <div className="md:w-3/4">
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-1">{title}</h3>
                 <div className="text-lg font-semibold text-gray-600 dark:text-gray-300 mb-4">{company}</div>
-                <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                <ul className="space-y-4">
                     {details.map((detail, index) => (
-                        <li key={index}>{detail}</li>
+                        <li key={index} className="text-gray-600 dark:text-gray-400">
+                            <ReactMarkdown
+                                components={{
+                                    p: ({ node, ...props }) => <div className="mb-2" {...props} />,
+                                    ul: ({ node, ...props }) => <ul className="list-disc list-outside ml-5 space-y-1 mt-1" {...props} />,
+                                    li: ({ node, ...props }) => <li className="pl-1" {...props} />,
+                                    strong: ({ node, ...props }) => <span className="font-bold text-gray-900 dark:text-gray-100" {...props} />,
+                                    a: ({ node, ...props }) => <a className="text-[#4D7CFF] hover:underline" {...props} />,
+                                }}
+                            >
+                                {detail}
+                            </ReactMarkdown>
+                        </li>
                     ))}
                 </ul>
             </div>
