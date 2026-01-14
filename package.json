@@ -29,7 +29,7 @@
     "new-post": "node scripts/new-post.js",
     "dev": "node scripts/generate-post-map.js && next dev",
     "prebuild": "node scripts/generate-post-map.js",
-    "build": "next build && cp out/sitemap.xml out/sitemap_final.xml",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "publish": "python3 scripts/publish_post.py",
