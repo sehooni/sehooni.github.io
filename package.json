@@ -28,7 +28,7 @@
     "build:js": "npm run uglify && npm run add-banner",
     "new-post": "node scripts/new-post.js",
     "dev": "node scripts/generate-post-map.js && next dev",
-    "prebuild": "node scripts/generate-post-map.js",
+    "prebuild": "node scripts/generate-post-map.js && node scripts/generate-rss.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
