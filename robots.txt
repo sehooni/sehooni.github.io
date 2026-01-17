@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://sehooni.github.io/sitemap.xml
+Disallow: /.html
+Sitemap: https://sehooni.github.io/sitemap_final.xml

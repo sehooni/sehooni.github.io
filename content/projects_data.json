@@ -1,5 +1,43 @@
 [
     {
+        "title": "[M.S. Thesis] AlphaSS : Protein Structure Prediction with Disulfide Bond Information",
+        "tags": [
+            "AlphaFold2",
+            "PyTorch",
+            "Deep Learning",
+            "Protein Structure Prediction",
+            "Bioinformatics"
+        ],
+        "period": "2023.03 - 2025.02",
+        "description": "Enhance AlphaFold2 by integrating disulfide bond embeddings and loss to improve prediction accuracy, especially in low-MSA scenarios.",
+        "image": "/assets/images/AlphaSS/alphass_image_0.png",
+        "images": [
+            "/assets/images/AlphaSS/alphass_image_0.png",
+            "/assets/images/AlphaSS/alphass_image_1.png",
+            "/assets/images/AlphaSS/alphass_image_2.png",
+            "/assets/images/AlphaSS/alphass_image_4.png",
+            "/assets/images/AlphaSS/alphass_image_3.png",
+            "/assets/images/AlphaSS/alphass_image_5.png",
+            "/assets/images/AlphaSS/alphass_image_6.png"
+        ],
+        "links": [
+            {
+                "label": "GitHub",
+                "url": "https://github.com/iitp-ppi/AlphaSS.git",
+                "icon": "github"
+            },
+            {
+                "label": "Thesis",
+                "url": "https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=11c20015cf4992baffe0bdc3ef48d419",
+                "icon": "external"
+            }
+        ],
+        "details": {
+            "en": "\n**1. Objective**\n- Enhance AlphaFold2 by integrating disulfide bond embeddings and disulfide loss to improve prediction accuracy, especially in low-MSA scenarios.\n\n**2. Approach**\n- **In-depth Analysis**: Conducted protein structure data analysis and feature extraction to identify key factors influencing structure prediction.\n- **Model Optimization**: Developed and optimized a modified AlphaFold2 pipeline incorporating disulfide-specific features.\n- **Benchmarking**: Rigorously benchmarked performance improvements against standard datasets to validate the effectiveness of the proposed method.\n\n**3. Results**\n- **Significant Performance Gains**: Observed a TM-score improvement of 2–3% under sufficient MSA conditions and 5–10% under insufficient MSA conditions.\n- **Enhanced Recall**: Disulfide bond prediction recall improved by 50–100% with sufficient MSA, and by 60–100% when MSA was limited.\n- **Low-MSA Robustness**: Validated that incorporating disulfide bond information particularly benefits prediction performance under data-scarce (low-MSA) conditions.\n- **Conference Presentation**: Findings were presented at BIOINFO 2024.\n",
+            "ko": "\n**1. 연구 목표**\n- AlphaFold2 모델에 이황화 결합(Disulfide bond) 임베딩과 손실 함수(Loss)를 통합하여, 특히 MSA(다중 서열 정렬) 정보가 부족한 상황에서의 단백질 구조 예측 정확도를 향상시키는 것을 목표로 함.\n\n**2. 연구 접근 방식**\n- **심층 분석**: 단백질 구조 데이터 분석 및 특징 추출을 수행하여 구조 예측에 영향을 미치는 핵심 요소를 파악.\n- **모델 최적화**: 이황화 결합 특화 기능을 통합한 수정된 AlphaFold2 파이프라인을 개발 및 최적화.\n- **벤치마킹**: 제안된 방법의 유효성을 검증하기 위해 표준 데이터셋을 대상으로 성능 향상을 엄격하게 벤치마킹함.\n\n**3. 연구 성과**\n- **성능 향상**: TM-score 기준, 충분한 MSA 조건에서 2–3%, 불충분한 MSA 조건에서 5–10%의 성능 향상을 관찰.\n- **Recall 개선**: 이황화 결합 예측 재현율(Recall)이 충분한 MSA에서 50–100%, 제한된 MSA에서 60–100% 향상됨.\n- **Low-MSA 강건성**: 이황화 결합 정보를 통합하는 것이 데이터가 희소한(Low-MSA) 조건에서 구조 예측 성능에 특히 기여함을 입증.\n- **학회 발표**: 해당 연구 성과는 BIOINFO 2024에서 발표됨.\n"
+        }
+    },
+    {
         "title": "[LG Aimers 7th] Menu demand forecasting with N-HiTS & designed loss function",
         "tags": [
             "Time Series Forecasting",

@@ -1,5 +1,5 @@
 ---
-title:  "[AI Hackathon] 2025 LG Aimers 7  AI Hackathon 회고"
+title:  "[AI Hackathon] 2025 LG Aimers 7기 AI Hackathon 회고"
 excerpt: ""
 categories:
   - Hackathon
