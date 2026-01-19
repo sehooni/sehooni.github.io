@@ -33,7 +33,7 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
             <div className="space-y-12">
                 {currentPosts.map((post) => (
                     <article key={post.slug} className="flex flex-col group border-b border-gray-100 dark:border-gray-800 pb-12 last:border-0">
-                        <Link href={`/${post.slug}/`} className="block">
+                        <Link href={`/blog/${post.slug}/`} className="block">
                             <h2 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
                                 {post.title}
                             </h2>
@@ -53,7 +53,7 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
                             {post.excerpt || "Click to read more..."}
                         </p>
                         <Link
-                            href={`/${post.slug}/`}
+                            href={`/blog/${post.slug}/`}
                             className="inline-block mt-4 text-primary font-medium hover:underline"
                         >
                             Read more →
@@ -80,8 +80,8 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
                             key={p}
                             onClick={() => handlePageChange(p)}
                             className={`px-3 py-1 rounded border ${currentPage === p
-                                    ? 'bg-primary text-white border-primary'
-                                    : 'border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800'
+                                ? 'bg-primary text-white border-primary'
+                                : 'border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800'
                                 } transition-colors`}
                         >
                             {p}

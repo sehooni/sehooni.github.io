@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Post routes
     const postRoutes = allPosts.map((post) => ({
-        url: `${baseUrl}/${post.slug}/`, // Explicit trailing slash
+        url: `${baseUrl}/blog/${post.slug}/`, // Explicit trailing slash with /blog prefix
         lastModified: new Date(post.date).toISOString(),
         changeFrequency: 'weekly' as const,
         priority: 0.8,
@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Category routes
     const categoryRoutes = Object.keys(categories).map((category) => ({
-        url: `${baseUrl}/category/${category}/`, // Explicit trailing slash, category keys are already encoded-ready or simple strings
+        url: `${baseUrl}/blog/category/${category}/`, // Explicit trailing slash with /blog/category prefix
         lastModified: new Date().toISOString(),
         changeFrequency: 'weekly' as const,
         priority: 0.6,

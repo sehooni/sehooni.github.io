@@ -62,7 +62,7 @@ function traverseDirectory(dir) {
             // NOTE: We must match the slug generation logic from lib/posts.ts exactly.
             // In lib/posts.ts: const slugArray = [...categorySegments, titleSlug]; const slug = slugArray.join('/');
             const slug = [...categorySegments, titleSlug].join('/');
-            const url = `${SITE_URL}/${slug}/`;
+            const url = `${SITE_URL}/blog/${slug}/`;
 
             allPosts.push({
                 title: matterResult.data.title || titleSlug,

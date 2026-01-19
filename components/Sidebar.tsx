@@ -66,9 +66,9 @@ export default function Sidebar({ categories }: SidebarProps) {
                     <li key={node.path}>
                         <div className="flex justify-between items-center group py-1">
                             <Link
-                                href={`/category/${node.path}/`}
+                                href={`/blog/category/${node.path}/`}
                                 className={`block hover:text-primary hover:underline transition-colors truncate max-w-[80%]
-                                    ${(pathname?.startsWith(`/category/${node.path}`) || pathname?.startsWith(`/${node.path}`))
+                                    ${(pathname?.startsWith(`/blog/category/${node.path}`) || pathname?.startsWith(`/blog/${node.path}`))
                                         ? 'font-bold text-black dark:text-white'
                                         : 'text-foreground'
                                     }`}
