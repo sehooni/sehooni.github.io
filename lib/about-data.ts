@@ -14,7 +14,7 @@ export const ABOUT_DATA = {
     // Social Links
     social: {
         github: "https://github.com/sehooni",
-        linkedin: "https://www.linkedin.com/in/sehoon-park-575b8b22a",
+        linkedin: "https://www.linkedin.com/in/sehoon-park",
         email: "mailto:74sehoon@gmail.com"
     },
 
@@ -68,7 +68,7 @@ export const ABOUT_DATA = {
     // Experience Section
     experience: [
         {
-            title: "Post-Master Researcher",
+            title: "AI Researcher",
             company: "Korea Basic Science Institute (KBSI)",
             period: "2025.09 - Present",
             details: [
@@ -112,6 +112,7 @@ export const ABOUT_DATA = {
     // Awards Section
     awards: {
         certifications: [
+            "Gemini 3 Seoul Hackathon 2026 - Top 6 certificate",
             "LG Aimers 7th AI Hackathon - Top 4% in Preliminary Round/",
             "Upstage Global AI Hackathon - Top 15 Certificate",
             "Smilegate Futurelab AI Service Weeklython - 1st Place",
@@ -119,6 +120,7 @@ export const ABOUT_DATA = {
 
         ],
         presentations: [
+            "Gemini 3 Seoul Hackathon 2026 - Finalist Project Presentation",
             "CASP 16 (Punta Cana, Dominican Republic) - Poster Presentation",
             "BIOINFO2024 (Gyeongju, Korea) - Poster Presentation",
             "Upstage Global AI Hackathon - Project Presentation",
@@ -133,8 +135,7 @@ export const ABOUT_DATA = {
         "TensorFlow",
         "Git",
         "Linux",
-        "Docker",
-        "Next.js"
+        "Docker"
     ],
 
     // Interests Section
