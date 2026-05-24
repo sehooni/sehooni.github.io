@@ -8,6 +8,8 @@ export default function NotFound() {
     const router = useRouter();
     const [isRedirecting, setIsRedirecting] = useState(false);
     const [notFound, setNotFound] = useState(false);
+    const [redirectTitle, setRedirectTitle] = useState('이전 블로그 주소를 찾았습니다!');
+    const [redirectMessage, setRedirectMessage] = useState('새로운 글로 이동 중입니다...');
 
     useEffect(() => {
         const checkRedirect = async () => {
@@ -33,7 +35,48 @@ export default function NotFound() {
             // Hardcoded common patterns from Jekyll
             if (lastSegment === 'categories' || lastSegment === 'tags' || lastSegment.startsWith('page')) {
                 setIsRedirecting(true);
+                setRedirectTitle('카테고리/태그 페이지 안내');
+                setRedirectMessage('새로운 블로그 목록으로 이동합니다...');
                 router.replace('/blog/');
+                return;
+            }
+
+            // 1. Check for known deleted/legacy paths
+            const pathLower = path.toLowerCase();
+            
+            // Project related legacy deletions (e.g. Capstone, Neural-Style-Transfer)
+            if (
+                pathLower.includes('capstone') || 
+                pathLower.includes('neural_style_transfer') ||
+                pathLower.includes('detail_of_project') ||
+                pathLower.includes('introduction_of_project') ||
+                pathLower.includes('ppt_of_projects')
+            ) {
+                setRedirectTitle('이전 프로젝트 소개 글 안내');
+                setRedirectMessage('이 프로젝트 글은 개편으로 삭제되어, 3초 후 전체 프로젝트 페이지로 이동합니다...');
+                setIsRedirecting(true);
+                setTimeout(() => {
+                    router.replace('/projects/');
+                }, 3000);
+                return;
+            }
+
+            // Blog/Linux/ML related legacy deletions
+            if (
+                pathLower.includes('/blog/jekyll/') ||
+                pathLower.includes('/blog/etc/') ||
+                pathLower.includes('/linux/') ||
+                pathLower.includes('/ml/') ||
+                pathLower.includes('model_based_validation') ||
+                pathLower.includes('peptide_identification') ||
+                pathLower.includes('peptide_validation')
+            ) {
+                setRedirectTitle('이전 블로그 글 안내');
+                setRedirectMessage('이 글은 블로그 개편 과정에서 정리되어, 3초 후 블로그 목록 페이지로 이동합니다...');
+                setIsRedirecting(true);
+                setTimeout(() => {
+                    router.replace('/blog/');
+                }, 3000);
                 return;
             }
 
@@ -86,8 +129,8 @@ export default function NotFound() {
         return (
             <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mb-4"></div>
-                <h2 className="text-2xl font-bold mb-2">이전 블로그 주소를 찾았습니다!</h2>
-                <p className="text-gray-600 dark:text-gray-400">새로운 글로 이동 중입니다...</p>
+                <h2 className="text-2xl font-bold mb-2">{redirectTitle}</h2>
+                <p className="text-gray-600 dark:text-gray-400">{redirectMessage}</p>
             </div>
         );
     }

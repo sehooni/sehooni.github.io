@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/projects',
         '/resume',
     ].map((route) => ({
-        url: `${baseUrl}${route}${route === '' ? '' : '/'}`, // Ensure trailing slash for pages (except root which usually has it implicitly, but let's be consistent)
+        url: encodeURI(`${baseUrl}${route}${route === '' ? '' : '/'}`), // Ensure trailing slash for pages (except root which usually has it implicitly, but let's be consistent)
         lastModified: new Date().toISOString(),
         changeFrequency: 'monthly' as const,
         priority: route === '' ? 1.0 : 0.8,
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Post routes
     const postRoutes = allPosts.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}/`, // Explicit trailing slash with /blog prefix
+        url: encodeURI(`${baseUrl}/blog/${post.slug}/`), // Explicit trailing slash with /blog prefix
         lastModified: new Date(post.date).toISOString(),
         changeFrequency: 'weekly' as const,
         priority: 0.8,
@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Category routes
     const categoryRoutes = Object.keys(categories).map((category) => ({
-        url: `${baseUrl}/blog/category/${category}/`, // Explicit trailing slash with /blog/category prefix
+        url: encodeURI(`${baseUrl}/blog/category/${category}/`), // Explicit trailing slash with /blog/category prefix
         lastModified: new Date().toISOString(),
         changeFrequency: 'weekly' as const,
         priority: 0.6,
