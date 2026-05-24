@@ -61,7 +61,7 @@ export default function NotFound() {
                 return;
             }
 
-            // Blog/Linux/ML related legacy deletions
+            // Blog/Linux/ML/Computer Science related legacy deletions
             if (
                 pathLower.includes('/blog/jekyll/') ||
                 pathLower.includes('/blog/etc/') ||
@@ -69,7 +69,11 @@ export default function NotFound() {
                 pathLower.includes('/ml/') ||
                 pathLower.includes('model_based_validation') ||
                 pathLower.includes('peptide_identification') ||
-                pathLower.includes('peptide_validation')
+                pathLower.includes('peptide_validation') ||
+                pathLower.includes('computer science') ||
+                pathLower.includes('computer%20science') ||
+                pathLower.includes('algorithms_start') ||
+                pathLower.includes('linked_list')
             ) {
                 setRedirectTitle('이전 블로그 글 안내');
                 setRedirectMessage('이 글은 블로그 개편 과정에서 정리되어, 3초 후 블로그 목록 페이지로 이동합니다...');

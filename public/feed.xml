@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 24 May 2026 07:08:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2026 07:16:18 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -72,13 +72,6 @@
       <description><![CDATA[Proteomics 수업 내용 정리 - Introduction of Proteomics 2]]></description>
     </item>
     <item>
-      <title><![CDATA[algorithms_start]]></title>
-      <link>https://sehooni.github.io/blog/Computer%20Science/Algorithms/algorithms_start/</link>
-      <guid>https://sehooni.github.io/blog/Computer%20Science/Algorithms/algorithms_start/</guid>
-      <pubDate>Tue, 07 Mar 2023 00:00:00 GMT</pubDate>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title><![CDATA[[Proteomics] Introduction of Proteomics]]></title>
       <link>https://sehooni.github.io/blog/Proteomics/introduction_to_proteomics/</link>
       <guid>https://sehooni.github.io/blog/Proteomics/introduction_to_proteomics/</guid>
@@ -119,13 +112,6 @@
       <guid>https://sehooni.github.io/blog/Projects/Jetson/Jetson_Yahboom/</guid>
       <pubDate>Thu, 16 Feb 2023 00:00:00 GMT</pubDate>
       <description><![CDATA[yahboom Jetson Nano Linux OS 설정]]></description>
-    </item>
-    <item>
-      <title><![CDATA[linked_list]]></title>
-      <link>https://sehooni.github.io/blog/Computer%20Science/DataStructure/linked_list/</link>
-      <guid>https://sehooni.github.io/blog/Computer%20Science/DataStructure/linked_list/</guid>
-      <pubDate>Thu, 26 Jan 2023 00:00:00 GMT</pubDate>
-      <description><![CDATA[]]></description>
     </item>
     <item>
       <title><![CDATA[[Jetson] Jetson Nano를 이용한 Yolov5 활용기]]></title>
