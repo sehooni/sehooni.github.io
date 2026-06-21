@@ -87,7 +87,7 @@ Solar LLM
 ### 2. RAG & LangGraph
 
 #### RAG(Retrieval Augmented Generation; 검색증강생성)
-RAG(Retrieval Augmented Generation; 검색증강생성)는 LLM이 답을 생성하기 전에 벡터DB나 검색엔진에서 관련 문서를 검색해 Context로 주입한 뒤, 이를 바탕으로 답변을 생성하는 방식으로, 쉽게 비유하자면 ``LLM에 외부 지식을 붙여서 "잘 아는 도메인 비서"로 만든다``고 설명할 수 있습니다.
+RAG(Retrieval Augmented Generation; 검색증강생성)는 LLM이 답을 생성하기 전에 벡터DB나 검색엔진에서 관련 문서를 검색해 Context로 주입한 뒤, 이를 바탕으로 답변을 생성하는 방식으로, 쉽게 비유하자면 ``LLM에 외부 지식을 붙여서 "잘 아는 도메인 비서"로 만든다``고 설명할 수 있습니다. (자세한 RAG 이론 및 원리는 [RAG(Retrieval Augmented Generation)란 무엇인가](https://sehooni.github.io/blog/AI/LLM/About_RAG) 포스트를 참고해주세요.)
 
 전통적인 파인튜닝과 달리, 모델 자체는 그대로 두고 외부 지식DB만 업데이트하면 되기 때문에 최신성 및 도메인 특화, 비용 측면에서 효율적이라고 알려져 있습니다.
 
@@ -130,7 +130,7 @@ Gradio의 경우, [Gradio 공식 문서](https://www.gradio.app/guides/quickstar
 
 또한 실제 개발 환경에서 근무하는 다양한 멘토님과의 커뮤니케이션, 세션, 더 나아가 다양한 나라에서 참가한 팀원들과의 네트워킹도 본인에게 있어 큰 경험과 자산이 되었다고 생각합니다. 본 포스팅을 통해 다시한번 이러한 대회를 열어준 Upstage에 감사드립니다.
 
-대회에 대한 회고는 이것으로 마무리하고, RAG에 대한 내용도 추가 공부 후 블로그에 업데이트할 예정입니다!
+대회에 대한 회고는 이것으로 마무리하고, RAG에 대한 자세한 내용은 [RAG(Retrieval Augmented Generation)란 무엇인가](https://sehooni.github.io/blog/AI/LLM/About_RAG) 포스트를 참고해주세요!
 긴 글 읽어주셔서 감사합니다! 
 
 
