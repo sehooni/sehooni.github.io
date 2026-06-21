@@ -59,14 +59,14 @@ last_modified_at: 2026-01-06
 
 시계열 예측 모델로는 다층 계층적 구조를 통해 복잡한 장단기 주기를 효과적으로 포착하는 **N-HiTS (Neural Hierarchical Interpolation for Time Series)** 아키텍처를 베이스라인으로 채택했습니다.
 
-![Train Process](/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7--ai-hackathon-/image.png)
+![Train Process](/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image.png)
 
 * **시간 순서를 유지한 단순 시점 분할 (Simple Temporal Split)**:
   시계열 데이터의 특성상 미래의 정보가 과거에 유출되는 데이터 누수(Data Leakage)를 원천 차단하기 위해 시간 순서를 엄격히 준수하여 Train과 Validation 세트를 분리했습니다.
 * **실전과 동일한 Multi-Window Validation 구성**:
   실제 해커톤 제출 방식이 **"최근 28일의 데이터(Lookback Window)를 기반으로 향후 7일(Forecast Horizon)을 예측"**하는 형태였습니다. 검증 데이터셋 역시 $28 \to 7$ 예측 윈도우를 여러 개 겹쳐 테스트할 수 있도록 $42$~$56$일 수준의 넉넉한 검증 스팬을 설정하여 평균적인 오차를 도출했습니다.
 
-![Predict Process](/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7--ai-hackathon-/image-1.png)
+![Predict Process](/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image-1.png)
 
 * **공변량 정합성 (Covariate Alignment)**:
   예측 시점의 공변량 정렬 에러(Length Mismatch)를 방지하기 위해 타깃 값과 동적 외부 변수의 시점을 동일하게 정합시키는 데이터 파이프라인을 구축했습니다.
@@ -88,7 +88,7 @@ last_modified_at: 2026-01-06
 
 단일 N-HiTS 모델로 전체 영업장과 메뉴를 통합 학습시켰을 때, 특정 대형 매장의 고수요 메뉴에서 지속적으로 예측 오차가 누적되는 현상이 발견되었습니다.
 
-![Develop process step by step](/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7--ai-hackathon-/image-2.png)
+![Develop process step by step](/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image-2.png)
 
 1. **오차 지점 탐색**:
    검증 데이터 예측값과 실제값의 잔차(Residual) 분석을 수행한 결과, 잔차가 $10$ 이상 벌어지는 이상 항목(Anomalies) 대부분이 고가중치 영업장('미라시아')에 집중되어 있었습니다.

@@ -90,11 +90,11 @@
         ],
         "period": "2025.08 - 2025.09",
         "description": "[LG Aimers 7th Hackathon finalist]\nTime series forecasting using N-HiTS and LLM",
-        "image": "/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7--ai-hackathon-/image.png",
+        "image": "/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image.png",
         "images": [
-            "/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7--ai-hackathon-/image.png",
-            "/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7--ai-hackathon-/image-1.png",
-            "/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7--ai-hackathon-/image-2.png"
+            "/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image.png",
+            "/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image-1.png",
+            "/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image-2.png"
         ],
         "links": [
             {
@@ -134,11 +134,11 @@
         ],
         "period": "2024.08 - 2024.09",
         "description": "[Upstage Global AI Hackathon finalist]\nRAG와 Langchain, Solar LLM Finetuning을 이용한 영양제 추천 서비스 개발",
-        "image": "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI_2.jpg",
+        "image": "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon/Overview_of_NutriPharmAI_2.jpg",
         "images": [
-            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI_2.jpg",
-            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI_insertIMG.jpg",
-            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon-/Overview_of_NutriPharmAI_chat.jpg"
+            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon/Overview_of_NutriPharmAI_2.jpg",
+            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon/Overview_of_NutriPharmAI_insertIMG.jpg",
+            "/assets/images/2024-10-01-ai-hackathon-2024-upstage-global-ai-week-ai-hackathon/Overview_of_NutriPharmAI_chat.jpg"
         ],
         "github": "https://github.com/sehooni/NutriPharmAI",
         "links": [
