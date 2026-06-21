@@ -68,19 +68,6 @@ export const ABOUT_DATA = {
     // Experience Section
     experience: [
         {
-            title: "Solo Developer",
-            company: "Gemini 3 Seoul Hackathon 2026 (Team Alpha_BioAgent)",
-            period: "2026.02",
-            details: [
-                "**Alpha-Agent: Autonomous AI Co-Scientist**",
-                "**Tech**: Gemini 3.1 Pro, Google’s Antigravity, Python (Bio.PDB)",
-                "Developed an autonomous research agent to bridge the \"Valley of Death\" between in-silico predictions and in-vitro experimental results.",
-                "Eliminated LLM numerical hallucinations by designing a grounded system on the Google Antigravity platform, enabling the agent to autonomously write and execute Python code to physically verify interatomic distances (Å) and B-factors.",
-                "Detected dynamically unstable loops unidentifiable by text-based metrics by performing multimodal structural analysis on B-factor-driven thermal wobble simulation videos using a vision model.",
-                "Built a closed-loop self-correction system that autonomously adjusts design parameters and suggests alternatives based on virtual wet-lab feedback, such as protein aggregation."
-            ]
-        },
-        {
             title: "AI Researcher",
             company: "Korea Basic Science Institute (KBSI)",
             period: "2025.09 - Present",
@@ -126,7 +113,7 @@ export const ABOUT_DATA = {
     awards: {
         certifications: [
             "Gemini 3 Seoul Hackathon 2026 - Top 6 certificate",
-            "LG Aimers 7th AI Hackathon - Top 4% in Preliminary Round/",
+            "LG Aimers 7th AI Hackathon - Top 4% in Preliminary Round",
             "Upstage Global AI Hackathon - Top 15 Certificate",
             "Smilegate Futurelab AI Service Weeklython - 1st Place",
             "[Patent] APPARATUS FOR SUPPORTING SMART STICK (KOR 10-2022-0064648, Issued: May 26, 2022)",

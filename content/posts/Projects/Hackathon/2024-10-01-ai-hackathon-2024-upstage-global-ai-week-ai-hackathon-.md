@@ -135,7 +135,7 @@ Gradio의 경우, [Gradio 공식 문서](https://www.gradio.app/guides/quickstar
 
 
 저에게 연락을 주고 싶으신 것이 있으시다면 
-- LinkedIn : www.linkedin.com/in/sehoon-park-575b8b22a
+- LinkedIn : [www.linkedin.com/in/sehoon-park](https://www.linkedin.com/in/sehoon-park)
 - Github : https://github.com/sehooni
 - Email : 74sehoon@gmail.com
 - 블로그 댓글

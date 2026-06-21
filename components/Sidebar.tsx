@@ -124,7 +124,7 @@ export default function Sidebar({ categories }: SidebarProps) {
                             <a href="https://github.com/sehooni" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="GitHub">
                                 <FaGithub size={18} />
                             </a>
-                            <a href="https://www.linkedin.com/in/sehoon-park-575b8b22a/?locale=ko_KR" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/sehoon-park/?locale=ko_KR" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="LinkedIn">
                                 <FaLinkedin size={18} />
                             </a>
                         </div>

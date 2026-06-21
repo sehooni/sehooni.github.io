@@ -28,7 +28,7 @@ export default function Home() {
 
             {/* Social Links */}
             <div className="flex space-x-6 text-2xl text-gray-800 dark:text-gray-200">
-                <a href="https://www.linkedin.com/in/sehoon-park-575b8b22a/?locale=ko_KR" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">
+                <a href="https://www.linkedin.com/in/sehoon-park/?locale=ko_KR" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">
                     <FaLinkedin />
                 </a>
                 <a href="https://github.com/sehooni" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">
