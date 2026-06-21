@@ -136,8 +136,10 @@ export default function Sidebar({ categories }: SidebarProps) {
                 {/* Categories - Hide on Projects, About, Resume pages */}
                 {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
                     <div className="mb-8">
-                        <h3 className="text-xs font-bold uppercase tracking-wider text-secondary mb-3 pb-1 border-b border-border">
-                            Categories
+                        <h3 className="text-xs font-bold uppercase tracking-wider text-secondary mb-3 pb-1 border-b border-border hover:text-primary transition-colors">
+                            <Link href="/blog/category/">
+                                Categories
+                            </Link>
                         </h3>
                         {renderCategories(categoryTree)}
                     </div>

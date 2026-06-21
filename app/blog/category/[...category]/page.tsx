@@ -68,6 +68,28 @@ export default async function Category({ params }: { params: Promise<{ category:
                 <main className="flex-1 w-full p-6 lg:p-12 relative">
                     <header className="mb-12 border-b pb-8 sticky top-20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-10 pt-4 -mt-4 transition-all duration-200">
                         <div className="flex flex-col gap-2">
+                            <div className="text-sm text-gray-400 dark:text-gray-500 mb-2 flex items-center flex-wrap">
+                                <Link href="/blog/category/" className="hover:text-primary hover:underline transition-colors">
+                                    Categories
+                                </Link>
+                                {decodedCategory.split('/').map((part, index, arr) => {
+                                    const path = arr.slice(0, index + 1).join('/');
+                                    return (
+                                        <span key={path} className="flex items-center">
+                                            <span className="mx-2 text-gray-300 dark:text-gray-600">/</span>
+                                            {index === arr.length - 1 ? (
+                                                <span className="font-semibold text-gray-800 dark:text-gray-200">
+                                                    {CATEGORY_DISPLAY_NAMES[part] || part}
+                                                </span>
+                                            ) : (
+                                                <Link href={`/blog/category/${path}/`} className="hover:text-primary hover:underline transition-colors">
+                                                    {CATEGORY_DISPLAY_NAMES[part] || part}
+                                                </Link>
+                                            )}
+                                        </span>
+                                    );
+                                })}
+                            </div>
                             <h1 className="text-4xl font-bold mb-4">
                                 {CATEGORY_DISPLAY_NAMES[decodedCategory.split('/').pop()!] || decodedCategory}
                             </h1>

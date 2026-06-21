@@ -41,6 +41,14 @@ export default function NotFound() {
                 return;
             }
 
+            if (lastSegment === 'category') {
+                setIsRedirecting(true);
+                setRedirectTitle('카테고리 페이지 안내');
+                setRedirectMessage('카테고리 목록 페이지로 이동합니다...');
+                router.replace('/blog/category/');
+                return;
+            }
+
             // 1. Check for known deleted/legacy paths
             const pathLower = path.toLowerCase();
             
