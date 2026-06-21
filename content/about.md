@@ -35,6 +35,21 @@ From 2021 to 2023, I was a undergraduate research assistant with Computer vision
 My current research interests include Protein Structure Prediction, Bioinformatics, and Artificial Intelligence.
 
 ### Career & Activities
+- Solo Developer (2026.02)
+
+    &nbsp;&nbsp;&nbsp;&nbsp; Gemini 3 Seoul Hackathon 2026 (Team Alpha_BioAgent)
+
+  - Developed an autonomous research agent to bridge the "Valley of Death" between in-silico predictions and in-vitro experimental results.
+  - Eliminated LLM numerical hallucinations by designing a grounded system on the Google Antigravity platform, enabling the agent to autonomously write and execute Python code to physically verify interatomic distances (Å) and B-factors.
+  - Detected dynamically unstable loops unidentifiable by text-based metrics by performing multimodal structural analysis on B-factor-driven thermal wobble simulation videos using a vision model.
+  - Built a closed-loop self-correction system that autonomously adjusts design parameters and suggests alternatives based on virtual wet-lab feedback, such as protein aggregation.
+
+- AI Researcher (2025.09 - Present)
+
+    &nbsp;&nbsp;&nbsp;&nbsp; Korea Basic Science Institute (KBSI), Seoul, South Korea
+
+  - Biopharmaceuticals Research Center & Protein Structure Group
+
 - M.S in Artificial Intelligence (2023.03 - 2025.02)
 
     &nbsp;&nbsp;&nbsp;&nbsp; BISLab - BioInformatics Lab. Hanyang University, Seoul, South Korea

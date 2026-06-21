@@ -1,5 +1,16 @@
 [
     {
+        "title": "Alpha-Agent: Autonomous AI Co-Scientist",
+        "date": "2026.02",
+        "description": "[Gemini 3 Seoul Hackathon 2026] Developed an autonomous research agent to bridge the \"Valley of Death\" between in-silico predictions and in-vitro experimental results.",
+        "tags": [
+            "AI",
+            "Hackathon"
+        ],
+        "links": [],
+        "contentMarkdown": "**Role**: Solo Developer (Team Alpha_BioAgent)\n**Tech**: Gemini 3.1 Pro, Google’s Antigravity, Python (Bio.PDB)\n- Developed an autonomous research agent to bridge the \"Valley of Death\" between in-silico predictions and in-vitro experimental results.\n- Eliminated LLM numerical hallucinations by designing a grounded system on the Google Antigravity platform, enabling the agent to autonomously write and execute Python code to physically verify interatomic distances (Å) and B-factors.\n- Detected dynamically unstable loops unidentifiable by text-based metrics by performing multimodal structural analysis on B-factor-driven thermal wobble simulation videos using a vision model.\n- Built a closed-loop self-correction system that autonomously adjusts design parameters and suggests alternatives based on virtual wet-lab feedback, such as protein aggregation."
+    },
+    {
         "title": "AI Parmacist Chatbot Service",
         "date": "2024.07 - 2024.09",
         "description": "[Upstage Global AI Hackathon finalist] RAG와 Langchain, Solar LLM Finetuning을 이용한 영양제 추천 서비스 개발",
