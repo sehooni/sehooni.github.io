@@ -26,6 +26,11 @@
                 "icon": "github"
             },
             {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/blog/Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent",
+                "icon": "blog"
+            },
+            {
                 "label": "Hackathon Gallery",
                 "url": "https://cerebralvalley.ai/e/gemini-3-seoul-hackathon/hackathon/gallery",
                 "icon": "external"
@@ -98,6 +103,11 @@
                 "icon": "DACON"
             },
             {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/blog/Projects/Hackathon/ai-hackathon-2025-lg-aimers-7-ai-hackathon",
+                "icon": "blog"
+            },
+            {
                 "label": "Related Link (LG AI Research)",
                 "url": "https://www.lgresearch.ai/news/view?seq=581",
                 "icon": "external"
@@ -136,6 +146,11 @@
                 "label": "GitHub",
                 "url": "https://github.com/sehooni/NutriPharmAI",
                 "icon": "github"
+            },
+            {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/blog/Projects/Hackathon/ai-hackathon-2024-upstage-global-ai-week-ai-hackathon",
+                "icon": "blog"
             }
         ],
         "details": {
@@ -163,7 +178,7 @@
             },
             {
                 "label": "Blog Post",
-                "url": "https://sehooni.github.io/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator",
+                "url": "https://sehooni.github.io/blog/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator",
                 "icon": "blog"
             },
             {
@@ -197,7 +212,7 @@
             },
             {
                 "label": "Blog Post",
-                "url": "https://sehooni.github.io/category/Projects/Jetson",
+                "url": "https://sehooni.github.io/blog/category/Projects/Jetson",
                 "icon": "blog"
             }
         ],

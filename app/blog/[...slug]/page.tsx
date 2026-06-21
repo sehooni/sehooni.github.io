@@ -130,7 +130,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                                         <>
                                             <span>•</span>
                                             <Link
-                                                href={`/category/${postData.category}`}
+                                                href={`/blog/category/${postData.category}`}
                                                 className="font-medium text-primary hover:underline"
                                             >
                                                 {postData.category}

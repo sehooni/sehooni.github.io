@@ -7,7 +7,13 @@
             "AI",
             "Hackathon"
         ],
-        "links": [],
+        "links": [
+            {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/blog/Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent",
+                "icon": "blog"
+            }
+        ],
         "contentMarkdown": "**Role**: Solo Developer (Team Alpha_BioAgent)\n**Tech**: Gemini 3.1 Pro, Google’s Antigravity, Python (Bio.PDB)\n- Developed an autonomous research agent to bridge the \"Valley of Death\" between in-silico predictions and in-vitro experimental results.\n- Eliminated LLM numerical hallucinations by designing a grounded system on the Google Antigravity platform, enabling the agent to autonomously write and execute Python code to physically verify interatomic distances (Å) and B-factors.\n- Detected dynamically unstable loops unidentifiable by text-based metrics by performing multimodal structural analysis on B-factor-driven thermal wobble simulation videos using a vision model.\n- Built a closed-loop self-correction system that autonomously adjusts design parameters and suggests alternatives based on virtual wet-lab feedback, such as protein aggregation."
     },
     {
@@ -23,6 +29,11 @@
                 "label": "GitHub repository",
                 "url": "https://github.com/sehooni/NutriPharmAI",
                 "icon": "github"
+            },
+            {
+                "label": "Blog Post",
+                "url": "https://sehooni.github.io/blog/Projects/Hackathon/ai-hackathon-2024-upstage-global-ai-week-ai-hackathon",
+                "icon": "blog"
             }
         ],
         "contentMarkdown": "Finalist in Global AI Week Hackathon (Upstage AI Hackathon).\n- Objective: Develop an AI-driven chatbot to assist with supplement and medication intake.\n- Approach:\n    - Designed and implemented chatbot functionality using LLMs, Langchain, RAG, and Gradio.\n    - Optimized responses through retrieval-augmented generation (RAG)."
@@ -43,7 +54,7 @@
             },
             {
                 "label": "Blog Post",
-                "url": "https://sehooni.github.io/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator",
+                "url": "https://sehooni.github.io/blog/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator",
                 "icon": "blog"
             },
             {
@@ -71,7 +82,7 @@
             },
             {
                 "label": "Blog Post",
-                "url": "https://sehooni.github.io/category/Projects/Jetson",
+                "url": "https://sehooni.github.io/blog/category/Projects/Jetson",
                 "icon": "blog"
             }
         ],

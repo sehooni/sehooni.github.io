@@ -106,7 +106,7 @@ LangGraph는
 
 
 ### 3. Gradio
-바로 이전 [스마일게이트 해커톤](https://sehooni.github.io/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator)에서 사용한 Gradio를 사용하여 직접 프로토타입을 구현하였습니다. 당시에는 팀원이 주도적으로 진행을 하였다면, 당시 경험을 살려 직접 연결하고 서비스를 구현하였습니다.
+바로 이전 [스마일게이트 해커톤](https://sehooni.github.io/blog/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator)에서 사용한 Gradio를 사용하여 직접 프로토타입을 구현하였습니다. 당시에는 팀원이 주도적으로 진행을 하였다면, 당시 경험을 살려 직접 연결하고 서비스를 구현하였습니다.
 
 Gradio의 경우, [Gradio 공식 문서](https://www.gradio.app/guides/quickstart)를 참고하면 보다 쉽게 구현할 수 있습니다. 
 
