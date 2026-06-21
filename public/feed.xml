@@ -5,15 +5,22 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 21 Jun 2026 06:04:21 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2026 08:05:23 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title><![CDATA[[AI Hackathon] 2026 Gemini 3 Seoul Hackathon 본선(Top 6) 진출 회고: Alpha-Agent]]></title>
+      <link>https://sehooni.github.io/blog/Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent/</link>
+      <guid>https://sehooni.github.io/blog/Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent/</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[1인 개발팀(Alpha_BioAgent)으로 참여한 Gemini 3 서울 해커톤 본선 회고 및 Google Antigravity 기반 자율 AI 연구원(Alpha-Agent) 개발기]]></description>
+    </item>
     <item>
       <title><![CDATA[[AI Hackathon] 2025 LG Aimers 7기 AI Hackathon 회고]]></title>
       <link>https://sehooni.github.io/blog/Projects/Hackathon/ai-hackathon-2025-lg-aimers-7--ai-hackathon-/</link>
       <guid>https://sehooni.github.io/blog/Projects/Hackathon/ai-hackathon-2025-lg-aimers-7--ai-hackathon-/</guid>
       <pubDate>Tue, 06 Jan 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[LG Aimers 7기 AI 해커톤 본선 진출(Finalist) 회고 및 N-HiTS와 군집 모델링 기반의 F&B 매장 매출 수요 예측 솔루션 공유]]></description>
     </item>
     <item>
       <title><![CDATA[[ML Study] 머신러닝 첫걸음: Classification 모델 완전정복 (1)]]></title>

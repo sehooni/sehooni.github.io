@@ -18,6 +18,19 @@
             "/assets/images/Alpha-Agent/Gemini_me.jpeg",
             "/assets/images/Alpha-Agent/gemini3_hackathon.jpeg"
         ],
+        "github": "https://github.com/sehooni/Alpha_Agent",
+        "links": [
+            {
+                "label": "GitHub",
+                "url": "https://github.com/sehooni/Alpha_Agent",
+                "icon": "github"
+            },
+            {
+                "label": "Hackathon Gallery",
+                "url": "https://cerebralvalley.ai/e/gemini-3-seoul-hackathon/hackathon/gallery",
+                "icon": "external"
+            }
+        ],
         "details": {
             "en": "\n**1. Objective**\n- Develop an autonomous research agent to bridge the \"Valley of Death\" between in-silico predictions and in-vitro experimental results.\n\n**2. Approach & Key Achievements**\n- **Eliminated LLM Numerical Hallucinations**: Designed a grounded system on the Google Antigravity platform, enabling the agent to autonomously write and execute Python code to physically verify interatomic distances (Å) and B-factors.\n- **Multimodal Structural Analysis**: Detected dynamically unstable loops unidentifiable by text-based metrics by performing analysis on B-factor-driven thermal wobble simulation videos using a vision model.\n- **Closed-Loop Self-Correction**: Built a self-correction system that autonomously adjusts design parameters and suggests alternatives based on virtual wet-lab feedback, such as protein aggregation.\n\n**3. Results**\n- Winner of the Top 6 / Finalist award at the Gemini 3 Seoul Hackathon 2026 (Solo Developer, Team Alpha_BioAgent).",
             "ko": "\n**1. 연구 목표**\n- In-silico 예측과 in-vitro 실험 결과 사이의 \"죽음의 계곡(Valley of Death)\"을 메우기 위한 자율 연구 에이전트 개발.\n\n**2. 접근 방식 및 주요 성과**\n- **LLM 수치적 환각 제거**: Google Antigravity 플랫폼 상에 그라운딩된 시스템을 설계하여 에이전트가 자율적으로 Python 코드를 작성 및 실행함으로써 원자 간 거리(Å) 및 B-factor를 물리적으로 검증할 수 있도록 함.\n- **멀티모달 구조 분석**: 비전 모델을 사용하여 B-factor 기반 열적 흔들림(thermal wobble) 시뮬레이션 비디오에 대한 분석을 수행함으로써 텍스트 기반 지표로는 식별할 수 없는 동적으로 불안정한 루프 감지.\n- **폐루프 자가 교정**: 단백질 응집(protein aggregation)과 같은 가상 습식 실험실 피드백을 기반으로 설계 매개변수를 자율적으로 조정하고 대안을 제시하는 자가 교정 시스템 구축.\n\n**3. 연구 성과**\n- Gemini 3 Seoul Hackathon 2026 본선 진출 및 Top 6 수상 (1인 개발, 팀 Alpha_BioAgent)."
