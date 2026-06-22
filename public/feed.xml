@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 22 Jun 2026 06:41:43 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 07:12:37 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -44,6 +44,13 @@
       <description><![CDATA[인공지능, 머신러닝, 딥러닝의 기본 개념을 정리하고, MNIST 데이터셋과 SGD 분류기를 활용한 이진 분류 모델 학습 및 정밀도, 재현율, F1-Score, ROC-AUC 등 성능 지표의 상세 분석]]></description>
     </item>
     <item>
+      <title><![CDATA[[Paper Review] Geometric deep learning improves generalizability of MHC-bound peptide prediction]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/Geometric-deep-learning-MHC-peptide-prediction/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/Geometric-deep-learning-MHC-peptide-prediction/</guid>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[기존 서열 기반 방식(SeqB)의 데이터 편향성과 일반화 오류 한계를 극복하기 위해 3D 구조 정보와 회전/이동 불변성(SE(3)-equivariance) 기반 기하학적 딥러닝(GDL) 및 자가지도학습(3D-SSL)을 적용한 pMHC 결합 예측 모델 리뷰]]></description>
+    </item>
+    <item>
       <title><![CDATA[[LLM] RAG(Retrieval Augmented Generation)란 무엇인가]]></title>
       <link>https://sehooni.github.io/blog/AI/LLM/About_RAG/</link>
       <guid>https://sehooni.github.io/blog/AI/LLM/About_RAG/</guid>
@@ -58,11 +65,53 @@
       <description><![CDATA[Upstage 주최 2024 Global AI Week - AI Hackathon에서 파이널리스트(Finalist)로 선정된 AGI 기반 지능형 서비스 및 RAG 최적화 구현기 회고]]></description>
     </item>
     <item>
+      <title><![CDATA[[Paper Review] HighFold: Predicting cyclic peptide structures and complexes with head-to-tail and disulfide bridge constraints]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/HighFold-cyclic-peptide-structure-prediction/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/HighFold-cyclic-peptide-structure-prediction/</guid>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[기존 단백질 구조 예측 모델이 처리하기 어려운 고리형 펩타이드(Cyclic Peptide)의 머리-꼬리 연결성 및 이황화 결합 구조적 형태를 Cyclic Position Offset Encoding Matrix(CycPOEM)로 극사화한 HighFold 모델 리뷰]]></description>
+    </item>
+    <item>
       <title><![CDATA[[AI Hackathon] 2024 SmileGate FutureLab AI service weeklython 회고]]></title>
       <link>https://sehooni.github.io/blog/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator/</link>
       <guid>https://sehooni.github.io/blog/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator/</guid>
       <pubDate>Wed, 31 Jul 2024 00:00:00 GMT</pubDate>
       <description><![CDATA[스마일게이트 퓨처랩 주최 제1회 AI 서비스 위클리톤에서 대상을 수상한 GPT-4o 파인튜닝 기반의 게임 시나리오 생성 서비스 개발기 및 해커톤 회고]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] MSAGPT: Neural Prompting Protein Structure Prediction via MSA Generative Pre-Training]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/MSAGPT-generative-pretraining-protein-structure/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/MSAGPT-generative-pretraining-protein-structure/</guid>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[희소한 상동 서열(orphan protein) 환경에서 단백질 구조 예측 한계를 극복하기 위해 다중 서열 정렬(MSA)을 생성 모델링으로 학습하고 AlphaFold2 피드백을 결합한 MSAGPT 프레임워크 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] GCPNet-EMA: Protein structure accuracy estimation using geometry-complete perceptron networks]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/GCPNet-EMA-protein-model-accuracy-estimation/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/GCPNet-EMA-protein-model-accuracy-estimation/</guid>
+      <pubDate>Fri, 19 Apr 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[3차원 단백질 구조의 기하학적 정보와 회전/이동 불변성(SE(3)-equivariance)을 반영하는 geometry-complete perceptron network(GCPNet)를 도입하여 구조 모델 평가 속도와 신뢰도를 향상시킨 GCPNet-EMA 모델 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] Distance-AF: Modifying Predicted Protein Structure Models by AlphaFold2 with User-Specified Distance Constraints]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/Distance-AF-protein-structure-refinement/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/Distance-AF-protein-structure-refinement/</guid>
+      <pubDate>Thu, 29 Feb 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[AlphaFold2 구조 예측 모델에 사용자가 지정한 물리적 거리 제약조건(Distance Constraints)을 반영하여 도메인 방향성 및 다중 형태 변화 등을 최적화하는 Distance-AF 프레임워크 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] AlphaLink2: Modeling protein complexes with crosslinking mass spectrometry and deep learning]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/AlphaLink2-protein-complex-modeling/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/AlphaLink2-protein-complex-modeling/</guid>
+      <pubDate>Fri, 15 Dec 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[AlphaFold-Multimer의 한계를 극복하기 위해 화학적 교차결합 질량분석(XL-MS) 데이터를 단백질 복합체 구조 예측 네트워크에 직접 결합하여 정확도를 향상시킨 AlphaLink2 알고리즘 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] diSBPred: A Machine Learning Based Approach for Disulfide Bond Prediction]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/diSBPred-disulfide-bond-prediction/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/diSBPred-disulfide-bond-prediction/</guid>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[단백질 3차원 구조 예측 및 번역 후 변형 분석의 핵심 요소인 시스테인 잔기의 이황화 결합 상태 및 연결성을 다양한 서열/구조 기반 피처와 스태킹 앙상블 기법으로 예측하는 diSBPred 프레임워크 리뷰]]></description>
     </item>
     <item>
       <title><![CDATA[[Proteomics] Percolator]]></title>
