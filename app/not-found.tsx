@@ -32,6 +32,25 @@ export default function NotFound() {
 
             const lastSegment = segments[segments.length - 1];
 
+            // Check if it's an old category path (e.g., /category/Projects/Jetson)
+            if (path.toLowerCase().startsWith('/category/')) {
+                const categorySubPath = path.slice('/category'.length);
+                setIsRedirecting(true);
+                setRedirectTitle('카테고리 페이지 안내');
+                setRedirectMessage('새로운 카테고리 목록으로 이동합니다...');
+                router.replace(`/blog/category${categorySubPath}/`);
+                return;
+            }
+
+            // Check if it starts with one of the primary post folders (e.g. /Projects/..., /PaperReview/...) without /blog prefix
+            const firstSegment = segments[0].toLowerCase();
+            const primaryCategories = ['projects', 'paperreview', 'proteomics', 'ai'];
+            if (primaryCategories.includes(firstSegment)) {
+                setIsRedirecting(true);
+                router.replace(`/blog/${segments.join('/')}/`);
+                return;
+            }
+
             // Hardcoded common patterns from Jekyll
             if (lastSegment === 'categories' || lastSegment === 'tags' || lastSegment.startsWith('page')) {
                 setIsRedirecting(true);
@@ -115,7 +134,7 @@ export default function NotFound() {
                         const newSegments = urlPath.split('/').filter(Boolean);
 
                         if (newSegments.length === 0) return false;
-                        return newSegments[newSegments.length - 1] === lastSegment;
+                        return newSegments[newSegments.length - 1].toLowerCase() === lastSegment.toLowerCase();
                     } catch (e) {
                         return false;
                     }
