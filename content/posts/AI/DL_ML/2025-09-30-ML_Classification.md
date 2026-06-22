@@ -1,6 +1,6 @@
 ---
 title:  "[ML Study] 머신러닝 첫걸음: Classification 모델 완전정복 (1)"
-excerpt: ""
+excerpt: "인공지능, 머신러닝, 딥러닝의 기본 개념을 정리하고, MNIST 데이터셋과 SGD 분류기를 활용한 이진 분류 모델 학습 및 정밀도, 재현율, F1-Score, ROC-AUC 등 성능 지표의 상세 분석"
 categories:
   - AI, DL, ML
 tags:

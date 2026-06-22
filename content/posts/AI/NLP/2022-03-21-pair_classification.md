@@ -67,3 +67,12 @@ classes: wide
 문서 분류 과제를 3개 범주(긍정, 부정, 중립)를 분류하는 태스크로 상정한다면 두 모듈 구조는 똑같다.
 다만 차이는 태스크 모듈의 입력(`pooler_output`)이 된다. 
 즉, **`pooler_output`** 에 문장 1개의 의미가 응축되어 있다면 **문서 분류**, 2개의 의미가 내포해 있다면 **문장 쌍 분류** 과제가 된다.
+
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

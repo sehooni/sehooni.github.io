@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 21 Jun 2026 09:34:14 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 06:41:43 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -23,32 +23,46 @@
       <description><![CDATA[LG Aimers 7기 AI 해커톤 본선 진출(Finalist) 회고 및 N-HiTS와 군집 모델링 기반의 F&B 매장 매출 수요 예측 솔루션 공유]]></description>
     </item>
     <item>
+      <title><![CDATA[[ML Study] 분류 모델의 핵심: 로지스틱 회귀와 소프트맥스 회귀]]></title>
+      <link>https://sehooni.github.io/blog/AI/DL_ML/logistic-regression-and-softmax/</link>
+      <guid>https://sehooni.github.io/blog/AI/DL_ML/logistic-regression-and-softmax/</guid>
+      <pubDate>Tue, 02 Dec 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[회귀에서 분류 모델로의 확장 과정, 학습 모니터링을 위한 Learning Curve, 과적합을 방지하는 규제(Regularization) 기법, 그리고 로지스틱 회귀와 소프트맥스 회귀의 수학적 원리 정리]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[ML Study] 선형 회귀와 최적화: 정규방정식부터 경사하강법(GD)까지]]></title>
+      <link>https://sehooni.github.io/blog/AI/DL_ML/linear-regression-and-optimization/</link>
+      <guid>https://sehooni.github.io/blog/AI/DL_ML/linear-regression-and-optimization/</guid>
+      <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[머신러닝의 기초인 선형 회귀(Linear Regression) 모델의 정의와 최적의 가중치를 찾기 위한 두 가지 학습 방법인 정규방정식 및 경사하강법(Gradient Descent)의 수학적 원리 정리]]></description>
+    </item>
+    <item>
       <title><![CDATA[[ML Study] 머신러닝 첫걸음: Classification 모델 완전정복 (1)]]></title>
       <link>https://sehooni.github.io/blog/AI/DL_ML/ML_Classification/</link>
       <guid>https://sehooni.github.io/blog/AI/DL_ML/ML_Classification/</guid>
       <pubDate>Tue, 30 Sep 2025 00:00:00 GMT</pubDate>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[인공지능, 머신러닝, 딥러닝의 기본 개념을 정리하고, MNIST 데이터셋과 SGD 분류기를 활용한 이진 분류 모델 학습 및 정밀도, 재현율, F1-Score, ROC-AUC 등 성능 지표의 상세 분석]]></description>
     </item>
     <item>
       <title><![CDATA[[LLM] RAG(Retrieval Augmented Generation)란 무엇인가]]></title>
       <link>https://sehooni.github.io/blog/AI/LLM/About_RAG/</link>
       <guid>https://sehooni.github.io/blog/AI/LLM/About_RAG/</guid>
       <pubDate>Wed, 02 Oct 2024 00:00:00 GMT</pubDate>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[대형 언어 모델(LLM)의 최신성 한계와 환각 현상을 해결하기 위한 검색 증강 생성(RAG) 기술의 개념, 파인튜닝과의 비교, 그리고 핵심 6단계 파이프라인 정리]]></description>
     </item>
     <item>
       <title><![CDATA[[AI Hackathon] 2024 Upstage Global AI week AI Hackathon 회고]]></title>
       <link>https://sehooni.github.io/blog/Projects/Hackathon/ai-hackathon-2024-upstage-global-ai-week-ai-hackathon/</link>
       <guid>https://sehooni.github.io/blog/Projects/Hackathon/ai-hackathon-2024-upstage-global-ai-week-ai-hackathon/</guid>
       <pubDate>Tue, 01 Oct 2024 00:00:00 GMT</pubDate>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[Upstage 주최 2024 Global AI Week - AI Hackathon에서 파이널리스트(Finalist)로 선정된 AGI 기반 지능형 서비스 및 RAG 최적화 구현기 회고]]></description>
     </item>
     <item>
       <title><![CDATA[[AI Hackathon] 2024 SmileGate FutureLab AI service weeklython 회고]]></title>
       <link>https://sehooni.github.io/blog/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator/</link>
       <guid>https://sehooni.github.io/blog/Projects/Hackathon/2024smilegate-futurelab-ai-service-weeklython-ai-driven-game-scenario-generator/</guid>
       <pubDate>Wed, 31 Jul 2024 00:00:00 GMT</pubDate>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[스마일게이트 퓨처랩 주최 제1회 AI 서비스 위클리톤에서 대상을 수상한 GPT-4o 파인튜닝 기반의 게임 시나리오 생성 서비스 개발기 및 해커톤 회고]]></description>
     </item>
     <item>
       <title><![CDATA[[Proteomics] Percolator]]></title>

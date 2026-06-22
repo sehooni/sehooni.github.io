@@ -99,3 +99,12 @@ Classification은 이미지에 대한 class를 예측하는 것이며, Object De
 리더보드만을 보고 판단하기 보다는, 직접적으로 기준을 세우고 그에 맞춰서 비교해야한다는 교훈도 얻었다.
 
 그렇지만 이번 대회를 통해 이미지처리 분야의 능력을 조금 더 발전 시켰다는 부분에 있어 큰 배움이 된 것 같다.
+
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

@@ -166,13 +166,17 @@ Pretrained된 CNN을 거쳐서 나온 **Feature Map**은 ZFNet 기준으로 256-
 발전 방향의 순서대로 각 모델의 장단점에 대해 정리하였습니다. 확실히 faster R-CNN으로 갈수록 사진당 속도가 빠르게 증가하였음을 확인할 수 있으며, 동시에 정확도로 볼 수 있는 mAP의 값 또한 미비하지만 증가했음을 확인할 수 있습니다.
 ![19](https://user-images.githubusercontent.com/84653623/208604296-cb2fb558-8064-4358-8cd6-f797f6f389d5.PNG)
 ![20](https://user-images.githubusercontent.com/84653623/208387438-e7b201d4-2153-488c-b1a5-e4e862f3871d.PNG)
-
----
-PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다. 
-
-
 # Reference
 - 논문
   - [Rich feature hierarchies for accurate object detection and semantic segmentation](https://arxiv.org/abs/1311.2524)
   - [Fast R-CNN](https://openaccess.thecvf.com/content_iccv_2015/html/Girshick_Fast_R-CNN_ICCV_2015_paper.html)
   - [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://proceedings.neurips.cc/paper/2015/hash/14bfa6bb14875e45bba028a21ed38046-Abstract.html)
+
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

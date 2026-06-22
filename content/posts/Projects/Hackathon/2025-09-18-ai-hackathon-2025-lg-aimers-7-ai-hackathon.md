@@ -112,9 +112,10 @@ last_modified_at: 2026-01-06
 좋은 동료들과 함께 시계열 최적화 모델을 한 단계씩 발전시켜 나갔던 뜻깊은 해커톤이었습니다. 앞으로도 더 정교한 머신러닝/딥러닝 모델링을 설계하여 실생활의 난제들을 풀 수 있도록 연구를 지속하겠습니다!
 
 ---
+긴 글 읽어주셔서 감사합니다! 
 
 **Contact & Inquiries**
-* **LinkedIn**: [Sehoon Park](www.linkedin.com/in/sehoon-park)
-* **GitHub**: [https://github.com/sehooni](https://github.com/sehooni)
-* **Email**: 74sehoon@gmail.com
-* 댓글 혹은 메일을 통해 다양한 기술적 피드백을 환영합니다! :)
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

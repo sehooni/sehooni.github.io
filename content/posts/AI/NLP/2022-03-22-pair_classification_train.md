@@ -469,3 +469,11 @@ trainer.fit(
 
 # **문장 쌍 분류**는 문서 분류 과제와 태스크 모듈 구조 등에서 본질적으로 다르지 않다. 입력문서가 1개냐(문서분류), 2개냐(문장 쌍 분류)의 차이가 있을 뿐이다.
 
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

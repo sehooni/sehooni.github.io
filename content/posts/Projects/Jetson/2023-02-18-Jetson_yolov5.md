@@ -105,6 +105,13 @@ yolov5/utils에 있는 dataloader.py에서 cap = cv2.VideoCapture(s)를 cv2.Vide
 
 또한 yahboom의 경우 yolov4를 기본으로 지원하는데, 처음 프로젝트를 nvidia 제품으로 진행하였고, 그 과정에서 yolov5를 사용하였기 때문에 하는 수 없이 이런 여러 수고들이 있었습니다.
 자료 또한 현저히 적었구요...
-누군가 본 포스팅들을 통해 해결이 된다면 그걸로 정리하는 입장에서는 만족스러울 것 같습니다! 
+누군가 본 포스팅들을 통해 해결이 된다면 그걸로 정리하는 입장에서는 만족스러울 것 같습니다!
 
-PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다. 
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

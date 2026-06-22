@@ -1,6 +1,6 @@
 ---
 title:  "[AI Hackathon] 2024 Upstage Global AI week AI Hackathon 회고"
-excerpt: ""
+excerpt: "Upstage 주최 2024 Global AI Week - AI Hackathon에서 파이널리스트(Finalist)로 선정된 AGI 기반 지능형 서비스 및 RAG 최적화 구현기 회고"
 categories:
   - Projects, Hackathon
 tags:
@@ -131,12 +131,12 @@ Gradio의 경우, [Gradio 공식 문서](https://www.gradio.app/guides/quickstar
 또한 실제 개발 환경에서 근무하는 다양한 멘토님과의 커뮤니케이션, 세션, 더 나아가 다양한 나라에서 참가한 팀원들과의 네트워킹도 본인에게 있어 큰 경험과 자산이 되었다고 생각합니다. 본 포스팅을 통해 다시한번 이러한 대회를 열어준 Upstage에 감사드립니다.
 
 대회에 대한 회고는 이것으로 마무리하고, RAG에 대한 자세한 내용은 [RAG(Retrieval Augmented Generation)란 무엇인가](https://sehooni.github.io/blog/AI/LLM/About_RAG) 포스트를 참고해주세요!
+
+---
 긴 글 읽어주셔서 감사합니다! 
 
-
-저에게 연락을 주고 싶으신 것이 있으시다면 
-- LinkedIn : [www.linkedin.com/in/sehoon-park](https://www.linkedin.com/in/sehoon-park)
-- Github : https://github.com/sehooni
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
 - Email : 74sehoon@gmail.com
-- 블로그 댓글
-으로 연락 주시면 감사하겠습니다. :)
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

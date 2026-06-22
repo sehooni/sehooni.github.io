@@ -623,3 +623,12 @@ app.run()
 ## 웹 사이트의 형태는 다음과 같다.
 
 ![model_inference](https://user-images.githubusercontent.com/84653623/160078717-08773d8a-9907-448c-b490-7c68f2a84147.png)
+
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

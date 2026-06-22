@@ -609,3 +609,11 @@ trainer.fit(
 
 # 각종 설정을 마친 뒤 말뭉치를 내려받아 전처리한다. 프리트레인을 마친 모델을 이 데이터에 맞게 파인 튜닝한다.
 
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

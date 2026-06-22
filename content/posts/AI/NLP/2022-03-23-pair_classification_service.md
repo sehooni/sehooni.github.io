@@ -645,3 +645,12 @@ app.run()
 
 # 웹사이트 형태는 다음과 같다.
 ![pair_classification](https://user-images.githubusercontent.com/84653623/160079951-83a22799-e4d8-4254-845b-61b55a1ec40d.png)
+
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

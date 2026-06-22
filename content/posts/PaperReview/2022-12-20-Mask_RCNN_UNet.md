@@ -310,14 +310,16 @@ U-Net을 정리하면 다음과 같습니다.
 U-Net은 FCNs보다 확장된 개념의 **Upsamling**과 **Skip Atchitecture**를 적용한 모델을 제안합니다.
 결과적으로 **U-Net의 구조**는 `아주 적은 양의 학습 데이터만으로 Data Augmentation을 활용하여 여러 Biomedical Image Segmentation 문제에서 우수한 성능을 보여주었습니다.`
 ![39](https://user-images.githubusercontent.com/84653623/221755786-bb7ded86-dffd-48b6-beb5-067ea97e01c3.PNG)
-
-
----
-PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다. 
-
-
 # Reference
 - 논문
   - [Mask R-CNN](https://arxiv.org/abs/1703.06870)
   - [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)
 
+---
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)

@@ -340,4 +340,10 @@ Transformer는 기존의 RNN, seq2seq 모델의 한계였던 병렬화 불가능
     [[NLP] Attention Is All You Need 번역 및 정리 (Transformer)](https://silhyeonha-git.tistory.com/16)
 
 ---
-PS. 추가 문의사항 및 질문은 환영합니다. 그를 통해 저도 더 성장할 수 있을테니까요. 긴 글 읽어주셔서 감사합니다. 
+긴 글 읽어주셔서 감사합니다! 
+
+**Contact & Inquiries**
+- LinkedIn : [Sehoon Park](https://www.linkedin.com/in/sehoon-park)
+- GitHub : [https://github.com/sehooni](https://github.com/sehooni)
+- Email : 74sehoon@gmail.com
+- 궁금한 점이나 의견은 댓글 혹은 메일을 통해 언제든 환영합니다! :)
