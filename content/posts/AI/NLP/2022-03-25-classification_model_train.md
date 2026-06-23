@@ -366,7 +366,7 @@ train_dataset = ClassificationDataset(
 
 ### **ClassificationDataset** 클래스가 하는 역할
 
-이 클래스는 **NsmcCorpus**와 위에서 선언해 둔 **토크나이저(tokenizer)**를 품고 있다.
+이 클래스는 **NsmcCorpus**와 위에서 선언해 둔 **토크나이저(tokenizer)를** 품고 있다.
 
 **NsmcCorpus**는 CSV 파일 형식의 NSMC 데이터를 문장과 레이블*(예를 들면 영화 리뷰와 긍정 및 부정)*으로 읽는다.
 
@@ -484,7 +484,7 @@ val_dataloader= DataLoader(
 
 ### 모델 초기화
 
-code 1-3**(1. 각종 설정하기-모델 환경 설정)**에서 `pretrained_model_name`을 `beomi/kebert-base`로 지정했으므로 프리트레인을 마친 BERT로 `kcbert-base`를 사용한다.
+code 1-3**(1. 각종 설정하기-모델 환경 설정)에서** `pretrained_model_name`을 `beomi/kebert-base`로 지정했으므로 프리트레인을 마친 BERT로 `kcbert-base`를 사용한다.
 
 모델을 초기화하는 코드에서 `BertForSequenceClassification`은 프리트레인을 마친 BERT 모델 위에 문서 분류용 태스크 모듈이 덧붙여진 형태의 모델 클래스이다. 이 클래스는 허깅페이스에서 제공하는 `transformers` 라이브러리에 포함되어 있다.
 
@@ -521,7 +521,7 @@ model = BertForSequenceClassification.from_pretrained(
 
 ### Task 정의
 
-code 1-3**(1. 각종 설정하기-모델 환경 설정)**에서 만든 학습 설정(`args`)과 code 1-11**(5. 모델 불러오기-모델초기화)**에서 준비한 모델(`model`)을 `ClassificationTask`에 주입한다. `ClassificationTask`에는 **옵티마이저**(optimizer), **러닝 레이트 스케줄러**(learnig rate scheduler)가 정의되어 있다. 옵티마이저로는 **아담**(Adam), 러닝 레이트 스케줄러로는 `ExponentialLR`을 사용한다.
+code 1-3**(1. 각종 설정하기-모델 환경 설정)에서** 만든 학습 설정(`args`)과 code 1-11**(5. 모델 불러오기-모델초기화)에서** 준비한 모델(`model`)을 `ClassificationTask`에 주입한다. `ClassificationTask`에는 **옵티마이저**(optimizer), **러닝 레이트 스케줄러**(learnig rate scheduler)가 정의되어 있다. 옵티마이저로는 **아담**(Adam), 러닝 레이트 스케줄러로는 `ExponentialLR`을 사용한다.
 
 code1-12를 통해 문서 분류용 태스크를 정의할 수 있다.
 

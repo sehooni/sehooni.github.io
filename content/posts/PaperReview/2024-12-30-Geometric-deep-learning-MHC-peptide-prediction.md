@@ -32,7 +32,7 @@ classes: wide
 *Figure 1: 무수히 많은 변이를 가진 HLA 대립유전자(Alleles)와 다양한 길이의 펩타이드 간의 상호작용 개념도*
 
 인간의 HLA 유전자는 약 14,000종이 넘는 극심한 다형성(Polymorphism)을 나타내어, 특정 환자가 어떤 HLA 대립유전자(Alleles)를 가지고 있는지에 따라 결합 홈(Binding groove)의 모양이 완전히 달라집니다. 기존 연구들은 대개 아미노산 서열 패턴만을 분석하는 **서열 기반 모델(Sequence-based, SeqB)**(예: NetMHCpan, MHCflurry)을 사용했습니다. 이들은 학습 데이터가 풍부한 일부 메이저 HLA(예: HLA-A*02:01)에 대해서는 높은 정확도를 보이나 다음 한계를 지닙니다:
-1. **데이터 편향성 (Data Bias)**: 실험 데이터가 극소수이거나 전무한 희귀 HLA 유전자에 대해서는 예측력이 급격히 붕괴합니다.
+1. **데이터 편향성 (Data Bias):** 실험 데이터가 극소수이거나 전무한 희귀 HLA 유전자에 대해서는 예측력이 급격히 붕괴합니다.
 2. **일반화 능력 결여**: 서열 유사성만을 암기하여 학습하므로, 유사성이 낮은 바이러스 변종이나 새로운 펩타이드 변이가 유발하는 물리적인 구조적 친화력 변화를 포착하지 못합니다.
 
 본 논문에서는 3D 물리 공간의 기하 정보를 직접 인코딩하는 **구조 기반 기하학적 딥러닝(Structure-based Geometric Deep Learning, StrB GDL)** 모델과 데이터 희소성을 해소하는 3D 자가지도학습(3D-SSL) 기법을 접목하여 희귀 유전체 결합 성능을 돌파하는 방법론을 제안합니다.
@@ -53,8 +53,8 @@ classes: wide
 
 ### 2.2. pMHC 인터페이스 그래프 변환
 PANDORA로 예측된 3D 구조의 원자 좌표들을 기반으로 아미노산 잔기 수준 그래프 $\mathcal{G} = (\mathcal{V}, \mathcal{E})$를 구축합니다.
-- **노드(Node $\mathcal{V}$)**: 각 아미노산 잔기(주로 $C_\alpha$ 원자 위치)를 노드로 정의합니다. 노드 피처에는 아미노산 종류, 물리화학적 성질 등이 포함됩니다.
-- **엣지(Edge $\mathcal{E}$)**: 수용체 MHC 결합 홈의 계면 포켓으로부터 $12$Å 반경 이내에 인접한 잔기 쌍들을 엣지로 연결합니다.
+- **노드(Node $\mathcal{V}$):** 각 아미노산 잔기(주로 $C_\alpha$ 원자 위치)를 노드로 정의합니다. 노드 피처에는 아미노산 종류, 물리화학적 성질 등이 포함됩니다.
+- **엣지(Edge $\mathcal{E}$):** 수용체 MHC 결합 홈의 계면 포켓으로부터 $12$Å 반경 이내에 인접한 잔기 쌍들을 엣지로 연결합니다.
 - **물리화학적 엣지 특징**: 엣지 상호작용 피처에는 단순히 공간적 거리뿐만 아니라, 분자 간의 인력/척력을 규명하는 쿨롱 정전기 에너지(Coulomb Electrostatic potential), 반데르발스 힘(van der Waals/Lennard-Jones potential), 수소 결합 친화성 등 정밀한 물리 기하 수치를 인코딩하여 모델이 구조의 안정성을 인지할 수 있는 기반을 다집니다.
 
 ![pMHC Interface Graph](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image6.png)
@@ -62,7 +62,7 @@ PANDORA로 예측된 3D 구조의 원자 좌표들을 기반으로 아미노산 
 
 ### 2.3. EGNN 아키텍처 도입 (E(n)-Equivariant GNN)
 
-3차원 물리 구조를 인코딩할 때 단순 GNN을 활용하면 분자의 절대 회전이나 평행 이동에 따라 출력 예측값이 달라지는 비일관적인 결함이 발생합니다. 본 연구진은 3차원 유클리드 공간의 대칭 이동 및 회전 변환에 대해 출력이 공변적(Equivariant) 또는 불변적(Invariant)으로 대응하는 **E(n)-equivariant Graph Neural Network (EGNN)**를 중추 모델로 사용합니다.
+3차원 물리 구조를 인코딩할 때 단순 GNN을 활용하면 분자의 절대 회전이나 평행 이동에 따라 출력 예측값이 달라지는 비일관적인 결함이 발생합니다. 본 연구진은 3차원 유클리드 공간의 대칭 이동 및 회전 변환에 대해 출력이 공변적(Equivariant) 또는 불변적(Invariant)으로 대응하는 **E(n)-equivariant Graph Neural Network (EGNN)를** 중추 모델로 사용합니다.
 
 ![StrB Deep Learning architectures](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image7.png)
 *Figure 4: 구조 기반 딥러닝 모델들의 입출력 및 연산 방식(3D-CNN, GNN, EGNN) 특징 비교*
@@ -133,7 +133,7 @@ $$
 ![Generalizability to unseen alleles](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image11.png)
 *Figure 8: 훈련 데이터셋에 노출되지 않았던 비대중적인 HLA alleles에서의 성능 검증 결과(EGNN 기반 기하학적 모델들의 일반화 승리)*
 
-- **압도적인 데이터 효율성 (1/90 비교)**: 사전 학습(3D-SSL)을 거친 EGNN은 기존 서열 기반 지도학습 모델들이 학습에 필요로 했던 대량의 바인딩 친화도 데이터 크기의 **90분의 1(1/90)** 수준에 불과한 데이터만으로도 대등하거나 능가하는 성능을 확보했습니다.
+- **압도적인 데이터 효율성 (1/90 비교):** 사전 학습(3D-SSL)을 거친 EGNN은 기존 서열 기반 지도학습 모델들이 학습에 필요로 했던 대량의 바인딩 친화도 데이터 크기의 **90분의 1(1/90)** 수준에 불과한 데이터만으로도 대등하거나 능가하는 성능을 확보했습니다.
 
 ![Data efficiency comparison curves](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image13.png)
 *Figure 9: 미세 조정(Fine-tuning) 시 주입하는 지도학습 데이터 양에 따른 성능 도달 속도 및 데이터 효율 지표*

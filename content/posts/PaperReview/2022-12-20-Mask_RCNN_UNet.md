@@ -101,7 +101,7 @@ $F(x) = H(x) - x$를 잔차라고 하며, 이 잔차를 학습하는 것은 **Re
 해당 feature map은 backbone 모델 최종 layer에서의 output인데, 이렇게 layer를 통과할수록 아주 중요한 feature만 남게 되고,중간중간의 feature들은 모두 잃어버리게 됩니다.
 그리고 최종 layer에서 다양한 크기의 object를 검출해야 하므로, 여러 scale 값으로 anchor를 생성하게 되나 이는 매우 비효율적입니다.
 
-이를 극복하기 위해 나온 방법이 바로 **FPN(축약설명)**입니다.
+이를 극복하기 위해 나온 방법이 바로 **FPN(축약설명)입니다**.
 
 FPN의 작동과정은 다음과 같습니다.
 마지막 layer의 feature map에서 점점 이전의 중간 feature map들을 더하면서 이전 정보까지 유지할 수 있도록 합니다.

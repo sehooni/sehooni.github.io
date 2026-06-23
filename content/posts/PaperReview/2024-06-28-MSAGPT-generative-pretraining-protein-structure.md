@@ -24,7 +24,7 @@ classes: wide
 
 ## 1. 서론 (Introduction)
 
-AlphaFold2의 혁신은 단백질 3차원 구조 예측(Protein Structure Prediction, PSP)의 지평을 완전히 바꾸어 놓았습니다. 그러나 AlphaFold2 아키텍처의 내면을 들여다보면, 입력되는 **다중 서열 정렬(Multiple Sequence Alignment, MSA)**의 풍부함에 절대적으로 의존한다는 중대한 아킬레스건이 존재합니다. 
+AlphaFold2의 혁신은 단백질 3차원 구조 예측(Protein Structure Prediction, PSP)의 지평을 완전히 바꾸어 놓았습니다. 그러나 AlphaFold2 아키텍처의 내면을 들여다보면, 입력되는 **다중 서열 정렬(Multiple Sequence Alignment, MSA)의** 풍부함에 절대적으로 의존한다는 중대한 아킬레스건이 존재합니다. 
 
 AlphaFold2는 진화 과정에서 함께 보존(Co-conservation)되며 동시 돌연변이가 발생한 아미노산 잔기 쌍의 패턴을 추적하여 물리적인 거리를 유도합니다. 만약 상동 서열 데이터가 극도로 부족한 **"고아 단백질(Orphan Protein)"**이나 메타게노믹스 유래의 희귀 서열(전체 메타게노믹스 단백질의 약 20%를 차지)을 구조 예측할 경우, 깊이가 얕은 MSA로 인해 AlphaFold2의 구조 정확도는 급격하게 무너집니다.
 
@@ -42,12 +42,12 @@ MSAGPT는 다중 서열 정렬(MSA) 행렬을 단순한 2차원 문자 배열이
 ### 2.1. 2D Evolutionary Rotary Positional Encoding (2D-RoPE)
 
 일반적인 1차원 자연어 처리용 LLM에 사용되는 로터리 위치 임베딩(RoPE)은 문장의 순서 정보만을 보존합니다. 그러나 MSA 데이터는 다음과 같은 독특한 2차원 구조적 특징을 지닙니다:
-- **서열 축 (Sequence Axis, 가로축 $i$)**: 단백질 서열 내에서 아미노산 잔기가 몇 번째 위치에 있는지를 나타냅니다. (아미노산 간의 물리적 거리와 2차/3차 구조적 인접성에 직접 영향)
-- **진화 축 (Evolutionary Axis, 세로축 $j$)**: 정렬된 상동 서열들이 쿼리 서열(Query Sequence)로부터 진화적으로 얼마나 떨어져 배치되었는지를 나타냅니다. (진화적 변이 및 보존 정도를 판별)
+- **서열 축 (Sequence Axis, 가로축 $i$):** 단백질 서열 내에서 아미노산 잔기가 몇 번째 위치에 있는지를 나타냅니다. (아미노산 간의 물리적 거리와 2차/3차 구조적 인접성에 직접 영향)
+- **진화 축 (Evolutionary Axis, 세로축 $j$):** 정렬된 상동 서열들이 쿼리 서열(Query Sequence)로부터 진화적으로 얼마나 떨어져 배치되었는지를 나타냅니다. (진화적 변이 및 보존 정도를 판별)
 
-만약 이를 단순 1차원 임베딩으로 처리하면, 신경망은 '아미노산 잔기의 위치'와 '상동 서열의 깊이'를 혼동하여 공진화(Co-evolution) 관계를 학습하지 못하게 됩니다. 이를 해결하기 위해 MSAGPT는 가로와 세로 축의 기하학적 관계를 동시에 인코딩하는 **이중축 2D-RoPE (Dual-axis 2D-RoPE)**를 설계하였습니다.
+만약 이를 단순 1차원 임베딩으로 처리하면, 신경망은 '아미노산 잔기의 위치'와 '상동 서열의 깊이'를 혼동하여 공진화(Co-evolution) 관계를 학습하지 못하게 됩니다. 이를 해결하기 위해 MSAGPT는 가로와 세로 축의 기하학적 관계를 동시에 인코딩하는 **이중축 2D-RoPE (Dual-axis 2D-RoPE)를** 설계하였습니다.
 
-특정 위치 $(i, j)$의 Query ($q$) 및 Key ($k$) 벡터에 가해지는 2차원 로터리 회전 변환 행렬 $\mathbf{R}_{2D}(i, j)$는 가로축 변환 $\mathbf{R}_{\text{seq}}(i)$와 세로축 변환 $\mathbf{R}_{\text{evo}}(j)$의 **크로네커 곱(Kronecker Product, $\otimes$)**을 통해 계산됩니다:
+특정 위치 $(i, j)$의 Query ($q$) 및 Key ($k$) 벡터에 가해지는 2차원 로터리 회전 변환 행렬 $\mathbf{R}_{2D}(i, j)$는 가로축 변환 $\mathbf{R}_{\text{seq}}(i)$와 세로축 변환 $\mathbf{R}_{\text{evo}}(j)$의 **크로네커 곱(Kronecker Product, $\otimes$)을** 통해 계산됩니다:
 
 $$
 \mathbf{R}_{2D}(i, j) = \mathbf{R}_{\text{seq}}(i) \otimes \mathbf{R}_{\text{evo}}(j)
@@ -60,7 +60,7 @@ $$
 
 ### 2.2. 1D 평탄화 및 자기회귀 디코딩 (1D Flattening & Autoregressive Decoding)
 
-2차원 정렬 행렬 데이터를 기존의 효율적인 디코더 전용 Transformer 연산 최적화 인프라에 통합하기 위해, MSAGPT는 $M \times N$ 크기의 MSA 행렬을 다음과 같이 **서열 단위 평탄화(Sequence-wise Flattening)**를 거쳐 1차원 토큰 스트림 $\mathbf{S}$로 변환합니다:
+2차원 정렬 행렬 데이터를 기존의 효율적인 디코더 전용 Transformer 연산 최적화 인프라에 통합하기 위해, MSAGPT는 $M \times N$ 크기의 MSA 행렬을 다음과 같이 **서열 단위 평탄화(Sequence-wise Flattening)를** 거쳐 1차원 토큰 스트림 $\mathbf{S}$로 변환합니다:
 
 $$
 \mathbf{S} = [\text{Seq}_1, \langle\text{sep}\rangle, \text{Seq}_2, \langle\text{sep}\rangle, \dots, \langle\text{sep}\rangle, \text{Seq}_M]
@@ -150,7 +150,7 @@ MSAGPT는 생물학적 데이터 검색(Database Search)의 한계로 인해 깊
 
 하지만 성공적인 성능 증명에도 불구하고, 실무 적용을 위해 극복해야 할 과제들이 산재해 있습니다:
 
-1. **극심한 추론 연산 오버헤드 (Inference Latency & KV-Cache footprint)**: MSAGPT는 2.8B 크기의 거대 모델인 데다가, 2차원 MSA 데이터를 1차원으로 길게 풀어 헤쳐 입력받기 때문에 컨텍스트 길이가 잔기 수 $L$과 상동 서열 수 $M$의 곱인 $L \times M$ 스케일로 폭증합니다. 이로 인해 Attention 연산량과 GPU VRAM의 KV-Cache 메모리 부하가 기하급수적으로 커져 실시간 대규모 서열 스크리닝 파이프라인에 활용하기에는 자원 소모가 매우 큽니다.
+1. **극심한 추론 연산 오버헤드 (Inference Latency & KV-Cache footprint):** MSAGPT는 2.8B 크기의 거대 모델인 데다가, 2차원 MSA 데이터를 1차원으로 길게 풀어 헤쳐 입력받기 때문에 컨텍스트 길이가 잔기 수 $L$과 상동 서열 수 $M$의 곱인 $L \times M$ 스케일로 폭증합니다. 이로 인해 Attention 연산량과 GPU VRAM의 KV-Cache 메모리 부하가 기하급수적으로 커져 실시간 대규모 서열 스크리닝 파이프라인에 활용하기에는 자원 소모가 매우 큽니다.
 2. **단백질 다량체(Complex/Multimer) 확장 한계**: 현재 프레임워크는 단일 사슬 모노머(Monomer) 단백질의 MSA 생성을 표적으로 훈련되었습니다. 두 개 이상의 단백질 체인이 서로 물리적으로 결합하는 복합체(Complex) 구조 예측을 위해서는 체인 간 종(Species) 매칭 관계와 복합체 공동 진화 정보(Inter-chain co-evolution)가 동시 고려된 가상 MSA를 생성해야 하므로, 향후 다중 체인 링커 토큰 매핑 및 크로스-체인 Attention 설계 연구가 수반되어야 합니다.
 3. **피드백 모델(AlphaFold2) 편향에 대한 종속성**: DPO 학습 단계에서 선호도를 매기는 절대적인 채점관이 AlphaFold2의 자체 계산 예측값(TM-score 및 pLDDT)이기 때문에, AF2가 지니는 내재적인 구조적 취약점이나 특정 단백질 패밀리에 대한 편향(Bias)이 생성 모델인 MSAGPT에 고스란히 복제 및 누적(Bias cascade)될 가능성이 큽니다.
 4. **완전 고아 단백질(Strict Orphan Protein)에서의 한계**: 자연계에 상동 서열이 아예 존재하지 않는 완전 고아 단백질의 경우, Few-shot 프롬프트 가이드라인을 제공할 수 없어 오직 Zero-shot 생성에만 의존해야 합니다. 이때 모델이 진화적 맥락 정보 없이 의미 있는 공진화 패턴을 무에서 유로 유도해 내는 것은 여전히 확률적으로 어려우며 생성 다양성이 한계에 부딪힐 수 있습니다.

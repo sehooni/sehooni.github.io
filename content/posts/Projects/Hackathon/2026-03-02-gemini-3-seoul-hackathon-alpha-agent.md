@@ -34,11 +34,11 @@ last_modified_at: 2026-03-02
 
 ## Introduction
 
-안녕하세요! 지난 2026년 2월 28일, Google DeepMind, AI Futures Fund, Attention X가 주관 및 주최한 **Gemini 3 서울 해커톤 (Gemini 3 Seoul Hackathon)**에 참여했습니다.
+안녕하세요! 지난 2026년 2월 28일, Google DeepMind, AI Futures Fund, Attention X가 주관 및 주최한 **Gemini 3 서울 해커톤 (Gemini 3 Seoul Hackathon)에** 참여했습니다.
 
 이번 대회는 차세대 초거대 멀티모달 모델인 **Gemini 3.1 Pro**와 구글의 신규 에이전트 오케스트레이션 프레임워크인 **Google Antigravity**를 직접 빌드해보고 실전 문제를 해결하는 오프라인 해커톤이었습니다. 
 
-저는 대학원 및 최근 KBSI에서의 연구 경험(단백질 구조 예측 및 생물정보학)을 살려, **1인 개발팀(팀명: Alpha_BioAgent)**으로 참여하였고, 최종 본선 6개 팀에 선정되어 현장 데모 및 프로젝트 발표를 무사히 마쳤습니다.
+저는 대학원 및 최근 KBSI에서의 연구 경험(단백질 구조 예측 및 생물정보학)을 살려, **1인 개발팀(팀명: Alpha_BioAgent)으로** 참여하였고, 최종 본선 6개 팀에 선정되어 현장 데모 및 프로젝트 발표를 무사히 마쳤습니다.
 
 ![Gemini 3 Seoul Hackathon Poster](/assets/images/Alpha-Agent/gemini3_hackathon.jpeg)
 
@@ -56,7 +56,7 @@ last_modified_at: 2026-03-02
 ### Computational Prediction vs. Wet-Lab Reality
 현대 구조생물학은 AlphaFold 등을 필두로 컴퓨터(in-silico)상에서 단백질 3차원 구조를 예측하고 설계하는 과정이 혁신적으로 빨라졌습니다. 하지만 컴퓨터가 "성공적"이라고 도출해 낸 단백질 후보군도, 실제 실험실(in-vitro / wet-lab)에서 직접 발현 및 검증을 해 보면 단백질이 뭉쳐서 덩어리가 되거나(Aggregation), 구조적으로 붕괴해 버려 실험이 실패하는 경우가 허다합니다. 이 오차를 해결하는 과정을 생물학 분야에서는 흔히 **"죽음의 계곡(Valley of Death)"**이라 부릅니다.
 
-일반적인 대형언어모델(LLM)에 3D 단백질 파일(PDB/CIF) 내용을 텍스트로 주고 "거리 검증"이나 "구조적 안정성"을 평가하게 하면, 수많은 원자 좌표들 간의 거리를 텍스트 매칭만으로 계산하려 들기 때문에 엄청난 **수치적 환각(Numerical Hallucinations)**이 발생합니다.
+일반적인 대형언어모델(LLM)에 3D 단백질 파일(PDB/CIF) 내용을 텍스트로 주고 "거리 검증"이나 "구조적 안정성"을 평가하게 하면, 수많은 원자 좌표들 간의 거리를 텍스트 매칭만으로 계산하려 들기 때문에 엄청난 **수치적 환각(Numerical Hallucinations)이** 발생합니다.
 
 이를 해결하기 위해, 저는 AI 모델이 단순히 텍스트에 갇혀 추론하는 것이 아니라 **도구(Python 스크립트 실행, 비전 분석 등)를 자율적으로 활용해 실제 3D 물리 환경을 검증하고, 스스로 피드백을 받아 설계를 수정하는 자율형 연구 에이전트 Alpha-Agent**를 기획했습니다.
 

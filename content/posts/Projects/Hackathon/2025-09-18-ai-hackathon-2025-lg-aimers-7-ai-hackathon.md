@@ -48,9 +48,9 @@ last_modified_at: 2025-09-26
 
 시계열 데이터에서 매출 수량의 스케일 차이가 매우 크고 특정 날짜에 판매량이 급증하는 경향이 있어 모델 학습의 불안정성을 초래했습니다. 이를 해결하기 위해 다음과 같은 전처리를 적용했습니다.
 
-* **타깃 변환 (Target Transformation)**:
+* **타깃 변환 (Target Transformation):**
   매출 수량 $y$에 대해 로그 변환 $y' = \log(y + 1)$을 적용하여 안정적인 학습 분포를 유도했습니다. 모델을 통해 예측된 결과 $y_{pred}'$는 역변환 $\exp(y_{pred}') - 1$을 거쳐 최종 제출 값으로 복원되었습니다.
-* **공변량 정규화 (Covariate Normalization)**:
+* **공변량 정규화 (Covariate Normalization):**
   그 외 외부 변수(기온, 강수량 등)에 대해서는 매장별, 메뉴별 시리즈(Series) 단위로 MinMaxScaling ($0$에서 $1$ 사이)을 적용했습니다. 전체 데이터를 기준으로 정규화할 경우 특정 비인기 메뉴의 공변량이 묻히는 문제를 방지하기 위함이었습니다.
 
 ---
@@ -61,14 +61,14 @@ last_modified_at: 2025-09-26
 
 ![Train Process](/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image.png)
 
-* **시간 순서를 유지한 단순 시점 분할 (Simple Temporal Split)**:
+* **시간 순서를 유지한 단순 시점 분할 (Simple Temporal Split):**
   시계열 데이터의 특성상 미래의 정보가 과거에 유출되는 데이터 누수(Data Leakage)를 원천 차단하기 위해 시간 순서를 엄격히 준수하여 Train과 Validation 세트를 분리했습니다.
 * **실전과 동일한 Multi-Window Validation 구성**:
   실제 해커톤 제출 방식이 **"최근 28일의 데이터(Lookback Window)를 기반으로 향후 7일(Forecast Horizon)을 예측"**하는 형태였습니다. 검증 데이터셋 역시 $28 \to 7$ 예측 윈도우를 여러 개 겹쳐 테스트할 수 있도록 $42$~$56$일 수준의 넉넉한 검증 스팬을 설정하여 평균적인 오차를 도출했습니다.
 
 ![Predict Process](/assets/images/2025-09-18-ai-hackathon-2025-lg-aimers-7-ai-hackathon/image-1.png)
 
-* **공변량 정합성 (Covariate Alignment)**:
+* **공변량 정합성 (Covariate Alignment):**
   예측 시점의 공변량 정렬 에러(Length Mismatch)를 방지하기 위해 타깃 값과 동적 외부 변수의 시점을 동일하게 정합시키는 데이터 파이프라인을 구축했습니다.
 
 ---
@@ -77,9 +77,9 @@ last_modified_at: 2025-09-26
 
 예선과 본선에서 채점하는 정량평가 지표가 달라짐에 따라, 손실 함수(Loss Function) 역시 이에 맞추어 전환하였습니다.
 
-* **예선 단계 (Weighted SMAPE)**:
+* **예선 단계 (Weighted SMAPE):**
   예선에서는 영업장별 가중치가 부과된 SMAPE(Symmetric Mean Absolute Percentage Error)가 사용되었습니다. 특히 '미라시아'와 같은 특정 고가중치 매장의 성능이 총점에 큰 영향을 주었습니다. 이를 타깃팅하기 위해 고가중치 매장의 시계열 데이터를 의도적으로 복사해 학습 데이터 분포를 늘리는 **오버샘플링(Over-sampling)** 방식을 도입해 가중 학습을 유도했습니다.
-* **본선 단계 (SMAPE, NMAE, NRMSE, R-squared 균등 가중)**:
+* **본선 단계 (SMAPE, NMAE, NRMSE, R-squared 균등 가중):**
   본선에서는 특정 매장 중심이 아닌 다각적인 지표 평가로 변경되었습니다. 이에 따라 인위적인 오버샘플링을 배제하고 전체 영업장 가중치를 동일하게 조정했습니다. 또한 실제 매출값이 $0$이거나 음수인 구간은 최종 평가에서 제외되는 점을 감안하여, 해당 구간을 계산에서 제외시키는 **지표 마스킹(Masking)** 기법을 손실 함수에 직접 내재화하여 불필요한 예측 낭비를 줄였습니다.
 
 ---

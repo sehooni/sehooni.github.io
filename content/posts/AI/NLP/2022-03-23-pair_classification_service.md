@@ -586,7 +586,7 @@ def inference_fn(premise, hypothesis):
   }
 ```
 
-**모델 출력값(`output.logits`)**은 소프트맥스 함수 적용 이전의 로짓 형태이다. 여기에 소프트맥스 함수를 써서 모델 출력을 확률 형태로 바꾼다. 그리고 약간 후처리하여 예측 확률의 최댓값이 참 위치(0)일 경우 해당 문장이 '**참 (entailment)**', 거짓 위치(1)일 경우 '**거짓 (contradiction)**', 중립 위치(2)일 경우 '**중립 (neutral)**'이 되도록 pred 값을 만든다.
+**모델 출력값(`output.logits`)은** 소프트맥스 함수 적용 이전의 로짓 형태이다. 여기에 소프트맥스 함수를 써서 모델 출력을 확률 형태로 바꾼다. 그리고 약간 후처리하여 예측 확률의 최댓값이 참 위치(0)일 경우 해당 문장이 '**참 (entailment)**', 거짓 위치(1)일 경우 '**거짓 (contradiction)**', 중립 위치(2)일 경우 '**중립 (neutral)**'이 되도록 pred 값을 만든다.
 
 code 4-9에서 `entailment_width`, `contradiction_width`, `neutral_width`는 웹 페이지에서 참, 거짓, 중립 막대 길이를 조정하는 정보이므로 크게 신경 쓰지 않아도 된다.
 
