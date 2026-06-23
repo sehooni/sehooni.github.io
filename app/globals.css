@@ -48,6 +48,14 @@
     font-family: monospace !important;
   }
 
+  .prose code::before {
+    content: "" !important;
+  }
+
+  .prose code::after {
+    content: "" !important;
+  }
+
   .prose pre code {
     background-color: transparent !important;
     color: inherit !important;
