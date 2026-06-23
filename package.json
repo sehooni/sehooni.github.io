@@ -31,7 +31,7 @@
     "prebuild": "node scripts/generate-post-map.js && node scripts/generate-rss.js",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "publish": "python3 scripts/publish_post.py",
     "publish-project": "python3 scripts/publish_project.py"
   },
@@ -63,6 +63,8 @@
     "@tailwindcss/typography": "^0.5.0",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.9",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "postcss": "^8.4.0",
