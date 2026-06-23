@@ -160,7 +160,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                 <Suspense fallback={<div className="w-full lg:w-64 flex-shrink-0 p-6 bg-sidebar-bg border-r border-border text-gray-400">Loading sidebar...</div>}>
                     <Sidebar categories={categories} />
                 </Suspense>
-                <main className="flex-1 w-full p-6 lg:p-12">
+                <main className="flex-1 w-full p-6 lg:px-12 lg:pb-12 lg:pt-6">
                     <div className="flex gap-8">
                         <ScrollToTop />
                         <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">

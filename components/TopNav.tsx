@@ -40,7 +40,7 @@ export default function TopNav({ title: customTitle }: { title?: string }) {
     };
 
     return (
-        <nav className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 mb-8 md:mb-12">
+        <nav className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 mb-0">
             <div className="max-w-screen-2xl mx-auto px-6 py-4 md:py-6 flex flex-col md:flex-row justify-between items-center">
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 md:mb-0">
                     <Link href={titleHref} onClick={handleTitleClick} className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors">

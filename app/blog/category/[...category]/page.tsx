@@ -87,8 +87,8 @@ export default async function Category({ params }: { params: Promise<{ category:
                 <Suspense fallback={<div className="w-full lg:w-64 flex-shrink-0 p-6 bg-sidebar-bg border-r border-border text-gray-400">Loading sidebar...</div>}>
                     <Sidebar categories={categories} />
                 </Suspense>
-                <main className="flex-1 w-full p-6 lg:p-12 relative">
-                    <header className="mb-12 border-b pb-8 sticky top-20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-10 pt-4 -mt-4 transition-all duration-200">
+                <main className="flex-1 w-full p-6 lg:px-12 lg:pb-12 lg:pt-6 relative">
+                    <header className="mb-12 border-b pb-8 sticky top-16 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-10 pt-4 -mt-4 transition-all duration-200">
                         <div className="flex flex-col gap-2">
                             <div className="text-sm text-gray-400 dark:text-gray-500 mb-2 flex items-center flex-wrap">
                                 <Link href="/blog/category/" className="hover:text-primary hover:underline transition-colors">
