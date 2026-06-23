@@ -9,6 +9,8 @@
   "ai/dl_ml/logistic-regression-and-softmax": "/AI/DL_ML/logistic-regression-and-softmax",
   "about_rag": "/AI/LLM/About_RAG",
   "ai/llm/about_rag": "/AI/LLM/About_RAG",
+  "langchain-introduction": "/AI/LLM/LangChain-introduction",
+  "ai/llm/langchain-introduction": "/AI/LLM/LangChain-introduction",
   "pair_classification": "/AI/NLP/pair_classification",
   "ai/nlp/pair_classification": "/AI/NLP/pair_classification",
   "pair_classification_train": "/AI/NLP/pair_classification_train",
