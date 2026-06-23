@@ -53,8 +53,8 @@ classes: wide
 
 ### 2.2. pMHC 인터페이스 그래프 변환
 PANDORA로 예측된 3D 구조의 원자 좌표들을 기반으로 아미노산 잔기 수준 그래프 $\mathcal{G} = (\mathcal{V}, \mathcal{E})$를 구축합니다.
-- **노드(Node $\mathcal{V}$):** 각 아미노산 잔기(주로 $C_\alpha$ 원자 위치)를 노드로 정의합니다. 노드 피처에는 아미노산 종류, 물리화학적 성질 등이 포함됩니다.
-- **엣지(Edge $\mathcal{E}$):** 수용체 MHC 결합 홈의 계면 포켓으로부터 $12$Å 반경 이내에 인접한 잔기 쌍들을 엣지로 연결합니다.
+- **노드(Node** $\mathcal{V}$**):** 각 아미노산 잔기(주로 $C_\alpha$ 원자 위치)를 노드로 정의합니다. 노드 피처에는 아미노산 종류, 물리화학적 성질 등이 포함됩니다.
+- **엣지(Edge** $\mathcal{E}$**):** 수용체 MHC 결합 홈의 계면 포켓으로부터 $12$Å 반경 이내에 인접한 잔기 쌍들을 엣지로 연결합니다.
 - **물리화학적 엣지 특징**: 엣지 상호작용 피처에는 단순히 공간적 거리뿐만 아니라, 분자 간의 인력/척력을 규명하는 쿨롱 정전기 에너지(Coulomb Electrostatic potential), 반데르발스 힘(van der Waals/Lennard-Jones potential), 수소 결합 친화성 등 정밀한 물리 기하 수치를 인코딩하여 모델이 구조의 안정성을 인지할 수 있는 기반을 다집니다.
 
 ![pMHC Interface Graph](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image6.png)
