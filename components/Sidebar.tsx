@@ -4,15 +4,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { Search, X } from 'lucide-react';
 
 import { PostData } from '@/lib/posts';
 import { CATEGORY_ORDER, CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@/lib/category-config';
 
 interface SidebarProps {
     categories: Record<string, number>;
+    searchQuery?: string;
+    onSearchChange?: (query: string) => void;
 }
 
-export default function Sidebar({ categories }: SidebarProps) {
+export default function Sidebar({ categories, searchQuery, onSearchChange }: SidebarProps) {
     const pathname = usePathname();
 
     // Transform flat categories into a tree structure
@@ -100,6 +103,31 @@ export default function Sidebar({ categories }: SidebarProps) {
     return (
         <div className="w-full lg:w-64 flex-shrink-0 lg:block bg-sidebar-bg border-r border-border h-auto lg:h-[calc(100vh-6rem)] lg:sticky lg:top-24 overflow-y-auto sidebar-scroll font-sans">
             <div className="p-6">
+                {/* Search Bar - only show if onSearchChange is provided and not on sub-pages */}
+                {onSearchChange && !['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
+                    <div className="relative w-full mb-6">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400 dark:text-gray-500">
+                            <Search size={16} />
+                        </div>
+                        <input
+                            type="text"
+                            value={searchQuery || ''}
+                            onChange={(e) => onSearchChange(e.target.value)}
+                            placeholder="Search posts..."
+                            className="w-full pl-9 pr-8 py-1.5 text-sm border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-600 focus:border-transparent transition-all"
+                        />
+                        {searchQuery && (
+                            <button
+                                onClick={() => onSearchChange('')}
+                                className="absolute inset-y-0 right-0 pr-2.5 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                                aria-label="Clear search"
+                            >
+                                <X size={16} />
+                            </button>
+                        )}
+                    </div>
+                )}
+
                 {/* Profile Section - Hide on Projects, About, Resume pages */}
                 {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
                     <div className="flex flex-col items-center mb-8">

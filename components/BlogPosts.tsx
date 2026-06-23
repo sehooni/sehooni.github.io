@@ -1,19 +1,25 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import { Search, X, BookOpen, ArrowRight } from 'lucide-react';
+import { BookOpen, ArrowRight } from 'lucide-react';
 import { PostData } from '@/lib/posts';
 
 interface BlogPostsProps {
     posts: PostData[];
+    searchQuery: string;
+    onSearchChange: (query: string) => void;
 }
 
-export default function BlogPosts({ posts }: BlogPostsProps) {
-    const [searchQuery, setSearchQuery] = useState('');
+export default function BlogPosts({ posts, searchQuery, onSearchChange }: BlogPostsProps) {
     const [currentPage, setCurrentPage] = useState(1);
     const POSTS_PER_PAGE = 10;
+
+    // Reset to page 1 when search query changes
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [searchQuery]);
 
     // Search filter logic
     const filteredPosts = posts.filter((post) => {
@@ -49,49 +55,13 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchQuery(e.target.value);
-        setCurrentPage(1); // Reset to first page on search
-    };
-
     const clearSearch = () => {
-        setSearchQuery('');
-        setCurrentPage(1);
+        onSearchChange('');
     };
 
     return (
         <div className="space-y-10">
-            {/* Search Bar */}
-            <div className="relative w-full max-w-lg">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400 dark:text-gray-500">
-                    <Search size={18} />
-                </div>
-                <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    placeholder="Search posts by title, tag, or content..."
-                    className="w-full pl-10 pr-10 py-2 border border-gray-200 dark:border-gray-800 rounded-xl bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-600 focus:border-transparent transition-all"
-                />
-                {searchQuery && (
-                    <button
-                        onClick={clearSearch}
-                        className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-                        aria-label="Clear search"
-                    >
-                        <X size={18} />
-                    </button>
-                )}
-            </div>
-
-            {/* Search feedback */}
-            {!isSearchEmpty && (
-                <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                    Found {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'} matching &ldquo;{searchQuery}&rdquo;
-                </div>
-            )}
-
-            {/* Featured Post Card */}
+            {/* Featured Post Card - Raised to the very top */}
             {featuredPost && (
                 <Link
                     href={`/blog/${featuredPost.slug}/`}
@@ -123,6 +93,20 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
                         Read post <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </span>
                 </Link>
+            )}
+
+            {/* Description Banner - Positioned below the Featured Post Card */}
+            <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <p className="text-gray-600 dark:text-gray-400">
+                    Writing about technology, learning, experience and especially AI.
+                </p>
+            </div>
+
+            {/* Search feedback */}
+            {!isSearchEmpty && (
+                <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                    Found {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'} matching &ldquo;{searchQuery}&rdquo;
+                </div>
             )}
 
             {/* Blog Post List */}
