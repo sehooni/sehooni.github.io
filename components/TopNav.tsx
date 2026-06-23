@@ -26,11 +26,26 @@ export default function TopNav({ title: customTitle }: { title?: string }) {
     ];
 
 
+    // Determine target link based on title
+    let titleHref = '/blog';
+    if (title === 'Projects') titleHref = '/projects';
+    else if (title === 'About') titleHref = '/about';
+    else if (title === 'Résumé') titleHref = '/resume';
+
+    const handleTitleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (pathname === titleHref) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
     return (
         <nav className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 mb-8 md:mb-12">
             <div className="max-w-screen-2xl mx-auto px-6 py-4 md:py-6 flex flex-col md:flex-row justify-between items-center">
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 md:mb-0">
-                    {title}
+                    <Link href={titleHref} onClick={handleTitleClick} className="hover:text-purple-700 dark:hover:text-purple-400 transition-colors">
+                        {title}
+                    </Link>
                 </h1>
                 <ul className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm font-medium tracking-wide">
                     {navItems.map((item) => {
