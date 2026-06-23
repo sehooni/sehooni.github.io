@@ -9,6 +9,7 @@ import { Search, X } from 'lucide-react';
 
 import { PostData } from '@/lib/posts';
 import { CATEGORY_ORDER, CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@/lib/category-config';
+import VisitorCounter from './VisitorCounter';
 
 interface SidebarProps {
     categories: Record<string, number>;
@@ -159,6 +160,11 @@ export default function Sidebar({ categories }: SidebarProps) {
                             </a>
                         </div>
                     </div>
+                )}
+
+                {/* Visitor Counter - show on all blog-related pages (not projects/about/resume) */}
+                {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
+                    <VisitorCounter />
                 )}
 
                 {/* Search Bar - show on all blog-related pages (not projects/about/resume) */}
