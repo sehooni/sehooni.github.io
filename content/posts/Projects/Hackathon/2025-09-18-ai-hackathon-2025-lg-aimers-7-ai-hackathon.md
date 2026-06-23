@@ -13,8 +13,8 @@ tags:
 toc: true
 toc_sticky: true
 use_math: true
-date: 2026-01-06
-last_modified_at: 2026-01-06
+date: 2025-09-26
+last_modified_at: 2025-09-26
 ---
 <!--
 ⚠️ Math Rendering Rules ⚠️
