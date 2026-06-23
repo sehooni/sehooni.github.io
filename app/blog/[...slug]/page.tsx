@@ -23,6 +23,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import ShareButtons from '@/components/ShareButtons';
 import PostNavigation from '@/components/PostNavigation';
 import Sidebar from '@/components/Sidebar';
+import CategoryPostNavigation from '@/components/CategoryPostNavigation';
 import { Suspense } from 'react';
 
 
@@ -35,6 +36,18 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
     // decode title part for share buttons if needed, usually slug parts are url-encoded
     const decodedSlug = slug.map(s => decodeURIComponent(s)).join('/');
     const categories = getCategories();
+
+    // Fetch sibling posts in the same category
+    const allPosts = getSortedPostsData();
+    const normalizePath = (p: string) => p.replace(/\\/g, '/');
+    const currentCategoryNormalized = normalizePath(postData.category || 'uncategorized');
+    const categoryPosts = allPosts.filter(p => normalizePath(p.category || 'uncategorized') === currentCategoryNormalized);
+    const currentIdx = categoryPosts.findIndex(p => p.slug === postData.slug);
+    
+    // getSortedPostsData is sorted chronologically descending (newest first).
+    // So currentIdx + 1 is the previous post (older), and currentIdx - 1 is the next post (newer).
+    const prevPost = currentIdx !== -1 && currentIdx < categoryPosts.length - 1 ? categoryPosts[currentIdx + 1] : null;
+    const nextPost = currentIdx > 0 ? categoryPosts[currentIdx - 1] : null;
 
 
     // Helper helper to extract text from React children
@@ -152,6 +165,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                             </ReactMarkdown>
 
                             <ShareButtons title={postData.title} slug={decodedSlug} />
+                            <CategoryPostNavigation prevPost={prevPost} nextPost={nextPost} />
                             <Comments issueTerm={postData.issueTerm} />
                         </article>
 
