@@ -4,15 +4,18 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { BookOpen, ArrowRight } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { PostData } from '@/lib/posts';
 
 interface BlogPostsProps {
     posts: PostData[];
-    searchQuery: string;
-    onSearchChange: (query: string) => void;
 }
 
-export default function BlogPosts({ posts, searchQuery, onSearchChange }: BlogPostsProps) {
+export default function BlogPosts({ posts }: BlogPostsProps) {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const searchQuery = searchParams ? searchParams.get('q') || '' : '';
+
     const [currentPage, setCurrentPage] = useState(1);
     const POSTS_PER_PAGE = 10;
 
@@ -56,7 +59,7 @@ export default function BlogPosts({ posts, searchQuery, onSearchChange }: BlogPo
     };
 
     const clearSearch = () => {
-        onSearchChange('');
+        router.push('/blog');
     };
 
     return (

@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { Search, X } from 'lucide-react';
 
@@ -11,12 +12,38 @@ import { CATEGORY_ORDER, CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@
 
 interface SidebarProps {
     categories: Record<string, number>;
-    searchQuery?: string;
-    onSearchChange?: (query: string) => void;
 }
 
-export default function Sidebar({ categories, searchQuery, onSearchChange }: SidebarProps) {
+export default function Sidebar({ categories }: SidebarProps) {
     const pathname = usePathname();
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    // Read search query from URL parameter 'q'
+    const searchQuery = searchParams ? searchParams.get('q') || '' : '';
+    const [inputValue, setInputValue] = useState(searchQuery);
+
+    // Sync input value when URL parameter changes
+    useEffect(() => {
+        setInputValue(searchQuery);
+    }, [searchQuery]);
+
+    const handleSearchChange = (val: string) => {
+        setInputValue(val);
+        const params = new URLSearchParams(searchParams ? searchParams.toString() : '');
+        
+        if (val) {
+            params.set('q', val);
+        } else {
+            params.delete('q');
+        }
+
+        if (pathname !== '/blog') {
+            router.push(`/blog?${params.toString()}`);
+        } else {
+            router.replace(`/blog?${params.toString()}`, { scroll: false });
+        }
+    };
 
     // Transform flat categories into a tree structure
     const categoryTree = Object.entries(categories).reduce((acc, [path, count]) => {
@@ -134,22 +161,22 @@ export default function Sidebar({ categories, searchQuery, onSearchChange }: Sid
                     </div>
                 )}
 
-                {/* Search Bar - only show if onSearchChange is provided and not on sub-pages */}
-                {onSearchChange && !['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
+                {/* Search Bar - show on all blog-related pages (not projects/about/resume) */}
+                {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
                     <div className="relative w-full mb-6">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400 dark:text-gray-500">
                             <Search size={16} />
                         </div>
                         <input
                             type="text"
-                            value={searchQuery || ''}
-                            onChange={(e) => onSearchChange(e.target.value)}
+                            value={inputValue}
+                            onChange={(e) => handleSearchChange(e.target.value)}
                             placeholder="Search posts..."
                             className="w-full pl-9 pr-8 py-1.5 text-sm border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-600 focus:border-transparent transition-all"
                         />
-                        {searchQuery && (
+                        {inputValue && (
                             <button
-                                onClick={() => onSearchChange('')}
+                                onClick={() => handleSearchChange('')}
                                 className="absolute inset-y-0 right-0 pr-2.5 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
                                 aria-label="Clear search"
                             >

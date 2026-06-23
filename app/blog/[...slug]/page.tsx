@@ -23,6 +23,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import ShareButtons from '@/components/ShareButtons';
 import PostNavigation from '@/components/PostNavigation';
 import Sidebar from '@/components/Sidebar';
+import { Suspense } from 'react';
 
 
 // ... (existing imports)
@@ -116,7 +117,9 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
             {/* TopNav for Blog Section */}
 
             <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto items-start">
-                <Sidebar categories={categories} />
+                <Suspense fallback={<div className="w-full lg:w-64 flex-shrink-0 p-6 bg-sidebar-bg border-r border-border text-gray-400">Loading sidebar...</div>}>
+                    <Sidebar categories={categories} />
+                </Suspense>
                 <main className="flex-1 w-full p-6 lg:p-12">
                     <div className="flex gap-8">
                         <ScrollToTop />

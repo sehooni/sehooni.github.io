@@ -1,6 +1,6 @@
 ---
-title:  "[AI Hackathon] 2026 Gemini 3 Seoul Hackathon 본선(Top 6) 진출 회고: Alpha-Agent"
-excerpt: "1인 개발팀(Alpha_BioAgent)으로 참여한 Gemini 3 서울 해커톤 본선 회고 및 Google Antigravity 기반 자율 AI 연구원(Alpha-Agent) 개발기"
+title:  "[AI Hackathon] 2026 Gemini 3 Seoul Hackathon (Top 6 Finalist) 회고: Alpha-Agent"
+excerpt: "1인 개발팀(Alpha_BioAgent)으로 참여한 Gemini 3 서울 해커톤 회고 및 Google Antigravity 기반 자율 AI 연구원(Alpha-Agent) 개발기"
 categories:
   - Projects
   - Hackathon
@@ -11,6 +11,7 @@ tags:
   - Bioinformatics
   - Gemini 3.1 Pro
   - Google Antigravity
+  - 제미나이
 toc: true
 toc_sticky: true
 use_math: true

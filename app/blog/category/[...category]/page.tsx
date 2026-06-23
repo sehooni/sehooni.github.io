@@ -3,6 +3,7 @@ import { getSortedPostsData, getCategories } from '@/lib/posts';
 import { format } from 'date-fns';
 import Sidebar from '@/components/Sidebar';
 import { CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@/lib/category-config';
+import { Suspense } from 'react';
 
 export async function generateStaticParams() {
     const categories = getCategories();
@@ -64,7 +65,9 @@ export default async function Category({ params }: { params: Promise<{ category:
         <div className="min-h-screen flex flex-col">
 
             <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto items-start">
-                <Sidebar categories={categories} />
+                <Suspense fallback={<div className="w-full lg:w-64 flex-shrink-0 p-6 bg-sidebar-bg border-r border-border text-gray-400">Loading sidebar...</div>}>
+                    <Sidebar categories={categories} />
+                </Suspense>
                 <main className="flex-1 w-full p-6 lg:p-12 relative">
                     <header className="mb-12 border-b pb-8 sticky top-20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm z-10 pt-4 -mt-4 transition-all duration-200">
                         <div className="flex flex-col gap-2">

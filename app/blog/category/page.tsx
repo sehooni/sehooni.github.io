@@ -2,6 +2,7 @@ import { getCategories } from '@/lib/posts';
 import Sidebar from '@/components/Sidebar';
 import Link from 'next/link';
 import { CATEGORY_ORDER, CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@/lib/category-config';
+import { Suspense } from 'react';
 
 const getCumulativeCount = (catPath: string, categories: Record<string, number>) => {
     return Object.entries(categories).reduce((sum, [path, count]) => {
@@ -61,7 +62,9 @@ export default function CategoryIndex() {
     return (
         <div className="min-h-screen flex flex-col">
             <div className="flex flex-col lg:flex-row w-full max-w-screen-2xl mx-auto items-start">
-                <Sidebar categories={categories} />
+                <Suspense fallback={<div className="w-full lg:w-64 flex-shrink-0 p-6 bg-sidebar-bg border-r border-border text-gray-400">Loading sidebar...</div>}>
+                    <Sidebar categories={categories} />
+                </Suspense>
                 <main className="flex-1 w-full p-6 lg:p-12">
                     <header className="mb-12 border-b pb-8">
                         <div className="flex flex-col gap-2">
