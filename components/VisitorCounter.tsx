@@ -19,7 +19,7 @@ export default function VisitorCounter() {
     useEffect(() => {
         const fetchVisitorStats = async () => {
             const namespace = "sehooni-github-io";
-            
+
             // Generate timezone-safe YYYY-MM-DD string
             const now = new Date();
             const year = now.getFullYear();
@@ -40,7 +40,7 @@ export default function VisitorCounter() {
                 const hasVisitedToday = localStorage.getItem(storageKey);
                 let finalTotal = 0;
                 let finalToday = 0;
-                const offset = 38000;
+                const offset = 38001;
 
                 // Helper to safely fetch count or fallback to incrementing if not found
                 const safeFetch = async (getUrl: string, upUrl: string, increment: boolean) => {
@@ -124,29 +124,36 @@ export default function VisitorCounter() {
     }, []);
 
     return (
-        <div className="w-full bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-md rounded-xl p-3.5 border border-gray-200/80 dark:border-gray-800/80 mb-5 text-xs flex justify-between items-center transition-all duration-300 hover:shadow-md hover:border-primary/30 dark:hover:border-primary/30">
-            <div className="flex items-center gap-2 flex-1 justify-center">
-                <UserCheck className="text-primary w-4 h-4 shrink-0" />
-                <span className="text-gray-500 dark:text-gray-400 font-medium">Today</span>
-                <span className="font-bold text-gray-800 dark:text-gray-200 min-w-[20px] text-center">
+        <div className="w-full bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-md rounded-xl p-3 border border-gray-200/80 dark:border-gray-800/80 mb-5 text-xs flex flex-col gap-2 transition-all duration-300 hover:shadow-md hover:border-primary/30 dark:hover:border-primary/30">
+            {/* Total Row */}
+            <div className="flex items-center justify-between px-1 py-0.5">
+                <div className="flex items-center gap-2">
+                    <Users className="text-purple-500 w-4 h-4 shrink-0" />
+                    <span className="text-gray-500 dark:text-gray-400 font-medium">Total</span>
+                </div>
+                <span className="font-bold text-gray-800 dark:text-gray-200">
                     {stats.loading ? (
-                        <span className="inline-block w-4 h-3 bg-gray-200 dark:bg-gray-800 animate-pulse rounded" />
+                        <span className="inline-block w-8 h-3 bg-gray-200 dark:bg-gray-800 animate-pulse rounded" />
                     ) : (
-                        stats.today.toLocaleString()
+                        stats.total.toLocaleString()
                     )}
                 </span>
             </div>
-            
-            <div className="h-4 w-px bg-gray-200 dark:bg-gray-800 mx-2" />
-            
-            <div className="flex items-center gap-2 flex-1 justify-center">
-                <Users className="text-purple-500 w-4 h-4 shrink-0" />
-                <span className="text-gray-500 dark:text-gray-400 font-medium">Total</span>
-                <span className="font-bold text-gray-800 dark:text-gray-200 min-w-[25px] text-center">
+
+            {/* Divider */}
+            <div className="h-px w-full bg-gray-200/80 dark:bg-gray-800/80" />
+
+            {/* Today Row */}
+            <div className="flex items-center justify-between px-1 py-0.5">
+                <div className="flex items-center gap-2">
+                    <UserCheck className="text-primary w-4 h-4 shrink-0" />
+                    <span className="text-gray-500 dark:text-gray-400 font-medium">Today</span>
+                </div>
+                <span className="font-bold text-gray-800 dark:text-gray-200">
                     {stats.loading ? (
                         <span className="inline-block w-6 h-3 bg-gray-200 dark:bg-gray-800 animate-pulse rounded" />
                     ) : (
-                        stats.total.toLocaleString()
+                        stats.today.toLocaleString()
                     )}
                 </span>
             </div>
