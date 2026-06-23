@@ -84,7 +84,7 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
                             </>
                         )}
                     </div>
-                    <h2 className="max-w-3xl text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors mb-3 leading-tight">
+                    <h2 className="max-w-3xl text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors mb-3 leading-tight">
                         {featuredPost.title}
                     </h2>
                     {featuredPost.excerpt && (
@@ -121,7 +121,7 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
                             className="flex flex-col group border-b border-gray-100 dark:border-gray-800 pb-10 last:border-0 last:pb-0"
                         >
                             <Link href={`/blog/${post.slug}/`} className="block">
-                                <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+                                <h2 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
                                     {post.title}
                                 </h2>
                             </Link>

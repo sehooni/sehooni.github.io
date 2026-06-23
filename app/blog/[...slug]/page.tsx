@@ -71,15 +71,15 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
     const components = {
         h1: ({ node, ...props }: any) => {
             const id = generateId(props.children);
-            return <h1 id={id} className="text-3xl font-bold mt-8 mb-4" {...props} />;
+            return <h1 id={id} className="text-xl md:text-2xl font-bold mt-8 mb-4" {...props} />;
         },
         h2: ({ node, ...props }: any) => {
             const id = generateId(props.children);
-            return <h2 id={id} className="text-2xl font-bold mt-8 mb-4" {...props} />;
+            return <h2 id={id} className="text-lg md:text-xl font-bold mt-8 mb-4" {...props} />;
         },
         h3: ({ node, ...props }: any) => {
             const id = generateId(props.children);
-            return <h3 id={id} className="text-xl font-bold mt-6 mb-3" {...props} />;
+            return <h3 id={id} className="text-base md:text-lg font-bold mt-6 mb-3" {...props} />;
         },
         img: ({ node, ...props }: any) => {
             return (
@@ -139,7 +139,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                         <article className="flex-1 min-w-0 prose prose-slate dark:prose-invert max-w-none">
                             <header className="mb-8 not-prose border-b pb-8">
                                 <PostNavigation />
-                                <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+                                <h1 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">{postData.title}</h1>
                                 <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                                     <time dateTime={postData.date}>{format(new Date(postData.date), 'MMMM d, yyyy')}</time>
                                     {postData.category && (
