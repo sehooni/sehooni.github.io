@@ -31,6 +31,8 @@
   "paperreview/attention_is_all_you_need": "/PaperReview/Attention_is_all_you_need",
   "disbpred-disulfide-bond-prediction": "/PaperReview/diSBPred-disulfide-bond-prediction",
   "paperreview/disbpred-disulfide-bond-prediction": "/PaperReview/diSBPred-disulfide-bond-prediction",
+  "alphalink-protein-structure-prediction": "/PaperReview/AlphaLink-protein-structure-prediction",
+  "paperreview/alphalink-protein-structure-prediction": "/PaperReview/AlphaLink-protein-structure-prediction",
   "alphalink2-protein-complex-modeling": "/PaperReview/AlphaLink2-protein-complex-modeling",
   "paperreview/alphalink2-protein-complex-modeling": "/PaperReview/AlphaLink2-protein-complex-modeling",
   "distance-af-protein-structure-refinement": "/PaperReview/Distance-AF-protein-structure-refinement",

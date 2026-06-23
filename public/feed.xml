@@ -5,15 +5,15 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 23 Jun 2026 03:59:02 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 07:25:11 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title><![CDATA[[AI Hackathon] 2026 Gemini 3 Seoul Hackathon 본선(Top 6) 진출 회고: Alpha-Agent]]></title>
+      <title><![CDATA[[AI Hackathon] 2026 Gemini 3 Seoul Hackathon (Top 6 Finalist) 회고: Alpha-Agent]]></title>
       <link>https://sehooni.github.io/blog/Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent/</link>
       <guid>https://sehooni.github.io/blog/Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent/</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[1인 개발팀(Alpha_BioAgent)으로 참여한 Gemini 3 서울 해커톤 본선 회고 및 Google Antigravity 기반 자율 AI 연구원(Alpha-Agent) 개발기]]></description>
+      <description><![CDATA[1인 개발팀(Alpha_BioAgent)으로 참여한 Gemini 3 서울 해커톤 회고 및 Google Antigravity 기반 자율 AI 연구원(Alpha-Agent) 개발기]]></description>
     </item>
     <item>
       <title><![CDATA[[AI Hackathon] 2025 LG Aimers 7기 AI Hackathon 회고]]></title>
@@ -107,10 +107,17 @@
       <description><![CDATA[AlphaFold-Multimer의 한계를 극복하기 위해 화학적 교차결합 질량분석(XL-MS) 데이터를 단백질 복합체 구조 예측 네트워크에 직접 결합하여 정확도를 향상시킨 AlphaLink2 알고리즘 리뷰]]></description>
     </item>
     <item>
+      <title><![CDATA[[Paper Review] AlphaLink: Protein structure prediction with in-cell photo-crosslinking mass spectrometry and deep learning]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/AlphaLink-protein-structure-prediction/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/AlphaLink-protein-structure-prediction/</guid>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[AlphaFold2의 한계를 극복하기 위해 세포 내 광교차결합 질량분석(photo-crosslinking MS) 실험 데이터를 AlphaFold2 아키텍처에 직접 통합하여 도전적 단백질 구조 예측 정확도를 비약적으로 향상시킨 AlphaLink 알고리즘 리뷰]]></description>
+    </item>
+    <item>
       <title><![CDATA[[Paper Review] diSBPred: A Machine Learning Based Approach for Disulfide Bond Prediction]]></title>
       <link>https://sehooni.github.io/blog/PaperReview/diSBPred-disulfide-bond-prediction/</link>
       <guid>https://sehooni.github.io/blog/PaperReview/diSBPred-disulfide-bond-prediction/</guid>
-      <pubDate>Wed, 15 Nov 2023 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
       <description><![CDATA[단백질 3차원 구조 예측 및 번역 후 변형 분석의 핵심 요소인 시스테인 잔기의 이황화 결합 상태 및 연결성을 다양한 서열/구조 기반 피처와 스태킹 앙상블 기법으로 예측하는 diSBPred 프레임워크 리뷰]]></description>
     </item>
     <item>
