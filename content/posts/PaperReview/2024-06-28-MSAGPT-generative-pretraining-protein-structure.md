@@ -26,7 +26,7 @@ classes: wide
 
 AlphaFold2의 혁신은 단백질 3차원 구조 예측(Protein Structure Prediction, PSP)의 지평을 완전히 바꾸어 놓았습니다. 그러나 AlphaFold2 아키텍처의 내면을 들여다보면, 입력되는 **다중 서열 정렬(Multiple Sequence Alignment, MSA)의** 풍부함에 절대적으로 의존한다는 중대한 아킬레스건이 존재합니다. 
 
-AlphaFold2는 진화 과정에서 함께 보존(Co-conservation)되며 동시 돌연변이가 발생한 아미노산 잔기 쌍의 패턴을 추적하여 물리적인 거리를 유도합니다. 만약 상동 서열 데이터가 극도로 부족한 **"고아 단백질(Orphan Protein)"**이나 메타게노믹스 유래의 희귀 서열(전체 메타게노믹스 단백질의 약 20%를 차지)을 구조 예측할 경우, 깊이가 얕은 MSA로 인해 AlphaFold2의 구조 정확도는 급격하게 무너집니다.
+AlphaFold2는 진화 과정에서 함께 보존(Co-conservation)되며 동시 돌연변이가 발생한 아미노산 잔기 쌍의 패턴을 추적하여 물리적인 거리를 유도합니다. 만약 상동 서열 데이터가 극도로 부족한 **"고아 단백질(Orphan Protein)"이나** 메타게노믹스 유래의 희귀 서열(전체 메타게노믹스 단백질의 약 20%를 차지)을 구조 예측할 경우, 깊이가 얕은 MSA로 인해 AlphaFold2의 구조 정확도는 급격하게 무너집니다.
 
 ![Low-MSA Regime Challenge](/assets/images/2024-06-28-MSAGPT-generative-pretraining-protein-structure/image4.png)
 *Figure 1: 진화 서열 검색 데이터가 희소한 고아 단백질(Orphan Protein)에 대해 AlphaFold2의 구조 정확도가 손실되는 문제 분석*
