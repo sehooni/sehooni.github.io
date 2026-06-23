@@ -149,7 +149,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string[
                             </ReactMarkdown>
 
                             <ShareButtons title={postData.title} slug={decodedSlug} />
-                            <Comments />
+                            <Comments issueTerm={postData.issueTerm} />
                         </article>
 
                         <TableOfContents content={postData.content} />

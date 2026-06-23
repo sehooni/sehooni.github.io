@@ -12,7 +12,22 @@ export interface PostData {
     category?: string;
     categories?: string[];
     content: string;
+    issueTerm: string; // The utterances key matching previous Jekyll config
     [key: string]: any;
+}
+
+export function calculateIssueTerm(titleSlug: string, categories: string[]): string {
+    let issueTerm = titleSlug;
+    const hasProjects = categories.some((c: string) => {
+        const lc = c.toLowerCase();
+        return lc === 'projects' || lc === 'jetson' || lc === 'nlp' || lc === 'toy_projects';
+    });
+
+    if (hasProjects && categories.length > 0) {
+        const categoryPath = categories.map((c: string) => c.toLowerCase()).join('/');
+        issueTerm = `${categoryPath}/${titleSlug}/`;
+    }
+    return issueTerm;
 }
 
 export function getSortedPostsData(): PostData[] {
@@ -58,6 +73,9 @@ export function getSortedPostsData(): PostData[] {
                     }
                 }
 
+                const frontmatterCategories = matterResult.data.categories || (matterResult.data.category ? [matterResult.data.category] : []);
+                const issueTerm = calculateIssueTerm(titleSlug, frontmatterCategories);
+
                 allPosts.push({
                     slug,
                     slugArray,
@@ -65,9 +83,7 @@ export function getSortedPostsData(): PostData[] {
                     ...matterResult.data,
                     date,
                     category, // Ensure category is set from dir if not in frontmatter, or override? 
-                    // Usually frontmatter category is preferred content-wise, 
-                    // but for URL structure we rely on file path. 
-                    // Let's preserve frontmatter category if distinct, or default to dir.
+                    issueTerm,
                 } as PostData);
             }
         }
@@ -171,6 +187,9 @@ export async function getPostData(slugArray: string[]): Promise<PostData> {
         }
     }
 
+    const frontmatterCategories = matterResult.data.categories || (matterResult.data.category ? [matterResult.data.category] : []);
+    const issueTerm = calculateIssueTerm(titleSlug, frontmatterCategories);
+
     return {
         slug: slugArray.join('/'),
         slugArray,
@@ -178,6 +197,7 @@ export async function getPostData(slugArray: string[]): Promise<PostData> {
         ...matterResult.data,
         date,
         category,
+        issueTerm,
     } as PostData;
 }
 
