@@ -4,6 +4,25 @@ import { format } from 'date-fns';
 import Sidebar from '@/components/Sidebar';
 import { CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@/lib/category-config';
 import { Suspense } from 'react';
+import { Metadata } from 'next';
+
+export async function generateMetadata(
+    { params }: { params: Promise<{ category: string[] }> }
+): Promise<Metadata> {
+    const { category } = await params;
+    const decodedCategory = category.map(c => decodeURIComponent(c)).join('/');
+    const categoryName = decodedCategory.split('/').pop()!;
+    const displayName = CATEGORY_DISPLAY_NAMES[categoryName] || categoryName;
+    const description = CATEGORY_DESCRIPTIONS[categoryName] || `Posts in category ${displayName}`;
+
+    return {
+        title: `${displayName} Category`,
+        description: description,
+        alternates: {
+            canonical: `https://sehooni.github.io/blog/category/${decodedCategory}/`,
+        },
+    };
+}
 
 export async function generateStaticParams() {
     const categories = getCategories();

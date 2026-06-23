@@ -12,6 +12,33 @@ import rehypeRaw from 'rehype-raw';
 import rehypeHighlight from 'rehype-highlight';
 import TableOfContents from '@/components/TableOfContents';
 import 'highlight.js/styles/github-dark.css'; // Import highlight.js style
+import { Metadata } from 'next';
+
+export async function generateMetadata(
+    { params }: { params: Promise<{ slug: string[] }> }
+): Promise<Metadata> {
+    const { slug } = await params;
+    const postData = await getPostData(slug);
+    const decodedSlug = slug.map(s => decodeURIComponent(s)).join('/');
+    const title = postData.title;
+    const description = postData.excerpt || postData.content.substring(0, 150).replace(/\n/g, ' ') + '...';
+
+    return {
+        title: title,
+        description: description,
+        alternates: {
+            canonical: `https://sehooni.github.io/blog/${decodedSlug}/`,
+        },
+        openGraph: {
+            title: title,
+            description: description,
+            url: `https://sehooni.github.io/blog/${decodedSlug}/`,
+            type: 'article',
+            publishedTime: postData.date,
+            authors: ['Sehoon Park'],
+        }
+    };
+}
 
 export async function generateStaticParams() {
     const paths = getAllPostIds();

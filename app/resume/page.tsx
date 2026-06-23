@@ -1,3 +1,13 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Resume',
+    description: 'Curriculum Vitae and professional summary of Sehoon Park.',
+    alternates: {
+        canonical: 'https://sehooni.github.io/resume/',
+    },
+};
+
 export default function Resume() {
     return (
         <div className="min-h-screen flex flex-col items-center">
