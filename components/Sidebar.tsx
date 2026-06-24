@@ -162,11 +162,6 @@ export default function Sidebar({ categories }: SidebarProps) {
                     </div>
                 )}
 
-                {/* Visitor Counter - show on all blog-related pages (not projects/about/resume) */}
-                {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
-                    <VisitorCounter />
-                )}
-
                 {/* Search Bar - show on all blog-related pages (not projects/about/resume) */}
                 {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
                     <div className="relative w-full mb-6">
@@ -202,6 +197,11 @@ export default function Sidebar({ categories }: SidebarProps) {
                         </h3>
                         {renderCategories(categoryTree)}
                     </div>
+                )}
+
+                {/* Visitor Counter - show on all blog-related pages (not projects/about/resume) */}
+                {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
+                    <VisitorCounter />
                 )}
 
 
