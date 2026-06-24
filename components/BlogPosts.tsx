@@ -53,6 +53,17 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
         currentPage * POSTS_PER_PAGE
     );
 
+    // Dynamic Popular posts mapping
+    const popularPostSlugs = [
+        "Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent",
+        "Projects/Hackathon/ai-hackathon-2025-lg-aimers-7-ai-hackathon",
+        "AI/LLM/LangChain-introduction"
+    ];
+
+    const popularPosts = popularPostSlugs
+        .map(slug => posts.find(p => p.slug === slug))
+        .filter((post): post is PostData => !!post);
+
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -64,38 +75,79 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
 
     return (
         <div className="space-y-10">
-            {/* Featured Post Card - Raised to the very top */}
+            {/* Featured Hero Area (Latest + Popular Grid) */}
             {featuredPost && (
-                <Link
-                    href={`/blog/${featuredPost.slug}/`}
-                    className="group block rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-8 transition-all duration-300 hover:border-purple-500 dark:hover:border-purple-600 hover:shadow-md"
-                >
-                    <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-black dark:bg-white px-3 py-1 text-xs font-semibold text-white dark:text-black">
-                            <BookOpen size={13} /> Latest
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Left Side: Latest Post Card */}
+                    <Link
+                        href={`/blog/${featuredPost.slug}/`}
+                        className="group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-8 transition-all duration-300 hover:border-purple-500 dark:hover:border-purple-600 hover:shadow-md h-full"
+                    >
+                        <div>
+                            <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+                                <span className="inline-flex items-center gap-1.5 rounded-full bg-black dark:bg-white px-3 py-1 text-xs font-semibold text-white dark:text-black">
+                                    <BookOpen size={13} /> Latest
+                                </span>
+                                <time dateTime={featuredPost.date}>
+                                    {featuredPost.date ? format(new Date(featuredPost.date), 'MMMM d, yyyy') : ''}
+                                </time>
+                                {featuredPost.category && (
+                                    <>
+                                        <span>•</span>
+                                        <span className="font-medium text-purple-700 dark:text-purple-400 capitalize">{featuredPost.category}</span>
+                                    </>
+                                )}
+                            </div>
+                            <h2 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors mb-3 leading-tight line-clamp-2">
+                                {featuredPost.title}
+                            </h2>
+                            {featuredPost.excerpt && (
+                                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3">
+                                    {featuredPost.excerpt}
+                                </p>
+                            )}
+                        </div>
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-700 dark:text-purple-400 group-hover:underline mt-4">
+                            Read post <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                         </span>
-                        <time dateTime={featuredPost.date}>
-                            {featuredPost.date ? format(new Date(featuredPost.date), 'MMMM d, yyyy') : ''}
-                        </time>
-                        {featuredPost.category && (
-                            <>
-                                <span>•</span>
-                                <span className="font-medium text-purple-700 dark:text-purple-400 capitalize">{featuredPost.category}</span>
-                            </>
-                        )}
+                    </Link>
+
+                    {/* Right Side: Popular Posts Card */}
+                    <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-8 flex flex-col justify-between h-full">
+                        <div>
+                            <div className="mb-4 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                                <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-xs font-semibold text-purple-700 dark:text-purple-400">
+                                    ★ Popular
+                                </span>
+                                <span className="font-semibold text-gray-900 dark:text-white">인기 포스트</span>
+                            </div>
+                            <div className="divide-y divide-gray-100 dark:divide-gray-800">
+                                {popularPosts.map((post) => (
+                                    <Link
+                                        key={post.slug}
+                                        href={`/blog/${post.slug}/`}
+                                        className="group/item block py-3.5 first:pt-0 last:pb-0"
+                                    >
+                                        <h3 className="text-sm font-bold text-gray-900 dark:text-white group-hover/item:text-purple-700 dark:group-hover/item:text-purple-400 transition-colors line-clamp-2 leading-snug">
+                                            {post.title}
+                                        </h3>
+                                        <div className="mt-1 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                                            <time dateTime={post.date}>
+                                                {post.date ? format(new Date(post.date), 'MMM d, yyyy') : ''}
+                                            </time>
+                                            {post.category && (
+                                                <>
+                                                    <span>•</span>
+                                                    <span className="capitalize">{post.category.split('/').pop()}</span>
+                                                </>
+                                            )}
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                    <h2 className="max-w-3xl text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors mb-3 leading-tight">
-                        {featuredPost.title}
-                    </h2>
-                    {featuredPost.excerpt && (
-                        <p className="max-w-2xl text-gray-600 dark:text-gray-300 text-base leading-relaxed mb-6">
-                            {featuredPost.excerpt}
-                        </p>
-                    )}
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-700 dark:text-purple-400 group-hover:underline">
-                        Read post <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </span>
-                </Link>
+                </div>
             )}
 
             {/* Description Banner - Positioned below the Featured Post Card */}
