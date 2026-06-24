@@ -31,9 +31,9 @@ export default function VisitorCounter() {
             const todayKey = `today-visitors-${todayStr}`;
             const storageKey = `visited-date-${todayStr}`;
 
-            const totalUrl = `https://api.counterapi.dev/v1/${namespace}/${totalKey}`;
+            const totalUrl = `https://api.counterapi.dev/v1/${namespace}/${totalKey}/`;
             const totalUpUrl = `https://api.counterapi.dev/v1/${namespace}/${totalKey}/up`;
-            const todayUrl = `https://api.counterapi.dev/v1/${namespace}/${todayKey}`;
+            const todayUrl = `https://api.counterapi.dev/v1/${namespace}/${todayKey}/`;
             const todayUpUrl = `https://api.counterapi.dev/v1/${namespace}/${todayKey}/up`;
 
             try {
@@ -49,19 +49,19 @@ export default function VisitorCounter() {
                             const res = await fetch(upUrl);
                             if (res.ok) {
                                 const data = await res.json();
-                                return data.value || 0;
+                                return data.count || 0;
                             }
                         } else {
                             const res = await fetch(getUrl);
                             if (res.ok) {
                                 const data = await res.json();
-                                return data.value || 0;
+                                return data.count || 0;
                             }
                             // If GET fails (e.g. key doesn't exist yet), initialize it
                             const resUp = await fetch(upUrl);
                             if (resUp.ok) {
                                 const data = await resUp.json();
-                                return data.value || 0;
+                                return data.count || 0;
                             }
                         }
                     } catch (err) {
