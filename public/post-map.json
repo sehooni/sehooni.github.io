@@ -11,6 +11,8 @@
   "ai/llm/about_rag": "/AI/LLM/About_RAG",
   "langchain-introduction": "/AI/LLM/LangChain-introduction",
   "ai/llm/langchain-introduction": "/AI/LLM/LangChain-introduction",
+  "llm-wiki": "/AI/LLM/llm-wiki",
+  "ai/llm/llm-wiki": "/AI/LLM/llm-wiki",
   "pair_classification": "/AI/NLP/pair_classification",
   "ai/nlp/pair_classification": "/AI/NLP/pair_classification",
   "pair_classification_train": "/AI/NLP/pair_classification_train",

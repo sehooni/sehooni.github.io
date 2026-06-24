@@ -5,9 +5,16 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 23 Jun 2026 11:07:06 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 00:10:46 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title><![CDATA[[LLM] Andrej Karpathy의 'LLM Wiki': RAG의 한계를 극복하는 새로운 개인 지식 베이스 구축 패턴]]></title>
+      <link>https://sehooni.github.io/blog/AI/LLM/llm-wiki/</link>
+      <guid>https://sehooni.github.io/blog/AI/LLM/llm-wiki/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[안드레이 카파시(Andrej Karpathy)가 제안한 'LLM Wiki' 패턴 분석: 전통적인 RAG의 근본적 한계를 극복하고, LLM을 활용해 스스로 누적·진화하는 개인 마크다운 지식 베이스(Obsidian Vault)를 구축 및 관리하는 방법론.]]></description>
+    </item>
     <item>
       <title><![CDATA[[AI Hackathon] 2026 Gemini 3 Seoul Hackathon (Top 6 Finalist) 회고: Alpha-Agent]]></title>
       <link>https://sehooni.github.io/blog/Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent/</link>
