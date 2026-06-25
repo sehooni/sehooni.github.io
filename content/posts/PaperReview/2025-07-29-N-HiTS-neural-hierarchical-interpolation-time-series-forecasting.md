@@ -34,11 +34,14 @@ classes: wide
 
 그 결과, 최신 Transformer 아키텍처 대비 **정확도는 평균 20% 개선**하면서도 **학습 및 추론 시간은 무려 50배 단축**하는 경이로운 성과를 거두었습니다.
 
+![Figure 1: Computational Costs and Performance Mapping](/assets/images/2025-07-29-N-HiTS-neural-hierarchical-interpolation-time-series-forecasting/fig1.png)
+*Figure 1: (a) 예측 Horizon 증가에 따른 모델별 계산 시간 및 메모리 요구량 추이, (b) 대표적인 시계열 벤치마크에서의 오차(MSE) 대비 속도 비교. N-HiTS는 경쟁 모델 중 가장 낮은 학습 자원을 소모하면서도 가장 높은 정확도를 달성합니다.*
+
 ---
 
 ## 💡 2. 핵심 연구 직관 및 설계 사상 (Core Intuition & Design Insights)
 
-N-HiTS가 탄생하게 된 배경과 이를 지탱하는 핵심적인 설계 직관을 살펴보겠습니다.
+N-HiTS의 설계 철학은 이전 연구인 **N-BEATS**의 한계를 깊이 있게 성찰하고, 이를 디지털 신호 처리(DSP) 및 근사 이론(Approximation Theory)의 관점에서 개선하려는 시도에서 출발했습니다.
 
 ### 🎨 초보자를 위한 비유: "풍경화를 그리는 단계적 과정"
 우리가 도화지에 큰 풍경화를 그린다고 상상해 봅시다.
@@ -52,58 +55,32 @@ N-HiTS가 탄생하게 된 배경과 이를 지탱하는 핵심적인 설계 직
 
 ### 🚀 핵심 설계적 통찰 (Design Insights)
 
-#### ① 미래 시점 예측의 중복성과 차원 압축 (Information Redundancy in Long Horizons)
-미래의 아주 긴 시점(예: $H = 720$)을 1대1로 직접 매핑하여 예측하는 구조는 파라미터가 비대해질 뿐 아니라, 예측 곡선이 조밀하게 요동치며 노이즈에 극도로 취약해집니다. 
-N-HiTS 연구진은 **"미래 예측 지점들이 지닌 정보의 부드러움(Smoothness)과 높은 중복성"**에 주목했습니다. 미래를 촘촘히 720개 예측하는 대신, 신호를 대표하는 소수의 핵심 계수(Basis Coefficients, $d \ll H$)만 뱉게 하고 이를 선형 보간(Linear Interpolation)함으로써 해결했습니다. 이 직관적인 통찰은 파라미터를 극적으로 줄이는 동시에, 예측 곡선에 자연스러운 수학적 규제화(Regularization)를 부여하여 예측의 안정성을 극대화했습니다.
+#### ① N-BEATS의 한계 극복: 파라미터 폭발과 예측 휘발성 (Prediction Volatility)
+N-BEATS는 최초로 MLP 기반 순차 블록(Doubly Residual) 구조를 제시하여 트랜스포머 없이 고성능 시계열 예측이 가능함을 보여주었으나, 장기 예측($H \ge 720$)에서는 치명적인 문제점을 노출했습니다.
+* **차원의 저주와 파라미터 폭발**: 최종 출력 레이어가 예측 Horizon $H$와 입력 윈도우 크기 $L$에 직접 대응하여 모든 시점의 예측값을 직접 조립하므로, $H$가 비대해질수록 MLP 가중치 행렬 크기가 $O(L \times H)$로 무겁게 팽창합니다.
+* **고주파 노이즈에 대한 오버피팅**: 학습 과정에서 각 미래 시점의 출력이 강하게 요동치며 예측 곡선이 톱니바퀴처럼 거칠어지는 **예측 휘발성(Prediction Volatility)** 현상이 발생합니다.
 
-#### ② 복잡한 도메인 변환 없는 주파수 분해 (Implicit Frequency Decomposition via Pooling)
-시계열의 다중 주파수 성분을 학습하기 위해 Fourier 변환이나 Wavelet 분석을 복잡하게 인공신경망에 내재화하는 대신, 입력 단계에서 서로 다른 커널 크기의 **MaxPool**을 거치게 하는 것만으로도 충분히 주파수 대역 분할이 가능하다는 점을 파악했습니다.
-큰 풀링 커널을 통과한 스택은 자연스레 장기 추세(저주파)에만 대응하고, 풀링을 거치지 않은 스택은 미세 노이즈나 초단기 주기(고주파)를 보완하게 함으로써, 신경망이 자연스럽게 주파수별 역할을 나누어 맡도록 유도했습니다.
-입력 해상도 자체가 다 다르기 때문에(Multi-rate), 각 스택은 자연스럽게 자신에게 할당된 주파수 밴드에만 전념하게 됩니다.
+N-HiTS 연구진은 **"미래 장기 예측 곡선이 가지는 정보의 중복성(Information Redundancy)"**에 주목했습니다. 미래 720개의 시점이 완전히 독립적으로 튈 확률은 낮으며, 실제 물리적인 시계열 신호는 일정한 부드러움(Smoothness)을 가집니다. 따라서 MLP가 720개의 점을 직접 뿌리게 설계하는 대신, 단 36개의 대표 계수(Basis Coefficients, $d \ll H$)만 학습하도록 출력을 극도로 압축하고, 그 사이를 선형/3차 보간법(Linear/Cubic Interpolation)으로 부드럽게 이어주는 설계를 고안했습니다. 
+이 제약 조건은 **수학적으로 매우 강한 규제화(Smoothness Regularization)**로 작동하여 파라미터 개수를 기하급수적으로 낮추는 동시에, 고주파 오버피팅을 철저히 차단했습니다.
+
+#### ② 명시적 주파수 도메인 변환 없는 주파수 선택성 (Implicit Bandpass Filtering)
+전통적인 신호 처리 분야에서는 신호를 고주파/저주파로 분해하기 위해 고속 푸리에 변환(FFT)이나 웨이블릿(Wavelet) 변환을 사용합니다. 최근 딥러닝 연구 역시 복잡한 주파수 도메인 매핑 레이어를 직접 설계하여 시계열에 대입하는 경향을 보여왔습니다.
+하지만 N-HiTS는 인공신경망 입력단 바로 뒤에 **서로 다른 크기의 MaxPool 레이어를 장착하는 극도로 단순한 아키텍처**를 제안했습니다.
+* 큰 커널로 입력 신호를 풀링한 스택은 미세 노이즈가 제거된 저해상도 신호만 보게 되므로, 자연스럽게 장기 트렌드(저주파) 학습에만 특화됩니다.
+* 풀링을 거의 거치지 않은 스택은 고해상도 정보가 유지되므로, 미세 변동 및 단기 변동성(고주파) 학습에 매진하게 됩니다.
+
+이 단순한 아이디어 덕분에 복잡한 FFT 역변환 및 그라디언트 불안정 문제 없이, 완벽하게 주파수 대역이 분할된 계층적 예측(Implicit Bandpass Decomposition)을 실현할 수 있었습니다.
 
 ---
 
 ## 3. 방법론 및 모델 아키텍처 (Methodology & Model Architecture)
 
-N-HiTS는 기본적으로 N-BEATS에서 제안된 **이중 잔차 스택 구조(Doubly Residual Stacking)**를 계승하며, 여기에 다중 속도 샘플링과 계층적 보간을 밀접하게 결합했습니다.
+N-HiTS는 입력 데이터의 다운샘플링, MLP 인코딩, 기저 계수 보간, 그리고 이중 잔차(Doubly Residual) 결합이 유기적으로 연동되는 수학적 엄밀성을 가집니다.
 
-### 3.1. 전체 파이프라인 시각화 (Mermaid Flowchart)
+### 3.1. 전체 아키텍처 구조
 
-```mermaid
-graph TD
-    Input[원시 입력 시퀀스: x] --> Block1[Stack 1: 저주파/장기 트렌드 전담]
-    
-    subgraph Stack 1 [Stack 1 Block]
-        Block1 --> Pool1[1. MaxPool: 커널 크기 k_1 대형]
-        Pool1 --> MLP1[2. Block MLP]
-        MLP1 --> Theta1[3. 기저 계수 theta_1 추출: d_1개]
-        Theta1 --> Interp1_F[4. Forecast Interpolation: d_1 -> H]
-        Theta1 --> Interp1_B[5. Backcast Interpolation: d_1 -> L]
-    end
-    
-    Input --> Sub1(잔차 계산: x - Backcast 1)
-    Interp1_B --> Sub1
-    
-    Sub1 --> Block2[Stack 2: 고주파/단기 변동 전담]
-    
-    subgraph Stack 2 [Stack 2 Block]
-        Block2 --> Pool2[1. MaxPool: 커널 크기 k_2 소형/없음]
-        Pool2 --> MLP2[2. Block MLP]
-        MLP2 --> Theta2[3. 기저 계수 theta_2 추출: d_2개]
-        Theta2 --> Interp2_F[4. Forecast Interpolation: d_2 -> H]
-        Theta2 --> Interp2_B[5. Backcast Interpolation: d_2 -> L]
-    end
-    
-    Interp1_F --> Sum[최종 예측 융합: sum]
-    Interp2_F --> Sum
-    Sum --> Output[최종 미래 예측값: y_hat]
-    
-    style Stack 1 fill:#f9f,stroke:#333,stroke-width:2px
-    style Stack 2 fill:#bbf,stroke:#333,stroke-width:2px
-    style Sum fill:#bfb,stroke:#333,stroke-width:2px
-```
-
----
+![Figure 2: N-HiTS Architecture](/assets/images/2025-07-29-N-HiTS-neural-hierarchical-interpolation-time-series-forecasting/fig2.png)
+*Figure 2: N-HiTS의 세부 신경망 구조. 각 Stack의 Block들은 입력 시퀀스를 서로 다른 크기로 MaxPool하여 MLP로 보냅니다. MLP는 기저 계수 $\theta$를 출력하고, 보간 커널 $I$가 이를 타겟 시계열 해상도로 늘려 복원 및 예측을 수행합니다.*
 
 ### 3.2. 이중 잔차 스택 구조 (Doubly Residual Stacking)
 
@@ -125,7 +102,9 @@ $$\hat{\mathbf{y}} = \sum_{\ell=1}^{M} \hat{y}_{\ell}$$
 $$\mathbf{x}_\ell^{pooled} = \text{MaxPool}(\mathbf{x}_\ell, \text{kernel\_size}=k_\ell, \text{stride}=k_\ell)$$
 
 * **수학적 의미**: 이 연산은 신호처리에서 에일리어싱(Aliasing)을 방지하며 저주파 성분을 통과시키는 **Low-pass Filter** 역할을 합니다. 
-* **구조적 이점**: 입력 벡터의 길이가 $L$에서 $\frac{L}{k_\ell}$로 대폭 축소되므로, 뒤따르는 MLP Layer의 입력 차원이 크게 줄어듭니다. 이는 신경망 가중치 행렬의 크기를 획기적으로 줄여 메모리 사용량과 연산 속도를 기하급수적으로 최적화합니다.
+* **정량적 파라미터 세이빙**:
+  입력 윈도우 크기가 $L$이고 MLP 첫 번째 은닉층 노드 수가 $d_h$일 때, 기존 N-BEATS 아키텍처는 첫 레이어 가중치 파라미터가 $L \times d_h$ 만큼 소요됩니다. 
+  반면 N-HiTS는 MaxPool을 거치므로 첫 레이어의 가중치 행렬이 $\left( \frac{L}{k_\ell} \times d_h \right)$ 크기로 정확히 **$1/k_\ell$ 수준으로 격감**하게 됩니다. 이 기작 덕분에 장기 윈도우 $L$이 극단적으로 늘어나도 연산 부하가 선형적으로 유지됩니다.
 
 ---
 
@@ -143,12 +122,49 @@ $$d^f_\ell \ll H, \quad d^b_\ell \ll L$$
 $$\hat{y}_\ell = I(\theta_\ell^f, H)$$
 $$\tilde{y}_\ell = I(\theta_\ell^b, L)$$
 
-여기서 보간 연산자 $I$는 일반적으로 구현이 단순하고 미분 가능한 **선형 보간(Piecewise Linear Interpolation)** 또는 더 부드러운 곡선을 만드는 **Cubic Spline Interpolation**을 사용합니다.
+여기서 보간 연산자 $I$는 일반적으로 구현이 단순하고 미분 가능한 **선형 보간(Piecewise Linear Interpolation)** 또는 더 부드러운 곡선을 만드는 **Cubic Spline Interpolation**을 사용합니다. 
+
+예를 들어, 선형 보간의 경우 $d^f_\ell$ 크기의 계수 $\theta^f_\ell = [\theta_1, \theta_2, \dots, \theta_d]$는 타겟 시점 $\tau \in [1, H]$ 상에서 다음과 같이 수식화되어 매핑됩니다.
+$$\hat{y}_{\tau} = \theta_i + (\tau - t_i) \frac{\theta_{i+1} - \theta_i}{t_{i+1} - t_i}$$
+여기서 $t_i = (i-1)\frac{H-1}{d-1} + 1$은 계수가 위치하는 균등 분할 노드(Knots) 좌표입니다.
+
+![Figure 3: Hierarchical Prediction Assembly](/assets/images/2025-07-29-N-HiTS-neural-hierarchical-interpolation-time-series-forecasting/fig3.png)
+*Figure 3: 계층적 예측 조립의 개념적 시각화. 각 블록이 서로 다른 시간적 스케일(해상도)로 일부 시점의 기저 값을 결정하고 보간하면, 스택을 지나면서 이 신호들이 누적 합산되어 최종 예측값(오른쪽 아래)으로 융합됩니다.*
 
 #### 📈 표현 비율(Expressiveness Ratio, $r_\ell$) 제어
 각 블록의 출력 정밀도는 표현 비율 $r_\ell = d^f_\ell / H$로 통제됩니다.
 * **앞단 스택 (Low-frequency)**: $k_\ell$을 매우 크게(예: 24), $r_\ell$을 매우 작게(예: 0.05) 설정합니다. 720 시점의 미래를 단 36개의 점으로만 예측한 뒤 선형 보간하는 구조이므로, 거친 트렌드만 스무딩하게 포착하게 됩니다.
 * **뒷단 스택 (High-frequency)**: $k_\ell$을 1(풀링 없음), $r_\ell$을 1.0에 가깝게 설정합니다. 촘촘한 간격으로 예측을 뱉어내어 세밀한 주간/일간 노이즈 변동을 추적합니다.
+
+---
+
+### 🎓 전문가를 위한 수학적 증명 핵심 (Theorem 1: Approximation capacity of N-HiTS)
+
+N-HiTS의 핵심적 이론 성과는 **"충분히 매끄러운(Smooth) 시계열 관계 하에서, 매우 긴 미래 시점을 소수의 계수로 보간 복원하는 행위가 수학적으로 정밀한 수렴성을 보장한다"**는 것을 수학적으로 증명해 낸 점에 있습니다.
+
+> **Theorem 1 (Informal)**
+> 연속적이고 제곱적분 가능한 예측 타겟 함수 $Y(\tau \mid \mathbf{y}_{t-L:t}) \in L_2([0, 1])$가 존재하고, 과거 과거 신호 $\mathbf{y}_{t-L:t}$와 보간 기저 계수 $\theta$ 사이의 매핑 관계가 $K$-Lipschitz 연속성을 갖는다면, 
+> N-HiTS가 학습한 유한개의 멀티 해상도 기저 계수 $\hat{\theta}_{w,h}$를 통해 보간법으로 재구성한 시계열 예측 $\tilde{Y}(\tau)$의 평균 근사 오류는 임의의 아주 작은 양수 $\epsilon$ 이하로 바운드(Bound)될 수 있다.
+> $$\int_{0}^{1} |Y(\tau \mid \mathbf{y}_{t-L:t}) - \tilde{Y}(\tau \mid \mathbf{y}_{t-L:t})| d\tau \le \epsilon$$
+
+#### 📝 증명의 논리 구조 (Proof Flow)
+
+1. **Lemma 1 (Haar 다중 해상도 근사)**:
+   Haar 스케일링 함수(Father Wavelet)의 선형 결합 $V_w$를 통해 임의의 $L_2([0, 1])$ 공간 내의 함수 $Y(\tau)$는 임의의 오차 $\epsilon_1$ 범위 내로 정밀하게 근사(Haar Projection) 가능합니다:
+   $$\int_{0}^{1} |Y(\tau) - \sum_{w,h} \theta_{w,h} \phi_{w,h}(\tau)| d\tau \le \epsilon_1$$
+   이때 근사에 필요한 유한한 계수의 총개수를 $N_{\epsilon_1}$이라 칭합니다.
+
+2. **Lemma 2 (신경망의 계수 근사 보장)**:
+   과거 조건부 입력 시퀀스 $\mathbf{y}_{t-L:t}$에서 각 기저 계수 $\theta_{w,h}$로 가는 매핑이 매끄럽고 연속적(K-Lipschitz)인 경우, 3층 ReLU 신경망 $\hat{\theta}_{w,h}$은 Universal Approximation Theorem에 의해 이 계수를 임의의 오차 $\epsilon_2$ 범위 내로 예측할 수 있습니다:
+   $$\int_{[0,1]^L} |\theta_{w,h}(\mathbf{y}_{t-L:t}) - \hat{\theta}_{w,h}(\mathbf{y}_{t-L:t})| d\mathbf{y}_{t-L:t} \le \epsilon_2$$
+
+3. **종합 (삼각 부등식 전개)**:
+   실제 타겟 함수 $Y(\tau)$와 N-HiTS의 예측값 $\tilde{Y}(\tau)$ 사이의 거리를 삼각 부등식(Triangular Inequality)으로 분할 전개합니다:
+   $$\int |Y(\tau) - \tilde{Y}(\tau)| d\tau \le \int |Y(\tau) - \hat{Y}(\tau)| d\tau + \sum_{w,h} |\theta_{w,h} - \hat{\theta}_{w,h}|$$
+   두 Lemma의 근사 바운드를 대입하면 최종 오차는 다음과 같이 묶여 수렴하게 됩니다.
+   $$\int |Y(\tau) - \tilde{Y}(\tau)| d\tau \le \epsilon_1 + N_{\epsilon_1}\epsilon_2 \le \epsilon$$
+   
+이 증명은 N-HiTS의 출력 보간(Interpolation) 설계가 직관적인 트릭에 머무는 것이 아니라, **웨이블릿 해상도 해석론 및 인공신경망의 보편적 근사 정리(UAT) 위에서 수학적으로 확고히 검증된 강건한 구조**임을 대변합니다.
 
 ---
 
@@ -167,37 +183,58 @@ N-HiTS는 시계열 장기 예측의 대표적인 벤치마크 데이터셋인 *
 | N-BEATS (ICLR '20) | Pure MLP-based Residual | 0.412 | 0.15x |
 | **N-HiTS (Ours)** | **Hierarchical Interpolation MLP** | **0.345 (SOTA)** | **0.02x (50배 빠름)** |
 
-* **압도적인 성능 향상**: N-HiTS는 최신 주파수 도메인 기반 트랜스포머인 FEDformer에 비해서도 **11% 이상의 MSE 하락**을 기록하며 압도적인 정확도 SOTA를 달성했습니다.
-* **극적인 시간 단축**: 트랜스포머 계열 모델들이 에포크당 수십 분씩 걸려 학습할 때, N-HiTS는 입력 데이터 풀링과 저차원 출력 보간 덕분에 단 수십 초 만에 학습을 끝마칩니다. (연산 속도 50배 이상 단축)
+![Figure 4: Computational Efficiency Comparison](/assets/images/2025-07-29-N-HiTS-neural-hierarchical-interpolation-time-series-forecasting/fig4.png)
+*Figure 4: 예측 Horizon $H$ 증가에 따른 학습 소요 시간(초/에포크) 및 GPU 메모리 점유율 비교. Transformer 기반 모델들이 기하급수적으로 무거워지는 반면, N-HiTS는 매우 가볍고 일관된 스케일링 효율성을 보입니다.*
 
 ---
 
-### 4.2. 스택별 실제 학습 결과 시각화
-실제로 N-HiTS가 주파수를 정상 분해했는지 알아보기 위해, 각 스택의 예측값 출력에 고속 푸리에 변환(FFT)을 취해 주파수 스펙트럼을 분석한 결과입니다.
+### 4.2. ETT 데이터셋 질적 예측 결과 시각화
 
-```
-       [스택 1: 대형 풀링]                   [스택 2: 중간 풀링]                  [스택 3: 풀링 없음]
-       
-          ▲ 에너지(강도)                        ▲ 에너지(강도)                       ▲ 에너지(강도)
-          │  █                                  │                                    │      █  █
-          │  █                                  │    █   █                           │    ███████
-          │  █                                  │  █████████                         │   █████████
-          └───────────────►                     └───────────────►                    └───────────────►
-           0.0 (저주파/트렌드)                    0.5 (중간 대역)                       1.0 (고주파/노이즈)
-```
-* **결과 분석**: 수학적 강제성 없이 오로지 **MaxPool 크기**와 **보간율($r_\ell$)**만 계층적으로 다르게 주었을 뿐인데, 각 스택이 완벽하게 독립적인 주파수 영역(저주파 트렌드, 중간 계절성, 고주파 노이즈)을 필터링하여 분담 훈련되었음이 검증되었습니다.
+N-HiTS의 실제 예측 궤적을 확인해보면, 모델이 시계열의 주기적이고 거친 경향을 정교하게 피팅하고 있음을 알 수 있습니다.
+
+![Figure 5: ETTm2 Forecasting Results](/assets/images/2025-07-29-N-HiTS-neural-hierarchical-interpolation-time-series-forecasting/fig5.png)
+*Figure 5: ETTm2 데이터셋에서 720 시점 앞을 예측한 결과 예시. N-HiTS(왼쪽)가 Target 트랙을 매우 긴 Horizon 속에서도 요동치지 않고 견고하게 추종합니다. 오른쪽 플롯들은 다양한 보간법(Linear, Nearest Neighbor, Cubic) 제약 하에서 각 스택들이 획득하는 주파수 성분 특성을 나타냅니다.*
 
 ---
 
-## 5. 결론 및 고찰 (Conclusion & Limitations)
+## 5. 결론 및 심층 고찰 (Conclusion & Discussion)
+
+N-HiTS는 단순하지만 잘 조직된 선형 인코딩 구조와 수렴 제약 조건이 결합될 때 얼마나 뛰어난 효율을 내는지 보여준 대표적 이정표입니다.
 
 ### 5.1. 학술적 및 산업적 의의
 1. **MLP의 역습**: 최근 인공지능 연구가 거대한 트랜스포머 일변도로 흘러가는 경향이 있는 가운데, **적절한 수학적 유도(Inductive Bias)**와 신호처리 직관만 주입한다면 가볍고 심플한 MLP 구조가 트랜스포머보다 훨씬 뛰어나고 실용적일 수 있음을 증명했습니다.
 2. **현업 배포 최적화**: 50배 이상 빠른 속도 덕분에 클라우드 비용을 획기적으로 줄일 수 있으며, 실시간성 장기 수요 예측이 필요한 물류, 이커머스, 발전소 제어 시스템에 매우 쉽게 적용할 수 있습니다.
 
-### 5.2. 모델의 근본적 한계점
-* **채널 독립성(Channel Independence)의 한계**: N-HiTS는 기본적으로 다변량 시계열을 다룰 때 각 변수(채널)를 독립적으로 쪼개어 예측한 후 병합하는 구조를 취합니다. 이 때문에, 서로 다른 변수 간의 동적인 인과성이나 교차 상관관계(Cross-correlation)를 직접 레이어에서 학습하기 어렵습니다. (변수 간의 상관관계가 극도로 얽힌 금융 자산 포트폴리오 등에서는 별도의 GNN이나 다변량 헤드 결합이 요구됩니다.)
-* **외생 변수(Covariates) 처리 매핑**: 기온, 강수량, 이벤트 여부 등 예측에 영향을 주는 동적 외생 변수를 계층적 분해 및 보간 체계 안에 직관적으로 동기화하기 까다로워 모델 구성 시 정교한 전처리가 추가적으로 필요합니다.
+---
+
+### 🧠 5.2. 학술적 쟁점: 채널 독립성 (Channel Independence) vs 다변량 결합성 (Multivariate Mixing)
+N-HiTS의 탁월한 예측력의 기반에는 **채널 독립성(Channel Independence, CI)**이라는 중요한 통계적 전제가 깔려 있습니다. 
+* **채널 독립성(CI)이란?**: 다변량 시계열 $X \in \mathbb{R}^{K \times L}$ ($K$: 변수 개수)가 입력되었을 때, 각 채널을 완전히 독립적인 개별 일변량 시계열로 쪼개어 각각 N-HiTS 블록에 입력하여 예측한 뒤 최종적으로 병합하는 기법입니다.
+* **장기 예측(Long-horizon)에서의 강점**: 
+  - **가짜 상관관계(Spurious Correlation) 차단**: 다변량 결합 예측(예: Transformer가 다변량 차원을 Flatten하여 다차원 Self-attention을 취하는 방식)은 학습 데이터셋에서 변수들 간의 우연한 일시적 연동을 영구적인 상관관계로 오인하여 미래 시점의 예측 오차를 폭발시키기 쉽습니다. 채널 독립성을 취하면 이러한 오버피팅 가능성이 완전히 제거됩니다.
+  - **차원의 저주 해결**: 수천 개의 지표가 있는 경우에도 동일한 N-HiTS 블록 가중치를 공유(Shared weights)하여 각 채널을 배치(Batch) 차원으로 묶어 고속 병렬 추론할 수 있어 성능과 속도가 모두 우월해집니다.
+* **한계점 및 대안**:
+  - **물리적 피드백 루프의 부실화**: 인프라 메트릭 모니터링(예: MTAD-GAT 도메인)이나 정밀 화학 공정 제어계처럼 "지표 A의 상승이 지표 B의 즉각적인 하강을 인과적으로 초래하는" 명확한 피드백이 존재하는 시계열의 경우, 채널 독립성은 시스템 수준의 물리적 조화성을 반영하지 못합니다.
+  - **대안 연구**: 최근 연구들은 각 채널별로 N-HiTS를 독립 실행하여 시간적 추세를 우선 복원한 후, 얕은 선형 크로스 어텐션(Cross-attention) 레이어 한 층만을 얹어 변수 간 상관관계를 약하게 보완하는 하이브리드 아키텍처로 진화하고 있습니다.
+
+---
+
+### 🛠️ 5.3. 실전 튜닝 및 하이퍼파라미터 가이드 (Hyperparameter Tuning Tips)
+
+현업 데이터셋에서 N-HiTS를 최적으로 튜닝하기 위한 핵심 가이드는 다음과 같이 요약할 수 있습니다.
+
+1. **스택 밴드 개수 및 풀링 크기 ($k_\ell$) 매치**:
+   - 일반적으로 **3개의 스택** 구성을 권장합니다.
+   - **Stack 1 (Trend)**: 데이터의 주기성 중 가장 긴 시즌 길이(예: 24시간 주기이면 24, 일간 주기이면 7)에 맞추어 $k_\ell$ 커널 크기를 크게 설정합니다.
+   - **Stack 2 (Seasonality)**: Stack 1보다 약 2~3배 작은 풀링 크기를 인가합니다.
+   - **Stack 3 (Residual/Noise)**: $k_\ell = 1$로 설정하여 풀링을 완전히 건너뜁니다.
+
+2. **표현 비율 ($r_\ell$) 설정**:
+   - 스택 1의 $r_\ell$은 $0.05 \sim 0.1$ 범위로 극단적으로 낮추어야 합니다. (계수가 적을수록 트렌드가 매끄럽게 추출됩니다.)
+   - 스택 3의 $r_\ell$은 $0.8 \sim 1.0$으로 설정하여, 디테일한 국소 변동성 그라디언트를 최대한 보존하도록 조율합니다.
+
+3. **입력 윈도우 크기 ($L$)의 설정 규칙**:
+   - Transformer 모델은 연산량 때문에 $L$을 $2H$ 이상 크게 늘리지 못하지만, N-HiTS는 연산 비용이 매우 낮고 입력 풀링이 있으므로 **$L = 5H$ 또는 $L = 7H$**까지 넓은 범위의 과거를 커버하도록 설정하여 장기 계절성 정보를 극대화해 학습시키는 것이 모델의 진가를 발휘하는 팁입니다.
 
 ---
 
