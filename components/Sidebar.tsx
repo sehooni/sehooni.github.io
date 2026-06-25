@@ -39,10 +39,10 @@ export default function Sidebar({ categories }: SidebarProps) {
             params.delete('q');
         }
 
-        if (pathname !== '/blog') {
-            router.push(`/blog?${params.toString()}`);
+        if (pathname !== '/blog/all') {
+            router.push(`/blog/all?${params.toString()}`);
         } else {
-            router.replace(`/blog?${params.toString()}`, { scroll: false });
+            router.replace(`/blog/all?${params.toString()}`, { scroll: false });
         }
     };
 
@@ -184,6 +184,32 @@ export default function Sidebar({ categories }: SidebarProps) {
                                 <X size={16} />
                             </button>
                         )}
+                    </div>
+                )}
+
+                {/* All Posts - Hide on Projects, About, Resume pages */}
+                {!['/projects', '/about', '/resume'].some(path => pathname?.startsWith(path)) && (
+                    <div className="mb-6">
+                        <h3 className="text-xs font-bold uppercase tracking-wider text-secondary mb-3 pb-1 border-b border-border hover:text-primary transition-colors">
+                            <Link href="/blog/all">
+                                All Posts
+                            </Link>
+                        </h3>
+                        <div className="flex justify-between items-center group py-1">
+                            <Link
+                                href="/blog/all"
+                                className={`block hover:text-primary hover:underline transition-colors text-sm
+                                    ${pathname === '/blog/all'
+                                        ? 'font-bold text-black dark:text-white'
+                                        : 'text-foreground'
+                                    }`}
+                            >
+                                전체글 보기
+                            </Link>
+                            <span className="text-xs text-secondary bg-white dark:bg-gray-800 px-2 py-0.5 rounded-full border border-border group-hover:border-primary group-hover:text-primary transition-colors">
+                                {Object.values(categories).reduce((sum, count) => sum + count, 0)}
+                            </span>
+                        </div>
                     </div>
                 )}
 

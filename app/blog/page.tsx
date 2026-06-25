@@ -17,7 +17,7 @@ export default function Blog() {
 
     return (
         <Suspense fallback={<div className="min-h-screen p-6 text-gray-500">Loading blog...</div>}>
-            <BlogLayout posts={allPosts} categories={categories} />
+            <BlogLayout posts={allPosts} categories={categories} mode="landing" />
         </Suspense>
     );
 }

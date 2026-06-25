@@ -9,9 +9,10 @@ import { PostData } from '@/lib/posts';
 
 interface BlogPostsProps {
     posts: PostData[];
+    mode?: 'landing' | 'all';
 }
 
-export default function BlogPosts({ posts }: BlogPostsProps) {
+export default function BlogPosts({ posts, mode = 'all' }: BlogPostsProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
     const searchQuery = searchParams ? searchParams.get('q') || '' : '';
@@ -41,7 +42,7 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
     // When search is empty, the first post is highlighted as Featured (Latest)
     // and pagination is applied to the remaining posts.
     const isSearchEmpty = searchQuery.trim() === '';
-    const featuredPost = isSearchEmpty && posts.length > 0 ? posts[0] : null;
+    const featuredPost = (mode === 'landing') && isSearchEmpty && posts.length > 0 ? posts[0] : null;
 
     // Posts to be listed in the pagination area
     const listPosts = featuredPost ? filteredPosts.slice(1) : filteredPosts;
@@ -70,93 +71,111 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
     };
 
     const clearSearch = () => {
-        router.push('/blog');
+        router.push('/blog/all');
     };
 
-    return (
-        <div className="space-y-10">
-            {/* Featured Hero Area (Latest + Popular Grid) */}
-            {featuredPost && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Left Side: Latest Post Card */}
-                    <Link
-                        href={`/blog/${featuredPost.slug}/`}
-                        className="group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-8 transition-all duration-300 hover:border-purple-500 dark:hover:border-purple-600 hover:shadow-md h-full"
-                    >
-                        <div>
-                            <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
-                                <span className="inline-flex items-center gap-1.5 rounded-full bg-black dark:bg-white px-3 py-1 text-xs font-semibold text-white dark:text-black">
-                                    <BookOpen size={13} /> Latest
-                                </span>
-                                <time dateTime={featuredPost.date}>
-                                    {featuredPost.date ? format(new Date(featuredPost.date), 'MMMM d, yyyy') : ''}
-                                </time>
-                                {featuredPost.category && (
-                                    <>
-                                        <span>•</span>
-                                        <span className="font-medium text-purple-700 dark:text-purple-400 capitalize">{featuredPost.category}</span>
-                                    </>
+    if (mode === 'landing') {
+        return (
+            <div className="space-y-10">
+                {/* Description Banner - Swapped position to the very top */}
+                <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Writing about technology, learning, experience and especially AI.
+                    </p>
+                </div>
+
+                {/* Featured Hero Area (Latest + Popular Grid) - Positioned below the banner */}
+                {featuredPost && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Left Side: Latest Post Card */}
+                        <Link
+                            href={`/blog/${featuredPost.slug}/`}
+                            className="group flex flex-col justify-between rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-8 transition-all duration-300 hover:border-purple-500 dark:hover:border-purple-600 hover:shadow-md h-full"
+                        >
+                            <div>
+                                <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+                                    <span className="inline-flex items-center gap-1.5 rounded-full bg-black dark:bg-white px-3 py-1 text-xs font-semibold text-white dark:text-black">
+                                        <BookOpen size={13} /> Latest
+                                    </span>
+                                    <time dateTime={featuredPost.date}>
+                                        {featuredPost.date ? format(new Date(featuredPost.date), 'MMMM d, yyyy') : ''}
+                                    </time>
+                                    {featuredPost.category && (
+                                        <>
+                                            <span>•</span>
+                                            <span className="font-medium text-purple-700 dark:text-purple-400 capitalize">{featuredPost.category}</span>
+                                        </>
+                                    )}
+                                </div>
+                                <h2 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors mb-3 leading-tight line-clamp-2">
+                                    {featuredPost.title}
+                                </h2>
+                                {featuredPost.excerpt && (
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3">
+                                        {featuredPost.excerpt}
+                                    </p>
                                 )}
                             </div>
-                            <h2 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors mb-3 leading-tight line-clamp-2">
-                                {featuredPost.title}
-                            </h2>
-                            {featuredPost.excerpt && (
-                                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3">
-                                    {featuredPost.excerpt}
-                                </p>
-                            )}
-                        </div>
-                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-700 dark:text-purple-400 group-hover:underline mt-4">
-                            Read post <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                        </span>
-                    </Link>
+                            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-700 dark:text-purple-400 group-hover:underline mt-4">
+                                Read post <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                            </span>
+                        </Link>
 
-                    {/* Right Side: Popular Posts Card */}
-                    <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-8 flex flex-col justify-between h-full">
-                        <div>
-                            <div className="mb-4 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                                <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-xs font-semibold text-purple-700 dark:text-purple-400">
-                                    ★ Popular
-                                </span>
-                                <span className="font-semibold text-gray-900 dark:text-white">인기 포스트</span>
-                            </div>
-                            <div className="divide-y divide-gray-100 dark:divide-gray-800">
-                                {popularPosts.map((post) => (
-                                    <Link
-                                        key={post.slug}
-                                        href={`/blog/${post.slug}/`}
-                                        className="group/item block py-3.5 first:pt-0 last:pb-0"
-                                    >
-                                        <h3 className="text-sm font-bold text-gray-900 dark:text-white group-hover/item:text-purple-700 dark:group-hover/item:text-purple-400 transition-colors line-clamp-2 leading-snug">
-                                            {post.title}
-                                        </h3>
-                                        <div className="mt-1 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                                            <time dateTime={post.date}>
-                                                {post.date ? format(new Date(post.date), 'MMM d, yyyy') : ''}
-                                            </time>
-                                            {post.category && (
-                                                <>
-                                                    <span>•</span>
-                                                    <span className="capitalize">{post.category.split('/').pop()}</span>
-                                                </>
-                                            )}
-                                        </div>
-                                    </Link>
-                                ))}
+                        {/* Right Side: Popular Posts Card */}
+                        <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-8 flex flex-col justify-between h-full">
+                            <div>
+                                <div className="mb-4 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                                    <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-100 dark:bg-purple-900/30 px-3 py-1 text-xs font-semibold text-purple-700 dark:text-purple-400">
+                                        ★ Popular
+                                    </span>
+                                    <span className="font-semibold text-gray-900 dark:text-white">인기 포스트</span>
+                                </div>
+                                <div className="divide-y divide-gray-100 dark:divide-gray-800">
+                                    {popularPosts.map((post) => (
+                                        <Link
+                                            key={post.slug}
+                                            href={`/blog/${post.slug}/`}
+                                            className="group/item block py-3.5 first:pt-0 last:pb-0"
+                                        >
+                                            <h3 className="text-sm font-bold text-gray-900 dark:text-white group-hover/item:text-purple-700 dark:group-hover/item:text-purple-400 transition-colors line-clamp-2 leading-snug">
+                                                {post.title}
+                                            </h3>
+                                            <div className="mt-1 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                                                <time dateTime={post.date}>
+                                                    {post.date ? format(new Date(post.date), 'MMM d, yyyy') : ''}
+                                                </time>
+                                                {post.category && (
+                                                    <>
+                                                        <span>•</span>
+                                                        <span className="capitalize">{post.category.split('/').pop()}</span>
+                                                    </>
+                                                )}
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
+                )}
+
+                {/* Link to All Posts (Yellow Box position replacement) */}
+                <div className="flex justify-center pt-8 border-t border-gray-100 dark:border-gray-800 mt-8">
+                    <Link
+                        href="/blog/all"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-purple-700 hover:bg-purple-800 text-white font-semibold transition-all shadow-sm hover:shadow-md group"
+                    >
+                        <span>전체글 보기</span>
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
                 </div>
-            )}
-
-            {/* Description Banner - Positioned below the Featured Post Card */}
-            <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <p className="text-gray-600 dark:text-gray-400">
-                    Writing about technology, learning, experience and especially AI.
-                </p>
             </div>
+        );
+    }
 
+    // Default mode === 'all'
+    return (
+        <div className="space-y-10">
             {/* Search feedback */}
             {!isSearchEmpty && (
                 <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
@@ -252,4 +271,3 @@ export default function BlogPosts({ posts }: BlogPostsProps) {
         </div>
     );
 }
-
