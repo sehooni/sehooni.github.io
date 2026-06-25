@@ -65,6 +65,9 @@ export default function BlogPosts({ posts, mode = 'all' }: BlogPostsProps) {
         .map(slug => posts.find(p => p.slug === slug))
         .filter((post): post is PostData => !!post);
 
+    // In landing mode, show the 5 most recent posts
+    const recentPosts = posts.slice(0, 5);
+
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -159,15 +162,56 @@ export default function BlogPosts({ posts, mode = 'all' }: BlogPostsProps) {
                     </div>
                 )}
 
-                {/* Link to All Posts (Yellow Box position replacement) */}
-                <div className="flex justify-center pt-8 border-t border-gray-100 dark:border-gray-800 mt-8">
+                {/* Link to All Posts (Left-aligned & smaller size) */}
+                <div className="flex justify-start pt-6 border-t border-gray-100 dark:border-gray-800 mt-8">
                     <Link
                         href="/blog/all"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-purple-700 hover:bg-purple-800 text-white font-semibold transition-all shadow-sm hover:shadow-md group"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-purple-700 hover:bg-purple-800 text-white text-xs font-semibold transition-all shadow-sm hover:shadow-md group"
                     >
                         <span>전체글 보기</span>
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
                     </Link>
+                </div>
+
+                {/* Recent Posts Section */}
+                <div className="space-y-8 mt-10">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-3">
+                        최근 포스트
+                    </h3>
+                    <div className="space-y-10">
+                        {recentPosts.map((post) => (
+                            <article
+                                key={post.slug}
+                                className="flex flex-col group border-b border-gray-100 dark:border-gray-800 pb-10 last:border-0 last:pb-0"
+                            >
+                                <Link href={`/blog/${post.slug}/`} className="block">
+                                    <h4 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+                                        {post.title}
+                                    </h4>
+                                </Link>
+                                <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                                    <time dateTime={post.date}>
+                                        {post.date ? format(new Date(post.date), 'MMMM d, yyyy') : ''}
+                                    </time>
+                                    {post.category && (
+                                        <>
+                                            <span>•</span>
+                                            <span className="text-purple-700 dark:text-purple-400 font-medium capitalize">{post.category}</span>
+                                        </>
+                                    )}
+                                </div>
+                                <p className="text-gray-600 dark:text-gray-300 line-clamp-3 leading-relaxed">
+                                    {post.excerpt || "Click to read more..."}
+                                </p>
+                                <Link
+                                    href={`/blog/${post.slug}/`}
+                                    className="inline-flex items-center gap-1.5 mt-4 text-purple-700 dark:text-purple-400 font-semibold hover:underline"
+                                >
+                                    Read more <ArrowRight size={14} />
+                                </Link>
+                            </article>
+                        ))}
+                    </div>
                 </div>
             </div>
         );
