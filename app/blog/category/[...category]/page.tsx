@@ -5,6 +5,7 @@ import Sidebar from '@/components/Sidebar';
 import { CATEGORY_DISPLAY_NAMES, CATEGORY_DESCRIPTIONS } from '@/lib/category-config';
 import { Suspense } from 'react';
 import { Metadata } from 'next';
+import CategoryPostList from '@/components/CategoryPostList';
 
 export async function generateMetadata(
     { params }: { params: Promise<{ category: string[] }> }
@@ -126,21 +127,9 @@ export default async function Category({ params }: { params: Promise<{ category:
                         </div>
                     </header>
 
-                    <div className="space-y-8">
-                        {categoryPosts.map(({ slug, date, title }) => (
-                            <article key={slug} className="group relative flex flex-col items-start border-b border-gray-100 dark:border-gray-800 pb-8 last:border-0 last:pb-0">
-                                <h2 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                                    <Link href={`/blog/${slug}/`}>
-                                        <span className="absolute inset-0" />
-                                        {title}
-                                    </Link>
-                                </h2>
-                                <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                                    <time dateTime={date}>{format(new Date(date), 'MMMM d, yyyy')}</time>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
+                    <Suspense fallback={<div className="text-center py-12 text-gray-500 dark:text-gray-400">Loading posts...</div>}>
+                        <CategoryPostList posts={categoryPosts} />
+                    </Suspense>
                 </main>
             </div>
         </div>
