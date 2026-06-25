@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 25 Jun 2026 08:36:16 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 10:23:43 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -28,6 +28,13 @@
       <guid>https://sehooni.github.io/blog/Projects/Hackathon/gemini-3-seoul-hackathon-alpha-agent/</guid>
       <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[1인 개발팀(Alpha_BioAgent)으로 참여한 Gemini 3 서울 해커톤 회고 및 Google Antigravity 기반 자율 AI 연구원(Alpha-Agent) 개발기]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] Multivariate Time-series Anomaly Detection via Graph Attention Network (MTAD-GAT)]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/MTAD-GAT-multivariate-time-series-anomaly-detection/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/MTAD-GAT-multivariate-time-series-anomaly-detection/</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[서로 다른 지표 간의 공간적 상관관계와 시간적 의존성을 명시적으로 학습하기 위해 병렬 그래프 어텐션 네트워크(Feature/Time GAT) 및 예측-재구성 공동 최적화(Joint Optimization)를 최초로 제안한 Microsoft의 대표적인 다변량 시계열 이상 탐지 논문 리뷰]]></description>
     </item>
     <item>
       <title><![CDATA[[ML Study] 분류 모델의 핵심: 로지스틱 회귀와 소프트맥스 회귀]]></title>
