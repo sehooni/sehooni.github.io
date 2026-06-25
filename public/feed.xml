@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 25 Jun 2026 10:23:43 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 10:35:10 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -63,6 +63,13 @@
       <guid>https://sehooni.github.io/blog/Projects/Hackathon/ai-hackathon-2025-lg-aimers-7-ai-hackathon/</guid>
       <pubDate>Fri, 26 Sep 2025 00:00:00 GMT</pubDate>
       <description><![CDATA[LG Aimers 7기 AI 해커톤 본선 진출(Finalist) 회고 및 N-HiTS와 군집 모델링 기반의 F&B 매장 매출 수요 예측 솔루션 공유]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] N-HiTS: Neural Hierarchical Interpolation for Time Series Forecasting]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/N-HiTS-neural-hierarchical-interpolation-time-series-forecasting/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/N-HiTS-neural-hierarchical-interpolation-time-series-forecasting/</guid>
+      <pubDate>Tue, 29 Jul 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[단순한 MLP 기반 아키텍처에 다중 속도 입력 풀링(Multi-rate Pooling)과 계층적 보간법(Hierarchical Interpolation)을 결합하여, 무거운 Transformer 모델 대비 50배 빠른 연산 속도와 20% 향상된 정확도로 장기 시계열 예측(Long-horizon Forecasting)을 정복한 N-HiTS 논문 리뷰]]></description>
     </item>
     <item>
       <title><![CDATA[[Paper Review] Geometric deep learning improves generalizability of MHC-bound peptide prediction]]></title>
