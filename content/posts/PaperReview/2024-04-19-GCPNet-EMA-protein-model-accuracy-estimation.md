@@ -30,7 +30,7 @@ classes: wide
 1. **파이프라인 종속성 (Pipeline Dependency):** 특정 구조 예측 모델 내부의 특징 맵(예: AlphaFold의 임베딩 정보)을 입력으로 필요로 하기 때문에, Rosetta나 ESMFold 등 다른 모델이 예측한 구조에 대해서는 범용적으로 활용할 수 없습니다.
 2. **3D 기하 정보 활용의 미흡 (Geometric Incompleteness):** 단백질 구조의 3차원 좌표 데이터가 가지는 물리적인 회전 및 이동 대칭성(SE(3)-Equivariance)을 딥러닝 신경망 내에서 수학적으로 보존하지 못해, 방향성이나 손대칭성(Chirality) 정보를 누락하는 경향이 있었습니다.
 
-본 논문에서는 3D 단백질 구조 본연의 3차원 대칭성을 보존하고 기하학적 특성을 완벽히 반영(Geometry-complete)하는 SE(3)-Equivariant Graph Neural Network 기반의 범용 EMA 예측 모델인 **GCPNet-EMA**를 제안합니다.
+본 논문에서는 3D 단백질 구조 본연의 3차원 대칭성을 보존하고 기하학적 특성을 완벽히 반영(Geometry-complete)하는 SE(3)-Equivariant Graph Neural Network 기반의 범용 EMA 예측 모델인 **GCPNet-EMA를** 제안합니다.
 
 ---
 
@@ -66,7 +66,7 @@ $$
 
 ### 2.2. SE(3)-Equivariant GCP Message Passing
 
-GCPNet-EMA의 핵심 연산 엔진은 기하학적 벡터와 일반 스칼라 피처를 쌍으로 결합하여 처리하는 **GCP(Geometry-Complete Perceptron) 레이어**입니다. 이 구조는 스칼라 피처 $s_i \in \mathbb{R}^{d_s}$와 3차원 공간 상의 방향과 크기를 갖는 벡터 피처 $\vec{v}_i \in \mathbb{R}^{d_v \times 3}$를 유기적으로 커플링(coupled)하여 레이어 간에 전달하고 업데이트합니다.
+GCPNet-EMA의 핵심 연산 엔진은 기하학적 벡터와 일반 스칼라 피처를 쌍으로 결합하여 처리하는 **GCP(Geometry-Complete Perceptron) 레이어입니다**. 이 구조는 스칼라 피처 $s_i \in \mathbb{R}^{d_s}$와 3차원 공간 상의 방향과 크기를 갖는 벡터 피처 $\vec{v}_i \in \mathbb{R}^{d_v \times 3}$를 유기적으로 커플링(coupled)하여 레이어 간에 전달하고 업데이트합니다.
 
 ![SE(3)-Equivariant Message Passing](/assets/images/2024-04-19-GCPNet-EMA-protein-model-accuracy-estimation/image5.png)
 *Figure 2: 스칼라와 벡터 특징값을 함께 전달 및 업데이트하여 물리 기하 구조를 엄밀하게 학습하는 Equivariant Message Passing 레이어 상세*
@@ -126,7 +126,7 @@ GCPNet-EMA는 단일 구조 평가와 복합체(Multimer) 평가 벤치마크셋
 ![Performance Tables vs EnQA-MSA](/assets/images/2024-04-19-GCPNet-EMA-protein-model-accuracy-estimation/image12.png)
 *Figure 5: EnQA-MSA 및 기타 평가 모델들과의 성능 비교 지표(MAE, Pearson, Spearman)*
 
-- **추론 연산의 압도적 속도**: 기존의 고성능 SE(3) 동변성 네트워크들은 구면 하모닉스(Spherical Harmonics)나 Clebsch-Gordan 텐서 프로덕트 등 고비용의 복잡한 물리 계산 레이어를 사용하여 연산 속도가 매우 느렸습니다. 반면 GCPNet-EMA는 외적(Cross-product) 기반의 정교한 로컬 좌표 투영 방식을 사용하여, 경쟁 모델 대비 **약 47% 빠른 추론 속도**를 자랑합니다. 이는 수백만 개의 구조 스크리닝 파이프라인에 즉시 적용 가능한 수준의 극단적인 실용성을 의미합니다.
+- **추론 연산의 압도적 속도**: 기존의 고성능 SE(3) 동변성 네트워크들은 구면 하모닉스(Spherical Harmonics)나 Clebsch-Gordan 텐서 프로덕트 등 고비용의 복잡한 물리 계산 레이어를 사용하여 연산 속도가 매우 느렸습니다. 반면 GCPNet-EMA는 외적(Cross-product) 기반의 정교한 로컬 좌표 투영 방식을 사용하여, 경쟁 모델 대비 **약 47% 빠른 추론 속도를** 자랑합니다. 이는 수백만 개의 구조 스크리닝 파이프라인에 즉시 적용 가능한 수준의 극단적인 실용성을 의미합니다.
 
 ![Inference Speed Comparisons](/assets/images/2024-04-19-GCPNet-EMA-protein-model-accuracy-estimation/image15.png)
 *Figure 6: 대형 복잡체 및 단백질 크기에 따른 추론 처리 속도 비교 차트(GCPNet-EMA의 47% 이상 연산 속도 개선)*

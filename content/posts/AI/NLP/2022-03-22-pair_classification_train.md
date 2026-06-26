@@ -293,9 +293,9 @@ train_dataset = ClassificationDataset(
 
 ### ClassificationDataset 클래스가 하는 역할
 
-이 클래스는 **KlueNLICorpus**와 code 3-7에서 선언해 둔 **토크나이저**를 품고 있다.  
+이 클래스는 **KlueNLICorpus와** code 3-7에서 선언해 둔 **토크나이저를** 품고 있다.  
 
-**ClassificationDataset**은 제공받은 문장과 레이블 각각을 tokenizer를 활용해 모델이 학습할 수 있는 형태(**ClassificationFeature**)로 가공한다.
+**ClassificationDataset은** 제공받은 문장과 레이블 각각을 tokenizer를 활용해 모델이 학습할 수 있는 형태(**ClassificationFeature**)로 가공한다.
 다시 말해, 전제와 가설 2개 문장을 각각 토큰화하고 이를 인덱스로 변환하는 한편, 레이블 역시 정수로 바꿔주는 역할을 한다.
 
 (**entailment: 0, contradiction: 1, neutral: 2**)
@@ -359,7 +359,7 @@ val_dataloader = DataLoader(
 
 code 3-11을 수행해 모델을 초기화 한다. 프리트레인을 마친 BERT로 `kcbert-base`를 사용한다. code 3-3에서 `pretrained_model_name`을 `beomi/kcber-base`로 지정했기 때문이다. 물론 허깅페이스 모델 허브에 등록된 모델이라면 다른 모델 역시 사용할 수 있다.
 
-`BertForSequenceClassification`은 프리트레인을 마친 BERT모델 위에 문서 분류용 태스크 모듈을 덧붙인 형태의 모델 클래스이다. 이 클래스는 **문서 분류 모델**에서 사용한 것과 동일하다.
+`BertForSequenceClassification`은 프리트레인을 마친 BERT모델 위에 문서 분류용 태스크 모듈을 덧붙인 형태의 모델 클래스이다. 이 클래스는 **문서 분류 모델에서** 사용한 것과 동일하다.
 
 #### code 3-11
 
@@ -403,7 +403,7 @@ task = ClassificationTask(model, args)
 
 ### 트레이너 정의
 
-code 3-13을 실행하면 트레이너를 정의할 수 있다. 이 트레이너는 **파이토치 라이트닝 라이브러리**의 도움을 받아 **GPU/TPU 설정**, **로그 및 체크포인트** 등 귀찮은 설정들을 알아서 해준다.
+code 3-13을 실행하면 트레이너를 정의할 수 있다. 이 트레이너는 **파이토치 라이트닝 라이브러리의** 도움을 받아 **GPU/TPU 설정**, **로그 및 체크포인트** 등 귀찮은 설정들을 알아서 해준다.
 
 #### code 3-13
 
@@ -467,7 +467,7 @@ trainer.fit(
     Validating: 0it [00:00, ?it/s]
 
 
-# **문장 쌍 분류**는 문서 분류 과제와 태스크 모듈 구조 등에서 본질적으로 다르지 않다. 입력문서가 1개냐(문서분류), 2개냐(문장 쌍 분류)의 차이가 있을 뿐이다.
+# **문장 쌍 분류는** 문서 분류 과제와 태스크 모듈 구조 등에서 본질적으로 다르지 않다. 입력문서가 1개냐(문서분류), 2개냐(문장 쌍 분류)의 차이가 있을 뿐이다.
 
 ---
 긴 글 읽어주셔서 감사합니다! 

@@ -221,7 +221,7 @@ print("F1-Score:", f1_score(y_train_5, y_train_pred))
 
 ## 5. ROC 곡선과 AUC
 
-**ROC(Receiver Operating Characteristic) 곡선**과 **AUC(Area Under the Curve)** 면적은 결정 임계값의 변화에 따른 이진 분류기의 분류 능력을 한눈에 보여주는 평가 도구입니다.
+**ROC(Receiver Operating Characteristic) 곡선과** **AUC(Area Under the Curve)** 면적은 결정 임계값의 변화에 따른 이진 분류기의 분류 능력을 한눈에 보여주는 평가 도구입니다.
 
 *   **Y축 (True Positive Rate, TPR):** 실제 Positive 중 올바르게 양성 예측한 비율인 재현율입니다.
     $$\text{TPR} = \frac{\text{TP}}{\text{TP} + \text{FN}}$$

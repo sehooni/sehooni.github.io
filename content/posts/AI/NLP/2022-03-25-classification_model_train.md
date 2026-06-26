@@ -314,8 +314,8 @@ tokenizer = BertTokenizer.from_pretrained(
 
 ### 학습 데이터셋 구축
 
-code 1-8을 통해 **ClassificationDataset**을 만들 수 있다.
-**ClassificationDataset**의 가장 큰 역할은 모든 인스턴스를 가지고 있다가 데이터 로더가 배치를 만들 때 인스턴스를 제공하는 일이다.
+code 1-8을 통해 **ClassificationDataset을** 만들 수 있다.
+**ClassificationDataset의** 가장 큰 역할은 모든 인스턴스를 가지고 있다가 데이터 로더가 배치를 만들 때 인스턴스를 제공하는 일이다.
 
 #### code 1-8
 
@@ -366,20 +366,20 @@ train_dataset = ClassificationDataset(
 
 ### **ClassificationDataset** 클래스가 하는 역할
 
-이 클래스는 **NsmcCorpus**와 위에서 선언해 둔 **토크나이저(tokenizer)를** 품고 있다.
+이 클래스는 **NsmcCorpus와** 위에서 선언해 둔 **토크나이저(tokenizer)를** 품고 있다.
 
-**NsmcCorpus**는 CSV 파일 형식의 NSMC 데이터를 문장과 레이블*(예를 들면 영화 리뷰와 긍정 및 부정)*으로 읽는다.
+**NsmcCorpus는** CSV 파일 형식의 NSMC 데이터를 문장과 레이블*(예를 들면 영화 리뷰와 긍정 및 부정)*으로 읽는다.
 
-**NsmcCorpus**는 **ClassificationDataset**이 요구하면 이 문장과 레이블을 **ClassificationDataset**에 제공한다.
+**NsmcCorpus는** **ClassificationDataset이** 요구하면 이 문장과 레이블을 **ClassificationDataset에** 제공한다.
 
- **ClassificationDataset**은 제공받은 문장과 레이블 각각을 tokenizer를 활용해 모델이 학습할 수 있는 형태(**ClassificationFeature**)로 가공한다.
+ **ClassificationDataset은** 제공받은 문장과 레이블 각각을 tokenizer를 활용해 모델이 학습할 수 있는 형태(**ClassificationFeature**)로 가공한다.
 
- **ClassificationFeature**라는 자료형에는 총 4가지의 정보가 있다.
-* 첫번째는 **`input_id`**이다. 인덱스로 변환된 토큰 시퀀스이다. 
+ **ClassificationFeature라는** 자료형에는 총 4가지의 정보가 있다.
+* 첫번째는 **`input_id`이다**. 인덱스로 변환된 토큰 시퀀스이다. 
 
-* 두번째는 **`attention_mask`**로 해당 토큰이 패딩 토큰인지(0) 아닌지(1)를 나타낸다. 
+* 두번째는 **`attention_mask`로** 해당 토큰이 패딩 토큰인지(0) 아닌지(1)를 나타낸다. 
 
-* **`token_type_ids`** 세그먼트 정보, **`label`**은 정수로 바뀐 레이블 정보 이다.
+* **`token_type_ids`** 세그먼트 정보, **`label`은** 정수로 바뀐 레이블 정보 이다.
 
 **`ClassificationFeatures`** 각 구성 요소의 자료형은 다음과 같다.
 
@@ -422,7 +422,7 @@ train_dataloader = DataLoader(
 
 ### 평가용 데이터 로더 구축
 
-평가용 데이터 로더는 학습용 데이터 로더와 달리 **`SequentialSampler`**를 사용한다. `SequentialSampler`는 인스턴스를 `batch_size`만큼 순서대로 추출하는 역할을 한다. 학습 때 배치 구성은 랜덤으로 하는 것이 좋은데, 평가할 때는 평가용 데이터 전체를 사용하므로 굳이 랜덤으로 구성할 이유가 없어 `SequentialSampler`를 사용한다.
+평가용 데이터 로더는 학습용 데이터 로더와 달리 **`SequentialSampler`를** 사용한다. `SequentialSampler`는 인스턴스를 `batch_size`만큼 순서대로 추출하는 역할을 한다. 학습 때 배치 구성은 랜덤으로 하는 것이 좋은데, 평가할 때는 평가용 데이터 전체를 사용하므로 굳이 랜덤으로 구성할 이유가 없어 `SequentialSampler`를 사용한다.
 
 code 1-10을 통해 평가용 데이터 로더를 구축한다.
 
@@ -605,7 +605,7 @@ trainer.fit(
 ---
 
 
-# **문서 분류 모델 학습**을 요약하자면
+# **문서 분류 모델 학습을** 요약하자면
 
 # 각종 설정을 마친 뒤 말뭉치를 내려받아 전처리한다. 프리트레인을 마친 모델을 이 데이터에 맞게 파인 튜닝한다.
 

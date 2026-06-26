@@ -217,7 +217,7 @@ model = BertForSequenceClassification(pretrained_model_config)
 
 ###  체크포인트 주입하기
 
-code 2-7은 초기화한 **BERT**모델에 체크포인트(fine_tuned_model_ckpt)를 주입한다.
+code 2-7은 초기화한 **BERT모델에** 체크포인트(fine_tuned_model_ckpt)를 주입한다.
 
 #### code 2-7
 
@@ -235,7 +235,7 @@ model.load_state_dict({k.replace("model.",""): v for k, v in fine_tuned_model_ck
 
 ### 평가모드로 전환
 
-이어서 code 2-8을 실행하면 모델이 평가모드로 전환되게 된다. **드롭아웃 등 학습 때만 사용하는 기법들을 무효화하는 역할**을 한다.
+이어서 code 2-8을 실행하면 모델이 평가모드로 전환되게 된다. **드롭아웃 등 학습 때만 사용하는 기법들을 무효화하는 역할을** 한다.
 
 #### code 2-8
 
@@ -549,9 +549,9 @@ model.eval()
 
 ## 3. 모델 출력값 만들고 후처리 하기
 
-code 2-9는 **인퍼런스 과정을 정의한 함수**이다. 문장에 토큰화를 수행한 뒤 `input_ids`, `attention_mask`, `token_type_ids`를 만든다. 이들 입력값을 파이토치의 텐서 자료형으로 변환한 뒤 모델에 입력한다. 모델 출력값(`outputs.logits`)은 소프트맥스 함수 적용 이전의 **로짓**(logit)형태인데, 여기에 소프트맥스 함수를 써서 모델 출력을 '[**부정일 확률, 긍정일 확률**]'로 바꾼다.
+code 2-9는 **인퍼런스 과정을 정의한 함수이다**. 문장에 토큰화를 수행한 뒤 `input_ids`, `attention_mask`, `token_type_ids`를 만든다. 이들 입력값을 파이토치의 텐서 자료형으로 변환한 뒤 모델에 입력한다. 모델 출력값(`outputs.logits`)은 소프트맥스 함수 적용 이전의 **로짓**(logit)형태인데, 여기에 소프트맥스 함수를 써서 모델 출력을 '[부정일** 확률, 긍정일 확률**]'로 바꾼다.
 
-마지막으로 모델 출력을 약간 후처리 하여 예측 확률의 최댓값이 부정 위치일 때 해당 문장이 '**부정**(negative)', 반대일 때는 '**긍정**(positive)'이 되도록 `pred`값을 만든다.
+마지막으로 모델 출력을 약간 후처리 하여 예측 확률의 최댓값이 부정 위치일 때 해당 문장이 '**부정**(negative)', 반대일 때는 '긍정****(positive)'이 되도록 `pred`값을 만든다.
 
 #### code 2-9
 

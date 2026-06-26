@@ -205,7 +205,7 @@ model = BertForSequenceClassification(pretrained_model_config)
 
 ### 체크포인트 주입하기
 
-code 4-7은 초기화한 **BERT**모델에 code 4-4의 체크포인트를 주입한다
+code 4-7은 초기화한 **BERT모델에** code 4-4의 체크포인트를 주입한다
 
 #### code 4-7
 
@@ -223,7 +223,7 @@ model.load_state_dict({k.replace("model.",""): v for k, v in fine_tuned_model_ck
 
 ### 평가 모드로 전환
 
-이어서 code 4-8을 실행하면 모델이 평가모드로 전환되게 된다. **드롭아웃 등 학습 때만 사용하는 기법들을 무효화하는 역할**을 한다.
+이어서 code 4-8을 실행하면 모델이 평가모드로 전환되게 된다. **드롭아웃 등 학습 때만 사용하는 기법들을 무효화하는 역할을** 한다.
 
 #### code 4-8
 
@@ -537,7 +537,7 @@ model.eval()
 
 ## 3. 모델 출력값 만들고 후처리 하기
 
-code 4-9는 **인퍼런스 과정을 정의한 함수**이다. 전제(premise)와 가설(hypothesis)을 입력받아 각각 토큰화, 인덱싱을 수행한 뒤 `input_ids`, `attention_mask`, `token_type_ids`를 만든다. 이들 압력값을 파이토치 텐서 자료형으로 변환한 뒤 모델에 입력한다.
+code 4-9는 **인퍼런스 과정을 정의한 함수이다**. 전제(premise)와 가설(hypothesis)을 입력받아 각각 토큰화, 인덱싱을 수행한 뒤 `input_ids`, `attention_mask`, `token_type_ids`를 만든다. 이들 압력값을 파이토치 텐서 자료형으로 변환한 뒤 모델에 입력한다.
 
 ### 인퍼런스 함수
 
@@ -586,7 +586,7 @@ def inference_fn(premise, hypothesis):
   }
 ```
 
-**모델 출력값(`output.logits`)은** 소프트맥스 함수 적용 이전의 로짓 형태이다. 여기에 소프트맥스 함수를 써서 모델 출력을 확률 형태로 바꾼다. 그리고 약간 후처리하여 예측 확률의 최댓값이 참 위치(0)일 경우 해당 문장이 '**참 (entailment)**', 거짓 위치(1)일 경우 '**거짓 (contradiction)**', 중립 위치(2)일 경우 '**중립 (neutral)**'이 되도록 pred 값을 만든다.
+**모델 출력값(`output.logits`)은** 소프트맥스 함수 적용 이전의 로짓 형태이다. 여기에 소프트맥스 함수를 써서 모델 출력을 확률 형태로 바꾼다. 그리고 약간 후처리하여 예측 확률의 최댓값이 참 위치(0)일 경우 해당 문장이 '**참 (entailment)**', 거짓 위치(1)일 경우 '거짓** (contradiction)**', 중립 위치(2)일 경우 '중립** (neutral)**'이 되도록 pred 값을 만든다.
 
 code 4-9에서 `entailment_width`, `contradiction_width`, `neutral_width`는 웹 페이지에서 참, 거짓, 중립 막대 길이를 조정하는 정보이므로 크게 신경 쓰지 않아도 된다.
 

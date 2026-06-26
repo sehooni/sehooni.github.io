@@ -44,7 +44,7 @@ classes: wide
 연구진은 3차원 분자 그래프 형태를 처리하고, 물리 기하 공간의 대칭성을 활용하여 면역 결합 구조를 효과적으로 평가하기 위해 다음과 같은 고성능 아키텍처 파이프라인을 구축했습니다.
 
 ### 2.1. PANDORA를 이용한 3D 모델 초고속 생성
-구조 기반 예측 모델의 가장 큰 장벽은 입력에 필요한 3차원 복합체 구조를 규명하는 데 비정상적으로 많은 시간(실험 결정학에 수개월, 분자 도킹 시뮬레이션에 수시간)이 소요된다는 점입니다. 이를 극복하기 위해 연구진은 초고속 pMHC 3D 모델링 툴킷인 **PANDORA**를 전면 도입하였습니다.
+구조 기반 예측 모델의 가장 큰 장벽은 입력에 필요한 3차원 복합체 구조를 규명하는 데 비정상적으로 많은 시간(실험 결정학에 수개월, 분자 도킹 시뮬레이션에 수시간)이 소요된다는 점입니다. 이를 극복하기 위해 연구진은 초고속 pMHC 3D 모델링 툴킷인 **PANDORA를** 전면 도입하였습니다.
 - PANDORA는 펩타이드가 MHC 포켓 홈에 결합할 때 양 끝단이 수소결합 등으로 강하게 잠기는 앵커(Anchor) 잔기 거리를 물리적 제약조건으로 수용하는 **앵커 제약 모델링(Anchor-Restrained Modeling)** 방식을 채택합니다.
 - 이를 통해 분자 동력학 등 복잡한 시뮬레이션 없이도 **1분 이내에** 실험 구조와 매우 일치하는 고품질의 pMHC 3D 템플릿 좌표 구조를 초고속으로 출력해 냅니다.
 
@@ -53,8 +53,8 @@ classes: wide
 
 ### 2.2. pMHC 인터페이스 그래프 변환
 PANDORA로 예측된 3D 구조의 원자 좌표들을 기반으로 아미노산 잔기 수준 그래프 $\mathcal{G} = (\mathcal{V}, \mathcal{E})$를 구축합니다.
-- **노드(Node** $\mathcal{V}$**):** 각 아미노산 잔기(주로 $C_\alpha$ 원자 위치)를 노드로 정의합니다. 노드 피처에는 아미노산 종류, 물리화학적 성질 등이 포함됩니다.
-- **엣지(Edge** $\mathcal{E}$**):** 수용체 MHC 결합 홈의 계면 포켓으로부터 $12$Å 반경 이내에 인접한 잔기 쌍들을 엣지로 연결합니다.
+- **노드(Node $\mathcal{V}$):** 각 아미노산 잔기(주로 $C_\alpha$ 원자 위치)를 노드로 정의합니다. 노드 피처에는 아미노산 종류, 물리화학적 성질 등이 포함됩니다.
+- **엣지(Edge $\mathcal{E}$):** 수용체 MHC 결합 홈의 계면 포켓으로부터 $12$Å 반경 이내에 인접한 잔기 쌍들을 엣지로 연결합니다.
 - **물리화학적 엣지 특징**: 엣지 상호작용 피처에는 단순히 공간적 거리뿐만 아니라, 분자 간의 인력/척력을 규명하는 쿨롱 정전기 에너지(Coulomb Electrostatic potential), 반데르발스 힘(van der Waals/Lennard-Jones potential), 수소 결합 친화성 등 정밀한 물리 기하 수치를 인코딩하여 모델이 구조의 안정성을 인지할 수 있는 기반을 다집니다.
 
 ![pMHC Interface Graph](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image6.png)
@@ -96,7 +96,7 @@ EGNN은 각 메시지 패싱 블록마다 노드 특징값 $h_i^l \in \mathbb{R}
 
 실제 면역 결합 친화성(BA) 실험 데이터를 대량으로 측정하는 것은 극심한 시간과 예산이 소모됩니다. 이를 극복하고자 연구진은 결합 친화성 라벨이 없는 일반 PDB 단백질 구조 좌표 데이터만을 활용하여 분자의 결합 물리 화학 환경을 사전에 학습하는 **3D 자가지도학습(3D-SSL)** 프레임워크를 수립했습니다.
 
-![3D Self-Supervised Learning Masked Residue Recovery](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image9.png)
+![3D Self-Supervised Learning Masked Residue Recovery](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image11.png)
 *Figure 6: 3D 구조 노드 중 일부 아미노산(20%)의 정체(Identity)를 지운 뒤 주변 기하 물리 특성을 토대로 원래 잔기를 복원하는 SSL 사전 학습 흐름*
 
 ### 3.1. Masked Residue Prediction (MRP, 마스킹 잔기 복원)
@@ -121,7 +121,7 @@ $$
 
 통계 물리적으로, 결합 환경에 적합하고 안정한 아미노산일수록 복원 확률 $P(x_i | \text{context})$가 높게 측정되며, 위 볼츠만 역산 수식을 거친 $E(x_i)$ 에너지는 낮아지게 됩니다. 이 에너지 점수를 수집하여 펩타이드와 MHC 포켓 홈 간의 최종 결합 강도 및 친화력을 정밀하게 예측 및 순위화할 수 있게 됩니다.
 
-![Thermodynamic energy transformation chart](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image10.png)
+![Thermodynamic energy transformation chart](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image12.png)
 *Figure 7: 아미노산 복원 확률 $P(x_i | \text{context})$로부터 볼츠만 수식을 적용하여 상대적 결합 자유 에너지를 추정해내는 기하 모델 설명*
 
 ---
@@ -130,17 +130,17 @@ $$
 
 - **희귀 MHC에 대한 일반화 성능 돌파**: 훈련 데이터셋에 전혀 등재되지 않았던 생소한 HLA Allele 변이체 군에 대한 검증에서, 기존 서열 기반 모델(MHCflurry)은 아웃오브디스트리뷰션(OOD) 오류로 인해 AUC 성능이 크게 급락한 반면, EGNN 구조 기반 모델은 결합 홈의 3D 물리적 기하 상태를 정밀하게 분석하여 흔들림 없이 높은 성능 점수(AUC/AUPRC)를 수호했습니다.
 
-![Generalizability to unseen alleles](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image11.png)
+![Generalizability to unseen alleles](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image13.png)
 *Figure 8: 훈련 데이터셋에 노출되지 않았던 비대중적인 HLA alleles에서의 성능 검증 결과(EGNN 기반 기하학적 모델들의 일반화 승리)*
 
 - **압도적인 데이터 효율성 (1/90 비교):** 사전 학습(3D-SSL)을 거친 EGNN은 기존 서열 기반 지도학습 모델들이 학습에 필요로 했던 대량의 바인딩 친화도 데이터 크기의 **90분의 1(1/90)** 수준에 불과한 데이터만으로도 대등하거나 능가하는 성능을 확보했습니다.
 
-![Data efficiency comparison curves](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image13.png)
+![Data efficiency comparison curves](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image16.png)
 *Figure 9: 미세 조정(Fine-tuning) 시 주입하는 지도학습 데이터 양에 따른 성능 도달 속도 및 데이터 효율 지표*
 
 - **만성 B형 간염 바이러스(HBV) 백신 임상 실증**: C-터미널 부근에 전하와 크기가 무시되는 글라이신(Glycine) 돌연변이가 발생하여 서열 기반 모델들이 데이터 편향성으로 인해 무조건 바인딩이 안 될 것이라며 놓쳤던(False Negative) 면역 타깃 펩타이드들을, EGNN은 물리 공간의 결합 자유 포켓 깊이를 입체적으로 스캔하여 성공적으로 결합 대상(True Positive)으로 예측해 냈습니다.
 
-![HBV Case study predictions](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image16.png)
+![HBV Case study predictions](/assets/images/2024-12-30-Geometric-deep-learning-MHC-peptide-prediction/image18.png)
 *Figure 10: 만성 B형 간염 바이러스(HBV) 변종 서열에서 Glycine 변이가 일어날 때, 구조적 결합력을 정확하게 캐치해내는 EGNN 및 MRR 에너지 결합 시뮬레이션*
 
 ---

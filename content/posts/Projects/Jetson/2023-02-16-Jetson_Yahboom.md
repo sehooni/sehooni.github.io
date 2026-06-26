@@ -69,7 +69,7 @@ Nvidia 공홈에서 회원가입 후 로그인 진행
 
 이때 리눅스 젯팩 버전을 4.4.1로 설정해줘야 한다.
 
-Jetpack version이 안 뜰 경우, 터미널에서 **sdkmanager --archivedversions**로 검색을 해주면 해당하는 버전을 선택할 수 있고 이를 통해 바로 접속이 가능하다.
+Jetpack version이 안 뜰 경우, 터미널에서 **sdkmanager --archivedversions로** 검색을 해주면 해당하는 버전을 선택할 수 있고 이를 통해 바로 접속이 가능하다.
 
 이후 젯슨나노는 아래와 같이 선택하여 주고, 위와 같이 3가지만 선택하여 준다.
 

@@ -31,7 +31,7 @@ classes: wide
 
 단백질 분석에 있어 그 과정을 살펴보면 아래의 그림과 동일하다.
 
-먼저 다 섞인 하나의 sample로 존재하는 용액을 분리, 분석해야한다. 질량이 너무 커서 한 번에 분석하기 어렵기 때문이다. 이때 **어떻게 잘 나누는가**가 중요하게 작용한다.  
+먼저 다 섞인 하나의 sample로 존재하는 용액을 분리, 분석해야한다. 질량이 너무 커서 한 번에 분석하기 어렵기 때문이다. 이때 **어떻게 잘 나누는가가** 중요하게 작용한다.  
 
 ![Untitled 1](https://user-images.githubusercontent.com/84653623/224967133-a18dc48a-68c8-4454-962a-196e875e0f70.png)
 
@@ -43,7 +43,7 @@ classes: wide
 
 ## Protein
 
-단백질은 기본적으로 20개의 아미노산으로 이루어진 서열이다. 컴퓨터 사이언스, 즉 CS분야에서는 알파벳이 20개인 **String data**로 볼 수 있으며, 알파벳 하나하나가 아미노산 1개을 의미한다. 이들이 쭉 연결되어 있는 것이 결국 하나의 단백질인 것이다.
+단백질은 기본적으로 20개의 아미노산으로 이루어진 서열이다. 컴퓨터 사이언스, 즉 CS분야에서는 알파벳이 20개인 **String data로** 볼 수 있으며, 알파벳 하나하나가 아미노산 1개을 의미한다. 이들이 쭉 연결되어 있는 것이 결국 하나의 단백질인 것이다.
 
 ![Untitled 2](https://user-images.githubusercontent.com/84653623/224967145-02a62faf-cc26-45f6-b5f4-dc587a62a095.png)
 
@@ -57,7 +57,7 @@ classes: wide
 
 ![Untitled 5](https://user-images.githubusercontent.com/84653623/224967166-f7b02dcf-986b-4e4c-babf-e0a3a8c701b9.png)
 
-단백질은 원래 어디가 앞, 뒤인지 정해져 있지 않다. 그러나 우리가 처리하기 용이하도록 **단백질의 화학적인 구조**를 기반으로 앞과 뒤를 정했다.
+단백질은 원래 어디가 앞, 뒤인지 정해져 있지 않다. 그러나 우리가 처리하기 용이하도록 **단백질의 화학적인 구조를** 기반으로 앞과 뒤를 정했다.
 
 - N-terminal: $NH_2$ 가 붙어 있는 곳 → 앞
 - C-terminal: $COOH$가 붙어 있는 곳 → 뒤
@@ -70,33 +70,33 @@ classes: wide
 
 ![Untitled 6](https://user-images.githubusercontent.com/84653623/224967170-d97a0f9a-2ade-4bc6-bce8-6337dacc4f81.png)
 
-**AA Codes**를 통해 이러한 아미노산들을 표기하는 방법이 명시되어 있다. 즉 오른쪽과 같이 **알파벳**만으로 표현하기도 하고, 왼쪽과 같이 **세글자**로 표현하기도 한다. **Structure**를 보면 우리가 이미 알고 있듯이,   $-NH-CH-CO-$ 에서 붙은 것들이 살짝 다른 것을 확인할 수 있다. 이는 R에 붙는것이 무엇이냐에 따라 아미노산이 결정되며, 이에 따라 질량이 달라짐을 보인다.
+**AA Codes를** 통해 이러한 아미노산들을 표기하는 방법이 명시되어 있다. 즉 오른쪽과 같이 **알파벳만으로** 표현하기도 하고, 왼쪽과 같이 **세글자로** 표현하기도 한다. **Structure를** 보면 우리가 이미 알고 있듯이,   $-NH-CH-CO-$ 에서 붙은 것들이 살짝 다른 것을 확인할 수 있다. 이는 R에 붙는것이 무엇이냐에 따라 아미노산이 결정되며, 이에 따라 질량이 달라짐을 보인다.
 
-**Leucine**과 **Isoleucine**은 화학식과 질량이 모두 같음을 확인할 수 있다. 그러나 이 둘은 **화학 구조식에서 차이**를 보인다. 기본 아미노산 구조에서 붙은 R이 다른 것인데, L은 중간에 있는 탄소(C)에 $CH_3$이 붙었고, I는 왼쪽에 위치한 탄소(C)에 $CH_3$이 결합하였음을 확인할 수 있다.
+**Leucine과** **Isoleucine은** 화학식과 질량이 모두 같음을 확인할 수 있다. 그러나 이 둘은 **화학 구조식에서 차이를** 보인다. 기본 아미노산 구조에서 붙은 R이 다른 것인데, L은 중간에 있는 탄소(C)에 $CH_3$이 붙었고, I는 왼쪽에 위치한 탄소(C)에 $CH_3$이 결합하였음을 확인할 수 있다.
 
 즉, `구조식에서만 차이를 보이며, 질량과 화학식이 모두 같기 때문에 질량 분석기를 통해서는 구분할 수 없음`을 유의하면 된다.
 
-다음으로 **Glutamine**과 **Lysine**을 살펴보면 앞서 언급한 Leu와 Ile와 달리 화학식과 질량이 모두 다르다. 그러나 질량을 유심히 보면, 정수부분은 동일하고, 소수 첫째자리에서 차이가 나타난다. 거의 유사한 것이다. 이전에 존재하던 해상도가 낮은 질량분석기라면 문제가 되었겠지만, 요즘은 해상도도 좋기 때문에 어렵지 않게 분석이 가능하다.
+다음으로 **Glutamine과** **Lysine을** 살펴보면 앞서 언급한 Leu와 Ile와 달리 화학식과 질량이 모두 다르다. 그러나 질량을 유심히 보면, 정수부분은 동일하고, 소수 첫째자리에서 차이가 나타난다. 거의 유사한 것이다. 이전에 존재하던 해상도가 낮은 질량분석기라면 문제가 되었겠지만, 요즘은 해상도도 좋기 때문에 어렵지 않게 분석이 가능하다.
 
 ## Protein, Peptide and Trypsin
 
-단백질은 수차례 언급했듯이, 아미노산 시퀀스로 이루어져 있다. 이를 더 작은 단위로 자른 것이 **Peptide**이다. 단백질의 질량은 너무 크기 때문에 한번에 질량분석을 하기에는 어려움이 존재한다. 따라서 작게 peptide로 잘라서 분석을 진행하게 된다. 지금의 질량 분석기에서 분석이 가능한 peptide의 크기는 대게 아미노산 $6 \sim 50$개 정도이다. 이를 다시 정리하면 아래의 그림과 같다.
+단백질은 수차례 언급했듯이, 아미노산 시퀀스로 이루어져 있다. 이를 더 작은 단위로 자른 것이 **Peptide이다**. 단백질의 질량은 너무 크기 때문에 한번에 질량분석을 하기에는 어려움이 존재한다. 따라서 작게 peptide로 잘라서 분석을 진행하게 된다. 지금의 질량 분석기에서 분석이 가능한 peptide의 크기는 대게 아미노산 $6 \sim 50$개 정도이다. 이를 다시 정리하면 아래의 그림과 같다.
 
  
 
 ![Untitled 7](https://user-images.githubusercontent.com/84653623/224967172-5758cc45-b7fb-447f-92dc-dc69ed022920.png)
 
-Trypsin는 효소의 종류 중 하나로, 단백질을 자르는 일(digestion)을 한다. Trypsin은 **arginine(R)과 lysine(K)** 의 **C-terminal side**를 기준으로 digestion을 진행한다. 효율이 좋기는 하지만 성능이 100%는 아니다. 원래는 잘라야하는 부분인데 못자르기도 하는 것이다.
+Trypsin는 효소의 종류 중 하나로, 단백질을 자르는 일(digestion)을 한다. Trypsin은 **arginine(R)과 lysine(K)** 의 **C-terminal side를** 기준으로 digestion을 진행한다. 효율이 좋기는 하지만 성능이 100%는 아니다. 원래는 잘라야하는 부분인데 못자르기도 하는 것이다.
 
 ## Miscleavage(Faulty cleavage), Semitryptic, Nontryptic, Fully tryptic and NTT (Number of Termini)
 
-앞서 이야기한 잘라야하는 부분인데 못자르기도 하는 것, 즉 자르는 부분을 놓친 것을 **Miscleavage**라고 한다. 단어 그대로 cleavage를 해야하는데 mis(놓친) 것이다. 
+앞서 이야기한 잘라야하는 부분인데 못자르기도 하는 것, 즉 자르는 부분을 놓친 것을 **Miscleavage라고** 한다. 단어 그대로 cleavage를 해야하는데 mis(놓친) 것이다. 
 
 ![Untitled 8](https://user-images.githubusercontent.com/84653623/224967177-b5b41ffe-be9a-4a5a-a11d-d51fcec1e8b2.png)
 
 Trypsin은 K와 R의 C-terminal 부분을 자른다고 했었는데, 위의 그림을 보면 빨간 시퀀스 안에 수많은 K와 R이 존재한다. 즉 miscleavage가 발생한 것이다.
 
-**Semitryptic**은 한쪽만 잘못 자른 케이스를, **Nontryptic**은 양쪽 다 잘못 자른 케이스를, **Fully tryptic**은 양쪽을 제대로 다 자른 케이스를 말한다. (여기서 한쪽이라 함은, N-terminal과 C-terminal 중 한 부분을 말한다.)
+**Semitryptic은** 한쪽만 잘못 자른 케이스를, **Nontryptic은** 양쪽 다 잘못 자른 케이스를, **Fully tryptic은** 양쪽을 제대로 다 자른 케이스를 말한다. (여기서 한쪽이라 함은, N-terminal과 C-terminal 중 한 부분을 말한다.)
 
 ![Untitled 9](https://user-images.githubusercontent.com/84653623/224967178-0f2f1604-c10f-4db8-9a22-822cb46b43d4.png)
 
@@ -111,13 +111,13 @@ Fully/Semi/Non-tryptic을 달리 표현한 것이 NTT이며, 이것들은 Trypsi
 
 ## Why are peptides, and not proteins, sequenced?
 
-그렇다면 왜 단백질이 아닌 펩타이드를 시퀀싱하는 것일까에 대해 살펴보자. 우선 앞서 언급하였듯이 **단백질의 경우, 질량이 큰 이유를 포함해 다루기에 어려움이 있다**. 또한 **모든 것이 녹는 것이 아닌 이유도 존재**하며, 이와 더불어 **민감도 또한 단백질에 비해 펩타이드가 낮다**.
+그렇다면 왜 단백질이 아닌 펩타이드를 시퀀싱하는 것일까에 대해 살펴보자. 우선 앞서 언급하였듯이 **단백질의 경우, 질량이 큰 이유를 포함해 다루기에 어려움이 있다**. 또한 **모든 것이 녹는 것이 아닌 이유도 존재하며**, 이와 더불어 **민감도 또한 단백질에 비해 펩타이드가 낮다**.
 
 결정적으로 `단백질 식별에 있어 펩타이드 시퀀싱으로도 충분하기 때문`에, 이러한 근거들을 바탕으로 **시퀸싱을 하는데 있어 단백질보다는 펩타이드를 이용하게 된다**.
 
 ## Different proteases may be used
 
-우리는 이전에 단백질 분해 효소로서 역할을 수행하는 trypsin(트립신)을 먼저 알아보았었다. 사실 이러한 역할을 트립신만이 수행하는 것이 아니다. 트립신이 아닌 단백질 분해 효소에 대해 살펴보면, **Lys-C**와 **Asp-N**, **Glu-C**가 존재한다.
+우리는 이전에 단백질 분해 효소로서 역할을 수행하는 trypsin(트립신)을 먼저 알아보았었다. 사실 이러한 역할을 트립신만이 수행하는 것이 아니다. 트립신이 아닌 단백질 분해 효소에 대해 살펴보면, **Lys-C와** **Asp-N**, **Glu-C가** 존재한다.
 
 - Lys-C : 아미노산 Lys(Lysine)의 C-terminal을 자르는 효소이다. 트립신에 비해 보다 안정적이며, 가혹하고 용해도가 높은 조건에서 트립신 소화를 사용하기 이전에 사용되고는 한다.
 - Asp-N, Glu-C : 아미노산 Asp(Aspartic acid)의 N-terminal과 Glu(Glutamic acid)의 C-terminal을 자르는 효소이다. 이들은 고도로 서열 특이적인 (그러나 덜 활성화되는) 단백질 분해 효소로, 트립신에 의한 펩타이드를 보완하는 펩타이드를 형성하는데 사용될 수 있다.
@@ -147,7 +147,7 @@ x축 가장 좌측에 위치한 단백질은 헤모글로빈으로 $10^{11} \sim
 
 ## GEL, LC and HPLC
 
-**Separation 방법**은 크게 두가지로 나뉜다. 예전에 많이 사용하였으나, 사람의 손이 많이 가는 **GEL**의 경우, 다양한 양을 갖는 단백질들이 한꺼번에 분석되어야하기 때문에, 넓게 펼쳐서 하나하나 차례대로 분석해야한다. 따라서 대량에는 적합하지 않고 지금은 극히 제한되어 잘 사용하지 않는다.
+**Separation 방법은** 크게 두가지로 나뉜다. 예전에 많이 사용하였으나, 사람의 손이 많이 가는 **GEL의** 경우, 다양한 양을 갖는 단백질들이 한꺼번에 분석되어야하기 때문에, 넓게 펼쳐서 하나하나 차례대로 분석해야한다. 따라서 대량에는 적합하지 않고 지금은 극히 제한되어 잘 사용하지 않는다.
 
 **LC(Liquid chromatography)** 는 자동화가 가능하다는 장점을 갖고 있는 분리 방법으로, 아주 가는 마이크로미터의 관을 특정 시양으로 채워놓고, 압력을 주어 단백질이 포함된 시료가 지나가도록 한다. 이때 단백질이 지나가는 속도의 차이 (다양한 분리 조건)를 이용하여 protein seperation을 진행한다. LC는 이때 중력을 이용하여 액체가 이동하게 한다면, **HPLC(High-Performance LC)** 는 펌프를 통한 높은 압력을 통해 액체가 이동하도록 한다는 차이점이 존재한다. 
 
@@ -158,13 +158,13 @@ Proteomics를 공부하는 입장에서 방법을 자세히 알 필요보다는,
 
 # Mass spectrometry
 
-Mass spectrometry는 질량 분석기 안에서 일어나는 일로서 주어지는 input의 형태가 `ion 형태`이여야 분석이 가능하다. 크게 2가지가 존재하는데 **ion source**와 **Mass analyzer**이다.  
+Mass spectrometry는 질량 분석기 안에서 일어나는 일로서 주어지는 input의 형태가 `ion 형태`이여야 분석이 가능하다. 크게 2가지가 존재하는데 **ion source와** **Mass analyzer이다**.  
 
 ![Untitled 13](https://user-images.githubusercontent.com/84653623/224967193-9bcf8ace-8285-45cb-90c6-5f568e0ddebb.png)
 
 ## Ion source
 
-단백질을 이온화하는 과정이 오랫동안 난제로 존재했었는데, 그 이유는 큰 힘 또는 에너지를 가하면 단백질이 훼손, 변형 및 파괴되었었기 때문에 이온의 형태로 만들기가 어려웠다. 이러한 문제점을 `Soft ionization`을 통해 해결하였다. 변형이 발생하지 않았고, 단백질을 위한 이온화 방법이었다. MALDI와 ESL가 존재하는데, **MALDI**는 matrix-assisted laser desorption의 약자로 단백질을 에너지를 대신 받아주는 물질로 감싸고 레이저로 쏘아 이온화 시켜 분석하는 방법이다. **ESI**는 electrospray ionization의 약자로 spray안의 단백질을 뒤에서 밀면 앞으로 분사하면서 동시에 전기를 걸어주는 방식이다. 두 가지 방법 다 현재 사용 중이며 장단점이 존재한다. 단, ESI가 LC와의 연결도 쉽고, 대용량에 적합하다보니 많이 사용한다.
+단백질을 이온화하는 과정이 오랫동안 난제로 존재했었는데, 그 이유는 큰 힘 또는 에너지를 가하면 단백질이 훼손, 변형 및 파괴되었었기 때문에 이온의 형태로 만들기가 어려웠다. 이러한 문제점을 `Soft ionization`을 통해 해결하였다. 변형이 발생하지 않았고, 단백질을 위한 이온화 방법이었다. MALDI와 ESL가 존재하는데, **MALDI는** matrix-assisted laser desorption의 약자로 단백질을 에너지를 대신 받아주는 물질로 감싸고 레이저로 쏘아 이온화 시켜 분석하는 방법이다. **ESI는** electrospray ionization의 약자로 spray안의 단백질을 뒤에서 밀면 앞으로 분사하면서 동시에 전기를 걸어주는 방식이다. 두 가지 방법 다 현재 사용 중이며 장단점이 존재한다. 단, ESI가 LC와의 연결도 쉽고, 대용량에 적합하다보니 많이 사용한다.
 
 ![Untitled 14](https://user-images.githubusercontent.com/84653623/224967198-40c0b113-c4fe-4fdf-bce8-94b31147ceed.png)
 
@@ -180,7 +180,7 @@ Mass spectrometry는 질량 분석기 안에서 일어나는 일로서 주어지
 
 ## Measurement
 
-이렇게 고른 이온들을 분석을 하기위해서는 특정 조건을 통해 질량을 구해야한다. 이를 목표로 하는 다양한 방법이 존재하는데, 대표적인 방법을 살펴보면 **TOF Mass analyzer**가 있는데 여기서 TOF는 Time-of-flight의 준말로, 문자 그대로 이온이 날아가는 시간을 측정하여 질량을 측정하게 된다. 
+이렇게 고른 이온들을 분석을 하기위해서는 특정 조건을 통해 질량을 구해야한다. 이를 목표로 하는 다양한 방법이 존재하는데, 대표적인 방법을 살펴보면 **TOF Mass analyzer가** 있는데 여기서 TOF는 Time-of-flight의 준말로, 문자 그대로 이온이 날아가는 시간을 측정하여 질량을 측정하게 된다. 
 
 ![Untitled 16](https://user-images.githubusercontent.com/84653623/224967202-e85e442e-9718-4758-b541-9810b9522778.png)
 
@@ -192,9 +192,9 @@ Mass spectrometry는 질량 분석기 안에서 일어나는 일로서 주어지
 
 측정되는 값은 결국 $m/z$로 이온화된 물질이 반드시 필요하며, 시간을 측정하는 것이므로 정확도가 일정 수준을 넘어가기 어렵다는 특징을 갖고 있다.
 
-또 다른 방법으로 **ICR(Ion Cyclontron Resonance) Mass analyzer**가 존재하는데, 이온이 chamber안에서 돌면서 분리되는 메커니즘을 갖고 있다. 질량이 작으면 작게, 질량이 크면 크게 돌고, 전하량이 크면 더 빨리, 작으면 천천히 도는 특징을 갖고 있다. 회전하는 frequency를 chamber 밖에서 측정할 수 있으며 최근 ICR이 TOF보다 Resolution이 좋아 더 자주 사용하는 양상을 보인다. 
+또 다른 방법으로 **ICR(Ion Cyclontron Resonance) Mass analyzer가** 존재하는데, 이온이 chamber안에서 돌면서 분리되는 메커니즘을 갖고 있다. 질량이 작으면 작게, 질량이 크면 크게 돌고, 전하량이 크면 더 빨리, 작으면 천천히 도는 특징을 갖고 있다. 회전하는 frequency를 chamber 밖에서 측정할 수 있으며 최근 ICR이 TOF보다 Resolution이 좋아 더 자주 사용하는 양상을 보인다. 
 
-그러나 결국 중요한 것은, **우리가 분석하는 것**은 $m/z$라는 점이다.
+그러나 결국 중요한 것은, **우리가 분석하는 것은** $m/z$라는 점이다.
 
 ![Untitled 18](https://user-images.githubusercontent.com/84653623/224967206-d1cbf980-f8f7-4329-b537-584d0d1b60df.png)
 
@@ -208,7 +208,7 @@ Mass spectrometry는 질량 분석기 안에서 일어나는 일로서 주어지
 
 # Tandem MS (MS/MS, MS2)
 
-Single stage MS에서 ionization이후 바로 Mass spectrometry를 진행하였다면, 이번에는 Isolation과 Fragmentation이 추가된 **Tandem Mass sepectrometry**에 대해 이야기하여 보자.
+Single stage MS에서 ionization이후 바로 Mass spectrometry를 진행하였다면, 이번에는 Isolation과 Fragmentation이 추가된 **Tandem Mass sepectrometry에** 대해 이야기하여 보자.
 
 아래의 그림은 Tandem Mass spectrometry (줄여서 MS/MS 혹은 MS2로 표기)의 과정을 나타낸 것이다. Ionization까지는 동일하나, 그 이후 Isolation이 진행된다. 
 

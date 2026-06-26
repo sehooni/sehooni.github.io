@@ -72,7 +72,7 @@ Loss
 
 ## 2. 과적합의 원인과 처방: 규제 (Regularization)
 
-과적합의 주요 원인은 **모델이 너무 복잡해서 학습 데이터의 아주 작은 노이즈(Noise)까지 외워버리기 때문**입니다. 수학적으로는 모델의 가중치($\theta$ 또는 $w$) 값들이 필요 이상으로 비대해질 때 발생합니다.
+과적합의 주요 원인은 **모델이 너무 복잡해서 학습 데이터의 아주 작은 노이즈(Noise)까지 외워버리기 때문입니다**. 수학적으로는 모델의 가중치($\theta$ 또는 $w$) 값들이 필요 이상으로 비대해질 때 발생합니다.
 
 ### 왜 가중치($\theta$)가 크면 과적합일까? (망치 비유)
 * **작은 망치 (작은 가중치):** 못을 부드럽게 박아 넣으며 데이터의 전반적인 거시적 패턴만 반영합니다.
@@ -85,7 +85,7 @@ Loss
 ---
 
 ### L2 규제: 릿지 회귀 (Ridge Regression)
-기존 MSE 비용 함수에 **가중치 제곱의 합**을 패널티 항으로 더해주는 기법입니다.
+기존 MSE 비용 함수에 **가중치 제곱의 합을** 패널티 항으로 더해주는 기법입니다.
 
 $$J(\boldsymbol{\theta}) = \text{MSE}(\boldsymbol{\theta}) + \alpha \frac{1}{2} \sum_{i=1}^{n} \theta_i^2$$
 
@@ -99,11 +99,11 @@ $$J(\boldsymbol{\theta}) = \text{MSE}(\boldsymbol{\theta}) + \alpha \frac{1}{2} 
 ---
 
 ### L1 규제: 라쏘 회귀 (Lasso Regression)
-기존 MSE 비용 함수에 **가중치 절댓값의 합**을 패널티 항으로 더해주는 기법입니다.
+기존 MSE 비용 함수에 **가중치 절댓값의 합을** 패널티 항으로 더해주는 기법입니다.
 
 $$J(\boldsymbol{\theta}) = \text{MSE}(\boldsymbol{\theta}) + \alpha \sum_{i=1}^{n} |\theta_i|$$
 
-* **원리**: 가중치가 0에서 멀어지면 절댓값 크기대로 즉시 선형적인 패널티를 받습니다. L1 패널티의 기하학적 특성상 최적화를 거치면 **중요하지 않은 특성의 가중치가 정확히 0으로 수축**됩니다.
+* **원리**: 가중치가 0에서 멀어지면 절댓값 크기대로 즉시 선형적인 패널티를 받습니다. L1 패널티의 기하학적 특성상 최적화를 거치면 **중요하지 않은 특성의 가중치가 정확히 0으로 수축됩니다**.
 * **특징**: 가중치 행렬이 희소(Sparse)해집니다. 즉, 자동으로 불필요한 입력 변수를 걸러내는 **변수 선택(Feature Selection)** 기능을 제공하여 모델을 단순화하고 가독성을 높입니다.
 
 ![Lasso L1 Regularization](/assets/images/2025-12-02-logistic-regression-and-softmax/page_16.png)
@@ -124,7 +124,7 @@ $$J(\boldsymbol{\theta}) = \text{MSE}(\boldsymbol{\theta}) + r \alpha \sum_{i=1}
 ---
 
 ### 조기 종료 (Early Stopping)
-수학적 공식을 더하는 대신, 학습을 모니터링하다가 **검증 손실(Validation Loss)이 최소화된 최적의 지점에서 학습을 강제로 멈추는 직관적인 기법**입니다. 과적합이 발생하기 직전에 모델 훈련을 중단시키므로 추가 계산 자원 낭비도 막을 수 있어 딥러닝에서 필수적으로 사용됩니다.
+수학적 공식을 더하는 대신, 학습을 모니터링하다가 **검증 손실(Validation Loss)이 최소화된 최적의 지점에서 학습을 강제로 멈추는 직관적인 기법입니다**. 과적합이 발생하기 직전에 모델 훈련을 중단시키므로 추가 계산 자원 낭비도 막을 수 있어 딥러닝에서 필수적으로 사용됩니다.
 
 ![Early Stopping Mechanism](/assets/images/2025-12-02-logistic-regression-and-softmax/page_19.png)
 
@@ -132,9 +132,9 @@ $$J(\boldsymbol{\theta}) = \text{MSE}(\boldsymbol{\theta}) + r \alpha \sum_{i=1}
 
 ## 3. 이진 분류의 해답: 로지스틱 회귀 (Logistic Regression)
 
-선형 회귀는 연속적인 값만 예측하므로 출력값이 $-\infty$에서 $+\infty$까지 뻗어 나갑니다. 하지만 "스팸 여부(0 또는 1)"를 판별하려면 출력이 항상 **0과 1 사이의 확률 값**으로 제한되어야 합니다.
+선형 회귀는 연속적인 값만 예측하므로 출력값이 $-\infty$에서 $+\infty$까지 뻗어 나갑니다. 하지만 "스팸 여부(0 또는 1)"를 판별하려면 출력이 항상 **0과 1 사이의 확률 값으로** 제한되어야 합니다.
 
-**로지스틱 회귀**는 선형 회귀 식의 결과물 $z = \boldsymbol{\theta}^T \mathbf{x}$를 확률을 출력하는 **시그모이드(Sigmoid) 함수**에 통과시켜 분류 문제를 해결하는 모델입니다.
+**로지스틱 회귀는** 선형 회귀 식의 결과물 $z = \boldsymbol{\theta}^T \mathbf{x}$를 확률을 출력하는 **시그모이드(Sigmoid) 함수에** 통과시켜 분류 문제를 해결하는 모델입니다.
 
 ![Sigmoid Logic](/assets/images/2025-12-02-logistic-regression-and-softmax/page_21.png)
 
@@ -170,11 +170,11 @@ $$J(\boldsymbol{\theta}) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y^{(i)} \log(\hat{
 로지스틱 회귀는 0과 1 중 하나를 고르는 이진 분류기입니다. 만약 강아지, 고양이, 라마 등 **3개 이상의 클래스를 분류해야 한다면 어떻게 해야 할까요?** 이를 다중 분류(Multi-class Classification)로 일반화한 것이 바로 **소프트맥스 회귀(Softmax Regression / 다항 로지스틱 회귀)입니다**.
 
 ### 소프트맥스(Softmax) 함수의 원리
-소프트맥스 회귀는 입력 샘플 $\mathbf{x}$에 대해 각 클래스 $k$마다 고유의 선형 예측 점수(Logit) $s_k(\mathbf{x}) = (\boldsymbol{\theta}^{(k)})^T \mathbf{x}$를 계산한 뒤, 이 점수들을 **소프트맥스 함수**에 통과시켜 클래스별 확률 분포로 변환합니다.
+소프트맥스 회귀는 입력 샘플 $\mathbf{x}$에 대해 각 클래스 $k$마다 고유의 선형 예측 점수(Logit) $s_k(\mathbf{x}) = (\boldsymbol{\theta}^{(k)})^T \mathbf{x}$를 계산한 뒤, 이 점수들을 **소프트맥스 함수에** 통과시켜 클래스별 확률 분포로 변환합니다.
 
 $$\hat{p}_k = \text{Softmax}(\mathbf{s}(\mathbf{x}))_k = \frac{e^{s_k(\mathbf{x})}}{\sum_{j=1}^{K} e^{s_j(\mathbf{x})}}$$
 
-* **특징**: 모든 클래스에 대한 출력 확률은 항상 $0$에서 $1$ 사이의 값을 가집니다. 또한, 모든 클래스 확률의 총합은 정확히 **$1$**이 됩니다. 모델은 이 중 가장 높은 확률을 가진 클래스를 최종 예측값으로 채택합니다.
+* **특징**: 모든 클래스에 대한 출력 확률은 항상 $0$에서 $1$ 사이의 값을 가집니다. 또한, 모든 클래스 확률의 총합은 정확히 **$1$이** 됩니다. 모델은 이 중 가장 높은 확률을 가진 클래스를 최종 예측값으로 채택합니다.
 
 ![Softmax Regression Concept](/assets/images/2025-12-02-logistic-regression-and-softmax/page_28.png)
 
@@ -186,8 +186,8 @@ $$\hat{p}_k = \text{Softmax}(\mathbf{s}(\mathbf{x}))_k = \frac{e^{s_k(\mathbf{x}
 
 * 모델 학습의 건강 상태는 **학습 곡선(Learning Curve)의** Train/Val Loss 추이를 관찰해 평가합니다.
 * 가중치 폭주로 인한 과적합(Overfitting) 진단이 나오면, 패널티를 가해 학습 선을 유연하게 만드는 **L2(Ridge)**, **L1(Lasso)**, **Elastic Net**, **Early Stopping** 등의 규제를 처방합니다.
-* 훈련이 원활해지면, 선형 수식 출력을 **시그모이드 함수**에 통과시키고 **크로스 엔트로피 손실**로 최적화하여 **이진 분류(Logistic Regression)를** 완수합니다.
-* 클래스가 3개 이상인 다중 분류가 필요할 때는 선형 출력을 **소프트맥스 함수**에 통과시켜 클래스별 확률 분포를 계산하는 **다중 분류(Softmax Regression)** 모델로 확장하여 해결합니다.
+* 훈련이 원활해지면, 선형 수식 출력을 **시그모이드 함수에** 통과시키고 **크로스 엔트로피 손실로** 최적화하여 **이진 분류(Logistic Regression)를** 완수합니다.
+* 클래스가 3개 이상인 다중 분류가 필요할 때는 선형 출력을 **소프트맥스 함수에** 통과시켜 클래스별 확률 분포를 계산하는 **다중 분류(Softmax Regression)** 모델로 확장하여 해결합니다.
 
 ![Summary of Regularization and Classification](/assets/images/2025-12-02-logistic-regression-and-softmax/page_29.png)
 
