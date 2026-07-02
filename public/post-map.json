@@ -84,5 +84,7 @@
   "peptid_denovo": "/Proteomics/PeptID_Denovo",
   "proteomics/peptid_denovo": "/Proteomics/PeptID_Denovo",
   "percolator": "/Proteomics/Percolator",
-  "proteomics/percolator": "/Proteomics/Percolator"
+  "proteomics/percolator": "/Proteomics/Percolator",
+  "protein-search-paradigms-msa-template-plm": "/Proteomics/protein-search-paradigms-msa-template-plm",
+  "proteomics/protein-search-paradigms-msa-template-plm": "/Proteomics/protein-search-paradigms-msa-template-plm"
 }

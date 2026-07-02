@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 01 Jul 2026 12:57:08 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 07:05:16 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -119,6 +119,13 @@
       <guid>https://sehooni.github.io/blog/PaperReview/MSAGPT-generative-pretraining-protein-structure/</guid>
       <pubDate>Fri, 28 Jun 2024 00:00:00 GMT</pubDate>
       <description><![CDATA[희소한 상동 서열(orphan protein) 환경에서 단백질 구조 예측 한계를 극복하기 위해 다중 서열 정렬(MSA)을 생성 모델링으로 학습하고 AlphaFold2 피드백을 결합한 MSAGPT 프레임워크 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Proteomics] 단백질 탐색의 세 가지 패러다임: MSA Search, Template Search, PLM Search]]></title>
+      <link>https://sehooni.github.io/blog/Proteomics/protein-search-paradigms-msa-template-plm/</link>
+      <guid>https://sehooni.github.io/blog/Proteomics/protein-search-paradigms-msa-template-plm/</guid>
+      <pubDate>Tue, 21 May 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[단백질 서열 및 구조 분석에서 상동 서열과 유사 구조를 탐색하는 세 가지 핵심 기술 패러다임의 원리, 방법론, 장단점 및 최신 트렌드 분석]]></description>
     </item>
     <item>
       <title><![CDATA[[Paper Review] GCPNet-EMA: Protein structure accuracy estimation using geometry-complete perceptron networks]]></title>
