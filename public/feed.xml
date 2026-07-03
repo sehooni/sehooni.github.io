@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 02 Jul 2026 07:11:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 06:26:30 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -168,6 +168,20 @@
       <guid>https://sehooni.github.io/blog/Proteomics/Percolator/</guid>
       <pubDate>Mon, 24 Apr 2023 00:00:00 GMT</pubDate>
       <description><![CDATA[Proteomics 수업 내용 정리 - Percolator]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] DDIM: Denoising Diffusion Implicit Models]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/ddim-denoising-diffusion-implicit-models/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/ddim-denoising-diffusion-implicit-models/</guid>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[디퓨전 생성 과정의 마르코프 체인 가정을 타파하고 결정론적 ODE 경로를 설계하여 성능 저하 없이 샘플링 속도를 획기적으로 개선한 DDIM(Denoising Diffusion Implicit Models) 논문 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] DDPM: Denoising Diffusion Probabilistic Models]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/ddpm-denoising-diffusion-probabilistic-models/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/ddpm-denoising-diffusion-probabilistic-models/</guid>
+      <pubDate>Sun, 02 Apr 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[확률적 디퓨전 과정을 마르코프 체인으로 모델링하여 노이즈로부터 고품질 이미지를 생성하는 생성 모델의 기초인 DDPM(Denoising Diffusion Probabilistic Models) 논문 리뷰]]></description>
     </item>
     <item>
       <title><![CDATA[[Proteomics] Peptide Identification - De novo sequencing]]></title>
