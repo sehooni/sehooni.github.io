@@ -24,7 +24,7 @@ classes: wide
 
 ## 1. 서론 (Introduction)
 
-앞선 포스팅에서 다루었던 DDPM(Denoising Diffusion Probabilistic Models)은 뛰어난 생성 품질과 안정적인 학습 과정으로 큰 주목을 받았습니다. 하지만 실용화 관점에서 치명적인 단점이 존재했는데, 바로 **"느린 샘플링 속도"**였습니다. 
+앞선 포스팅에서 다루었던 [**DDPM(Denoising Diffusion Probabilistic Models)**](/blog/PaperReview/ddpm-denoising-diffusion-probabilistic-models)은 뛰어난 생성 품질과 안정적인 학습 과정으로 큰 주목을 받았습니다. 하지만 실용화 관점에서 치명적인 단점이 존재했는데, 바로 **"느린 샘플링 속도"**였습니다. 
 
 DDPM은 역방향 생성 과정이 바로 직전 단계의 정보에만 의존하는 마르코프 체인(Markov Chain)으로 정의되어 있어, 고품질 이미지를 한 장 뽑기 위해 $T=1000$단계의 역방향 연산을 차례로 모두 거쳐야 했습니다. 이는 인공신경망(U-Net)을 1000번 호출해야 함을 의미하며, 실시간 서비스는 물론 대규모 이미지 생성을 불가능하게 만드는 병목이었습니다.
 
