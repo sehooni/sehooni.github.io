@@ -81,10 +81,12 @@ $$x_t = \sqrt{\alpha_t} x_{t-1} + \sqrt{1 - \alpha_t} \epsilon_{t-1} \quad (\tex
 
 위 수식을 재귀적으로 대입하면 다음과 같습니다:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 x_t &= \sqrt{\alpha_t} \left( \sqrt{\alpha_{t-1}} x_{t-2} + \sqrt{1 - \alpha_{t-1}} \epsilon_{t-2} \right) + \sqrt{1 - \alpha_t} \epsilon_{t-1} \\
 &= \sqrt{\alpha_t \alpha_{t-1}} x_{t-2} + \sqrt{\alpha_t(1 - \alpha_{t-1})} \epsilon_{t-2} + \sqrt{1 - \alpha_t} \epsilon_{t-1}
-\end{aligned}$$
+\end{aligned}
+$$
 
 독립적인 두 가우시안 분포의 합 법칙($\mathcal{N}(0, \sigma_1^2 \mathbf{I}) + \mathcal{N}(0, \sigma_2^2 \mathbf{I}) = \mathcal{N}(0, (\sigma_1^2 + \sigma_2^2)\mathbf{I})$)에 의해 두 노이즈 항을 하나로 묶을 수 있습니다. 분산의 합은 다음과 같습니다:
 
