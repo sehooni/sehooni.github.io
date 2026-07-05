@@ -5,9 +5,16 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 03 Jul 2026 06:29:12 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 14:21:40 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title><![CDATA[[Paper Review] Protein Language Models for Structural Biology: 거대 언어 모델이 해독하는 생명의 언어와 구조 예측]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/protein-language-models-for-structural-biology/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/protein-language-models-for-structural-biology/</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[단백질 서열을 언어로 이해하여 3차원 구조 예측, 역접힘(Inverse Folding), 신규 단백질 디자인(de novo Design)의 패러다임을 바꾼 단백질 언어 모델(PLM)의 연대기와 핵심 기술 및 최신 트렌드를 정리한 Nature Computational Science 종설 리뷰.]]></description>
+    </item>
     <item>
       <title><![CDATA[[LLM] Andrej Karpathy의 'LLM Wiki': RAG의 한계를 극복하는 새로운 개인 지식 베이스 구축 패턴]]></title>
       <link>https://sehooni.github.io/blog/AI/LLM/llm-wiki/</link>
