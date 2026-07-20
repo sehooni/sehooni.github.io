@@ -68,11 +68,23 @@ export const ABOUT_DATA = {
     // Experience Section
     experience: [
         {
+            title: "BIO AI Researcher",
+            company: "CJ CheilJedang",
+            period: "2026.07 - Present",
+            details: [
+                "R&D BIO AI Researcher."
+            ]
+        },
+        {
             title: "AI Researcher",
             company: "Korea Basic Science Institute (KBSI)",
-            period: "2025.09 - Present",
+            period: "2025.09 - 2026.07",
             details: [
                 "Biopharmaceuticals Research Center & Protein Structure Group",
+                "Spearheaded the development of AI/ML models for protein structure prediction and biomedical data analysis, driving innovation in deep learning-driven pharma and biotech R&D.",
+                "Leveraged AlphaFold3/Protenix frameworks to engineer protein structure prediction models, directly supporting drug mechanism studies.",
+                "Formulated causal relationship prediction models leveraging fMRI data.",
+                "Architected end-to-end deep learning pipelines optimized for analyzing protein structure-drug interactions."
             ]
         },
         {
