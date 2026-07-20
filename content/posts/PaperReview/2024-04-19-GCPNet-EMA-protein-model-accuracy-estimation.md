@@ -21,6 +21,14 @@ classes: wide
 * **DOI**: [10.1002/pro.4932](https://doi.org/10.1002/pro.4932)
 
 ---
+
+## 1. 서론 및 연구 배경 (Introduction)
+
+단백질 3차원 구조 예측(Protein Structure Prediction, PSP) 분야는 AlphaFold2와 ESMFold 등의 인공지능 모델이 도입되면서 대전환을 맞이했습니다. 그러나 예측 모델이 출력한 3차원 구조(Decoy)가 실제로 얼마나 물리화학적으로 타당하고 정밀한지 판별하는 **모델 정확도 추정(Estimation of Model Accuracy, EMA)** 분야는 신약 개발 및 분자 도킹 시뮬레이션의 신뢰성 확보를 위해 여전히 핵심적인 독립 과제로 남아 있습니다.
+
+기존의 EMA 방법론들은 다음과 같은 두 가지 주요 한계점을 안고 있었습니다:
+
+1. **특징 파이프라인 종속성 (Pipeline Dependency):** 특정 구조 예측 모델 내부의 중간 임베딩 정보(예: AlphaFold의 Pair/Evoformer representation)를 필요로 하여, Rosetta나 ESMFold 등 다른 모델이 예측한 구조에 대해서는 범용적으로 활용하기 어렵습니다.
 2. **3차원 기하 구조의 불완전한 모델링 (Geometric Incompleteness):** 단백질 구조의 3D 물리 기하학적 특성을 수학적으로 보존하기 위해 이동 및 회전 동변성(SE(3)-Equivariance)을 보장해야 하지만, 기존 방법론들은 Clebsch-Gordan 텐서곱(Tensor Product)과 같은 극도로 무거운 물리 계산에 의존하여 연산 속도가 매우 느리거나, 혹은 단순한 Euclidean 거리 기반 그래프를 사용하여 Chirality(거울상 대칭성)와 같은 국소적인 3D 방향 정보를 소실했습니다.
 
 GCPNet-EMA는 이러한 두 가지 한계를 극복하기 위해, 텐서곱 없이도 국소 프레임 투영을 통해 SE(3)-equivariant하면서도 geometry-complete한 GCPNet 아키텍처를 도입하여 빠르고 신뢰성 높은 평가를 구현했습니다.
@@ -46,7 +54,7 @@ GCPNet-EMA는 입력받은 단백질 3D 좌표 분자 점구름을 기반으로 
 *Table 5: GCPNet-EMA 모델이 사용하는 잔기 노드 및 엣지 특징들의 대칭성(Invariant/Equivariant) 및 속성 요약.*
 
 ### 2.1. 로컬 준거 프레임 정의 (Chirality-Sensitive Local Frame)
-3차원 공간 상의 강체 변환(SE(3) 변환) 하에서 기하학적 방향성과 거울상 구조(Chirality)를 완벽하게 보존하기 위해, GCPNet은 각 아미노산 잔기 쌍 $i, j$에 대해 상대 좌표 결합 방향과 외적을 활용하여 $	ext{SO}(3)$-equivariant 로컬 준거 프레임 $\mathcal{F}_{ij} = [\mathbf{a}_{ij}, \mathbf{b}_{ij}, \mathbf{c}_{ij}] \in \mathbb{R}^{3 \times 3}$를 정의합니다.
+3차원 공간 상의 강체 변환(SE(3) 변환) 하에서 기하학적 방향성과 거울상 구조(Chirality)를 완벽하게 보존하기 위해, GCPNet은 각 아미노산 잔기 쌍 $i, j$에 대해 상대 좌표 결합 방향과 외적을 활용하여 $\text{SO}(3)$-equivariant 로컬 준거 프레임 $\mathcal{F}_{ij} = [\mathbf{a}_{ij}, \mathbf{b}_{ij}, \mathbf{c}_{ij}] \in \mathbb{R}^{3 \times 3}$를 정의합니다.
 
 $$
 \mathbf{a}_{ij} = \frac{\mathbf{x}_i - \mathbf{x}_j}{\|\mathbf{x}_i - \mathbf{x}_j\|_2}
@@ -95,9 +103,9 @@ q_{ij} & \text{if } V_s \text{ represents edges}
 $$
 
 #### 3단계: 불변 스칼라 표현 병합 및 비선형 활성화 (Scalar-to-Scalar)
-원래의 노드/엣지 스칼라 특징 $s$와 투영으로 유도된 기하 스칼라 $q$, 그리고 다운스케일링된 벡터의 L2 노름(크기 정보) \|z\|_2를 결합하여 물리 특징을 병합하고 비선형 활성화 함수 $\sigma_s$를 적용합니다.
+원래의 노드/엣지 스칼라 특징 $s$와 투영으로 유도된 기하 스칼라 $q$, 그리고 다운스케일링된 벡터의 L2 노름(크기 정보) $\|\mathbf{z}\|_2$를 결합하여 물리 특징을 병합하고 비선형 활성화 함수 $\sigma_s$를 적용합니다.
 $$
-s_{(s,q,z)} = s \cup q \cup \|z\|_2 \quad \text{(Equation 5)}
+s_{(s,q,z)} = s \cup q \cup \|\mathbf{z}\|_2 \quad \text{(Equation 5)}
 $$
 $$
 s_v = \left\{s_{(s,q,z)}\mathbf{w}_s + \mathbf{b}_s \;\middle|\; \mathbf{w}_s \in \mathbb{R}^{(t+9+(r/\lambda)) \times t'}\right\} \quad \text{(Equation 6)}
@@ -109,10 +117,10 @@ $$
 #### 4단계: 동변 벡터의 게이팅 및 비선형 가중 업데이트 (Scalar-to-Vector Gating)
 스칼라 특징의 출력을 가중치 삼아 벡터 특징의 크기 흐름을 게이팅 연산 $\sigma_g$로 제어합니다. 활성화된 스칼라 값을 다시 벡터 공간으로 선형 사영하는 과정입니다.
 $$
-V_u = \left\{\mathbf{z}\mathbf{w}_{u_z} \;\middle|\; \mathbf{w}_{u_z} \in \mathbb{R}^{(r/\lambda) 	imes r'}\right\} \quad \text{(Equation 8)}
+V_u = \left\{\mathbf{z}\mathbf{w}_{u_z} \;\middle|\; \mathbf{w}_{u_z} \in \mathbb{R}^{(r/\lambda) \times r'}\right\} \quad \text{(Equation 8)}
 $$
 $$
-V' = \left\{V_u \odot \sigma_g(\sigma^+ (s_v)\mathbf{w}_g + \mathbf{b}_g) \;\middle|\; \mathbf{w}_g \in \mathbb{R}^{t' 	imes r'}\right\} \quad \text{(Equation 9)}
+V' = \left\{V_u \odot \sigma_g(\sigma^+ (s_v)\mathbf{w}_g + \mathbf{b}_g) \;\middle|\; \mathbf{w}_g \in \mathbb{R}^{t' \times r'}\right\} \quad \text{(Equation 9)}
 $$
 여기서 $\odot$는 행 단위 엘리먼트 곱(gating operation)을 지칭하며, $\sigma_g$와 $\sigma^+$는 각각 동변성을 훼손하지 않는 게이팅용 비선형 함수입니다.
 
@@ -129,7 +137,7 @@ GCPConv 레이어는 앞서 구축한 GCP 모듈을 메시지 패싱(Message Pas
 * **기하 메시지 정의 및 생성**:
   노드와 엣지, 그리고 로컬 3D 프레임 $\mathcal{F}_{ij}$를 연결하여 초기 메시지를 정의합니다.
   $$
-  m_{ij}^0 = \text{GCP} \left( n_i^0 \cup n_j^0 \cup e_{ij}, \mathcal{F}_{ij} ight) \quad \text{(Equation 11)}
+  m_{ij}^0 = \text{GCP} \left( n_i^0 \cup n_j^0 \cup e_{ij}, \mathcal{F}_{ij} \right) \quad \text{(Equation 11)}
   $$
 * **메시지 누적 및 잔차(Residual) 갱신**:
   복수의 GCP 모듈을 직렬로 연결하고 잔차 연결 구조($\text{ResGCP}$)를 형성하여 깊은 레이어에서도 그래디언트 소실 없이 안정적으로 메시지를 갱신합니다.
