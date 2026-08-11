@@ -18,7 +18,7 @@ export default function VisitorCounter() {
 
     useEffect(() => {
         const fetchVisitorStats = async () => {
-            const namespace = "sehooni-github-io";
+            const blogUrl = "https://sehooni.github.io";
 
             // Generate timezone-safe YYYY-MM-DD string
             const now = new Date();
@@ -27,60 +27,33 @@ export default function VisitorCounter() {
             const day = String(now.getDate()).padStart(2, '0');
             const todayStr = `${year}-${month}-${day}`;
 
-            const totalKey = "total-visitors";
-            const todayKey = `today-visitors-${todayStr}`;
             const storageKey = `visited-date-${todayStr}`;
+            const totalCacheKey = `visitor-total-cache`;
+            const todayCacheKey = `visitor-today-cache`;
 
-            const totalUrl = `https://api.counterapi.dev/v1/${namespace}/${totalKey}/`;
-            const totalUpUrl = `https://api.counterapi.dev/v1/${namespace}/${totalKey}/up`;
-            const todayUrl = `https://api.counterapi.dev/v1/${namespace}/${todayKey}/`;
-            const todayUpUrl = `https://api.counterapi.dev/v1/${namespace}/${todayKey}/up`;
+            const apiUrl = `https://hitscounter.dev/api/hit?output=json&url=${encodeURIComponent(blogUrl)}`;
+            const offset = 38001;
 
             try {
                 const hasVisitedToday = localStorage.getItem(storageKey);
                 let finalTotal = 0;
                 let finalToday = 0;
-                const offset = 38001;
-
-                // Helper to safely fetch count or fallback to incrementing if not found
-                const safeFetch = async (getUrl: string, upUrl: string, increment: boolean) => {
-                    try {
-                        if (increment) {
-                            const res = await fetch(upUrl);
-                            if (res.ok) {
-                                const data = await res.json();
-                                return data.count || 0;
-                            }
-                        } else {
-                            const res = await fetch(getUrl);
-                            if (res.ok) {
-                                const data = await res.json();
-                                return data.count || 0;
-                            }
-                            // If GET fails (e.g. key doesn't exist yet), initialize it
-                            const resUp = await fetch(upUrl);
-                            if (resUp.ok) {
-                                const data = await resUp.json();
-                                return data.count || 0;
-                            }
-                        }
-                    } catch (err) {
-                        console.error("Error in visitor api call", err);
-                    }
-                    return 0;
-                };
 
                 if (!hasVisitedToday) {
-                    // First visit of the day -> increment both counters
-                    const [totalVal, todayVal] = await Promise.all([
-                        safeFetch(totalUrl, totalUpUrl, true),
-                        safeFetch(todayUrl, todayUpUrl, true)
-                    ]);
-                    finalTotal = totalVal ? totalVal + offset : offset;
-                    finalToday = todayVal;
+                    // First visit of the day -> call API to increment count and fetch values
+                    const res = await fetch(apiUrl);
+                    if (res.ok) {
+                        const data = await res.json();
+                        finalTotal = (data.total_hits || 0) + offset;
+                        finalToday = data.today_hits || 0;
 
-                    // Save visit flag
-                    localStorage.setItem(storageKey, "true");
+                        // Save to cache
+                        localStorage.setItem(storageKey, "true");
+                        localStorage.setItem(totalCacheKey, String(finalTotal));
+                        localStorage.setItem(todayCacheKey, String(finalToday));
+                    } else {
+                        throw new Error("API response not ok");
+                    }
 
                     // Clean up old visit flags from previous days to keep localStorage clean
                     try {
@@ -94,16 +67,26 @@ export default function VisitorCounter() {
                         // ignore localStorage cleanup errors
                     }
                 } else {
-                    // Already visited today -> retrieve current values without incrementing
-                    const [totalVal, todayVal] = await Promise.all([
-                        safeFetch(totalUrl, totalUpUrl, false),
-                        safeFetch(todayUrl, todayUpUrl, false)
-                    ]);
-                    finalTotal = totalVal ? totalVal + offset : offset;
-                    finalToday = todayVal;
+                    // Already visited today -> retrieve cached values
+                    const cachedTotal = localStorage.getItem(totalCacheKey);
+                    const cachedToday = localStorage.getItem(todayCacheKey);
+
+                    if (cachedTotal && cachedToday) {
+                        finalTotal = parseInt(cachedTotal, 10);
+                        finalToday = parseInt(cachedToday, 10);
+                    } else {
+                        // Cache missing -> fetch API as fallback (will increment count once)
+                        const res = await fetch(apiUrl);
+                        if (res.ok) {
+                            const data = await res.json();
+                            finalTotal = (data.total_hits || 0) + offset;
+                            finalToday = data.today_hits || 0;
+                            localStorage.setItem(totalCacheKey, String(finalTotal));
+                            localStorage.setItem(todayCacheKey, String(finalToday));
+                        }
+                    }
                 }
 
-                // If values are 0 (e.g. API down or network issue), use a sensible placeholder
                 setStats({
                     total: finalTotal,
                     today: finalToday,
@@ -112,9 +95,11 @@ export default function VisitorCounter() {
 
             } catch (err) {
                 console.error("Failed to process visitor counts", err);
+                const cachedTotal = localStorage.getItem(totalCacheKey);
+                const cachedToday = localStorage.getItem(todayCacheKey);
                 setStats({
-                    total: 38000,
-                    today: 0,
+                    total: cachedTotal ? parseInt(cachedTotal, 10) : 38000,
+                    today: cachedToday ? parseInt(cachedToday, 10) : 0,
                     loading: false
                 });
             }
@@ -160,3 +145,4 @@ export default function VisitorCounter() {
         </div>
     );
 }
+
