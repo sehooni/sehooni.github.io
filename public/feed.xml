@@ -5,9 +5,30 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 26 Sep 2026 07:06:48 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 10:05:06 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title><![CDATA[[AI/BIO] Boltz-2 완벽 실무 가이드: 생체분자 복합체 3D 구조 및 결합 친화도(Affinity) 예측 파이프라인 구축]]></title>
+      <link>https://sehooni.github.io/blog/AI/BIO/boltz-2-practical-guide-structure-affinity-prediction/</link>
+      <guid>https://sehooni.github.io/blog/AI/BIO/boltz-2-practical-guide-structure-affinity-prediction/</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[MIT와 Recursion이 공개한 차세대 파운데이션 모델 Boltz-2의 환경 구축부터 YAML 명세서 작성, Pocket 컨디셔닝, 친화도(IC50) 예측, Python API 배치 가상 스크리닝 및 시각화까지 실무 가이드]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] Boltz-1: Democratizing Biomolecular Interaction Modeling (생체분자 복합체 3차원 구조 예측의 완전한 오픈소스 혁신)]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/Boltz-1-democratizing-biomolecular-interaction-modeling/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/Boltz-1-democratizing-biomolecular-interaction-modeling/</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[AlphaFold3에 필적하는 전원자(All-atom) 단백질-리간드-핵산 복합체 3차원 구조 예측 정확도를 달성하고, 모델 가중치와 학습·추론 코드를 MIT 라이선스로 전면 공개한 Boltz-1의 핵심 아키텍처, Diffusion 모듈, Boltz-steering 및 성능 분석]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction (구조 예측을 넘어 FEP급 결합 친화도로)]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/Boltz-2-towards-accurate-and-efficient-binding-affinity-prediction/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/Boltz-2-towards-accurate-and-efficient-binding-affinity-prediction/</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[AlphaFold3급 전원자 3D 구조 예측에 더해, 분자동역학 FEP(Free Energy Perturbation) 수준의 결합 친화도(Affinity) 예측을 1,000배 빠르게 수행하고 포켓 컨디셔닝 제어성을 구현한 차세대 바이오 파운데이션 모델 Boltz-2 심층 리뷰]]></description>
+    </item>
     <item>
       <title><![CDATA[[Paper Review] Protein Language Models for Structural Biology: 거대 언어 모델이 해독하는 생명의 언어와 구조 예측]]></title>
       <link>https://sehooni.github.io/blog/PaperReview/protein-language-models-for-structural-biology/</link>
