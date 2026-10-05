@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "[Paper Review] Boltz-1: Democratizing Biomolecular Interaction Modeling (생체분자 복합체 3차원 구조 예측의 완전한 오픈소스 혁신)"
-excerpt: "AlphaFold3에 필적하는 전원자(All-atom) 단백질-리간드-핵산 복합체 3차원 구조 예측 정확도를 달성하고, 모델 가중치와 학습·추론 코드를 MIT 라이선스로 전면 공개한 Boltz-1의 핵심 아키텍처, Diffusion 모듈, Boltz-steering 및 성능 분석"
+excerpt: "AlphaFold3와 비슷한 성능을 가진 All-atom 단백질-리간드-핵산 복합체 3차원 구조 예측을 구현한 Boltz-1의 핵심 아키텍처, Diffusion 모듈, Boltz-steering 및 성능 분석"
 toc: true
 toc_sticky: true
 
@@ -26,7 +26,7 @@ classes: wide
 
 ## 1. 서론 (Introduction): AlphaFold3의 등장과 오픈 사이언스의 갈증
 
-2024년 5월, DeepMind는 생명과학 인공지능의 또 다른 분수령이 된 **AlphaFold3(AF3)**를 발표했습니다. 기존 AlphaFold2가 단백질 단일 사슬 및 동종/이종 복합체(AlphaFold-Multimer) 예측에 머물렀던 것과 달리, AlphaFold3는 **단백질, DNA, RNA, 저분자 화합물(Ligand), 번역 후 변형(PTM), 금속 이온까지 아우르는 '전원자(All-atom) 복합체'**의 상호작용을 단일 딥러닝 프레임워크 안에서 통합 예측하는 혁신을 선보였습니다.
+2024년 5월, DeepMind는 생명과학 인공지능의 또 다른 분수령이 된 <strong>AlphaFold3(AF3)</strong>를 발표했습니다. 기존 AlphaFold2가 단백질 단일 사슬 및 동종/이종 복합체(AlphaFold-Multimer) 예측에 머물렀던 것과 달리, AlphaFold3는 <strong>단백질, DNA, RNA, 저분자 화합물(Ligand), 번역 후 변형(PTM), 금속 이온까지 아우르는 '전원자(All-atom) 복합체'</strong>의 상호작용을 단일 딥러닝 프레임워크 안에서 통합 예측하는 혁신을 선보였습니다.
 
 그러나 연구 현장의 기쁨 뒤에는 깊은 아쉬움이 뒤따랐습니다. DeepMind가 논문 공개 당시 학습 코드와 가중치(Weights)를 공개하지 않고, 웹 서버를 통해 1일 예측 횟수 및 비상업적 용도로 제한했기 때문입니다. 특히 실제 신약 개발(Drug Discovery) 파이프라인에서 가장 중요한 **단백질-저분자 리간드 결합 포즈 예측 기능은 웹 서버에서조차 제외**되어 있었습니다.
 
@@ -169,7 +169,7 @@ $$
 
 AlphaFold2는 3D 좌표를 생성할 때 주쇄(Backbone)의 펩타이드 평면을 삼각형 프레임(Rigid body frame, 회전 $R$과 이동 $\vec{t}$)으로 정의하고 Invariant Point Attention(IPA)을 수행했습니다. 그러나 이 방식은 **고리 구조가 없거나 불규칙한 형태를 띠는 저분자 화합물, 유연한 핵산 가닥, 금속 배위 결합**에는 적용하기 어렵다는 치명적인 한계가 있었습니다.
 
-Boltz-1은 이러한 프레임 제약을 완전히 철폐하고, **전원자 3차원 유클리드 좌표에 대한 생성형 확산 모델(Diffusion Model)**을 전면 도입했습니다.
+Boltz-1은 이러한 프레임 제약을 완전히 철폐하고, <strong>전원자 3차원 유클리드 좌표에 대한 생성형 확산 모델(Diffusion Model)</strong>을 전면 도입했습니다.
 
 ```
 [ AF2 방식 vs Boltz-1 / AF3 방식 비교 ]
@@ -196,13 +196,13 @@ $$
 \hat{x}_0 = f_\theta(x_t, t, s, z)
 $$
 
-이때 좌표 변환에 대한 **$\text{SE}(3)$-등변성(Equivariance)**을 만족해야 합니다. 복합체 전체가 3차원 공간에서 회전하거나 이동하더라도 예측되는 상대적 분자 구조는 동일하게 회전·이동해야 하기 때문입니다. Boltz-1은 Pair representation으로부터 유도된 원자 간 거리 바이어스와 어텐션을 결합하여 물리적 등변성을 엄격하게 보존합니다.
+이때 좌표 변환에 대한 <strong>SE(3)-등변성(Equivariance)</strong>을 만족해야 합니다. 복합체 전체가 3차원 공간에서 회전하거나 이동하더라도 예측되는 상대적 분자 구조는 동일하게 회전·이동해야 하기 때문입니다. Boltz-1은 Pair representation으로부터 유도된 원자 간 거리 바이어스와 어텐션을 결합하여 물리적 등변성을 엄격하게 보존합니다.
 
 ---
 
 ## 4. Boltz-1의 핵심 혁신: 할루시네이션(환각) 극복과 Boltz-steering
 
-Diffusion 기반 생성 모델을 분자 구조 예측에 적용할 때 가장 빈번하게 발생하는 골칫거리는 바로 **입체 충돌(Steric Clash)**과 **체인 겹침 현상(Chain Interpenetration / Hallucination)**입니다.
+Diffusion 기반 생성 모델을 분자 구조 예측에 적용할 때 가장 빈번하게 발생하는 골칫거리는 바로 <strong>입체 충돌(Steric Clash)</strong>과 <strong>체인 겹침 현상(Chain Interpenetration / Hallucination)</strong>입니다.
 
 확산 모델은 확률적 샘플링에 기반하므로, 서로 다른 두 단백질 사슬이나 리간드가 공간적으로 겹쳐 원자 간 거리가 $1\,\text{Å}$ 미만으로 침범하는 비물리적 구조(Severe clash)를 생성하는 경우가 발생합니다.
 
@@ -261,7 +261,7 @@ Boltz-1의 예측 성능은 단백질-단백질(PPI), 단백질-리간드(Dockin
 ### 5.2. 단백질 복합체 및 핵산 예측 (PPI & Nucleic Acids)
 
 * **단백질-단백질 상호작용 (PPI)**:
-  * 최근 공개된 PDB 테스트셋에서 복합체 접촉면 정확도인 **DockQ > 0.23 성공률이 83%**에 달하여, AlphaFold-Multimer v3 대비 명백한 성능 우위를 달성했습니다.
+  * 최근 공개된 PDB 테스트셋에서 복합체 접촉면 정확도인 <strong>DockQ > 0.23 성공률이 83%</strong>에 달하여, AlphaFold-Multimer v3 대비 명백한 성능 우위를 달성했습니다.
 * **단백질-RNA / DNA 상호작용**:
   * 핵산 결합 인터페이스에서 평균 Interface TM-score(ipTM) 0.72 이상을 기록하여, 단백질과 핵산이 상호 꼬임(Groove binding)을 형성하는 나선 구조를 높은 정밀도로 재현했습니다.
 
@@ -352,7 +352,7 @@ boltz predict input_complex.yaml \
 
 ### 7.1. 결합 친화도 예측으로의 도약: Boltz-2
 
-Boltz-1이 AlphaFold3 수준의 3차원 입체 '형태(Conformation)'를 예측하는 데 성공했다면, 후속 모델인 **Boltz-2**는 한 걸음 더 나아가 **결합 친화도(Binding Affinity, $\text{pIC}_{50}$ 및 Free Energy $\Delta G$)**를 직접 공동 모델링(Joint prediction)하는 파운데이션 모델로 진화하고 있습니다. 
+Boltz-1이 AlphaFold3 수준의 3차원 입체 '형태(Conformation)'를 예측하는 데 성공했다면, 후속 모델인 **Boltz-2**는 한 걸음 더 나아가 <strong>결합 친화도(Binding Affinity, $\text{pIC}_{50}$ 및 Free Energy $\Delta G$)</strong>를 직접 공동 모델링(Joint prediction)하는 파운데이션 모델로 진화하고 있습니다. 
 
 수일에서 수주가 소요되던 고비용의 분자동역학 자유에너지 섭동법(Free Energy Perturbation, FEP) 시뮬레이션을 딥러닝 추론을 통해 **1,000배 이상 빠르게 근사**하려는 시도가 Boltz 생태계를 중심으로 가속화되고 있습니다.
 

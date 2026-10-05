@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "[Paper Review] Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction (구조 예측을 넘어 FEP급 결합 친화도로)"
-excerpt: "AlphaFold3급 전원자 3D 구조 예측에 더해, 분자동역학 FEP(Free Energy Perturbation) 수준의 결합 친화도(Affinity) 예측을 1,000배 빠르게 수행하고 포켓 컨디셔닝 제어성을 구현한 차세대 바이오 파운데이션 모델 Boltz-2 심층 리뷰"
+excerpt: "All-atom 3D 복합체 구조 예측은 물론, 분자동역학 FEP(Free Energy Perturbation) 수준의 결합 친화도(Affinity) 예측을 1,000배 빠르게 수행하고 포켓 컨디셔닝 제어성을 구현한 차세대 바이오 파운데이션 모델 Boltz-2 심층 리뷰"
 toc: true
 toc_sticky: true
 
@@ -40,7 +40,7 @@ classes: wide
 4. 기존 물리 시뮬레이션 (FEP): 매우 정확하지만 1개 화합물 평가에 GPU 수십 시간 소요 (초고비용/저처리량)
 ```
 
-지금까지 결합 친화도를 정확히 계산하기 위해서는 **자유에너지 섭동법(Free Energy Perturbation, FEP)**이나 고비용의 분자동역학(MD) 시뮬레이션에 의존해야 했습니다. 하지만 FEP는 분자 1개의 결합 자유에너지를 계산하는 데 수 시간에서 수일이 소요되므로, 수십만~수백만 개의 화합물 라이브러리를 가상 스크리닝(Virtual Screening)하는 데는 근본적인 연산 한계가 있었습니다.
+지금까지 결합 친화도를 정확히 계산하기 위해서는 <strong>자유에너지 섭동법(Free Energy Perturbation, FEP)</strong>이나 고비용의 분자동역학(MD) 시뮬레이션에 의존해야 했습니다. 하지만 FEP는 분자 1개의 결합 자유에너지를 계산하는 데 수 시간에서 수일이 소요되므로, 수십만~수백만 개의 화합물 라이브러리를 가상 스크리닝(Virtual Screening)하는 데는 근본적인 연산 한계가 있었습니다.
 
 MIT Jameel Clinic과 Recursion, Valence Labs, NVIDIA가 공동 개발한 **Boltz-2**는 바로 이 오랜 난제를 해결하기 위해 탄생했습니다. Boltz-2는 전원자 3D 복합체 구조 예측과 동시에 **FEP에 필적하는 정량적 결합 친화도 예측을 단 몇 초 만에(1,000배 이상의 고속화)** 수행하는 차세대 생체분자 파운데이션 모델입니다.
 
@@ -88,7 +88,7 @@ $$
 
 ### 3.2. 이원화된 결합 친화도 예측 모듈 (Affinity Head)
 
-Boltz-2의 가장 독창적인 모듈은 구조 생성 트랙과 병렬로 작동하는 **친화도 예측 헤드(Affinity Module)**입니다. 신약 개발의 서로 다른 두 단계를 모두 지원할 수 있도록 출력이 이원화되어 있습니다:
+Boltz-2의 가장 독창적인 모듈은 구조 생성 트랙과 병렬로 작동하는 <strong>친화도 예측 헤드(Affinity Module)</strong>입니다. 신약 개발의 서로 다른 두 단계를 모두 지원할 수 있도록 출력이 이원화되어 있습니다:
 
 ```
 [ 신약 개발 단계별 맞춤형 출력 ]
@@ -156,7 +156,7 @@ flowchart LR
 
 ### 3.4. 내장된 물리 스티어링 (Native Boltz-steering, Boltz-2x)
 
-Boltz-1에서는 충돌 완화 기술(Boltz-steering)이 선택적 후처리 성격의 스크립트(Boltz-1x)로 동작했으나, **Boltz-2에서는 역방향 디노이징 루프 내부에 완전히 통합(Native integration)**되었습니다.
+Boltz-1에서는 충돌 완화 기술(Boltz-steering)이 선택적 후처리 성격의 스크립트(Boltz-1x)로 동작했으나, <strong>Boltz-2에서는 역방향 디노이징 루프 내부에 완전히 통합(Native integration)</strong>되었습니다.
 
 디노이징 샘플링 스텝에서 원자 간 반데르발스 척력(van der Waals repulsion)과 국소 공유결합 기하(Local bond geometry) 손실이 실시간으로 적용되므로, **별도의 추가 시간 지연 없이도 비물리적 원자 충돌이 완벽히 차단된 정밀 결합 포즈**를 얻을 수 있습니다.
 
@@ -212,7 +212,7 @@ Boltz-2는 기존의 구조 예측 벤치마크뿐만 아니라, 컴퓨터 보�
 
 ## 6. 결론 및 신약 개발 생태계에 미치는 파급력
 
-Boltz-2는 단백질 3차원 구조 예측이라는 첫 번째 거대한 산을 넘어, **"실제 신약 후보물질의 역가(Efficacy)를 예측할 수 있는가?"**라는 두 번째 산을 정복하기 시작한 기념비적인 모델입니다.
+Boltz-2는 단백질 3차원 구조 예측이라는 첫 번째 거대한 산을 넘어, <strong>"실제 신약 후보물질의 역가(Efficacy)를 예측할 수 있는가?"</strong>라는 두 번째 산을 정복하기 시작한 기념비적인 모델입니다.
 
 1. **가상 스크리닝의 패러다임 전환**: 
    수억 개 단위의 화학 라이브러리(Enamine REAL 등)에서 유효 물질을 발굴할 때, 조잡한 고전적 도킹 대신 FEP급 정확도의 딥러닝 친화도 스크리닝이 가능해졌습니다.
@@ -231,7 +231,7 @@ Boltz-2는 단백질 3차원 구조 예측이라는 첫 번째 거대한 산을 
 2. Wohlwend, J., Corso, G., Passaro, S., Getz, N., Reveiz, M., Leidal, K., Swiderski, W., Atkinson, L., Portnoi, T., Chinn, I., Silterra, J., Jaakkola, T., & Barzilay, R. (2024). Boltz-1: Democratizing Biomolecular Interaction Modeling. *bioRxiv*, 2024.11.19.624167. doi: [10.1101/2024.11.19.624167](https://doi.org/10.1101/2024.11.19.624167).
 3. Abramson, J., Adler, J., Dunger, J., Evans, R., Green, T., Pritzel, A., ... & Jumper, J. (2024). Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature*, 630(8016), 493–500.
 4. Schindler, C. E. et al. (2020). Large-scale assessment of binding free energy calculations in active drug discovery projects. *Journal of Chemical Information and Modeling*, 60(11), 5457–5474.
-5. Buttenschoen, M., Morris, G. M., & Deane, C. M. (2024). PoseBusters: AI-based docking methods fail to generate physically valid poses or generalize to novel sequences. *Chemical Science*, 15(8), 3130–3139.
+5. Buttenschoen, M., Morris, G. M., & Deane, C. M. (2024). PoseBusters: AI-based docking methods fail to gene  rate physically valid poses or generalize to novel sequences. *Chemical Science*, 15(8), 3130–3139.
 
 ---
 긴 글 읽어주셔서 감사합니다! 

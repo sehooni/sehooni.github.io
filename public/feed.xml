@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 05 Oct 2026 10:05:06 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 10:16:27 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -20,7 +20,7 @@
       <link>https://sehooni.github.io/blog/PaperReview/Boltz-1-democratizing-biomolecular-interaction-modeling/</link>
       <guid>https://sehooni.github.io/blog/PaperReview/Boltz-1-democratizing-biomolecular-interaction-modeling/</guid>
       <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[AlphaFold3에 필적하는 전원자(All-atom) 단백질-리간드-핵산 복합체 3차원 구조 예측 정확도를 달성하고, 모델 가중치와 학습·추론 코드를 MIT 라이선스로 전면 공개한 Boltz-1의 핵심 아키텍처, Diffusion 모듈, Boltz-steering 및 성능 분석]]></description>
+      <description><![CDATA[AlphaFold3와 비슷한 성능을 가진 All-atom 단백질-리간드-핵산 복합체 3차원 구조 예측을 구현한 Boltz-1의 핵심 아키텍처, Diffusion 모듈, Boltz-steering 및 성능 분석]]></description>
     </item>
     <item>
       <title><![CDATA[[Paper Review] Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction (구조 예측을 넘어 FEP급 결합 친화도로)]]></title>
