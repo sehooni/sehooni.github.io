@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 05 Oct 2026 10:40:51 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 10:48:18 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -27,7 +27,7 @@
       <link>https://sehooni.github.io/blog/PaperReview/Boltz-2-towards-accurate-and-efficient-binding-affinity-prediction/</link>
       <guid>https://sehooni.github.io/blog/PaperReview/Boltz-2-towards-accurate-and-efficient-binding-affinity-prediction/</guid>
       <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[All-atom 3D 복합체 구조 예측은 물론, 분자동역학 FEP(Free Energy Perturbation) 수준의 결합 친화도(Affinity) 예측을 1,000배 빠르게 수행하고 포켓 컨디셔닝 제어성을 구현한 차세대 바이오 파운데이션 모델 Boltz-2 심층 리뷰]]></description>
+      <description><![CDATA[All-atom 3D 복합체 구조 예측은 물론, 분자동역학 FEP(Free Energy Perturbation) 수준의 정량적 결합 친화도(Affinity) 예측을 1,000배 빠르게 수행하고 포켓 컨디셔닝 제어성을 구현한 차세대 바이오 파운데이션 모델 Boltz-2 심층 리뷰]]></description>
     </item>
     <item>
       <title><![CDATA[[Paper Review] ESM Cambrian (ESM-C): 28억 개 서열로 빚어낸 단백질 세계 모델과 68억 개 아틀라스]]></title>

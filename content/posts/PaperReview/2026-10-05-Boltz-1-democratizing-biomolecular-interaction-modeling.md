@@ -146,75 +146,104 @@ flowchart TD
 
 ---
 
-### 3.2. MSAModule & 48-Layer Pairformer Trunk
+### 3.2. MSAModule & 48-Layer Pairformer Trunk의 텐서 연산
 
-단백질 간의 물리적 접촉(Contact)은 수억 년의 진화 과정에서 동반 돌연변이(Co-mutation)로 나타납니다. Boltz-1은 AlphaFold3 아키텍처를 계승하여 진화적 정보를 처리하는 **MSA Module**과 2차원 잔기 쌍(Pair) 상호작용을 정밀하게 다듬는 **48단 Pairformer**를 구축했습니다.
+단백질 간의 물리적 접촉(Contact)은 수억 년의 진화 과정에서 동반 돌연변이(Co-mutation)로 나타납니다. Boltz-1은 진화적 정보를 처리하는 **MSA Module**과 2차원 잔기 쌍(Pair) 상호작용을 정밀하게 다듬는 **48단 Deep Pairformer**를 구축했습니다.
 
-#### 📐 Pairformer의 핵심: 삼각형 곱셈 및 어텐션 연산
+#### A. 텐서 차원 및 데이터 흐름
+* **Single Representation ($\mathbf{s}_i$)**: $\mathbb{R}^{N_{\text{tokens}} \times 384}$ (단일 잔기/원자의 생화학적 특성 보존)
+* **Pair Representation ($\mathbf{z}_{ij}$)**: $\mathbb{R}^{N_{\text{tokens}} \times N_{\text{tokens}} \times 128}$ (모든 원자/잔기 쌍의 2차원 상대 거리 및 기하학적 관계 보존)
+
+#### B. 삼각 곱셈 갱신 (Triangular Multiplicative Update)
 두 원자 또는 잔기 $i$와 $j$ 사이의 3차원 기하학적 관계는 제3의 잔기 $k$와의 관계를 통해 강하게 구속됩니다. 삼각 부등식($d_{ij} \le d_{ik} + d_{kj}$)과 입체 배치가 성립해야 하기 때문입니다.
 
-Pairformer는 이 기하학적 불변성을 **Triangular Multiplicative Update**를 통해 학습합니다:
+Pairformer는 이 기하학적 불변성을 <strong>나가는 엣지(Outgoing)</strong>와 <strong>들어오는 엣지(Incoming)</strong>의 두 가지 삼각 곱셈 연산으로 학습합니다:
 
 $$
-z_{ij}^{(\text{out})} = z_{ij} + \text{LayerNorm}\left( \sum_{k} a_{ik} \odot b_{jk} \right)
+\mathbf{z}_{ij}^{(\text{out})} = \mathbf{z}_{ij} + \text{Linear}\left( \text{LayerNorm}\left( \sum_{k=1}^N \mathbf{a}_{ik} \odot \mathbf{b}_{jk} \right) \right)
 $$
 
-여기서 $a_{ik}$와 $b_{jk}$는 $z_{ik}$와 $z_{jk}$로부터 선형 투영(Linear Projection) 및 게이팅(Gating)된 벡터입니다. 잔기 $i$에서 $k$, 그리고 $k$에서 $j$로 이어지는 우회 경로의 정보를 집계함으로써 2차원 거리 지도가 물리적으로 유효한 3차원 공간 임베딩으로 수렴하도록 만듭니다.
+$$
+\mathbf{z}_{ij}^{(\text{in})} = \mathbf{z}_{ij} + \text{Linear}\left( \text{LayerNorm}\left( \sum_{k=1}^N \mathbf{a}_{ki} \odot \mathbf{b}_{kj} \right) \right)
+$$
 
-이어지는 **Triangular Self-Attention**은 노드 $i$를 기준으로 연결된 엣지들을 축 방향(Starting node / Ending node)으로 어텐션을 수행하여 대역적(Global) 복합체 상호작용 맥락을 완성합니다.
+여기서 $\mathbf{a}_{ik}$와 $\mathbf{b}_{jk}$는 $\mathbf{z}$로부터 투영된 게이팅 활성화 벡터이며, $\odot$는 원소별 아다마르 곱(Hadamard product)입니다. 잔기 $i \to k \to j$의 삼각 순환 경로를 따라 기하학적 제약이 전역적으로 전파됩니다.
+
+#### C. 삼각 축방향 어텐션 (Triangular Self-Attention)
+노드 $i$를 공유하는 엣지 집합에 대해 행(Starting node)과 열(Ending node) 축을 따라 어텐션을 수행합니다:
+
+$$
+\mathbf{q}_{ik} = \mathbf{W}_q \mathbf{z}_{ik}, \quad \mathbf{k}_{jk} = \mathbf{W}_k \mathbf{z}_{jk}, \quad \mathbf{v}_{jk} = \mathbf{W}_v \mathbf{z}_{jk}, \quad \mathbf{b}_{ij} = \mathbf{W}_b \mathbf{z}_{ij}
+$$
+
+$$
+\alpha_{ikj} = \text{Softmax}_j\left( \frac{\mathbf{q}_{ik}^T \mathbf{k}_{jk}}{\sqrt{d}} + \mathbf{b}_{ij} \right), \quad \mathbf{z}_{ik} \leftarrow \mathbf{z}_{ik} + \sum_{j=1}^N \alpha_{ikj} \mathbf{v}_{jk}
+$$
 
 ---
 
-### 3.3. SE(3)-Equivariant 3D Coordinate Diffusion Module
+### 3.3. SE(3)-Equivariant 전원자 확산 모듈 (3D Diffusion Module)
 
 AlphaFold2는 3D 좌표를 생성할 때 주쇄(Backbone)의 펩타이드 평면을 삼각형 프레임(Rigid body frame, 회전 $R$과 이동 $\vec{t}$)으로 정의하고 Invariant Point Attention(IPA)을 수행했습니다. 그러나 이 방식은 **고리 구조가 없거나 불규칙한 형태를 띠는 저분자 화합물, 유연한 핵산 가닥, 금속 배위 결합**에는 적용하기 어렵다는 치명적인 한계가 있었습니다.
 
 Boltz-1은 이러한 프레임 제약을 완전히 철폐하고, <strong>전원자 3차원 유클리드 좌표에 대한 생성형 확산 모델(Diffusion Model)</strong>을 전면 도입했습니다.
 
 ```
-[ AF2 방식 vs Boltz-1 / AF3 방식 비교 ]
-AF2:  아미노산 평면(N-CA-C)을 회전·이동 프레임 (R_i, t_i)으로 강제 정의
-      -> 비대칭 저분자 화합물, 이온, RNA에 일반화 불가능
-Boltz: 모든 원자의 (x, y, z) 실수 좌표 자체에 정규분포 노이즈를 섞고,
-      이를 복원하는 Score-based Denoising Diffusion 채택
-      -> 화학종에 무관하게 모든 원자를 단일 원리로 생성 가능!
+[ AF2 방식 vs Boltz-1 전원자 확산 방식 비교 ]
+
+1. AlphaFold2:
+   - 주쇄 평면(N-CA-C)을 SE(3) 강체 프레임 (R_i, \vec{t}_i)으로 강제 정의
+   - 단점: 비대칭 저분자 화합물, 이온, 유연한 RNA에 일반화 불가능
+
+2. Boltz-1:
+   - 복합체 내 모든 원자의 (x, y, z) 실수 좌표 자체에 정규분포 노이즈를 주입
+   - Score-based Denoising Diffusion (Karras EDM Formulation)으로 동시 복원
+   - 장점: 단백질, DNA, RNA, 저분자, 금속 이온을 단 하나의 통일된 원리로 생성!
 ```
 
-#### 🧪 수식적 분석: 확산 과정과 역방향 디노이징
+#### A. Karras EDM 정식화에 기반한 연속 확산 과정
+정답 전원자 좌표 $\mathbf{x}_0 \in \mathbb{R}^{N_{\text{atoms}} \times 3}$에 노이즈 수준 $\sigma \in [\sigma_{\min}, \sigma_{\max}]$에 비례하는 가우시안 노이즈 $\mathbf{n} \sim \mathcal{N}(0, \sigma^2 \mathbf{I})$를 주입하여 노이즈 좌표 $\mathbf{x}_\sigma = \mathbf{x}_0 + \mathbf{n}$을 생성합니다.
 
-1. **정방향 노이즈 확산 (Forward Diffusion Process)**:
-실제 정답 3D 좌표 $x_0 \in \mathbb{R}^{N \times 3}$에 시점 $t \in [0, 1]$에 비례하는 가우시안 노이즈 $\epsilon \sim \mathcal{N}(0, I)$를 점진적으로 추가합니다:
-
-$$
-x_t = \alpha_t x_0 + \sigma_t \epsilon, \quad \sigma_t^2 = 1 - \alpha_t^2
-$$
-
-2. **역방향 예측 (Reverse Denoising Process)**:
-신경망 $f_\theta(x_t, t, s, z)$는 트렁크에서 추출된 단일 표현 $s$와 쌍 표현 $z$, 그리고 현재 노이즈 낀 좌표 $x_t$를 조건(Conditioning)으로 받아 원래 깨끗한 좌표의 추정치 $\hat{x}_0$를 직접 예측합니다:
+신경망 디노이저 $D_\theta(\mathbf{x}_\sigma; \sigma, \mathbf{s}, \mathbf{z})$는 노이즈 낀 좌표와 트렁크 잠재 표현을 조건으로 받아 원래 깨끗한 좌표 $\mathbf{x}_0$를 직접 예측합니다:
 
 $$
-\hat{x}_0 = f_\theta(x_t, t, s, z)
+\mathcal{L}_{\text{diff}}(\theta) = \mathbb{E}_{\mathbf{x}_0, \mathbf{n}, \sigma} \left[ \lambda(\sigma) \left\| D_\theta(\mathbf{x}_0 + \mathbf{n}; \sigma, \mathbf{s}, \mathbf{z}) - \mathbf{x}_0 \right\|_2^2 \right]
 $$
 
-이때 좌표 변환에 대한 <strong>SE(3)-등변성(Equivariance)</strong>을 만족해야 합니다. 복합체 전체가 3차원 공간에서 회전하거나 이동하더라도 예측되는 상대적 분자 구조는 동일하게 회전·이동해야 하기 때문입니다. Boltz-1은 Pair representation으로부터 유도된 원자 간 거리 바이어스와 어텐션을 결합하여 물리적 등변성을 엄격하게 보존합니다.
+손실 가중치 $\lambda(\sigma) = \frac{\sigma^2 + \sigma_{\text{data}}^2}{(\sigma \cdot \sigma_{\text{data}})^2}$를 적용하여, 노이즈 스케일 전반에 걸쳐 균등한 그래디언트 기여도를 보장합니다.
+
+#### B. 신뢰도 평가 헤드 (Confidence & Distogram)
+좌표 생성과 함께 원자 간 거리 분포를 예측하는 **Distogram Head**($2\,\text{Å} \sim 22\,\text{Å}$를 64개 구간으로 이산화)와 결합 신뢰도 헤드를 동시에 산출합니다:
+
+$$
+\text{ipTM} = \frac{1}{|\mathcal{I}|} \sum_{i \in \mathcal{I}} \max_j \frac{1}{1 + \left( \frac{\|\vec{x}_i - \vec{x}_j^{\text{aligned}}\|}{d_0} \right)^2}, \quad d_0 = 1.24 \sqrt[3]{N_{\text{res}} - 15} - 1.8
+$$
 
 ---
 
 ## 4. Boltz-1의 핵심 혁신: 할루시네이션(환각) 극복과 Boltz-steering
 
-Diffusion 기반 생성 모델을 분자 구조 예측에 적용할 때 가장 빈번하게 발생하는 골칫거리는 바로 <strong>입체 충돌(Steric Clash)</strong>과 <strong>체인 겹침 현상(Chain Interpenetration / Hallucination)</strong>입니다.
+Diffusion 기반 생성 모델을 분자 구조 예측에 적용할 때 가장 빈번하게 발생하는 골칫거리는 바로 <strong>입체 충돌(Steric Clash)</strong>과 <strong>체인 겹침 현상(Chain Interpenetration)</strong>입니다.
 
 확산 모델은 확률적 샘플링에 기반하므로, 서로 다른 두 단백질 사슬이나 리간드가 공간적으로 겹쳐 원자 간 거리가 $1\,\text{Å}$ 미만으로 침범하는 비물리적 구조(Severe clash)를 생성하는 경우가 발생합니다.
 
-![Boltz-steering concept and clash avoidance](/assets/images/2024-09-26-HighFold-cyclic-peptide-structure-prediction/fig01.jpg)
-*개념도: 비물리적 원자 충돌이 발생했을 때 역방향 디노이징 스텝마다 물리화학적 제약 손실의 그래디언트를 주입하여 올바른 결합 포즈로 안착시키는 스티어링 메커니즘.*
+```mermaid
+flowchart TD
+    Noise["초기 노이즈 낀 좌표 x_T ~ N(0, sigma_max^2 I)"] --> Loop["역방향 디노이징 루프 (Step t: T -> 0)"]
+    Loop --> ModelDenoise["신경망 디노이저 x_0 예측: D_theta(x_t; sigma_t, s, z)"]
+    ModelDenoise --> ComputeSteer["물리 제약 손실 함수 L_steering(x_t) 계산<br/>• 반데르발스 반발력 (L_clash)<br/>• 공유결합 길이 복원력 (L_bond)<br/>• 원자가 결합각 복원력 (L_angle)"]
+    ComputeSteer --> GradUpdate["스티어링 그래디언트 주입:<br/>x_{t-1} = x_{t-1} - eta_t * grad_{x_t}(L_steering)"]
+    GradUpdate --> Check{"t == 0 도달 여부"}
+    Check -- No --> Loop
+    Check -- Yes --> Final["원자 충돌 제로의 완벽한 전원자 3D 복합체 x_0"]
+```
 
-### 4.1. Boltz-steering (Boltz-1x)의 작동 메커니즘
+### 4.1. Boltz-steering (Boltz-1x)의 수학적 작동 메커니즘
 
-이 문제를 해결하기 위해 저자들은 추론 시점 가이던스 기술인 **Boltz-steering**을 제안했습니다. 이는 모델을 처음부터 다시 학습할 필요 없이, **역방향 확산 샘플링이 진행되는 매 스텝마다 실시간으로 물리적 제약 손실 함수 $L_{\text{steering}}$의 그래디언트를 좌표에 반영**하는 기법입니다:
+이 문제를 해결하기 위해 연구진은 추론 시점 가이던스 기술인 **Boltz-steering**을 제안했습니다. 모델을 처음부터 다시 학습할 필요 없이, **역방향 확산 샘플링이 진행되는 매 스텝마다 실시간으로 물리적 제약 손실 함수 $L_{\text{steering}}$의 그래디언트를 좌표에 반영**하는 기법입니다:
 
 $$
-x_{t-1} \leftarrow x_{t-1} - \eta_t \nabla_{x_t} L_{\text{steering}}(x_t)
+\mathbf{x}_{t-1} \leftarrow \mathbf{x}_{t-1} - \eta_t \nabla_{\mathbf{x}_t} L_{\text{steering}}(\mathbf{x}_t)
 $$
 
 여기서 $L_{\text{steering}}$은 다음과 같은 물리화학적 페널티의 가중치 합으로 정의됩니다:
@@ -226,10 +255,13 @@ $$
 1. **원자 충돌 방지 손실 ($L_{\text{clash}}$)**:
    반데르발스 반경(van der Waals radii) $r_i, r_j$의 합보다 가까워진 모든 비공유 결합 원자 쌍 $(i, j)$에 대해 반발력(Repulsive force)을 부여:
    $$
-   L_{\text{clash}} = \sum_{i < j, d_{ij} < (r_i + r_j)} \left( (r_i + r_j) - d_{ij} \right)^2
+   L_{\text{clash}} = \sum_{i < j, \, d_{ij} < (r_i + r_j)} \left( (r_i + r_j) - d_{ij} \right)^2
    $$
 2. **공유결합 및 결합각 제약 ($L_{\text{bond}}, L_{\text{angle}}$)**:
-   화학적으로 연결된 공유결합 길이 및 원자가 각도가 표준 분자 기하값(CCD 표준 라이브러리)에서 벗어날 경우 복원력을 가함.
+   화학적으로 연결된 공유결합 길이 및 원자가 각도가 표준 분자 기하값(CCD 표준 라이브러리)에서 벗어날 경우 조화 진동자(Harmonic oscillator) 형태의 복원력을 가함:
+   $$
+   L_{\text{bond}} = \sum_{(i, j) \in \mathcal{B}} \left( d_{ij} - d_{ij}^{\text{ideal}} \right)^2, \quad L_{\text{angle}} = \sum_{(i, j, k) \in \mathcal{A}} \left( \theta_{ijk} - \theta_{ijk}^{\text{ideal}} \right)^2
+   $$
 
 > [!TIP]
 > **Boltz-steering의 실무적 효과**
@@ -348,13 +380,50 @@ boltz predict input_complex.yaml \
 
 ---
 
+### 6.4. PyTorch 기반 파이썬 API 추론 예시
+
+스크립트 환경에서 프로그래밍 방식으로 모델을 직접 호출하고 신뢰도를 분석하는 코드입니다:
+
+```python
+import torch
+from boltz.model.model import Boltz1
+from boltz.data.parse.schema import parse_yaml
+
+# 1. 모델 로드 (CUDA 환경)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = Boltz1.load_from_checkpoint("boltz1_weights.ckpt").to(device)
+model.eval()
+
+# 2. YAML 데이터 명세서 파싱
+data_dict = parse_yaml("input_complex.yaml")
+
+# 3. All-atom 3D Diffusion 추론 (Steering 가이던스 적용)
+with torch.no_grad():
+    predictions = model.predict(
+        data_dict,
+        recycling_steps=3,
+        num_diffusion_steps=200,
+        use_steering=True,  # Boltz-1x 물리 충돌 방지 활성화
+        steering_weights={"clash": 1.0, "bond": 0.5, "angle": 0.2}
+    )
+
+# 4. 신뢰도 평가 결과 추출
+iptm = predictions["confidence"]["iptm"].item()
+plddt = predictions["confidence"]["plddt"].cpu().numpy()
+
+print(f"[+] Interface pTM (ipTM) : {iptm:.4f}")
+print(f"[+] Mean pLDDT            : {plddt.mean():.2f}")
+```
+
+---
+
 ## 7. 고찰 및 향후 전망 (Discussion & Perspectives)
 
 ### 7.1. 결합 친화도 예측으로의 도약: Boltz-2
 
 Boltz-1이 AlphaFold3 수준의 3차원 입체 '형태(Conformation)'를 예측하는 데 성공했다면, 후속 모델인 **Boltz-2**는 한 걸음 더 나아가 <strong>결합 친화도(Binding Affinity, $\text{pIC}_{50}$ 및 Free Energy $\Delta G$)</strong>를 직접 공동 모델링(Joint prediction)하는 파운데이션 모델로 진화하고 있습니다. 
 
-수일에서 수주가 소요되던 고비용의 분자동역학 자유에너지 섭동법(Free Energy Perturbation, FEP) 시뮬레이션을 딥러닝 추론을 통해 **1,000배 이상 빠르게 근사**하려는 시도가 Boltz 생태계를 중심으로 가속화되고 있습니다.
+수일에서 수주가 소요되던 고비용의 분자동역학 자유에너지 섭동법(Free Energy Perturbation, FEP) 시뮬레이션을 딥러닝 추론을 통해 <strong>1,000배 이상 빠르게 근사</strong>하려는 시도가 Boltz 생태계를 중심으로 가속화되고 있습니다.
 
 ### 7.2. 총평: 폐쇄형 모델의 독점을 깬 진정한 게임 체인저
 
