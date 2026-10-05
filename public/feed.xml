@@ -5,7 +5,7 @@
     <link>https://sehooni.github.io</link>
     <description>Sehoon's Technical Blog</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 05 Oct 2026 10:16:27 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 10:40:51 GMT</lastBuildDate>
     <atom:link href="https://sehooni.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -27,7 +27,49 @@
       <link>https://sehooni.github.io/blog/PaperReview/Boltz-2-towards-accurate-and-efficient-binding-affinity-prediction/</link>
       <guid>https://sehooni.github.io/blog/PaperReview/Boltz-2-towards-accurate-and-efficient-binding-affinity-prediction/</guid>
       <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[AlphaFold3급 전원자 3D 구조 예측에 더해, 분자동역학 FEP(Free Energy Perturbation) 수준의 결합 친화도(Affinity) 예측을 1,000배 빠르게 수행하고 포켓 컨디셔닝 제어성을 구현한 차세대 바이오 파운데이션 모델 Boltz-2 심층 리뷰]]></description>
+      <description><![CDATA[All-atom 3D 복합체 구조 예측은 물론, 분자동역학 FEP(Free Energy Perturbation) 수준의 결합 친화도(Affinity) 예측을 1,000배 빠르게 수행하고 포켓 컨디셔닝 제어성을 구현한 차세대 바이오 파운데이션 모델 Boltz-2 심층 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] ESM Cambrian (ESM-C): 28억 개 서열로 빚어낸 단백질 세계 모델과 68억 개 아틀라스]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/ESM-Cambrian-world-model-of-protein-biology/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/ESM-Cambrian-world-model-of-protein-biology/</guid>
+      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[28억 개의 지구 전역 메타유전체 서열로 학습한 차세대 파운데이션 모델 ESM-C를 뼈대로 삼아, ESMFold2 단일 서열 구조 예측, De Novo 표적 결합체(Binder) 설계, Sparse Autoencoder(SAE)를 통한 블랙박스 생물학적 회로 해석, 그리고 68억 개 서열의 거대 아틀라스까지 집대성한 2026년 단백질 AI의 최전선 심층 분석]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] ESM3: 서열·구조·기능을 모두 토큰화한 98B 멀티모달 생성 모델로 5억 년의 진화를 시뮬레이션하다]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/ESM3-simulating-500-million-years-of-evolution-with-multimodal-generative-model/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/ESM3-simulating-500-million-years-of-evolution-with-multimodal-generative-model/</guid>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[단백질 서열(Sequence), 3D 구조(Structure via VQ-VAE), 생물학적 기능(Function)을 하나의 통합된 이산 토큰 공간으로 묶어 단백질을 '프로그래밍' 가능한 언어로 변환하고, 5억 년의 진화적 거리를 뛰어넘는 신규 형광 단백질 esmGFP를 설계·검증한 Science 2025 논문 ESM3 심층 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] ESM-2와 ESMFold: 언어 모델의 스케일링으로 MSA를 대체하고 메타유전체 6억 개 구조를 풀다]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/ESM-2-and-ESMFold-atomic-level-protein-structure-prediction/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/ESM-2-and-ESMFold-atomic-level-protein-structure-prediction/</guid>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[15B 파라미터로 스케일업된 단백질 언어 모델 ESM-2와 이를 Invariant Point Attention(IPA) 접힘 모듈에 결합한 ESMFold를 통해, MSA 검색 없이 단일 서열만으로 AlphaFold2급 원자 수준 3D 구조를 최대 60배 빠르게 예측하고 6억 1700만 개 구조의 ESM Metagenomic Atlas를 완성한 Science 2023 논문 심층 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] MSA Transformer: 2차원 어텐션으로 공진화를 해독하는 단백질 다중 서열 언어 모델]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/MSA-Transformer-protein-language-modeling/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/MSA-Transformer-protein-language-modeling/</guid>
+      <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[다중 서열 정렬(MSA) 행렬 전체를 입력받아 행(Row)과 열(Column) 방향의 Tied Factorized Attention으로 분해함으로써, AlphaFold2의 Evoformer와 동일한 기하학적 철학 위에서 1/6의 파라미터로 비지도 구조 예측 SOTA를 달성한 ICML 2021 논문 심층 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] Transformer Protein Language Models Are Unsupervised Structure Learners (언어 모델의 Attention이 곧 3D 구조다)]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/Transformer-protein-language-models-unsupervised-structure-learners/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/Transformer-protein-language-models-unsupervised-structure-learners/</guid>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[단백질 언어 모델의 어텐션 행렬이 3차원 접촉(Contact Map)의 선형 기저를 이룸을 정보이론적으로 규명하고, 대칭화와 APC(Average Product Correction)를 통해 단 20개의 단백질 구조만으로 기존 지도학습 모델을 뛰어넘은 ICLR 2021 논문 심층 리뷰]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Paper Review] ESM-1b: 단백질 서열 2.5억 개로 학습한 자기지도학습과 생물학적 구조·기능의 창발]]></title>
+      <link>https://sehooni.github.io/blog/PaperReview/ESM-1b-biological-structure-and-function-from-unsupervised-learning/</link>
+      <guid>https://sehooni.github.io/blog/PaperReview/ESM-1b-biological-structure-and-function-from-unsupervised-learning/</guid>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[통계역학적 Potts 모델의 공진화 분석 한계를 극복하고, 라벨 없는 2.5억 개 아미노산 서열에 마스크 언어 모델링(MLM)을 스케일링하여 3차원 접촉 지도(Contact Map), 2차 구조, 변이 영향성(Fitness) 정보의 자발적 창발을 입증한 단백질 언어 모델의 기념비적 연구 ESM-1b 심층 분석]]></description>
     </item>
     <item>
       <title><![CDATA[[Paper Review] Protein Language Models for Structural Biology: 거대 언어 모델이 해독하는 생명의 언어와 구조 예측]]></title>
